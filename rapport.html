@@ -1,95 +1,347 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IFT2255 | DM1</title>
+    <title>IFT2255 | Rapport DM1</title>
     <link rel="shortcut icon" href="./../favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./../dist/style.min.css?v=007">
-    <link rel="stylesheet" href="./../assets/css/teams.css?v=001">
+    <link rel="stylesheet" href="./../assets/css/normalize.css">
+    <link rel="stylesheet" href="./../assets/css/base.css?v=02">
     <style>
-        .content-wrapper { 
-            position: relative; 
-            padding: 10px 5%; 
-        }
-
-        .page-header {
-            position: relative;
-            padding-bottom: 12px;
+        .report-header {
+            padding-top: 24px; padding-bottom: 24px;
             background-color: #fff;
         }
 
-        .page-header .content-wrapper {
-            padding-top: 24px;
-            display: flex; justify-content: center;
-        }
-                
-        .teaching {
-            display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between;
-            padding: 24px 5vw 0;
-            margin-bottom: 18px;
+        .title-section {
+            display: flex; align-items: flex-start; justify-content: space-between;
+            padding-left: 5vw;
+            padding-right: 5vw;
         }
 
-        .teaching-header {
-            display: flex;
-        }
-                    
-        .teaching-info {
-            flex-grow: 2;
+        .report-title {
+            color: royalblue;
+            font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
-        .teaching-term {
-            margin: 0;
-            margin-bottom: 4px;
+        .report-summary {
+            max-width: 800px;
+            font-size: 1.4em;
             color: #555;
-            font-weight: 500;
-        }
-
-        .teaching-schedule {
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        .teaching-title {
-            margin: 0;
-            font-size: 2.8em; font-weight: 300;
         }
         
-            .teaching-links {
+        .report-resources {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .report-resource {
+            margin-left: 12px;
+        }
+
+        .report-resource-link {
+            display: block;
+            padding: 2px;
+        }
+
+        .report-resource-link__img {
+            height: 36px; width: auto;
+        }
+
+        .section-title {
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            font-size: 2.4em; font-weight: 300;
+        }
+
+        .subsection-title {
+            margin-bottom: 3px;
+            font-size: 2em; font-weight: bold;
+            color: #555;
+        }
+
+        .team-section {
+            padding-left: 5vw;
+            padding-right: 5vw;
+        }
+
+            .team-title {
+                font-weight: 500;
+                margin-bottom: 12px;
+                color: #1C3A94;
+            }
+
+            .members {
                 display: flex; flex-direction: row;
             }
 
-            .teaching-link {
-                color: #555;
+            .member {
+                display: flex; flex-direction: column;
             }
-            .teaching-link:not(:last-child) {
-                margin-right: 12px;
-            }
+                .member:not(:last-child) {
+                    margin-right: 12px;
+                }
 
-            .teaching-link__link {
-                display: block;
-                width: 100%;
-                height: 100%;
-                padding: 10px 18px 12px;
-                font-size: 1.6rem; font-weight: 500;
-                border-radius: 2px;
-                text-align: center; 
-                border: 2px solid currentColor;
-                color: #fff;
-            }
+                .member-pic {
+                    display: block;
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                }
 
-        .teaching-header {
-            align-items: center;
-        }
+                .member-role {
+                    font-size: 0.9em; font-weight: 500;
+                    color: #555;
+                }
 
-        .page-body {
-            position: relative;
+        .report-body {
             display: flex;
-            flex-direction: column;
         }
-                
+
+        .report-aside {
+            padding-top: 24px; padding-right: 12px; padding-left: 5vw;
+            background-color: #6667AB;
+        }
+
+        .report-main {
+            padding-top: 24px; padding-left: 2%; padding-right: 5vw;
+        }
+
+        .main-section {
+            margin-bottom: 24px;
+        }
+
+        .nav {
+            color: #E87429;
+        }
+
+        .nav-item__link {
+            display: block;
+            color: #fff;
+            font-weight: 500;
+            padding: 6px;
+            text-decoration: none;
+        }
+
+        .nav-item-details {
+            color: #f5f5f5;
+            padding-left: 6px;
+        }
+
+        .glossary-term {
+            font-weight: bold;
+            background: #222;
+            padding: 3px 6px;
+            display: inline-block;
+            border-radius: 2px;
+            color: #fff;
+        }
+
+        .glossary-def {
+            margin-top: -6px; margin-left: 6px; margin-bottom: 6px;
+            padding: 12px 6px 4px;
+            background-color: #e5e4e2;
+            border-radius: 4px;
+        }
+
+        .personas {
+            display: flex;
+        }
+
+        .persona {
+            position: relative;
+            display: flex; flex-direction: column;
+            margin-right: 12px;
+            max-width: 360px;
+            padding: 6px 12px;
+            border-radius: 2px;
+            box-shadow: 0 1px 2px -1px #999;
+            background-color: #fff;
+            z-index: 2;
+        }
+
+        .persona-stat {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .persona-type {
+            display: flex; align-items: center; justify-content: center;
+            height: 40px; width: 40px; 
+            font-size: 1.3rem; font-weight: bold; 
+            border-radius: 50%;
+        }
+
+        .persona-type--pp {
+            background-color: #FF6F61;
+        }
+
+        .persona-type--eco {
+            background-color: #88B04B;
+        }
+
+        .persona-market {
+            display: flex; align-items: center; justify-content: center;
+            margin-left: 6px;
+            height: 40px; width: 40px; 
+            color: #444;
+            font-size: 1.3rem; font-weight: bold; 
+            border-radius: 50%;
+            background-color: #d5d5d5;
+        }
+
+        .persona-color {
+            display: flex; align-items: center; justify-content: center;
+            background-color: #FF6F61;
+            height: 42px; width: 42px; font-weight: bold;
+            justify-self: center; align-self: center;
+            font-size: 1.3rem;
+            border-radius: 50%;
+        }
+
+        .persona-identity {
+            display: flex; 
+        }
+        
+        .persona-name {
+            font-size: 1.2em; font-weight: 300;
+            flex-grow: 2;
+        }
+
+        .persona-demography-line {
+            display: flex;
+        }
+
+        .persona-background {
+            padding: 6px;
+            color: #555;
+        }
+
+        .persona-title {
+            margin-top: 6px; margin-bottom: 3px;
+            color: #222;
+            font-size: 1.1em; font-weight: 500;
+        }
+
+        .use-case {
+            display: flex;
+        }
+
+        .use-case-notes {
+            margin-left: 12px;
+        }
+
+        .scenario {
+            display: flex;
+            margin-bottom: 12px;
+            background-color: #fff;
+            border-radius: 3px;
+            box-shadow: 0 1px 2px #a9a9a9;
+        }
+
+        .scenario-meta {
+            padding: 12px;
+            max-width: 40%;
+            background-color: #e5e4e2;
+        }
+
+        .scenario-main {
+            flex-grow: 2;
+            padding: 12px;
+            margin-left: 12px;
+        }
+
+        .scenario-main-title {
+            margin: 0;
+            color: royalblue;
+        }
+
+        .scenario-alt-title {
+            margin: 0;
+            color: #FF6F61;
+        }
+        
+        .cu-actors {
+            display: flex;
+        }
+
+        .cu-actor {
+            margin-right: 6px;
+            padding: 4px 6px;
+            color: #fff; font-weight: 500;
+            background-color: #6667AB;
+            border-radius: 1px;
+        }
+
+        .cu-name {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .cu-goal {
+            margin: 0;
+            font-size: 1.6em;
+        }
+
+        .cu-part--notes {
+            margin-top: 12px;
+        }
+
+        .cu-part-title {
+            margin: 0;
+            margin-top: 6px;
+        }
+
+        .cu-conditions {
+            font-weight: 500;
+        }
+
+        .cu-notes {
+            color: #555;
+            margin: 0;
+            font-size: 1.4em;
+        }
+
+        .scenario-main-steps {
+            margin: 0; padding-left: 16px;        
+        }
+
+        .scenario-alt {
+            margin-top: 6px;
+        }
+
+        .scenario-alt p { margin: 0; }
+
+        .scenario-alt-steps { counter-reset: topLevel; }
+            .scenario-alt-steps:not(:last-child) { margin-bottom: 6px; }
+            .scenario-alt-step { counter-increment: topLevel; font-weight: 500; }
+            .scenario-alt-step:before { content: attr(value) counter(topLevel, lower-alpha) '. '; }
+            .scenario-alt-steps ol { font-weight: 400; counter-reset: secondLevel; }
+                .scenario-alt-steps ol li { counter-increment: secondLevel; margin-left: 12px; }
+                    .scenario-alt-steps ol li:before { content: attr(value) counter(topLevel, lower-alpha) '.' counter(secondLevel, decimal) '. '}
+
+        .glossary {
+            font-size: 1.4em;
+        }
+
+        .preview-img {
+            display: block;
+            width: 600px;
+            height: auto;
+        }
+
+        .report-footer {
+            padding: 24px 5vw 24px;
+            color: #fff;
+            background-color: #292723;
+        }
+
+            .report-footer p {
+                margin: 0; margin-bottom: 6px;
+            }
+
         .dash:before { 
             content: '-'; 
             margin-left: 4px;
@@ -103,741 +355,439 @@
             margin-right: 4px; 
             font-weight: bold;
             content: '🗸'; 
-            color: #11b334;
-        }
-       
-        .section-title {
-            margin-bottom: 12px;
-            font-weight: 300; font-size: 2.6em;
-            color: #555;
-            text-transform: uppercase;
-        }
-
-        .problem-section {
-            display: flex;
-        }
-
-        .problem-section p {
-            line-height: 1.5;
-            margin-top: 0;
-        }
-
-        .problem-section-aside {
-            flex: 1 1;
-            display: flex; flex-direction: column;
-            padding-top: 24px;
-            padding-left: 5vw;
-            padding-right: 24px;
-            min-width: 300px;
-            color: #222;
-            background-color: #33302B;
-            background-color: #88B04B;
-        }
-
-            .problem-section-aside .section-title {
-                color: #f5f5f5;
-            }
-
-        .problem-section-content {
-            flex-grow: 2;
-            display: flex; flex-direction: column;
-            background-color: #f5f5f5;
-            width: 100%;
-            z-index: 50;
-        }
-
-        .project-intro {
-            display: flex;
-        }
-
-        .project-intro-img {
-            display: block;
-            max-width: 50%;
-            height: auto;
-            flex: 1 1;
-        }
-
-        .project-intro-desc {
-            flex: 1 1;
-            padding: 12px 24px;
-            line-height: 1.5;
-            background-color: #1b1b1b;
-            color: #fff;
-        }
-
-            .project-intro-desc p {
-                font-size: 1.8em;
-            }
-
-        .project-intro-desc-title {
-            text-transform: uppercase;
-            color: #0d0d0d;
-            font-weight: bold;
-            margin-bottom: 4px;
-        }
-        
-        .problem-subsection--problem {
-            padding: 12px 5%;
-        }
-
-        .problem-subsection--activity {
-            padding: 12px 5%;
-            background: url(https://res.cloudinary.com/villemontreal/image/upload/v1582302005/portail/axgnbss3a6hlpmchosx2.jpg) 100%/cover no-repeat;
-        }
-
-        .problem-subsection--request {
-            padding: 12px 5%;
-        }
-
-        .activities {
-            display: flex;
-        }
-
-        .activity {
-            flex: 1 1;
-            padding: 12px 18px 6px;
-            border-radius: 1px;
-            color: #fff;
-        }
-
-        .activity--publications {
-            background-color: #8f3e22ee;
-        }
-
-        .activity--projects {
-            background-color: #232425ee;
-        }
-
-        .activity--tools {
-            background-color: #3a8c37ee;
-        }
-
-        .activity-title {
-            margin-top: 0; margin-bottom: 6px;
-            font-size: 1.7em;
-        }
-        
-        .subsection-title {
-            margin-bottom: 12px;
-            font-size: 3em; font-weight: 300;
-            color: #EF4E36;
-        }
-
-        .paragraph-title {
-            font-weight: 500;
-            margin-bottom: 6px;
-        }
-
-        .title {
-            margin-bottom: 2px;
-        }
-
-        .rule-section {
-            padding: 24px 5vw;
-            background-color: #fff;
-        }
-        
-        .definitions {
-            display: flex; flex-direction: row;
-            flex-wrap: wrap;
-        }
-        
-        .definition {
-            flex: 1 1 ;
-            margin-bottom: 6px; margin-right: 6px;
-            padding: 4px 12px 8px;
-            font-weight: 500;
-            color: #fff;
-            background-color: #6667AB;
-            border-radius: 1px;
-        }
-
-            .definition ins {
-                color: #000;
-            }
-
-        .requirements {
-            display: flex; flex-direction: row;
-            flex-wrap: wrap;
-        }
-        
-        .requirements--admin .requirement {
-            border-color: #F24738;
-        }
-
-        .requirement {
-            margin-bottom: 6px;
-            margin-right: 6px;
-            padding: 6px 8px;
-            color: #333;
-            line-height: 1.5;
-            width: calc(50% - 12px);
-            background-color: #fff;
-            border-radius: 2px;
-            border-bottom: 4px solid #6667AB;
-        }
-
-        .requirement-title {
-            display: block;
-            font-size: 1.1em; font-weight: 300;
-        }
-
-        .requirement .label {
-            color: #555;
-        }
-
-        .task-section {
-            padding: 24px 5vw;
-            color: #fff;
-            background-color: #3573DD;
-        }
-
-            .task-section .section-title {
-                color: #fff;
-            }
-
-        .evaluation-section {
-            padding: 24px 5vw;
-            color: #000;
-            background-color: #FF9147;
-        }
-            .evaluation-section .section-title {
-                color: #000;
-            }
-        
-        .calendar-link {
-            font-weight: 500;
-            color: royalblue;
-        }
-
-        .template-link {
-            display: block;
-            margin-top: 24px;
-            padding: 6px 12px;
-            width: 100%; max-width: 300px;
-            font-weight: 500; font-size: 1.5rem;
-            text-align: center;
-            color: #3573DD;
-            border-radius: 1px;
-            background-color: #fff;
-            transition: .2s;
-        }
-            .template-link:hover {
-                color: #fff;
-                background-color: #E87429;
-            }
-
-        .contact-discord {
-            color: #5865F2
-        }
-
-        table, tr, td {
-            border: 0 none;
-        }
-
-        ins {
-            text-decoration: none;
-            background-color: rgb(255, 234, 112);
-        }
-
-        .tasks {
-            margin-top: -12px;
-        }
-
-        .marking-scheme {
-            display: flex; flex-direction: column;
-            width: 100%; max-width: 300px;
-        }
-
-        .marking-scheme-title {
-            margin-top: 0;
-        }
-
-        .tbl-evaluation {
-            font-weight: 500;
-            font-size: 1.1em;
-        }
-
-        .tbl-evaluation td {
-            padding: 4px 6px;
-        }
-
-        .tbl-evaluation td:last-child {
-            font-weight: bold;
-            background-color: #f36523;
-        }
-
-        .tbl-evaluation-row {
-            background-color: #FFA061;
-        }
-
-        .tbl-evaluation-row {
-            border-bottom: 3px solid #ff9147;
-        }
-
-            .tbl-evaluation-row:last-child {
-                border-bottom: 0 none;
-            }
-
-            .tbl-evaluation-row--bonus {
-                border-top: 9px solid #ff9147;
-            }
-
-        @media only screen and (min-width: 0em) {
-            .problem-section-aside {
-                display: none;
-            }   
-            
-            .project-intro {
-                display: flex; flex-direction: column;
-            }
-
-                
-            .project-intro-img {
-                max-width: 100%;
-            }
-
-            .project-intro-desc {
-                margin-left: 0;
-            }
-
-            .activities {
-                flex-direction: column;
-            }
-
-            .activity {
-                margin-bottom: 12px;
-            }
-
-            .definitions {
-                flex-direction: column;
-            }
-
-            .requirements {
-                display: flex; flex-direction: column;
-            }
-
-            .requirement {
-                width: 100%;
-            }
-        }
-
-        @media only screen and (min-width: 40em) {
-            .problem-section-aside {
-                min-width: 300px;
-                padding-left: 2vw;
-                padding-right: 12px;
-            }
-
-            .problem-section-content {
-                flex-direction: column;
-            }        
-                
-            .rule-section,
-            .task-section,
-            .evaluation-section {
-                padding: 24px 2vw;
-            }
-
-            .team-count  {
-                width: 20px;
-            }
-
-            .definitions {
-                flex-direction: row;
-            }
-        }
-
-        @media only screen and (min-width: 56em) {
-            .problem-section-aside {
-                display: flex;
-                min-width: 320px;
-                padding-left: 3vw;
-                padding-right: 18px;
-            }
-
-            .rule-section,
-            .task-section,
-            .evaluation-section {
-                padding: 24px 3vw;
-            }
-
-            .team-count  {
-                width: auto;
-            }
-
-            .definitions {
-                display: flex; flex-direction: row;
-                flex-wrap: wrap;
-            }
-            
-            .definition {
-                flex: 1 1 ;
-                margin-bottom: 6px; margin-right: 6px;
-                padding: 4px 12px 8px;
-                font-weight: 500;
-                color: #fff;
-                background-color: #6667AB;
-                border-radius: 1px;
-            }
-        }
-
-        @media only screen and (min-width: 80em) {
-            .problem-section-aside {
-                padding-left: 5vw;
-                padding-right: 24px;
-            }
-
-            .project-intro {
-                display: flex; flex-direction: row;
-            }
-
-            
-            .project-intro-img {
-                max-width: 50%;
-            }
-
-            .rule-section,
-            .task-section,
-            .evaluation-section {
-                padding: 24px 5vw;
-            }
-            
-            .activities {
-                flex-direction: row;
-            }
-
-            .activity {
-                margin-right: 12px;
-            }
-
-            .definitions {
-                display: flex; flex-direction: row;
-                flex-wrap: wrap;
-            }
-        
-            .definition {
-                flex: 1 1 ;
-                margin-bottom: 6px; margin-right: 6px;
-                padding: 4px 12px 8px;
-                font-weight: 500;
-                color: #fff;
-                background-color: #6667AB;
-                border-radius: 1px;
-            }
-
-            .requirements {
-                display: flex; flex-direction: row;
-                flex-wrap: wrap;
-            }
-
-            .requirement {
-                margin-bottom: 6px;
-                margin-right: 6px;
-                padding: 6px 8px;
-                color: #333;
-                line-height: 1.5;
-                width: calc(50% - 12px);
-                background-color: #fff;
-                border-radius: 2px;
-                border-bottom: 4px solid #6667AB;
-            }
+            color: currentColor;
         }
     </style>
 </head>
 
-<body data-id="dm1">
-    <header class="page-header">
-        <section class="teaching">
-            <div class="teaching-header">
-                <div class="teaching-logo">
-                    <a href="./../aut2022.html" class="bare-link teaching-logo-name">
-                        <span class="teaching-logo-code">IFT</span>
-                        <span class="teaching-logo-number">2255</span>
-                    </a>
-                </div>
-                <div class="teaching-info teaching-info--large">
-                    <h1 class="teaching-title" title="IFT2255 &ndash; Génie Logiciel">Devoir 1</h1>
-                    <p class="teaching-term">Automne 2022</p>
-                </div>
-            </div>
-        </section>
-    </header>
-
-    <main class="page-body">
-        <section class="problem-section">
-            <aside class="problem-section-aside">
-                <h2 class="section-title">Équipes</h2>
-                <div data-display="teams"></div>
-
-                <h2 class="section-title" style="margin-top: 12px;">Infos</h2>
-                <p>
-                    Équipes: <strong data-ruleng="">$NUM_TEAMS</strong> <br>
-                    Participants: <strong data-ruleng="">$NUM_PARTICIPANTS</strong> <br>
-                    Semaine: <strong data-ruleng="">$CURRENT_WEEK</strong> <br>
-                    Fin du jalon: <strong>2022-10-11</strong>
+<body>
+    <header class="report-header">
+        <div class="title-section">
+            <div>
+                <h1 class="report-title">Rapport du livrable X</h1>
+                <p class="report-summary">
+                    <em>Court résumé du rapport</em> &ndash; Ce livrable se concentre sur... 
+                    lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia distinctio tempora quam nulla quod enim. 
+                    Odit eius dolores repellendus incidunt doloribus delectus at ex sunt error, iste dicta, maiores blanditiis.
                 </p>
-            </aside>
+            </div>
 
-            <div class="problem-section-content">
-                <div class="project-intro">
-                    <img class="project-intro-img" src="https://journalmetro.com/wp-content/uploads/2022/06/Compost-montreal.jpg" alt="">
-                    <!-- <img class="project-intro-img" src="https://images.lpcdn.ca/924x615/201112/09/449069-moins-quart-matieres-residuelles-collectees.jpg" alt=""> -->
-                    <div class="project-intro-desc">
-                        <p>
-                            La ville de Montréal a entrepris depuis 2010 de nombreuses initiatives pour encourager le recyclage et réduire le gaspillage des résidus alimentaires.
-                            Ceci s'est traduit par l'introduction de poubelle spécialisée (bac de recyclage, bac de compostage) dans la plupart des foyers (immeubles de huit logements et moins).
-                            Un système de collecte a aussi été mis en place pour récupérer le contenu des bacs à des horaires fixes (varie par quartier).
+            <ul class="bare-list report-resources">
+                <li class="report-resource has-helper">
+                    <a class="report-resource-link" href="#">
+                        <img class="report-resource-link__img" src="images/github_logo.png" alt="">
+                    </a>                   
+                    <span class="helper">Répertoire GitHub</span> 
+                </li>
+                <li class="report-resource has-helper">
+                    <a class="report-resource-link" href="fichier-dm1.vpp">
+                        <img class="report-resource-link__img" src="images/visual_paradigm_logo.png" alt="">
+                    </a>
+                    <span class="helper">Fichiers VPP</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="team-section">
+            <h2 class="team-title">Notre équipe</h2>
+            <ul class="bare-list members">
+                <li class="member">
+                    <img class="member-pic" src="" alt="" >
+                    <div class="member-identification">
+                        <span class="member-name">Francois LABONTE</span>
+                        <span class="member-id">2014069</span>
+                    </div> 
+                    <a href="mailto:prenom.nom@umontreal.ca">prenom.nom@umontreal.ca</a>
+                    <span class="member-role">Chargé de...</span>
+                </li>
+                <li class="member">
+                    <img class="member-pic" src="" alt="" >
+                    <div class="member-identification">
+                        <span class="member-name">Lola MONTENEGRO</span>
+                        <span class="member-id">1034870</span>
+                    </div> 
+                    <a href="mailto:prenom.nom@umontreal.ca">prenom.nom@umontreal.ca</a>
+                    <span class="member-role">Chargé de...</span>
+                </li>
+                <li class="member">
+                    <img class="member-pic" src="" alt="" >
+                    <div class="member-identification">
+                        <span class="member-name">Tien NGUYEN</span>
+                        <span class="member-id">2046973</span>
+                    </div> 
+                    <a href="mailto:prenom.nom@umontreal.ca">prenom.nom@umontreal.ca</a>
+                    <span class="member-role">Chargé de...</span>
+                </li>
+                <li class="member">
+                    <img class="member-pic" src="" alt="" >
+                    <div class="member-identification">
+                        <span class="member-name">Alassance N'DIAYE</span>
+                        <span class="member-id">2145872</span>
+                    </div> 
+                    <a href="mailto:prenom.nom@umontreal.ca">prenom.nom@umontreal.ca</a>
+                    <span class="member-role">Chargé de...</span>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="report-body">
+        <aside class="report-aside">
+            <nav>
+                <ul class="bare-list nav">
+                    <li class="nav-item">
+                        <a class="nav-item__link" href="#plan">Plannification</a> 
+                        <ul class="bare-list nav-item-details">
+                            <li class="dash">Échéancier</li>
+                            <li class="dash">Hypothèses</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item__link" href="#domain">Compréhension du domaine</a> 
+                        <ul class="bare-list nav-item-details">
+                            <li class="dash">Glossaire</li>
+                            <li class="dash">Persona</li>
+                            <li class="dash">User story</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item__link" href="#model">Modélisation du domaine</a> 
+                            <ul class="bare-list nav-item-details">
+                                <li class="dash">Cas d'utilisation</li>
+                                <li class="dash">Scénarios</li>
+                            </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item__link" href="#analysis">Analyse</a> 
+                        <ul class="bare-list nav-item-details">
+                            <li class="dash">Besoins non fonctionnels</li>
+                            <li class="dash">Risques</li>
+                            <li class="dash">Matériels nécessaires</li>
+                            <li class="dash">Contraintes</li>
+                            <li class="dash">Propositions</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item__link" href="#prototype">Prototype</a> 
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="report-main">
+            <section class="main-section">
+                <h2 id="plan" class="section-title">Plannification</h2>
+                <p>
+                    <em>
+                        Description brève du domaine et du problème. <br>
+                        Présentation de l'échéancier et la distribution des taches <br>
+                        Présentation des hypothèses (optionnel)
+                    </em>
+                </p>
+            </section>
+
+            <section class="main-section">
+                <h2 id="domain" class="section-title">Compréhension du domaine</h2>
+                <p>
+                    Après de nombreuses rencontres et une familiarisation avec l'activité VaxTodo, nous avons préparé un glossaire 
+                    rassemblant les termes et expressions clés caractérisant l'environnement.
+                </p>
+
+                <h3 class="subsection-title">Glossaire</h3>
+                <dl class="glossary">
+                    <dt class="glossary-term">Terme 1</dt>
+                    <dd class="glossary-def">Definition Debitis vel incidunt quaerat vitae iure, amet voluptatem commodi neque perferendis, asperiores facilis fugit! Dicta possimus aperiam officiis recusandae ipsum magni dignissimos?</dd>
+                    <dt class="glossary-term">Terme 2</dt>
+                    <dd class="glossary-def">Definition Culpa assumenda pariatur doloremque accusamus obcaecati reiciendis saepe sapiente, nihil adipisci quo architecto amet veniam vero delectus ullam dolorem unde quidem? Debitis.</dd>
+                    <dt class="glossary-term">Terme 3</dt>
+                    <dd class="glossary-def">Definition Alias sequi officia tempore maiores placeat omnis eum quo totam quia fuga? Officia repellendus odio ducimus dolores error dolorem hic a beatae.</dd>
+                </dl>
+
+                <h3 class="subsection-title">Persona</h3>
+
+                <ul class="bare-list personas">
+                    <li class="persona">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                            <span class="persona-name">Bob &ndash; <em>Comptable</em></span>
+                            <div class="persona-stat">
+                                <span class="persona-type persona-type--pp" title="Pratico-pratique">PP</span>
+                                <span class="persona-market">40%</span>
+                            </div>
+                        </div>
+                        <span class="persona-info">Homme célibataire de 42 ans vivant au Canada</span>
+                        <div class="persona-goal">
+                            <h4 class="persona-title">Buts</h4>
+                            <ul class="bare-list">
+                                <li class="check">But principal</li>
+                                <li class="check">But secondaire</li>
+                                <li class="check">Avantages</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="persona">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                            <span class="persona-name">Eva &ndash; <em>Pharmacienne</em></span>
+                            <div class="persona-stat">
+                                <span class="persona-type persona-type--eco" title="Ecolo">ECO</span>
+                                <span class="persona-market">20%</span>
+                            </div>
+                        </div>
+                        <span class="persona-info">Femme mariée de 34 ans vivant au Canada</span>
+                        <div class="persona-goal">
+                            <h4 class="persona-title">Buts</h4>
+                            <ul class="bare-list">
+                                <li class="check">But principal</li>
+                                <li class="check">But secondaire</li>
+                                <li class="check">Avantages</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="main-section">
+                <h2 id="model" class="section-title">Modélisation du domaine</h2>
+
+                <h3 class="subsection-title">Cas d'utilisation</h3>
+                <div class="use-case">
+                    <a class="use-case-link" href="lien-vers-fichier.vpp">
+                        <img class="use-case-img" src="images/use_case_diagram.svg" alt="">
+                    </a>
+                    <p class="use-case-notes">
+                        <em>
+                            Notes à propos du diagramme <br>
+                            - choix des acteurs <br>
+                            - choix des relations
+                        </em>
+                    </p>
+                </div>
+
+                <h3 class="subsection-title">Scénarios</h3>
+
+                <div class="scenario" id="cu-1">
+                    <div class="scenario-meta">
+                        <h4 class="cu-name">
+                            <strong>CU:</strong> Créer une séance
+                        </h4>
+                        <p class="cu-goal">
+                            <strong>Objectif:</strong> Un professionnel souhaite donner une séance d'un service au GYM
                         </p>
-                        <p>
-                            Actuellement, les résidents reçoivent peu d'information sur l'acheminement de leurs déchets et ont peu de controle
-                            sur la destination ou l'utilisation de leurs déchets. Cette distance rend difficile toute forme de suivi de la part
-                            des résidents et atténue la motivation collective pour soutenir ces actions écologiques.
-                        </p>
+                        
+                        <hr>
+
+                        <div class="cu-part">
+                            <h5 class="cu-part-title">Acteurs</h5>
+                            <ul class="bare-list cu-actors">
+                                <li class="cu-actor">Professionnel (Principal)</li>
+                                <li class="cu-actor">Agent (Secondaire)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cu-part">
+                            <h5 class="cu-part-title">Préconditions</h5>
+                            <ul class="bare-list cu-conditions">
+                                <li class="dash">Le professionnel a un compte et est présent au GYM.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cu-part">
+                            <h5 class="cu-part-title">Postconditions</h5>
+                            <ul class="bare-list cu-conditions">
+                                <li class="dash">Aucun</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cu-part cu-part--notes">
+                            <h5 class="cu-part-title">Notes</h5>
+                            <p class="cu-notes">Notes additionnelles et hypothèses</p>
+                        </div>
+                    </div>
+                    <div class="scenario-main">
+                        <h5 class="scenario-main-title">Scénario principal</h5>
+                        <ol class="scenario-main-steps">
+                            <li class="scenario-main-step">Le professionnel se présente à l’accueil et donne son numéro.</li>
+                            <li class="scenario-main-step">L’agent entre le numéro dans le système.</li>
+                            <li class="scenario-main-step">Le système valide le numéro du membre.</li>
+                            <li class="scenario-main-step">Le professionnel indique à l’agent le service qu’il souhaite fournir.</li>
+                            <li class="scenario-main-step">L’agent <a href="#cu-2">consulte le Répertoire des services</a> pour trouver le code de service.</li>
+                            <li class="scenario-main-step">L’agent demande au professionnel le reste des informations requises.</li>
+                            <li class="scenario-main-step">L’agent entre les données dans le système.</li>
+                            <li class="scenario-main-step">Le système affiche les détails de la séance nouvellement créée.</li>
+                        </ol>
+
+                        <div class="scenario-alt">
+                            <h5 class="scenario-alt-title">Scénarios alternatifs</h5>
+                            <ol class="bare-list scenario-alt-steps">
+                                <li class="scenario-alt-step" value="4">
+                                    Le compte est suspendu.
+                                    <ol class="bare-list">
+                                        <li value="4">Le système affiche Compte suspendu à l'écran</li>
+                                        <li value="4">Le scénario se termine</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                            <ol class="bare-list scenario-alt-steps">
+                                <li class="scenario-alt-step" value="6">
+                                    Le service souhaité n'est pas offert chez GYM.
+                                    <ol class="bare-list">
+                                        <li value="6">L'agent ne trouve pas le code pour le service demandé.</li>
+                                        <li value="6">L'agent informe le professionnel de la non-disponibilité du service.</li>
+                                        <li value="6">Le scénario se termine.</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
 
-                <section class="problem-subsection problem-subsection--problem">
-                    <h3 class="subsection-title">Proposition</h3>
-                    <div>
-                        <p>
-                            Nous pensons qu'une meilleur communication des activités de recyclage et compostage résultant du travail de tri effectué dans les foyers,
-                            et des métriques accessibles à tous réduiront la distance entre les acteurs.
-                            Ainsi nous proposons la création d'un outil, <em>“l'outil <b>Bineco</b>”</em> qui permettra à tout résident de:
+                <div class="scenario" id="cu-2">
+                    <div class="scenario-meta">
+                        <h4 class="cu-name">
+                            <strong>CU:</strong> Consulter le répertoire des services
+                        </h4>
+                        <p class="cu-goal">
+                            <strong>Objectif:</strong> Obtenir la liste des services et séances offerts et disponibles
                         </p>
-                        <ul class="bare-list">
-                            <li class="dash">Faire le suivi des recyclables</li>
-                            <li class="dash">Faire le suivi des résidus alimentaires</li>
-                            <li class="dash">Faire le suivi des déchets organiques</li>
-                            <li class="dash">Visualiser l'efficacité des activités de recyclages et compostages</li>
-                            <li class="dash">Signaler un problème à la ville</li>
-                            <li class="dash">Trouver un consommateur de déchets</li>
-                        </ul>
+                        
+                        <hr>
 
-                        <p style="margin-top: 12px;">
-                            Étant limité en temps, nous ne vous demandons pas plus qu'une implémentation où l'interaction est <strong>en ligne de commande</strong>.
-                        </p>
+                        <div class="cu-part">
+                            <h5 class="cu-part-title">Acteurs</h5>
+                            <ul class="bare-list cu-actors">
+                                <li class="cu-actor">Agent (Principal)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cu-part">
+                            <h5 class="cu-part-title">Préconditions</h5>
+                            <ul class="bare-list cu-conditions">
+                                <li class="dash">Aucun.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cu-part">
+                            <h5 class="cu-part-title">Postconditions</h5>
+                            <ul class="bare-list cu-conditions">
+                                <li class="dash">Aucun</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cu-part cu-part--notes">
+                            <h5 class="cu-part-title">Notes</h5>
+                            <p class="cu-notes">Notes additionnelles et hypothèses</p>
+                        </div>
                     </div>
-                </section>
+                    <div class="scenario-main">
+                        <h5 class="scenario-main-title">Scénario principal</h5>
+                        <ol class="scenario-main-steps">
+                            <li class="scenario-main-step">L’agent ouvre le Répertoire des services.</li>
+                            <li class="scenario-main-step">Le système affiche la liste des services offerts par GYM ainsi que toutes les séances disponibles durant la journée.</li>
+                        </ol>
 
-               <section class="problem-subsection problem-subsection--activity">
-                   <h3 class="subsection-title">Activités</h3>
-                   <!-- <img class="project-intro-img" src="https://res.cloudinary.com/villemontreal/image/upload/v1582302005/portail/axgnbss3a6hlpmchosx2.jpg" alt="">                       -->
-                   <ul class="bare-list activities">
-                       <li class="activity activity--publications">
-                           <h4 class="activity-title">Compostage</h4>
-                           <p>
-                                Les bacs de résidus alimentaires sont la propriété de la Ville (chaque bac est lié à une adresse) et servent à faire du compostage.
-                                Le compostage est un procédé de traitement biologique qui permet la biodégradation des matières organiques, 
-                                sous l'action de microorganismes aérobies. Dans certains quartiers, des composteurs communautaires sont mis à la disposition des résidents.
-                           </p>
-                       </li>
-                       <li class="activity activity--tools">
-                            <h4 class="activity-title">Recyclage</h4>
-                            <p>
-                                Les bacs de recyclage sont aussi la propriété de la ville et chacun est lié à une adresse.
-                                De nombreuses matières peuvent être recyclés, telle que le verre, le métal, le papier et carton ainsi que le plastique.
+                        <div class="scenario-alt">
+                            <h5 class="scenario-alt-title">Scénarios alternatifs</h5>
+                            <p>Aucun</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                            </p>
-                        </li>
-                        <li class="activity activity--projects">
-                            <h4 class="activity-title">Ordures</h4>
-                            <p>
-                                Les ordures ne devraient pas contenir de matières recyclables ni de résidus alimentaires. Cette catégorie est un peu moins intéressante 
-                                que les deux autres, mais elle est importante à surveiller. Ces déchets non recyclables et non compostables doivent être minimisés.
-                            </p>
-                        </li>
-                   </ul> 
-               </section>
+            <section class="main-section">
+                <h2 id="analysis" class="section-title">Analyse</h2>
+                <p>Notre analyse préliminaire nous a permis d'élucider les besoins et risques suivants...</p>
+                <div>
+                    <h3 class="subsection-title">Risques</h3>
+                    <ol class="risks">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                </div>
 
-                <section class="problem-subsection problem-subsection--request">
-                    <h3 class="subsection-title">Liste de souhaits</h3>
-                    
+                <div>
+                    <h3 class="subsection-title">Exigences non-fonctionnelles</h3>
+                    <ol class="nf-requirements">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ol>
+                </div>
+
+                <div>
+                    <h3 class="subsection-title">Ressources nécessaires</h3>
                     <p>
-                        Une fois connecté à Bineco, un résident peut envoyer diverses requêtes pour faire son suivi ou communiquer avec la ville ou une tierce partie.
-                    </p>       
-                    
-                    <ul class="bare-list requirements">
-                        <li class="requirement">
-                            <span class="requirement-title dash">Enregistrer mes bacs</span>
-                        </li>
-                        <li class="requirement">
-                            <span class="requirement-title dash">Afficher l'état des mes bacs</span>
-                        </li>
-                        <li class="requirement">
-                            <span class="requirement-title dash">Afficher les métriques de l'activité écologique</span>
-                        </li>
-                        <li class="requirement">
-                            <span class="requirement-title dash">Voir l'état de traitement de mes déchets</span>
-                        </li>
-                        <li class="requirement">
-                            <span class="requirement-title dash">Voir les activités auxquels je participe</span>
-                        </li>
-                        <li class="requirement">
-                            <span class="requirement-title dash">Signaler un problème à la ville</span>
-                        </li>
-                        <li class="requirement">
-                            <span class="requirement-title dash">Trouver un consommateur</span> 
-                        </li>
-                        <li class="requirement">
-                            <span class="requirement-title dash">S'inscrire comme consommateur</span> 
-                        </li>
-                    </ul>
-
-                    <h4 class="paragraph-title">Prototype</h4>
-
-                    <p>
-                        Suite à l'authentification, l'outil devrait afficher un menu principal présentant les actions possibles pour l'utilisateur connecté. <br>
-                        Les actions peuvent être imbriquées pour éviter d'afficher trop d'options à l'utilisateur. Cependant, le menu ne devrait pas avoir plus
-                        de 3 niveaux d'imbrication. Bien entendu, il devrait toujours être possible de retourner au menu principal sans quitter l'application.
+                        <em>Description et justification des ressourcs nécessaires pour le projet...</em>
                     </p>
-                </section>
-            </div>
-        </section>
+                </div>
 
-        <section class="rule-section">
-            <h2 class="section-title">Règles du jeu</h2>
+                <div>
+                    <h3 class="subsection-title">Contraintes</h3>
+                    <p>
+                        <em>Discussion des contraintes physiques et conceptuelles...</em>
+                    </p>
+                </div>
 
-            <p>
-                Vous avez droit à <strong>3 rencontres avec le client (1 rencontre par semaine)</strong> (communication via Discord ou courriel)
-                pour demander des informations additionnelles et comprendre leur besoin. <br>
-                La semaine commence le lundi et se termine le samedi. Les questions doivent être communiquées <strong>au moins 48 heures avant la fin de la semaine</strong>.
-                Passez ce délai, elles seront attribuées à la prochaine semaine.
-                Les réponses aux questions seront ajoutées au corps du texte plus haut. 
-                Jusqu'au 30 septembre, des précisions peuvent être rajoutées au texte. <br>
-                À noter qu' <strong>une équipe qui n'a jamais rencontré le client sera pénalisée.</strong>
-            </p>
-            <h3>Quota sur les quesions</h3>
-            <ul>
-                <li>Rencontre 1: <strong>3 questions max</strong></li>
-                <li>Rencontre 2: <strong>2 questions max</strong></li>
-                <li>Rencontre 3: <strong>1 question max</strong></li>
-            </ul>
+                <div>
+                    <h3 class="subsection-title">Propositions</h3>
 
+                    <p>
+                        <em>Discussion de la solution proposée et de vos propositions (apports, faisabilité, impacts, couts)...</em>
+                    </p>
+                </div>
+            </section>
 
-            <p>
-                Pour plannifier une rencontre, utilisez le <a class="calendar-link" href="https://calendly.com/lelafontant/ift2255-periode-de-consultation">calendrier</a>
-                ou envoyez vos questions à notre responsable, Louis-Edouard LAFONTANT.
-            </p>
-            <ul class="bare-list contacts">
-                <li class="contact contact--discord">Discord: <strong>L-E#2545</strong></li>
-                <li class="contact contact--mail">Courriel: <a href="mailto:louis.edouard.lafontant@umontreal.ca">louis.edouard.lafontant@umontreal.ca</a></li>
-            </ul>
+            <section class="main-section">
+                <h2 id="prototype" class="section-title">Prototype</h2>
 
-            
-        </section>
-
-        <section class="task-section">
-            <h2 class="section-title">Tâches</h2>
-
-            <p>
-                Pour ce premier jalon, vous devez produire un rapport en HTML (recommandé) ou PDF présentant votre
-                compréhension du domaine et votre première analyse du problème. <br>
-                Il devra aussi introduire le cadre du projet et vos échanges avec le client.
-            </p>
-
-            <h3>Cadre du projet</h3>
-            <ul class="tasks">
-                <li class="task">Description du projet: Contexte, Problèmes à résoudre, Portée</li>
-                <li class="task">Équipe, Répartition des tâches: Coordonnées des membres et la répartition des tâches</li>
-                <li class="task">Échéancier: Planification hebdomadaire des taches montrant la répartition dans l'équipe</li>
-                <li class="task">Priorisation: Description de l'ordre de priorités choisi</li>
-                <li class="task">Échanges avec client: Questions posées et réponses trouvées</li>
-            </ul>
-
-            <h3>Définition du domaine</h3>
-            <ul class="tasks">
-                <li class="task">Hypothèses: Hypothèses émises dans l'élaboration des exigences</li>
-                <li class="task">Glossaire: Liste des termes et expressions clés caractérisant le domaine</li>
-                <li class="task">Besoins fonctionnels: Fonctionnalité du logiciel à offrir traduit par des cas d'utilisation et scénarios</li>
-                <li class="task">Besoins non fonctionnels: 5 caractéristiques du logiciel affectant l'expérience utilisateur (avec justification)</li>
-            </ul>
-
-            <h3>Analyse</h3>
-            <ul class="tasks">
-                <li class="task">Risques: 5 risques associés au projet (avec justification)</li>
-                <li class="task">Besoins matériels: Partie à informatiser, matériels nécessaires, solutions de stockage</li>
-                <li class="task">Contraintes physiques et conceptuelles</li>
-                <li class="task">Prototype: 5 dessins illustrant différentes vues/interactions avec la plateforme</li>
-                <li class="task">Proposition: Description de votre solution</li>
-            </ul>
-
-            <a class="bare-link template-link" target="_blank" href="template.html">Template pour le rapport</a>
-        </section>
-
-        <section class="evaluation-section">
-            <h2 class="section-title">Évaluation</h2>
-            <p>
-                Ce devoir compte pour <strong>10% de la note final</strong>. <br>
-                Le rapport et tous les artéfacts produits sont à <strong>remettre au plus tard le mardi 11 octobre</strong> par le responsable d'équipe. <br>
-                Des <strong> pénalités de 10% par jour de retard </strong> seront accordées <strong>jusqu'au 13 octobre</strong>.
-                Au-delà de cette date, la moitié des points sera transférée au prochain devoir.
-            </p>
-
-            <div class="marking-scheme">
-            <h3 class="marking-scheme-title">Barème</h3>
-            <table class="tbl-evaluation">
-                <tr class="tbl-evaluation-row">
-                    <td>Glossaire</td>
-                    <td>5%</td>
-                </tr>
-                <tr class="tbl-evaluation-row" title="Besoins non-fonctionnel">
-                    <td>Besoins non-fonctionnel</td>
-                    <td>10%</td>
-                </tr>
-                <tr class="tbl-evaluation-row">
-                    <td>Cas d'utilisation</td>
-                    <td>25%</td>
-                </tr>
-                <tr class="tbl-evaluation-row">
-                    <td>Scénarios</td>
-                    <td>25%</td>
-                </tr>
-                <tr class="tbl-evaluation-row">
-                    <td>Analyse</td>
-                    <td>15%</td>
-                </tr>
-                <tr class="tbl-evaluation-row">
-                    <td>Prototype</td>
-                    <td>10%</td>
-                </tr>
-                <tr class="tbl-evaluation-row">
-                    <td>Git</td>
-                    <td>5%</td>
-                </tr>
-                <tr class="tbl-evaluation-row">
-                    <td>Rapports</td>
-                    <td>5%</td>
-                </tr>
-                
-                <tr class="tbl-evaluation-row tbl-evaluation-row--bonus">
-                    <td><strong> Bonus:</strong> Prototype fonctionnel</td>
-                    <td>10%</td>
-                </tr>
-            </table>
+                <p>
+                    <em>
+                        Ci-dessous nous illustrons notre prototype en présentant 5 vues de l'application. 
+                        Ce prototype utilise une interface en ligne de commande...</em>
+                </p>
+                <ul class="bare-list previews">
+                    <li class="preview">
+                        <h4 style="font-size: 1.2em; margin-bottom: 6px">Menu principal</h4> 
+                        <img class="preview-img" src="../assets/images/prototype_gym.jpg" alt="">
+                        Le menu principal est affiché au démarage de l'application. L'utilisateur entre le numéro 
+                        associé au sous-menu ou à l'action pour y accéder ou l'exécuter.
+                    </li>
+                    <li class="preview">
+                        <h4 style="font-size: 1.2em; margin-bottom: 6px">Titre de la vue</h4> 
+                        <img class="preview-img" src="../assets/images/prototype2.png" alt="">
+                        Description de la vue présentée...
+                    </li>
+                    <li class="preview">
+                        <h4 style="font-size: 1.2em; margin-bottom: 6px">Titre de la vue</h4> 
+                        <img class="preview-img" src="url-prototype.png" alt="">
+                        Description de la vue présentée...
+                    </li>
+                    <li class="preview">
+                        <h4 style="font-size: 1.2em; margin-bottom: 6px">Titre de la vue</h4> 
+                        <img class="preview-img" src="url-prototype.png" alt="">
+                        Description de la vue présentée...
+                    </li>
+                    <li class="preview">
+                        <h4 style="font-size: 1.2em; margin-bottom: 6px">Titre de la vue</h4> 
+                        <img class="preview-img" src="url-prototype.png" alt="">
+                        Description de la vue présentée...
+                    </li>
+                </li>
+            </section>
         </div>
-            <p>
-                Le <em>Bonus</em> consiste en un <strong>prototype interactif</strong> où l'on peut accéder
-                au menu et réaliser les CUs. 
-            </p>
-        </section>
     </main>
-
-    <footer class="page-footer">
-        <div class="content-wrapper">
-            <p>
-                IFT2255 &ndash; Génie logiciel <br>
-                Devoir 1
-            </p>
-            <p class="footer-maintenance">
-                Maintenu par: Louis-Edouard LAFONTANT (<a class="bare-link footer__link" href="http://www-ens.iro.umontreal.ca/~lafontle/" target="_blank">LELAFONTANT</a>) <br>
-                Dernière mis à jour: 2022-09-18
-            </p>
-            <p class="copyright">&copy; 2021 &ndash; 2022 Ceduni</p>
-        </div>
+    <footer class="report-footer">
+        <p>
+            Template de rapport
+        </p>
+        <p>
+            <em>
+                Ajoutez tous les liens additionnels nécessaires à la compréhension du rapport ici
+            </em>
+        </p>
+        <p class="copyright">&copy; 2021 &ndash; 2022 Ceduni</p>
     </footer>
-
-    <script src="../dist/data.js"></script>
 </body>
 
 </html>
