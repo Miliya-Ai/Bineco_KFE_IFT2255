@@ -1,24 +1,27 @@
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
+import java.io.*;
 import java.util.Scanner;
 
 public class LogIn {
 
-   public LogIn() {
+   public LogIn() throws IOException {
        File fichier = new File("password.txt");
-       fichier.createNewFile();
        out("veuillez entrer votre nom d'utilsateur");
        out("veuillez entrer votre mot de passe");
+       Scanner myObj = new Scanner(System.in);
+       String utilisateurEtPasse = myObj.nextLine();
+       save(utilisateurEtPasse);
    };
 
-    Scanner myObj = new Scanner(System.in);
+    public void save(String content)throws IOException{
+        FileWriter fw = new FileWriter("src/password.txt",true);
+        BufferedWriter writer = new BufferedWriter(fw);
+        writer.append("\n"+ content  );
+        writer.flush();
+        writer.close();
 
-    public String save(){
-        FileOutputStream fileOutputStream = new FileOutputStream(myObj);
-        PrintStream printStream = new PrintStream(fileOutputStream);
-        System.setOut(printStream);
     };
+
+
     public void out(String message) {
         System.out.println(message);
     }
