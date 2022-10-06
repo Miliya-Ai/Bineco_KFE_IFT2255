@@ -1,0 +1,85 @@
+        ##     ##
+       ##     ##         ||========||       ||       ||=\\      ||      ||========         =========         ========
+      ##     ##          ||        ||       ||       ||  \\     ||      ||               //                //         \\
+  #################      ||        ||       ||       ||   \\    ||      ||              //                //           \\
+    ##     ##            || ========        ||       ||    \\   ||      ||========     //                //             \\
+   ##     ##             ||        ||       ||       ||     \\  ||      ||            ||                ||              ||
+################         ||        ||       ||       ||      \\ ||      ||             \\                \\             //
+ ##     ##               ||        ||       ||       ||       \\||      ||              \\                \\           //
+##     ##                ||=========        ||       ||        \\=      ||========       \\==========      \\ ======= //
+
+(Écran 1)
+*********************************
+> Bonjour
+[0]: Quitter l'application
+[1]: Log in
+[2]: Sign in
+
+************ Log in ***************
+> Entrer votre nom:
+> Mot de passe:
+
+************ Sign in **************
+> Vous êtes
+[0]: Quitter l'application
+[1]: Résident
+[2]: Consommateur
+
+(Écran 2: L'utilisateur a choisi "Résident")
+************************************
+> Veuillez remplir
+> Profil:
+> Adresse:
+> Numéro bac:
+
+(Écran 3: L'utilisateur a choisi "Consommateur")
+************************************
+> Veuillez remplir
+> Profil:
+> Type:
+> Capacité:
+> Activité:
+
+===============================================
+
+(Écran 4: L'utilisateur a choisi "Log in")
+************** MENU PRINCIPAL ******************
+[0]: Quitter l'application
+[1]: Enregistrer un bac
+[2]: Trouver un consommateur
+[3]: Faire le suivi de mes bacs
+[4]: Voir les activité que je maintiens
+[5]: Signaler un problème à la ville
+
+(Écran 5: 'utilisateur a choisi "Enregistrer un bac")
+***********************************************
+> Scanner le code QR
+> Nom de bac
+> Type de bac
+================================================
+[0]: Quitter l'application
+[1]: Enregistrer un autre bac
+[2]: Retour au menu
+
+(Écran 6: 'utilisateur a choisi "Faire le suivi de mes bacs")
+****************************************
+> Faites votre choix
+[0]: Quitter l'application
+[1]: État de mes bacs
+[2]: Métriques écologiques
+[3]: États traitement
+[4]: Retour au menu
+
+(Écran 7: tous les option doivennet afficher([2][4][5], ect..))
+************************************
+>[contenu] 
+> [1] Retour MENU
+
+
+
+
+
+
+
+
+
