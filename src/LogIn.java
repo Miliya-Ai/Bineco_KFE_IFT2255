@@ -5,10 +5,14 @@ public class LogIn {
 
    public LogIn() throws IOException {
        File fichier = new File("password.txt");
-       out("veuillez entrer votre nom d'utilsateur");
-       out("veuillez entrer votre mot de passe");
+       out("Veuillez entrer votre nom d'utilsateur : ");
+       out("Veuillez entrer votre mot de passe :");
        Scanner myObj = new Scanner(System.in);
        String utilisateurEtPasse = myObj.nextLine();
+
+       //Pourquoi save dans le login? On veut save dans le Sign In
+       //Pour login on va juste verifier si 1 : utilisateur existe,
+       // 2: si oui, ecq le mot de passe match.
        save(utilisateurEtPasse);
    };
 
@@ -20,6 +24,11 @@ public class LogIn {
         writer.close();
 
     };
+
+    //Fonction pour regarder si l<utilisateur existe, et si oui, ecq le mot de passe est bon
+    public void checkCrendentials(String userMdp){
+
+    }
 
 
     public void out(String message) {
