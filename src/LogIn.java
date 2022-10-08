@@ -6,9 +6,14 @@ public class LogIn extends Page{
    public LogIn() throws IOException {
        File fichier = new File("password.txt");
        out("Veuillez entrer votre nom d'utilsateur : ");
-       out("Veuillez entrer votre mot de passe :");
        Scanner myObj = new Scanner(System.in);
-       String utilisateurEtPasse = myObj.nextLine();
+       String utilisateur = myObj.nextLine();
+
+       out("Veuillez entrer votre mot de passe :");
+       Scanner obj2 = new Scanner(System.in);
+       String mdp = obj2.nextLine();
+
+       verifyLogin(utilisateur, mdp);
 
        //Pourquoi save dans le login? On veut save dans le Sign In
        //Pour login on va juste verifier si 1 : utilisateur existe,
@@ -25,9 +30,37 @@ public class LogIn extends Page{
 
     };*/
 
-    //Fonction pour regarder si l<utilisateur existe, et si oui, ecq le mot de passe est bon
-    public void checkCrendentials(String userMdp){
+    private static Scanner x;
 
+    //Fonction pour regarder si l<utilisateur existe, et si oui, ecq le mot de passe est bon
+    public void verifyLogin(String user, String pass){
+
+        boolean verified = false;
+        String tempUser = "";
+        String tempPass = "";
+
+        try {
+            out("on essaye");
+            x = new Scanner(new File("password.txt"));
+            x.useDelimiter("[,\n]");
+
+            while(x.hasNext() && ! verified){
+                tempUser = x.next();
+                tempPass = x.next();
+
+                if (tempUser.trim().equals(user.trim()) && tempPass.trim().equals(pass.trim())){
+                    verified = true;
+
+                }
+            }
+            x.close();
+            out("valider!");
+
+        } catch (Exception e) {
+            out(tempUser);
+            out(tempPass);
+            out("Erreur, nom d'utilisateur ou mot de passe non valide");
+        }
     }
 
 
