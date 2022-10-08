@@ -17,7 +17,7 @@ public class SignIn extends Page{
             case 1:
                 new Resident();
             case 2:
-                break;
+                new Consommateur();
             default:
                 out("Svp, entrer un chiffre valide");
                 filtrer();

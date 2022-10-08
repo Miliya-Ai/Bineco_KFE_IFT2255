@@ -40,11 +40,11 @@ public class LogIn extends Page{
         String tempPass = "";
 
         try {
-            out("on essaye");
-            x = new Scanner(new File("password.txt"));
-            x.useDelimiter("[,\n]");
 
-            while(x.hasNext() && ! verified){
+            x = new Scanner(new File("passResident.txt"));
+            x.useDelimiter("\n|,");
+
+            while(x.hasNext() && !verified){
                 tempUser = x.next();
                 tempPass = x.next();
 

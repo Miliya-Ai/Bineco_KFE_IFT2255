@@ -26,7 +26,7 @@ public class Resident extends Page{
 
 
     public void save(String content)throws IOException {
-        FileWriter fw = new FileWriter("src/password.txt",true);
+        FileWriter fw = new FileWriter("src/passResident.txt",true);
         BufferedWriter writer = new BufferedWriter(fw);
         writer.append("\n"+ content  );
         writer.flush();
