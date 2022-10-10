@@ -5,7 +5,9 @@ public class DechetMunicipaux extends Page{
         entete("Etat de traitement des dechets municipaux");
 
 
-        out("Dechets municipaux--------------");
+        out("Recuperation : ");
+        out("Livraison : ");
+        out("Usage : ");
         filtrer();
     }
 
@@ -14,7 +16,12 @@ public class DechetMunicipaux extends Page{
     public void changerPage(int intNumeroOption) {
         switch (intNumeroOption) {
             case 0:
+                tabNomOptions.clear();
                 new Menu();
+                break;
+            case 99:
+                System.exit(0);
+                break;
             default:
                 out("Svp, entrer un chiffre valide");
                 //filtrer();

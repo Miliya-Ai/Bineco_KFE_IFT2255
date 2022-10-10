@@ -5,8 +5,11 @@ public class MetriquesEco extends Page{
     public MetriquesEco(){
         entete("Metriques ecologiques");
 
+        out("Resident ou municipal : ");
+        out("   Type : recycalge, composte, ordures : ");
+        out("       Intervalle de temps : ");
 
-        out("Metriques--------------");
+        out("\n ------AFFICHAGE DES METRIQUES------");
         filtrer();
     }
 
@@ -15,7 +18,12 @@ public class MetriquesEco extends Page{
     public void changerPage(int intNumeroOption) {
         switch (intNumeroOption) {
             case 0:
+                tabNomOptions.clear();
                 new Menu();
+                break;
+            case 99:
+                System.exit(0);
+                break;
             default:
                 out("Svp, entrer un chiffre valide");
                 //filtrer();

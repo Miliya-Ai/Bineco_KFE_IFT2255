@@ -11,16 +11,20 @@ public class SignIn extends Page{
         filtrer();
     }
 
-    /*@Override
+    @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
             case 1:
+                tabNomOptions.clear();
                 new Resident();
+                break;
             case 2:
+                tabNomOptions.clear();
                 new Consommateur();
+                break;
             default:
                 out("Svp, entrer un chiffre valide");
-                filtrer();
+                //filtrer();
         }
-    }*/
+    }
 }

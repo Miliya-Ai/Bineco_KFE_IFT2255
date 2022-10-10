@@ -4,7 +4,8 @@ public class FindConsommateur extends Page{
         entete("Trouver un consommateur");
 
 
-        out("Trouver un consommateur... filtre....");
+        out("Choix du type de consommateur (composte, recyclage, etc...");
+        out("Filtre de rechere (exemple : rayon km)");
         filtrer();
     }
 
@@ -13,7 +14,12 @@ public class FindConsommateur extends Page{
     public void changerPage(int intNumeroOption) {
         switch (intNumeroOption) {
             case 0:
+                tabNomOptions.clear();
                 new Menu();
+                break;
+            case 99:
+                System.exit(0);
+                break;
             default:
                 out("Svp, entrer un chiffre valide");
                 //filtrer();

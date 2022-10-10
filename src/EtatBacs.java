@@ -1,16 +1,16 @@
-public class Probleme extends Page{
+public class EtatBacs extends Page{
 
 
-    public Probleme(){
-        entete("Signaler un probleme");
+    public EtatBacs(){
+        entete("Etat de mes bacs");
 
-        out("Prenom, nom : ");
-        out("Adresse : ");
-        out("Courriel : ");
-        out("Type de probleme : ");
-        out("Commentaire : ");
+        out("Recyclage : capacite : x%, composition : ...");
+        out("Composte : capacite : x%");
+        out("Ordures : capacite : x%");
+        out("Historique : ");
         filtrer();
     }
+
 
     @Override
     public void changerPage(int intNumeroOption) {
@@ -18,7 +18,6 @@ public class Probleme extends Page{
             case 0:
                 tabNomOptions.clear();
                 new Menu();
-                break;
             case 99:
                 System.exit(0);
                 break;
@@ -28,4 +27,9 @@ public class Probleme extends Page{
         }
     }
 
+
 }
+
+
+
+

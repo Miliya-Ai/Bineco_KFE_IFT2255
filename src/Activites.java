@@ -6,7 +6,7 @@ public class Activites extends Page{
 
 
         out("Activitees auxquelles je participe :");
-        out("   - 1.........");
+        out("exemple : composte et recycalge.");
         filtrer();
     }
 
@@ -14,7 +14,12 @@ public class Activites extends Page{
     public void changerPage(int intNumeroOption) {
         switch (intNumeroOption) {
             case 0:
+                tabNomOptions.clear();
                 new Menu();
+                break;
+            case 99:
+                System.exit(0);
+                break;
             default:
                 out("Svp, entrer un chiffre valide");
                 //filtrer();

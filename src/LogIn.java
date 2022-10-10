@@ -3,8 +3,23 @@ import java.util.Scanner;
 
 public class LogIn extends Page{
 
+
+    public boolean verified = false;
    public LogIn() throws IOException {
-       File fichier = new File("password.txt");
+
+
+       entete("Log in");
+       out("Vous êtes un");
+       addTabNomOptions("Résident");
+       addTabNomOptions("Consommateur");
+       out(afficherOptions ());
+
+
+
+       filtrer();
+
+
+       /*File fichier = new File("password.txt");
        out("Veuillez entrer votre nom d'utilsateur : ");
        Scanner myObj = new Scanner(System.in);
        String utilisateur = myObj.nextLine();
@@ -13,7 +28,7 @@ public class LogIn extends Page{
        Scanner obj2 = new Scanner(System.in);
        String mdp = obj2.nextLine();
 
-       verifyLogin(utilisateur, mdp);
+       verifyLogin(utilisateur, mdp);*/
 
        //Pourquoi save dans le login? On veut save dans le Sign In
        //Pour login on va juste verifier si 1 : utilisateur existe,
@@ -29,6 +44,28 @@ public class LogIn extends Page{
         writer.close();
 
     };*/
+
+
+    @Override
+    public void changerPage(int intNumeroOption) throws IOException {
+        switch (intNumeroOption) {
+            case 1:
+                tabNomOptions.clear();
+                out("Entre les info resident");
+                verified = true;
+                new Menu();
+                break;
+            case 2:
+                tabNomOptions.clear();
+                out("Entre les info consommateur");
+                verified = true;
+                new Menu();
+                break;
+            default:
+                out("Svp, entrer un chiffre valide");
+                //filtrer();
+        }
+    }
 
     private static Scanner x;
 
