@@ -21,6 +21,8 @@ public class Consommateur extends Page{
         out("Capacité de traitement : ");
         out("Activité d'exploitation : ");
 
+        filtrer();
+
         /*out("Veuillez choisir un nom d'utilisateur");
         Scanner myUser = new Scanner(System.in);
         String userAccount = myUser.nextLine();
