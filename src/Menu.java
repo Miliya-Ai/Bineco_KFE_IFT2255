@@ -1,6 +1,10 @@
 public class Menu extends Page{
     public Menu() {
         entete("Menu");
+
+        out( "**** Pour retourner au menu, appuyer 0 ****");
+        out( "**** Pour quitter, appuyer 99 ****\n");
+
         addTabNomOptions("Enregistrer un bac");
         addTabNomOptions("Trouver un consommateur");
         addTabNomOptions("Suivi ecologique");
@@ -9,8 +13,8 @@ public class Menu extends Page{
         addTabNomOptions("Signaler un problème à la ville");
         out(afficherOptions ());
 
-        out("\nPour revenir au Menu appuyer 0");
-        out("Pour quitter appuyer 99");
+        //out("\nPour revenir au Menu appuyer 0");
+        //out("Pour quitter appuyer 99");
         filtrer();
     }
 
@@ -43,7 +47,7 @@ public class Menu extends Page{
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
-                //filtrer();
+                filtrer();
         }
     }
 }

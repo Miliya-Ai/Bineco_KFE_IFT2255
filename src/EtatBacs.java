@@ -4,6 +4,9 @@ public class EtatBacs extends Page{
     public EtatBacs(){
         entete("Etat de mes bacs");
 
+        out( "**** Pour retourner au menu, appuyer 0 ****");
+        out( "**** Pour quitter, appuyer 99 ****\n");
+
         out("Recyclage : capacite : x%, composition : ...");
         out("Composte : capacite : x%");
         out("Ordures : capacite : x%");
@@ -23,7 +26,7 @@ public class EtatBacs extends Page{
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
-                //filtrer();
+                filtrer();
         }
     }
 

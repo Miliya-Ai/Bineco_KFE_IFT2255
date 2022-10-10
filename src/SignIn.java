@@ -4,6 +4,7 @@ public class SignIn extends Page{
 
     public SignIn() {
         entete("Sign in");
+        out( "**** Pour quitter, appuyer 99 ****\n");
         out("Vous êtes un");
         addTabNomOptions("Résident");
         addTabNomOptions("Consommateur");
@@ -24,7 +25,7 @@ public class SignIn extends Page{
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
-                //filtrer();
+                filtrer();
         }
     }
 }

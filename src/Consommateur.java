@@ -8,6 +8,8 @@ public class Consommateur extends Page{
     public Consommateur() throws IOException {
         entete("Consommateur");
 
+        out( "**** Pour quitter, appuyer 99 ****\n");
+
         addTabNomOptions("Revenir a la page d'acceuil");
         out(afficherOptions());
 
@@ -55,7 +57,7 @@ public class Consommateur extends Page{
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
-                //filtrer();
+                filtrer();
         }
     }
 

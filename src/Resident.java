@@ -8,6 +8,8 @@ public class Resident extends Page{
     public Resident()throws IOException{
         entete("Resident");
 
+        out( "**** Pour quitter, appuyer 99 ****\n");
+
         addTabNomOptions("Revenir a la page d'acceuil");
         out(afficherOptions());
         out("\nChoisir nom utilisateur : ");
@@ -49,7 +51,7 @@ public class Resident extends Page{
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
-                //filtrer();
+                filtrer();
         }
     }
 

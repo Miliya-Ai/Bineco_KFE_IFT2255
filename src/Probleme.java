@@ -3,7 +3,8 @@ public class Probleme extends Page{
 
     public Probleme(){
         entete("Signaler un probleme");
-
+        out( "**** Pour retourner au menu, appuyer 0 ****");
+        out( "**** Pour quitter, appuyer 99 ****\n");
         out("Prenom, nom : ");
         out("Adresse : ");
         out("Courriel : ");
@@ -24,7 +25,7 @@ public class Probleme extends Page{
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
-                //filtrer();
+                filtrer();
         }
     }
 

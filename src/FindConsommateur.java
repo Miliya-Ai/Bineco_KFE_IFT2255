@@ -3,6 +3,8 @@ public class FindConsommateur extends Page{
     public FindConsommateur(){
         entete("Trouver un consommateur");
 
+        out( "**** Pour retourner au menu, appuyer 0 ****");
+        out( "**** Pour quitter, appuyer 99 ****\n");
 
         out("Choix du type de consommateur (composte, recyclage, etc...");
         out("Filtre de recherche (exemple : rayon km)");
@@ -22,7 +24,7 @@ public class FindConsommateur extends Page{
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
-                //filtrer();
+                filtrer();
         }
     }
 

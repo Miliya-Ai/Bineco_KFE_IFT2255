@@ -9,6 +9,7 @@ public class LogIn extends Page{
 
 
        entete("Log in");
+       out( "**** Pour quitter, appuyer 99 ****\n");
        out("Vous êtes un");
        addTabNomOptions("Résident");
        addTabNomOptions("Consommateur");
@@ -61,9 +62,12 @@ public class LogIn extends Page{
                 verified = true;
                 new Menu();
                 break;
+            case 99:
+                System.exit(0);
+                break;
             default:
                 out("Svp, entrer un chiffre valide");
-                //filtrer();
+                filtrer();
         }
     }
 

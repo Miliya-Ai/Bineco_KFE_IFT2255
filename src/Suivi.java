@@ -1,6 +1,8 @@
 public class Suivi extends Page {
     public Suivi() {
         entete("Suivi ecologique");
+        out( "**** Pour retourner au menu, appuyer 0 ****");
+        out( "**** Pour quitter, appuyer 99 ****\n");
         addTabNomOptions("Afficher l'état de mes bacs");
         //addTabNomOptions("Afficher les métriques écologiques");
         addTabNomOptions("Etat traitement dechets municipaux");
@@ -35,7 +37,7 @@ public class Suivi extends Page {
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
-                //filtrer();
+                filtrer();
         }
     }
 }
