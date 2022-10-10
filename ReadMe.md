@@ -7,6 +7,5 @@
 |Everyone| entrevue 3 | 3 oct au 7 |  
 |Emilie & Xavier | implémenation de l'outil Bineco | 
 
-conception de l'outil
-compléter le rapport
+****POUR EXECUTER L'APPLICATION SIMPLEMENT RUN LA FONCITON MAIN!*****
 
