@@ -75,8 +75,14 @@
 >[contenu] 
 > [1] Retour MENU
 
-
-
+(Écran 8: Trouver consommateur)
+************************************
+> Entrer le type de consommateur 
+>     composte :
+>     recyclage :
+> Entrer filtre de recherche 
+>     rayon(km) :
+> [1] Retour MENU
 
 
 

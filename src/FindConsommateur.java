@@ -5,7 +5,7 @@ public class FindConsommateur extends Page{
 
 
         out("Choix du type de consommateur (composte, recyclage, etc...");
-        out("Filtre de rechere (exemple : rayon km)");
+        out("Filtre de recherche (exemple : rayon km)");
         filtrer();
     }
 
