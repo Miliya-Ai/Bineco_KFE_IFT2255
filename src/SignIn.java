@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class SignIn extends Page{
 
     public SignIn() {
@@ -10,12 +12,12 @@ public class SignIn extends Page{
     }
 
     @Override
-    public void changerPage(int intNumeroOption) {
+    public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
             case 1:
-                break;
+                new Resident();
             case 2:
-                break;
+                new Consommateur();
             default:
                 out("Svp, entrer un chiffre valide");
                 filtrer();

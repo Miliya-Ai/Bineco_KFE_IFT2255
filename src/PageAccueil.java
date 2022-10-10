@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,10 +15,10 @@ public class PageAccueil extends Page {
     }
 
     @Override
-    public void changerPage(int intNumeroOption){
+    public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
             case 1:
-                break;
+                new LogIn();
             case 2:
                 new SignIn();
             default:

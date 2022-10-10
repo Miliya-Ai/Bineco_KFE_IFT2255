@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -51,7 +52,7 @@ public abstract class Page {
 
     }
 
-    public void changerPage(int intNumeroOption){
+    public void changerPage(int intNumeroOption) throws IOException {
 
     }
 }
