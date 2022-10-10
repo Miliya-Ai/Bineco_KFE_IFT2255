@@ -11,7 +11,7 @@ public class SignIn extends Page{
         filtrer();
     }
 
-    @Override
+    /*@Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
             case 1:
@@ -22,5 +22,5 @@ public class SignIn extends Page{
                 out("Svp, entrer un chiffre valide");
                 filtrer();
         }
-    }
+    }*/
 }

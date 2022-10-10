@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        new LogIn() ;
+        //new LogIn() ;
         //new PageAccueil();
-        //new Menu();
+        new Menu();
         //new SignIn();
     }
 }

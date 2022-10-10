@@ -14,7 +14,7 @@ public class PageAccueil extends Page {
 
     }
 
-    @Override
+    /*@Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
             case 1:
@@ -26,5 +26,5 @@ public class PageAccueil extends Page {
                 filtrer();
         }
 
-    }
+    }*/
 }
