@@ -315,11 +315,10 @@
                 <div class="scenario" id="cu-1">
                     <div class="scenario-meta">
                         <h4 class="cu-name">
-                            <strong>CU:</strong> Page d'accueil de l'outil BINECO
+                            <strong>CU:</strong> Créer une séance
                         </h4>
                         <p class="cu-goal">
-                            <strong>Objectif:</strong> Choisir si on veut s’inscrire (sign in) ou se connecter (log in)
-
+                            <strong>Objectif:</strong> Un professionnel souhaite donner une séance d'un service au GYM
                         </p>
                         
                         <hr>
@@ -327,24 +326,75 @@
                         <div class="cu-part">
                             <h5 class="cu-part-title">Acteurs</h5>
                             <ul class="bare-list cu-actors">
-                                <li class="cu-actor">le client:résident/consommateur (Principal)</li>
+                                <li class="cu-actor">Professionnel (Principal)</li>
+                                <li class="cu-actor">Agent (Secondaire)</li>
                             </ul>
                         </div>
                         
+                        <div class="cu-part">
+                            <h5 class="cu-part-title">Préconditions</h5>
+                            <ul class="bare-list cu-conditions">
+                                <li class="dash">Le professionnel a un compte et est présent au GYM.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cu-part">
+                            <h5 class="cu-part-title">Postconditions</h5>
+                            <ul class="bare-list cu-conditions">
+                                <li class="dash">Aucun</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cu-part cu-part--notes">
+                            <h5 class="cu-part-title">Notes</h5>
+                            <p class="cu-notes">Notes additionnelles et hypothèses</p>
+                        </div>
                     </div>
                     <div class="scenario-main">
                         <h5 class="scenario-main-title">Scénario principal</h5>
                         <ol class="scenario-main-steps">
-                            <li class="scenario-main-step">Il souhaite s’inscrire</li>
-                            <li class="scenario-main-step"> Il souhaite se connecter.</li>
+                            <li class="scenario-main-step">Le professionnel se présente à l’accueil et donne son numéro.</li>
+                            <li class="scenario-main-step">L’agent entre le numéro dans le système.</li>
+                            <li class="scenario-main-step">Le système valide le numéro du membre.</li>
+                            <li class="scenario-main-step">Le professionnel indique à l’agent le service qu’il souhaite fournir.</li>
+                            <li class="scenario-main-step">L’agent <a href="#cu-2">consulte le Répertoire des services</a> pour trouver le code de service.</li>
+                            <li class="scenario-main-step">L’agent demande au professionnel le reste des informations requises.</li>
+                            <li class="scenario-main-step">L’agent entre les données dans le système.</li>
+                            <li class="scenario-main-step">Le système affiche les détails de la séance nouvellement créée.</li>
                         </ol>
+
+                        <div class="scenario-alt">
+                            <h5 class="scenario-alt-title">Scénarios alternatifs</h5>
+                            <ol class="bare-list scenario-alt-steps">
+                                <li class="scenario-alt-step" value="4">
+                                    Le compte est suspendu.
+                                    <ol class="bare-list">
+                                        <li value="4">Le système affiche Compte suspendu à l'écran</li>
+                                        <li value="4">Le scénario se termine</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                            <ol class="bare-list scenario-alt-steps">
+                                <li class="scenario-alt-step" value="6">
+                                    Le service souhaité n'est pas offert chez GYM.
+                                    <ol class="bare-list">
+                                        <li value="6">L'agent ne trouve pas le code pour le service demandé.</li>
+                                        <li value="6">L'agent informe le professionnel de la non-disponibilité du service.</li>
+                                        <li value="6">Le scénario se termine.</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="scenario" id="cu-2">
                     <div class="scenario-meta">
                         <h4 class="cu-name">
-                            <strong>CU:</strong> S’inscrire
+                            <strong>CU:</strong> Consulter le répertoire des services
                         </h4>
                         <p class="cu-goal">
-                            <strong>Objectif:</strong> Un client désire s’inscrire dans l’outil bineco
+                            <strong>Objectif:</strong> Obtenir la liste des services et séances offerts et disponibles
                         </p>
                         
                         <hr>
@@ -352,168 +402,47 @@
                         <div class="cu-part">
                             <h5 class="cu-part-title">Acteurs</h5>
                             <ul class="bare-list cu-actors">
-                                <li class="cu-actor">client(Principal)</li>
+                                <li class="cu-actor">Agent (Principal)</li>
                             </ul>
+                        </div>
+                        
+                        <div class="cu-part">
+                            <h5 class="cu-part-title">Préconditions</h5>
+                            <ul class="bare-list cu-conditions">
+                                <li class="dash">Aucun.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cu-part">
+                            <h5 class="cu-part-title">Postconditions</h5>
+                            <ul class="bare-list cu-conditions">
+                                <li class="dash">Aucun</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="cu-part cu-part--notes">
+                            <h5 class="cu-part-title">Notes</h5>
+                            <p class="cu-notes">Notes additionnelles et hypothèses</p>
                         </div>
                     </div>
                     <div class="scenario-main">
                         <h5 class="scenario-main-title">Scénario principal</h5>
                         <ol class="scenario-main-steps">
-                            <li class="scenario-main-step">Préciser si on s'inscrit en tant que consommateur ou résident.</li>
-                            <li class="scenario-main-step">Choisir un nom d’utilisateur et mot de passe.</li>
-                            <li class="scenario-main-step">L’outil lui demande de fournir ses informations.</li>
-                            <li class="scenario-main-step">L’outil valide et enregistre les informations.</li>
-                            <li class="scenario-main-step">Le consommateur choisit de quitter l’outil ou d’aller vers la page de connection.</li>
+                            <li class="scenario-main-step">L’agent ouvre le Répertoire des services.</li>
+                            <li class="scenario-main-step">Le système affiche la liste des services offerts par GYM ainsi que toutes les séances disponibles durant la journée.</li>
                         </ol>
 
                         <div class="scenario-alt">
                             <h5 class="scenario-alt-title">Scénarios alternatifs</h5>
-                            <ol>
-                                <ul>3A.   Le client n’est pas éligible (adresse, numéro de bac ou informations de consommateurs erronées).</ul>
-                                <ul>B.  Système dit qu’il y a erreur dans les informations entrées.</ul>
-                                <ul>C. Le scénario reprend à l’étape 3.</ul>
-                            </ol>
+                            <p>Aucun</p>
                         </div>
-                    </div>                        
+                    </div>
                 </div>
-
-                <div class="scenario" id="cu-3">
-                    <div class="scenario-meta">
-                        <h4 class="cu-name">
-                            <strong>CU:</strong> Se connecter
-                        </h4>
-                        <p class="cu-goal">
-                            <strong>Objectif:</strong> le client veut se connecter à leur compte bineco
-                        </p>
-                        
-                        <hr>
-
-                        <div class="cu-part">
-                            <h5 class="cu-part-title">Acteurs</h5>
-                            <ul class="bare-list cu-actors">
-                                <li class="cu-actor">client(Principal)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="scenario-main">
-                        <h5 class="scenario-main-title">Scénario principal</h5>
-                        <ol class="scenario-main-steps">
-                            <li class="scenario-main-step">On lui demande s’il est résident ou consommateur.</li>
-                            <li class="scenario-main-step">L’outil lui demande de fournir ses informations de connexion.</li>
-                            <li class="scenario-main-step">L’outil valide les informations</li>
-                            <li class="scenario-main-step">L’outil valide et enregistre les informations.</li>
-                            <li class="scenario-main-step">Le résident/consommateur accède à son menu respectif.</li>
-                        </ol>
-
-                        <div class="scenario-alt">
-                            <h5 class="scenario-alt-title">Scénarios alternatifs</h5>
-                            <ol>
-                                <ul>3. A. Le résident/consommateur entre des informations de connection erronées (utilisateur ou mot de passe).</ul>
-                                <ul>B.  Système dit qu’il y a erreur dans les informations entrées.</ul>
-                                <ul>C.C. le système donne l’option de
-                                    <ol>
-                                        <li class="scenario-main-step">Recommencer : a-Retour l’étape 2 </li>
-                                        <li class="scenario-main-step">Retour à la page d’accueil: a-Le scénario se termine</li>
-                                    </ol>
-                                </ul>
-                            </ol>
-                        </div>
-                    </div>                        
-                </div>
-
-                <div class="scenario" id="cu-4">
-                    <div class="scenario-meta">
-                        <h4 class="cu-name">
-                            <strong>CU:</strong> Enregistrer des bacs
-                        </h4>
-                        <p class="cu-goal">
-                            <strong>Objectif:</strong> Un résident désire enregistrer ses bacs dans l’outil bineco
-                        </p>
-                        
-                        <hr>
-
-                        <div class="cu-part">
-                            <h5 class="cu-part-title">Acteurs</h5>
-                            <ul class="bare-list cu-actors">
-                                <li class="cu-actor">résident(Principal)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="scenario-main">
-                        <h5 class="scenario-main-title">Scénario principal</h5>
-                        <ol class="scenario-main-steps">
-                            <li class="scenario-main-step">Le résident sélectionne “enregistrer des bas” dans le menu.</li>
-                            <li class="scenario-main-step">Le résident scanne le code QR ou rentre le numero de son bac et ajoute des informations nécessaires.</li>
-                            <li class="scenario-main-step">L’outil valide et enregistre les informations.</li>
-                            <li class="scenario-main-step">L’outil valide et enregistre les informations.</li>
-                            <li class="scenario-main-step">Le résident peut <ol>
-                                <ul>Enregistrer un nouveau bac :i- Le scénario reprend à l’étape 2</ul>
-                                <ul>Revenir au menu</ul>
-                            </ol></li>
-                        </ol>
-
-                        <div class="scenario-alt">
-                            <h5 class="scenario-alt-title">Scénarios alternatifs</h5>
-                            <ol>
-                                <ul>
-                                   3A. Le code qr ou numero de bac n’est pas éligible
-                                   <ul>B.  Système presente un message d’erreur</ul>
-                                   <ul>C.Le scénario reprend à l’étape 2 .</ul>
-                                </ul>
-                                <ul>2A. Le bac a déjà été enregistré
-                                    <ul>B. Le système affiche le message: “le bac a déjà été enregistré”.</ul>
-                                </ul>
-                            </ol>
-                        </div>
-                    </div>                        
-                </div>
-
-                <div class="scenario" id="cu-5">
-                    <div class="scenario-meta">
-                        <h4 class="cu-name">
-                            <strong>CU:</strong> afficher l’état de mes bacs
-                        </h4>
-                        <p class="cu-goal">
-                            <strong>Objectif:</strong> Un résident souhaite voir l’état de ses bacs
-                        </p>
-                        
-                        <hr>
-
-                        <div class="cu-part">
-                            <h5 class="cu-part-title">Acteurs</h5>
-                            <ul class="bare-list cu-actors">
-                                <li class="cu-actor">resident(Principal)</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="scenario-main">
-                        <h5 class="scenario-main-title">Scénario principal</h5>
-                        <ol class="scenario-main-steps">
-                            <li class="scenario-main-step">Le client choisit dans le menu la page “afficher l’état de mes bacs”</li>
-                            <li class="scenario-main-step">Le client sélectionne le bac voulu parmi tous ses bacs enregistrés.</li>
-                            <li class="scenario-main-step">Le client choisit d’afficher l’état de cet bac. 
-                                <ul>Capacité actuelle <ul>L’outil affiche le contenu choix sélectionné</ul></ul>
-                                <ul>Composition actuelle <ul>L’outil affiche le contenu choix sélectionné</ul></ul>
-                                <ul>Son usage <ul>Le client choisit l’intervalle de son historique à afficher <ul>L’outil affiche le contenu choix sélectionné</ul></ul></li>
-                        </ol>
-
-                        <div class="scenario-alt">
-                            <h5 class="scenario-alt-title">Scénarios alternatifs</h5>
-                            <ol>
-                                <ul>2A. Le bac à afficher ne se trouve pas dans les choix à sélectionner dans l’outil.</ul>
-                                <ul>B. L’outil offre la possibilité de <ul>-Aller à la page “Signaler un problème à la ville”</ul>
-                                <ul>-Aller à la page  “Enregistrer mes bacs”</ul></ul>
-                                <ul>C. Le scénario reprend à l’étape 3.</ul>
-                            </ol>
-                        </div>
-                    </div>                        
-                </div>                    
             </section>
 
             <section class="main-section">
                 <h2 id="analysis" class="section-title">Analyse</h2>
                 <p>Notre analyse préliminaire nous a permis d'élucider les besoins et risques suivants...</p>
-                
                 <div>
                     <h3 class="subsection-title">Risques</h3>
                     <ol class="risks">
