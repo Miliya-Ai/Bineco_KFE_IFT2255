@@ -22,7 +22,7 @@ abstract class  Client extends Page {
 
         FileWriter fw = new FileWriter(path,true);
         BufferedWriter writer = new BufferedWriter(fw);
-        writer.append("\n"+ content  );
+        writer.append(content +"\n"  );
         writer.flush();
         writer.close();
 
@@ -44,7 +44,7 @@ abstract class  Client extends Page {
         isPasswordEligible =  password.matches(".*([a-zA-Z].*[0-9]|[0-9].*[a-zA-Z]).*");
 
         if (isPasswordEligible){
-            userAccount += "," + password;
+            userAccount += " " + password;
             save(userAccount, isResident);
         } else {
             passwordEligible(userAccount, isResident);

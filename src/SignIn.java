@@ -23,6 +23,10 @@ public class SignIn extends Page{
                 tabNomOptions.clear();
                 new Consommateur();
                 break;
+            case 99:
+                System.exit(0);
+                effacer();
+                break;
             default:
                 out("Svp, entrer un chiffre valide");
                 filtrer();

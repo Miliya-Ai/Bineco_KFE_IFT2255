@@ -66,10 +66,11 @@ public class LogIn extends Page{
                 break;
             case 99:
                 System.exit(0);
+                effacer();
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
-                filtrer();
+                //filtrer();
         }
     }
 

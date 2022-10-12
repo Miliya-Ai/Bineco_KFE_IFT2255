@@ -34,6 +34,7 @@ public class Consommateur extends Client{
                 break;
             case 99:
                 System.exit(0);
+                effacer();
                 break;
             default:
                 out("Svp, entrer un chiffre valide");

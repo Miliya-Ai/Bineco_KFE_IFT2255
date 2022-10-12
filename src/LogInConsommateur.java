@@ -6,24 +6,27 @@ import java.io.FileInputStream;
 
 public class LogInConsommateur extends Page{
 
-    public void readFichier() {
-        try {
+        public LogInConsommateur() throws FileNotFoundException {
 
-            String pathname = "src/passConsommateur.txt";
-            File filename = new File(pathname);
-            InputStreamReader reader = new InputStreamReader(
-                    new FileInputStream(filename));
-            BufferedReader br = new BufferedReader(reader);
-            String line = "";
-            line = br.readLine();
-            while (line != null) {
-                line = br.readLine();
-            }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            entete("Log in");
+            out( "**** Pour quitter, appuyer 99 ****\n");
+            addTabNomOptions("Enter");
+            out(afficherOptions ());
+            scannerInput();
+
         }
+
+
+    public void scannerInput() throws FileNotFoundException {
+        out("Nom d'utilisateur :");
+        Scanner nom = new Scanner(System.in);
+        String userName = nom.nextLine();
+
+        out("Mot de passe:");
+        Scanner mtp = new Scanner(System.in);
+        String password = mtp.nextLine();
+        verifyLogin(userName, password);
+
     }
 
             String username;
@@ -31,36 +34,26 @@ public class LogInConsommateur extends Page{
             boolean verified = false;
 
             //Fonction pour regarder si l<utilisateur existe, et si oui, ecq le mot de passe est bon
-            public void verifyLogin() {
+            //https://stackoverflow.com/questions/4008905/read-multiline-text-with-values-separated-by-whitespaces
+            public void verifyLogin(String user, String pass) {
 
-                Scanner scanner = new Scanner(System.in);
-
-                for (; ; ) {
-                    System.out.print("entrer nom d'utilisation ：");
-                    username = scanner.next();
-                    System.out.print("entrer mot de passe：");
-                    pwd = scanner.next();
-
-                    if (username.equals(username) && pwd.equals(pwd)) {
-
-                        for (; ; ) {
-                            System.out.println("entrer nouvelle nom d'utilisation：");
-                            pwd = scanner.next();
-                            System.out.println("entrer nouvelle mot de passe：");
-                            String password = scanner.next();
-                            if (pwd.equals(password)) {
-                                this.pwd = password;
-                                System.out.println("entrer avec succès, ton mot de passe ：" + pwd);
-
-                                break;
-                            } else {
-                                System.out.println("C'est pas correct, reentrer ça：");
-                            }
+                try{
+                    FileInputStream fstream = new FileInputStream("src/passConsommateur.txt");
+                    DataInputStream in = new DataInputStream(fstream);
+                    BufferedReader br = new BufferedReader(new InputStreamReader(in));
+                    String strLine;
+                    while ((strLine = br.readLine()) != null)   {
+                        String[] tokens = strLine.split(" ");
+                        if (tokens[0].equals( user) && tokens[1].equals(pass)){
+                            System.out.println("ok");
+                        }else{
+                            tabNomOptions.clear();
+                            new LogInConsommateur();
                         }
-                        break;
-                    } else {
-                        System.out.println("les deux pas correct，reentrer ça ：");
                     }
+                    in.close();
+                } catch (Exception e){
+                    System.err.println("Error: " + e.getMessage());
                 }
             }
 
@@ -82,6 +75,7 @@ public class LogInConsommateur extends Page{
                         break;
                     case 99:
                         System.exit(0);
+                        effacer();
                         break;
                     default:
                         out("Svp, entrer un chiffre valide");

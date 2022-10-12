@@ -1,5 +1,4 @@
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 
@@ -8,16 +7,16 @@ public class LogInResident extends Page{
 
     private static Scanner x;
 
-    public LogInResident(){
+    public LogInResident() throws FileNotFoundException {
         entete("Log in");
         out( "**** Pour quitter, appuyer 99 ****\n");
         addTabNomOptions("Enter");
         out(afficherOptions ());
         scannerInput();
-        filtrer();
+        //filtrer();
     }
 
-    public void scannerInput(){
+    public void scannerInput() throws FileNotFoundException {
         out("Nom d'utilisateur :");
         Scanner nom = new Scanner(System.in);
         String userName = nom.nextLine();
@@ -29,9 +28,9 @@ public class LogInResident extends Page{
 
     }
     //Fonction pour regarder si l<utilisateur existe, et si oui, ecq le mot de passe est bon
-    public void verifyLogin(String user, String pass){
+    public void verifyLogin(String user, String pass) throws FileNotFoundException {
 
-        boolean verified = false;
+        /*boolean verified = false;
         String tempUser = "";
         String tempPass = "";
 
@@ -58,7 +57,53 @@ public class LogInResident extends Page{
             out(tempPass);
             out("Erreur, nom d'utilisateur ou mot de passe non valide");
             scannerInput();
+        }*/
+
+        /*boolean verfified = false;
+        String tempUser = "";
+        String tempPass = "";
+
+
+
+
+        x = new Scanner(new File("passResident.txt"));
+        String[] inputs = x.delimiter().split(",");
+        tempUser = inputs[0];
+        tempPass = inputs[1];
+        out(tempPass);
+        out(tempUser);
+
+        if (user.equals(tempUser)  && pass.equals(tempPass)  ){
+            verfified = true;
+            out("MATCH");
+        } else {
+            out("erreur");
+        }*/
+
+
+        try{
+            FileInputStream fstream = new FileInputStream("src/passResident.txt");
+            DataInputStream in = new DataInputStream(fstream);
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));
+            String strLine;
+            while ((strLine = br.readLine()) != null)   {
+                String[] tokens = strLine.split(" ");
+                if (tokens[0].equals( user) && tokens[1].equals(pass)){
+                    tabNomOptions.clear();
+                    new Menu();
+                }else{
+                    tabNomOptions.clear();
+                    new LogInResident();
+                }
+            }
+            in.close();
+        } catch (Exception e){
+            System.err.println("Error: " + e.getMessage());
         }
+
+
+
+
     }
 
     @Override
@@ -67,16 +112,17 @@ public class LogInResident extends Page{
             case 1:
                 tabNomOptions.clear();
                 //out("Entre les info resident");
-                new Menu();
+                //new Menu();
                 //verified = true;
                 //new Menu();
                 break;
             case 99:
                 System.exit(0);
+                effacer();
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
-                filtrer();
+                //filtrer();
         }
     }
 

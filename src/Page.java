@@ -1,4 +1,7 @@
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -52,6 +55,18 @@ public abstract class Page {
 
     }
 
+
+    //https://www.baeldung.com/java-delete-file-contents
+    public void effacer() throws IOException {
+        BufferedWriter writer = Files.newBufferedWriter(Paths.get("src/passResident.txt"));
+        writer.write("");
+        writer.flush();
+
+        BufferedWriter writer2 = Files.newBufferedWriter(Paths.get("src/passConsommateur.txt"));
+        writer2.write("");
+        writer.flush();
+
+    }
     public void changerPage(int intNumeroOption) throws IOException {
 
     }

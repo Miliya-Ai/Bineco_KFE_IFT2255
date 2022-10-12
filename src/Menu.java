@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Menu extends Page{
     public Menu() {
         entete("Menu");
@@ -19,7 +21,7 @@ public class Menu extends Page{
     }
 
     @Override
-    public void changerPage(int intNumeroOption) {
+    public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
             case 1:
                 tabNomOptions.clear();
@@ -44,6 +46,7 @@ public class Menu extends Page{
                 break;
             case 99:
                 System.exit(0);
+                effacer();
                 break;
             default:
                 out("Svp, entrer un chiffre valide");

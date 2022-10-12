@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class EtatBacs extends Page{
 
 
@@ -16,13 +18,14 @@ public class EtatBacs extends Page{
 
 
     @Override
-    public void changerPage(int intNumeroOption) {
+    public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
             case 0:
                 tabNomOptions.clear();
                 new Menu();
             case 99:
                 System.exit(0);
+                effacer();
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
