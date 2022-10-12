@@ -5,7 +5,7 @@ public class LogIn extends Page{
 
 
     public boolean verified = false;
-   public LogIn() throws IOException {
+    public LogIn() throws IOException {
 
 
        entete("Log in");
@@ -52,15 +52,17 @@ public class LogIn extends Page{
         switch (intNumeroOption) {
             case 1:
                 tabNomOptions.clear();
-                out("Entre les info resident");
-                verified = true;
-                new Menu();
+                //out("Entre les info resident");
+                new LogInResident();
+                //verified = true;
+                //new Menu();
                 break;
             case 2:
                 tabNomOptions.clear();
-                out("Entre les info consommateur");
-                verified = true;
-                new Menu();
+                //out("Entre les info consommateur");
+                new LogInConsommateur();
+                //verified = true;
+                //new Menu();
                 break;
             case 99:
                 System.exit(0);
@@ -71,38 +73,6 @@ public class LogIn extends Page{
         }
     }
 
-    private static Scanner x;
-
-    //Fonction pour regarder si l<utilisateur existe, et si oui, ecq le mot de passe est bon
-    public void verifyLogin(String user, String pass){
-
-        boolean verified = false;
-        String tempUser = "";
-        String tempPass = "";
-
-        try {
-
-            x = new Scanner(new File("passResident.txt"));
-            x.useDelimiter("\n|,");
-
-            while(x.hasNext() && !verified){
-                tempUser = x.next();
-                tempPass = x.next();
-
-                if (tempUser.trim().equals(user.trim()) && tempPass.trim().equals(pass.trim())){
-                    verified = true;
-
-                }
-            }
-            x.close();
-            out("valider!");
-
-        } catch (Exception e) {
-            out(tempUser);
-            out(tempPass);
-            out("Erreur, nom d'utilisateur ou mot de passe non valide");
-        }
-    }
 
 
     public void out(String message) {
