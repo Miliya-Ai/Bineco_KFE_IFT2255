@@ -1,14 +1,22 @@
 <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ift2255</title>
+</head>
+<body>
+    <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IFT2255 | Rapport DM1</title>
     <link rel="shortcut icon" href="./../favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./../assets/css/normalize.css">
-    <link rel="stylesheet" href="./../assets/css/base.css?v=02">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -16,23 +24,20 @@
     <header class="report-header">
         <div class="title-section">
             <div>
-                <h1 class="report-title">Rapport du livrable X</h1>
+                <h1 class="report-title">Rapport du livrable BINECO</h1>
                 <p class="report-summary">
-                    <em>Court résumé du rapport</em> &ndash; Ce livrable se concentre sur... 
-                    lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia distinctio tempora quam nulla quod enim. 
-                    Odit eius dolores repellendus incidunt doloribus delectus at ex sunt error, iste dicta, maiores blanditiis.
-                </p>
+                    <em>Court résumé du rapport</em> &ndash; Ce livrable se concentre sur les détails des objectifs , de l'outil BINECO, établies par la ville de Montréal en vue de sensibiliser les habitants à recycler et à réduire le gaspillage des déchets.L'implémentation de l'outil de Bineco se fait en se focalisant sur la liste des souhaits et des besoins des utilisateurs, en apportant des solutions claires et des propositions adéquates tout en prenant soin d'identifier les différentes contraintes possibles de nuire à sa réalisation et son optimisation.
             </div>
 
             <ul class="bare-list report-resources">
                 <class="report-resource" has-helper>
                     <a class="report-resource-link" href="https://github.com/kim841/ift2255_KFE">
-                        <img class="https://github.com/kim841/ift2255_KFE.git" src="images/github_logo.png" alt="">
+                        <img class="https://github.com/kim841/ift2255_KFE.git" src="images/github.png" alt="">
                     </a>                   
                     <span class="helper">Répertoire GitHub</span> 
                 <class="report-resource" has-helper>
                     <a class="report-resource-link" href="bineco.vpp" download>
-                        <img class="report-resource-link__img" src="images/visual_paradigm_logo.png" alt="">
+                        <img class="report-resource-link__img" src="images/vpp.png" alt="">
                     </a>
                     <span class="helper">Fichiers VPP</span>
             </ul>
@@ -40,7 +45,7 @@
 
         <div class="team-section">
             <h2 class="team-title">Notre équipe</h2>
-            <ul class="bare-list members">
+            <ul class="bare-list members" id="membre">
                 <li class="member">
                     <img class="member-pic" src="images/kim.png" alt="" >
                     <div class="member-identification">
@@ -88,15 +93,12 @@
                         <a class="nav-item__link" href="#plan">Plannification</a> 
                         <ul class="bare-list nav-item-details">
                             <li class="dash">Échéancier</li>
-                            <li class="dash">Hypothèses</li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-item__link" href="#domain">Compréhension du domaine</a> 
                         <ul class="bare-list nav-item-details">
                             <li class="dash">Glossaire</li>
-                            <li class="dash">Persona</li>
-                            <li class="dash">User story</li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -126,44 +128,48 @@
             <section class="main-section">
                 <h2 id="plan" class="section-title">Plannification</h2>
                 <h3>
-                <li>Description du projet: Contexte, Problèmes à résoudre, Portée</li>
+                <li>Description du projet:</li>
                 </h3>
-                <h4><em>
-                    <p>Contexte : La ville de Montréal souhaite  encourager le recyclage et le compostage  à ses résidents afin de réduire des déchets ménagers. Pour ce faire, elle met en place des bacs spécialisés qui seront récupérés à des heures fixes</p>
-                    <p>Problèmes à résoudre : La motivation collective est atténuée par le manque de données sur le traitement des déchets.</p>
-                </em></h4>
+                <p style="font-size: 1.5em">Contexte : La ville de Montréal souhaite  encourager le recyclage et le compostage  à ses résidents afin de réduire des déchets ménagers. Pour ce faire, elle met en place des bacs spécialisés qui seront récupérés à des heures fixes.
+                Problèmes à résoudre : La motivation collective est atténuée par le manque de données sur le traitement des déchets.</p>
                 <h3>
                 <li>Échéancier: Planification hebdomadaire des taches montrant la répartition dans l'équipe</li>
                 </h3>
-                <img class="preview-img" src="images/echeancier.JPG" alt="">
+                <img class="preview-img" src="images/echeancier1.JPG" alt="">
                 <img class="preview-img" src="images/echeancier2.png" alt="">
-                <h3>
-                Priorisation: Description de l'ordre de priorités choisi</h3>
-                <ol><u>Fonctionnalité essentielle</u>
-                <ul>Enregistrement des bacs</ul>
-                <ul>Faire le suivi de mes bacs</ul>
-                <ul>S’inscrire en tant que résident ou consommateur</ul>
-                </ol>
-                <ol><u> Fonctionnalité nécessaire </u>
-                <ul>Afficher les métriques écologiques</ul>
-                <ul>Trouver un consommateur</ul>
-                </ol>
-                <ol><u> Fonctionnalité importante </u>
-                    <ul>Voir l’était de traitement des déchets municipaux</ul>
-                </ol>
-                <ol><u>Amélioration majeure</u>
-                    <ul>Voir les activités que je maintiens</ul>
-                </ol>
-                <ol><u>Amélioration mineure </u>
-                    <ul>Signaler un problème</ul>
-                </ol>
+                <h3 style="text-decoration:underline;">Priorisation: Description de l'ordre de priorités choisi</h3>
+                <div class="priorisation">
+                    <ol><u>Fonctionnalité essentielle</u>
+                    <ul>Enregistrement des bacs</ul>
+                    <ul>Faire le suivi de mes bacs</ul>
+                    <ul>S’inscrire en tant que résident ou consommateur</ul>
+                    </ol>
+                    <ol><u> Fonctionnalité nécessaire </u>
+                    <ul>Afficher les métriques écologiques</ul>
+                    <ul>Trouver un consommateur</ul>
+                    </ol>
+                    <ol><u> Fonctionnalité importante </u>
+                        <ul>Voir l’était de traitement des déchets municipaux</ul>
+                    </ol>
+                    <ol><u>Amélioration majeure</u>
+                        <ul>Voir les activités que je maintiens</ul>
+                    </ol>
+                    <ol><u>Amélioration mineure </u>
+                        <ul>Signaler un problème</ul>
+                    </ol>
+                </div>
 
-                <h4>
+                <div class="question">    
+                    <h4>
+                        <p>
+                            <em style="text-decoration:underline">
+                            Question:
+                            </em>
+                        </p>
+                    </h4>
                     <p>
-                        <em>
-                            question:
-                            <ul>
-                            <li>Quelles sont les spéciations à afficher dans :</li>
+                        <ul>
+                            <li>Quelles sont les spécifications à afficher dans :</li>
                                 <ol>
                                     <li>"Afficher l'état de mes bacs" (ex: type d'états),</li>
                                     <li>"Afficher les métriques de l'activité écologique" (ex: indicateurs bons et mauvais des activités, situation de tris)</li>
@@ -171,51 +177,45 @@
                                 </ol>
                                 
                                 <ol>
-                                    <li>Ces détails seront ajoutés à l'énoncé cette fin de semaine</li>
+                                    <li> ><em>Ces détails seront ajoutés à l'énoncé cette fin de semaine</em></li>
                                 </ol>
                             <li>De quelles manières un résident peut signaler un problème à la ville( Via un forum public ou message privée ,i-e, via service clientèle).</li>
                             <ol>
-                                <li>L'utilisateur choisit une option t.q. bacs endommagés (à réparer ou remplacer), demande d'un bac, bac insuffisant (capacité) qui envoie une requête à la ville</li>
+                                <li><em>L'utilisateur choisit une option t.q. bacs endommagés (à réparer ou remplacer), demande d'un bac, bac insuffisant (capacité) qui envoie une requête à la ville</em></li>
                             </ol>
-                            <li>Comment definissez bous un consommateurs ( membre d’une seule famille accedent a un seul compte ou plsrs pour chaque ?) :</li>
-                                <ol>
-                                    <li>quels sont les consommateurs qui s'offrent à nous (résidents de la ville ou centre de recyclages…)</li>
-                                    <li>de quelles manière localiser un consommateur ( adresse , nom de compte, résaux sociaux ect…)</li>
-                                </ol>
-                                <ol> Bineco doit permettre à un résident de naviguer à travers la liste des consommateurs enregistrés en offrant certains filtres pertinents pour la localisation de consommateur spécifique</ol>
-                                <li>Souhaiteriez-vous mettre un message de sensibilisation à l’ouverture ?</li>
-                                <ol>Dans un premier temps, non, car le client veut prioriser la porté pratique plutôt que social. Lorsque l’outil sera plus répandu (il aura plus d’utilisateurs), ce serait une bonne idée.</ol>
+                            <li>de quelles manière localiser un consommateur ( adresse , nom de compte, résaux sociaux ect…)</li>
+                                <ol><em> Bineco doit permettre à un résident de naviguer à travers la liste des consommateurs enregistrés en offrant certains filtres pertinents pour la localisation de consommateur spécifique</ol></em>
+                            <li>Souhaiteriez-vous mettre un message de sensibilisation à l’ouverture ?</li>
+                                <ol><em>Dans un premier temps, non, car le client veut prioriser la porté pratique plutôt que social. Lorsque l’outil sera plus répandu (il aura plus d’utilisateurs), ce serait une bonne idée.</em></ol>
                             <li>De quelles manières un résident peut-il communiquer avec la ville ? (forum, appel téléphonique, email, message privé etc)?</li>
-                                <ol>Ce serait par une requête par API à la ville. Il est à noter que “signaler un problème à la ville” concerne surtout les besoins immédiats tel que réparer un bac ou signaler un consommateur.</ol>
+                                <ol><em>Ce serait par une requête par API à la ville. Il est à noter que “signaler un problème à la ville” concerne surtout les besoins immédiats tel que réparer un bac ou signaler un consommateur.</em></ol>
                             <li>Comment pouvons-nous nous assurer qu’un consommateur a été enregistré auprès de la ville (prérequis)?</li>
-                            <ol>Normalement par API.</ol>
+                            <ol><em>Normalement par API.</em></ol>
                             <li>Quels mécanismes de recherche voulez-vous utiliser pour trouver un consommateur?                             </li>
-                            <ol>Si nous avons une longue liste de consommateurs, il serait préférable de pouvoir les filtrer. Par exemple, nous aurions la possibilité de filtrer les consommateurs par secteurs d’activités, par régions* ou efficacité des traitements.
-                                *Car les déchets d’un résident de Montréal peut être amenés ailleurs afin d’être traités.
+                            <ol><em>Si nous avons une longue liste de consommateurs, il serait préférable de pouvoir les filtrer. Par exemple, nous aurions la possibilité de filtrer les consommateurs par secteurs d’activités, par régions* ou efficacité des traitements.
+                                *Car les déchets d’un résident de Montréal peut être amenés ailleurs afin d’être traités.</em>
                                 </ol>
                             <li>Si les consommateurs ont autre activités que celle précité, peuvent-il s'inscrire aux consommateurs ? (activités d’exploitation)</li>
-                            <ol>Oui le consommateur peut avoir plusieurs activités autres que celles précitées.</ol>
+                            <ol><em>Oui le consommateur peut avoir plusieurs activités autres que celles précitées.</em></ol>
                             <li>Le projet pourra-t-il être open source ?</li>
-                            <ol>Ça dépend des développeurs du projet ( si les développeurs ont l’idée que ca pourrait améliorer le comportement du produit final</ol>
+                            <ol><em>Ça dépend des développeurs du projet ( si les développeurs ont l’idée que ca pourrait améliorer le comportement du produit final</em></ol>
                             <li>Doit-on mettre post/préconditions dans les scénarios? </li>
-                            <ol>Non, ce n’est pas tout le temps nécéssaire donc optionnel.</ol>
+                            <ol><em>Non, ce n’est pas tout le temps nécéssaire donc optionnel.</em></ol>
                             <li>La page “ voir les activités que je maintiens” concernent les  résidents et les consommateurs ?</li>
-                            <ol>C’est un souhait(pas une page). Les consommateurs indiquent les proportions de chacun de leurs activités et le résident peut les consulter .</ol>
+                            <ol><em>C’est un souhait(pas une page). Les consommateurs indiquent les proportions de chacun de leurs activités et le résident peut les consulter.</em></ol>
                         </ul>              
-                        </em>
                     </p>
-                </h4>
 
             </section>
 
             <section class="main-section">
                 <h2 id="domain" class="section-title">Compréhension du domaine</h2>
-                <p>
+                <p style="font-size:1.8em">
                     Après de nombreuses rencontres et une familiarisation avec l'activité VaxTodo, nous avons préparé un glossaire 
                     rassemblant les termes et expressions clés caractérisant l'environnement.
                 </p>
 
-                <h3 class="subsection-title">Glossaire</h3>
+                <h3 class="subsection-title" style="font-size:3em; text-decoration:underline;">Glossaire</h3>
                 <dl class="glossary">
                     <h4>Entités:</h4>
                     <dt class="glossary-term">Outils bineco </dt>
@@ -259,10 +259,10 @@
 
 
 
-            <section class="main-section">
+            <section class="main-section " id="section_2">
                 <h2 id="model" class="section-title">Modélisation du domaine</h2>
-                <img class="preview-img" src="images/visualP.png" alt="">
-                <h3 class="subsection-title">Scénarios</h3>
+                <img class="preview-img" src="images/vpp2.png" alt="">
+                <h3 class="subsection-title" style="text-decoration:underline; font-size: 2.5em;">Scénarios</h3>
 
                     <div class="scenario" id="cu-1">
                         <div class="scenario-meta">
@@ -279,7 +279,8 @@
                             <div class="cu-part">
                                 <h5 class="cu-part-title">Acteurs</h5>
                                 <ul class="bare-list cu-actors">
-                                    <li class="cu-actor">le client:résident/consommateur (Principal)</li>
+                                    <li class="cu-actor">résident(Principal)</li>
+                                    <li class="cu-actor">consommateur(Principal)</li>
                                 </ul>
                             </div>
                             
@@ -307,7 +308,8 @@
                             <div class="cu-part">
                                 <h5 class="cu-part-title">Acteurs</h5>
                                 <ul class="bare-list cu-actors">
-                                    <li class="cu-actor">client(Principal)</li>
+                                    <li class="cu-actor">résident(Principal)</li>
+                                    <li class="cu-actor">consommateur(Principal)</li>
                                 </ul>
                             </div>
                         </div>
@@ -346,7 +348,8 @@
                             <div class="cu-part">
                                 <h5 class="cu-part-title">Acteurs</h5>
                                 <ul class="bare-list cu-actors">
-                                    <li class="cu-actor">client(Principal)</li>
+                                    <li class="cu-actor">résident(Principal)</li>
+                                    <li class="cu-actor">consommateur(Principal)</li>
                                 </ul>
                             </div>
                         </div>
@@ -365,10 +368,10 @@
                                 <ol>
                                     <ul>3. A. Le résident/consommateur entre des informations de connection erronées (utilisateur ou mot de passe).</ul>
                                     <ul>B.  Système dit qu’il y a erreur dans les informations entrées.</ul>
-                                    <ul>C.C. le système donne l’option de
-                                        <ol>
-                                            <li class="scenario-main-step">Recommencer : a-Retour l’étape 2 </li>
-                                            <li class="scenario-main-step">Retour à la page d’accueil: a-Le scénario se termine</li>
+                                    <ul>C.C. le système donne l’option de:
+                                        <ol style="font-size:1em">
+                                            <ul> Recommencer : <ul>a-Retour l’étape 2 </ul></ul>
+                                            <ul> Retour à la page d’accueil: <ul>a-Le scénario se termine</ul></ul>
                                         </ol>
                                     </ul>
                                 </ol>
@@ -577,7 +580,7 @@
                                 <h5 class="cu-part-title">Acteurs</h5>
                                 <ul class="bare-list cu-actors">
                                     <li class="cu-actor">Résident (Principal)</li>
-                                    <li class="cu-actor">Consommateur (Secondaire)</li>
+                                    <li class="cu-actor">Consommateur (Principal)</li>
                                 </ul>
                             </div>
                             
@@ -595,7 +598,7 @@
                             <div class="scenario-alt">
                                 <h5 class="scenario-alt-title">Scénarios alternatifs</h5>
                                 <ol>
-                                    <li value=3>A. Aucun consommateur ne correspond aux contraintes (filtre) de l’utilisateur</li>
+                                    <ul> 3A. Aucun consommateur ne correspond aux contraintes (filtre) de l’utilisateur</ul>
                                     <ul>B. Message de l’outil qui dit “aucun consommateur trouvé”.</ul>
                                     <ul>C. Retourner à l'étape 2.</ul>
                                 </ol>
@@ -616,8 +619,8 @@
                             <div class="cu-part">
                                 <h5 class="cu-part-title">Acteurs</h5>
                                 <ul class=>
-                                    <li class="cu-actor">Résident (Agent principale)</li>
-                                    <li class="cu-actor">Consommateur (Agent principale)</li>
+                                    <li class="cu-actor">Résident (Principale)</li>
+                                    <li class="cu-actor">Consommateur (Principale)</li>
                                     <li class="cu-actor">Ville de Montréal (Secondaire)</li>
                                 </ul>
                             </div>
@@ -639,13 +642,13 @@
 
             <section class="main-section">
                 <h2 id="analysis" class="section-title">Analyse</h2>
-                <p>Notre analyse préliminaire nous a permis d'élucider les besoins et risques suivants...</p>
+                <p style="font-size:1.8em">Notre analyse préliminaire nous a permis d'élucider les besoins et risques suivants...</p>
                 
                 <div>
                     <h3 class="subsection-title">Risques</h3>
                     <ol class="risks">
                         <li><u>L’état n’est pas à jour </u>:
-                            <p>Le bon-fonctionnement de l’application dépend des API et des sites     webs de la ville. Panne ou trafic sur un site peut incapacité notre application.</p></li>
+                            <p>Le bon-fonctionnement de l’application dépend des API et des sites webs de la ville. Panne ou trafic sur un site peut incapacité notre application.</p></li>
                         <li><u>Informations erronées</u>: 
                             <p>La validité et la mise à jour des données affichée dans l’application dépend du consommateur (fréquence d’affichage des données, ect…). De plus, les métriques en lien avec nos propres bacs dépendent aussi du bon fonctionnement des capteurs.</p> </li>
                         <li><u> du bac/scan du bac</u> :
@@ -671,98 +674,99 @@
                         <li><u>Visibilité, facile à lire, contenu pas condensé</u></li>
                         <ol>Améliorer la structure des pages. Pas d’information inutile affichée. Liste des options clairement énoncées.</ol>
                     </ol>
+                </div>            
+
+                    <div>
+                        <h3 class="subsection-title">Ressources nécessaires</h3>
+
+                        <em style="font-size: 1.5em">Besoins matériels:</em>
+                        <ol class="ressources">
+                        <u>Matériel nécessaire</u> :<p>appareil, capteur, bacs</p>
+                        <u>Partie à informatiser</u> :<p> API, User Interface, Queries a base de données</p>
+                        <u>Solutions de stockage</u> :<p> base de donnée</p></ol>
+
+
+                    </div>
+                <div class="analyse-1">
+                    <div>
+                        <h3 class="subsection-title">Contraintes</h3>
+
+                        <em>Contraintes physiques </em>
+                        <ul>
+                            <li>La capacité de stockage </li>
+                            <li>Connection internet pour faire le suivi et voir les métriques</li>
+                            <li>Caméra pour scanner le code du bac</li>
+                        </ul>
+                        <em>Contraintes physiques </em>
+                        <ul>
+                            <li>Base de donné encryptée (utilisateur et mot de passe)</li>
+                            <li>API pour avoir accès aux données (ville et consommateurs)</li>
+                            <li>Utilisation de langage de programmation orienté objet tel que Java pour faciliter l’encapsulation et la structure du code</li>
+                        </ul>
+
+
+                    </div>
+
+                    <div>
+                        <h3 class="subsection-title">Propositions</h3>
+                        <em>Choix des métriques: </em>
+                        <p> Niveau résidentiel (usage des bacs):</p>
+                        <ul>
+                            <li>Poids de chaque activité (kg) dans un intervalle de temps défini (ex:semaines, mois, année).</li>
+                            <li>Pourcentage de chaque activité (compostage, recyclage, ordures) par rapport à  une autre selon l’intervalle de temps défini. </li>
+                            <li>Portions de matière recyclés/compostés/jetés comparé, par exemple, au mois/année précédent.</li>
+
+                        </ul>
+
+                        <p> Niveau municipal (traitement des déchets): </p>
+                        <ul>
+                            <li>Proportion de chaque activité (compostage, recyclage, ordures) par rapport à la ville</li>
+                            <li>Pourcentage de déchets envoyés dans le sites d'enfouissement/incinération, de produits recyclés,  matérielle composté</li>
+                            <li>Portions de matières recyclés/compostés/jetés comparés, par exemple, au mois/année précédent</li>
+
+                        </ul>
+                        <p>Voici des exemples de diagramme affiché:</p>
+                        <img class="preview-img" src="images/poids.png">
+                        <img class="preview-img" src="images/pourcentage.png">
+                    </div>
                 </div>
 
-                <div>
-                    <h3 class="subsection-title">Ressources nécessaires</h3>
-
-                    <em>Besoins matériels:</em>
-                    <p><u>Matériel nécessaire</u> : appareil, capteur, bacs</p>
-                    <p><u>Partie à informatiser</u> : API, User Interface, Queries a base de données</p>
-                    <p><u>Solutions de stockage</u> : base de donnée</p>
-
-
-                </div>
-
-                <div>
-                    <h3 class="subsection-title">Contraintes</h3>
-
-                    <em>Contraintes physiques </em>
-                    <ul>
-                        <li>La capacité de stockage </li>
-                        <li>Connection internet pour faire le suivi et voir les métriques</li>
-                        <li>Caméra pour scanner le code du bac</li>
-                    </ul>
-                    <em>Contraintes physiques </em>
-                    <ul>
-                        <li>Base de donné encryptée (utilisateur et mot de passe)</li>
-                        <li>API pour avoir accès aux données (ville et consommateurs)</li>
-                        <li>Utilisation de langage de programmation orienté objet tel que Java pour faciliter l’encapsulation et la structure du code</li>
-                    </ul>
-
-
-                </div>
-
-                <div>
-                    <h3 class="subsection-title">Propositions</h3>
-                    <em>Choix des métriques: </em>
-                    <p> Niveau résidentiel (usage des bacs):</p>
-                    <ul>
-                        <li>Poids de chaque activité (kg) dans un intervalle de temps défini (ex:semaines, mois, année).</li>
-                        <li>Pourcentage de chaque activité (compostage, recyclage, ordures) par rapport à  une autre selon l’intervalle de temps défini. </li>
-                        <li>Portions de matière recyclés/compostés/jetés comparé, par exemple, au mois/année précédent.</li>
-
-                    </ul>
-
-                    <p> Niveau municipal (traitement des déchets): </p>
-                    <ul>
-                        <li>Proportion de chaque activité (compostage, recyclage, ordures) par rapport à la ville</li>
-                        <li>Pourcentage de déchets envoyés dans le sites d'enfouissement/incinération, de produits recyclés,  matérielle composté</li>
-                        <li>Portions de matières recyclés/compostés/jetés comparés, par exemple, au mois/année précédent</li>
-
-                    </ul>
-                    <p>Voici des exemples de diagramme affiché:</p>
-                    <img class="preview-img" src="images/poids(kg).png" alt="">
-                    <img class="preview-img" src="images/30.png" alt="">
-                </div>
 
             </section>
 
             <section class="main-section">
                 <h2 id="prototype" class="section-title">Prototype</h2>
 
-                <p>
-                    <em>
-                        Ci-dessous nous illustrons notre prototype en présentant 5 vues de l'application. 
-                        Ce prototype utilise une interface en ligne de commande...</em>
+                <p style="font-size:1.8em">Ci-dessous nous illustrons notre prototype en présentant 5 vues de l'application.
+                    Ce prototype utilise une interface en ligne de commande...
                 </p>
                 <ul class="bare-list previews">
                     <li class="preview">
-                        <h4 style="font-size: 1.2em; margin-bottom: 6px">Page d’acceuil</h4> 
-                        <img class="preview-img" src="images/prototype.png" alt="">
-                        On demande si on veut s’inscrire (Sign In) ou se connecter (Log In), en tant que résident ou consommateur. Chacun de ces choix mène à une autre page qui demande les informations d’inscription pour le Sign In, et pour le Log In les informations de connection.  
+                        <h4 style="font-size: 1.8em; margin-bottom: 6px">Page d’acceuil</h4> 
+                        <img class="preview-img" src="images/prototype1.png" alt="">
+                        <p>On demande si on veut s’inscrire (Sign In) ou se connecter (Log In), en tant que résident ou consommateur. Chacun de ces choix mène à une autre page qui demande les informations d’inscription pour le Sign In, et pour le Log In les informations de connection.</p>
 
                     </li>
                     <li class="preview">
-                        <h4 style="font-size: 1.2em; margin-bottom: 6px">Menu principal</h4> 
+                        <h4 style="font-size: 1.8em; margin-bottom: 6px">Menu principal</h4> 
                         <img class="preview-img" src="images/prototype2.png" alt="">
-                        D’ici l’utilisateur a le choix de naviguer l’application. Les choix de pages qu’on lui offre sont listés avec l’input qu’il doit rentrer pour s’y rendre.
+                       <p>D’ici l’utilisateur a le choix de naviguer l’application. Les choix de pages qu’on lui offre sont listés avec l’input qu’il doit rentrer pour s’y rendre.</p>
                     </li>
                     <li class="preview">
-                        <h4 style="font-size: 1.2em; margin-bottom: 6px">Suivi de mes bacs</h4> 
+                        <h4 style="font-size: 1.8em; margin-bottom: 6px">Suivi de mes bacs</h4> 
                         <img class="preview-img" src="images/prototype3.png" alt="">
-                        De l’option suivi de mes bacs, on nous amène à une autre page qui nous redonne le choix d’autres pages où aller (l’état de mes bacs, métriques écologiques, etat de traitement des déchets municipal). 
+                        <p>De l’option suivi de mes bacs, on nous amène à une autre page qui nous redonne le choix d’autres pages où aller (l’état de mes bacs, métriques écologiques, etat de traitement des déchets municipal).</p>
 
                     </li>
                     <li class="preview">
-                        <h4 style="font-size: 1.2em; margin-bottom: 6px">Trouver consommateur</h4> 
+                        <h4 style="font-size: 1.8em; margin-bottom: 6px">Trouver consommateur</h4> 
                         <img class="preview-img" src="images/prototype4.png" alt="">
-                        Dans cette page, l'utilisateur tente de trouver un consommateur. Il y a un filtre de recherche à sa disponibilité tel que le rayon en km, le type d’activité, etc.
+                        <p>Dans cette page, l'utilisateur tente de trouver un consommateur. Il y a un filtre de recherche à sa disponibilité tel que le rayon en km, le type d’activité, etc.</p>
                     </li>
                     <li class="preview">
-                        <h4 style="font-size: 1.2em; margin-bottom: 6px">Enregistrer un bac</h4> 
+                        <h4 style="font-size: 1.8em; margin-bottom: 6px">Enregistrer un bac</h4> 
                         <img class="preview-img" src="images/prototype5.png" alt="">
-                        À la page d’enregistrement d’un bac on demande le type de bac, le numéro, un nom à donner au bac et l’option d’enregistrer trois autres bacs.
+                        <p>À la page d’enregistrement d’un bac on demande le type de bac, le numéro, un nom à donner au bac et l’option d’enregistrer trois autres bacs.</p>
                     </li>
                 </li>
             </section>
@@ -770,15 +774,15 @@
     </main>
     <footer class="report-footer">
         <p>
-            Template de rapport
+            Rapport de l'outil BINECO
         </p>
-        <p>
-            <em>
-                Ajoutez tous les liens additionnels nécessaires à la compréhension du rapport ici
-            </em>
-        </p>
-        <p class="copyright">&copy; 2021 &ndash; 2022 Ceduni</p>
+        <p class="copyright">&copy; 2021 &ndash; 2022 KFE</p>
     </footer>
 </body>
 
 </html>
+
+
+</body>
+</html>    
+    
