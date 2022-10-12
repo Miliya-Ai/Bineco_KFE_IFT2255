@@ -77,6 +77,10 @@ th { text-align: center; }
 .glossary-term{
     font-size: 1.5em;
 }
+
+.question em{
+    font-weight: bold;
+}
 .btn {
     font-family: 'Segoe UI', 'Droid Sans', Ubuntu, 'Lucida Grande', Arial, sans-serif;
     text-decoration: none; text-align: center;
