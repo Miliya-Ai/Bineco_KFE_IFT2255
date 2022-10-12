@@ -65,8 +65,9 @@ public class LogIn extends Page{
                 //new Menu();
                 break;
             case 99:
-                System.exit(0);
                 effacer();
+                System.exit(0);
+
                 break;
             default:
                 out("Svp, entrer un chiffre valide");

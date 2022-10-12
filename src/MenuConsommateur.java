@@ -1,42 +1,45 @@
 import java.io.IOException;
 
-public class Suivi extends Page {
-    public Suivi() {
-        entete("Suivi ecologique");
+public class MenuConsommateur extends Page{
+    public MenuConsommateur(){
+        entete("Menu du consommateur");
+
         out( "**** Pour retourner au menu, appuyer 0 ****");
         out( "**** Pour quitter, appuyer 99 ****\n");
-        addTabNomOptions("Afficher l'état de mes bacs");
-        //addTabNomOptions("Afficher les métriques écologiques");
-        addTabNomOptions("Etat traitement dechets municipaux");
-        addTabNomOptions("Metriques ecologiques");
+
+        addTabNomOptions("Trouver un consommateur");
+        addTabNomOptions("Voir les activité que je maintiens");
+        addTabNomOptions("Etat de traitement des dechets municipaux");
+        addTabNomOptions("Signaler un problème à la ville");
         out(afficherOptions ());
+
+        //out("\nPour revenir au Menu appuyer 0");
+        //out("Pour quitter appuyer 99");
         filtrer();
     }
-
-
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
-            case 0:
-                tabNomOptions.clear();
-                new Menu();
-                break;
-
             case 1:
                 tabNomOptions.clear();
-                new EtatBacs();
+                new FindConsommateur();
                 break;
             case 2:
                 tabNomOptions.clear();
-                new DechetMunicipaux();
+                new Activites();
                 break;
             case 3:
                 tabNomOptions.clear();
-                new MetriquesEco();
+                new DechetMunicipaux();
+                break;
+            case 4:
+                tabNomOptions.clear();
+                new Probleme();
                 break;
             case 99:
                 effacer();
                 System.exit(0);
+
                 break;
             default:
                 out("Svp, entrer un chiffre valide");

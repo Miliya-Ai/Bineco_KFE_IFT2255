@@ -24,8 +24,9 @@ public class EtatBacs extends Page{
                 tabNomOptions.clear();
                 new Menu();
             case 99:
-                System.exit(0);
                 effacer();
+                System.exit(0);
+
                 break;
             default:
                 out("Svp, entrer un chiffre valide");

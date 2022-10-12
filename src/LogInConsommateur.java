@@ -45,7 +45,8 @@ public class LogInConsommateur extends Page{
                     while ((strLine = br.readLine()) != null)   {
                         String[] tokens = strLine.split(" ");
                         if (tokens[0].equals( user) && tokens[1].equals(pass)){
-                            System.out.println("ok");
+                            tabNomOptions.clear();
+                            new MenuConsommateur();
                         }else{
                             tabNomOptions.clear();
                             new LogInConsommateur();
@@ -74,8 +75,9 @@ public class LogInConsommateur extends Page{
                         new Menu();
                         break;
                     case 99:
-                        System.exit(0);
                         effacer();
+                        System.exit(0);
+
                         break;
                     default:
                         out("Svp, entrer un chiffre valide");

@@ -1,5 +1,6 @@
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -56,15 +57,23 @@ public abstract class Page {
     }
 
 
-    //https://www.baeldung.com/java-delete-file-contents
+    //https://stackoverflow.com/questions/6994518/how-to-delete-the-content-of-text-file-without-deleting-itself
     public void effacer() throws IOException {
-        BufferedWriter writer = Files.newBufferedWriter(Paths.get("src/passResident.txt"));
+        /*BufferedWriter writer = Files.newBufferedWriter(Paths.get("src/passResident.txt"));
         writer.write("");
         writer.flush();
 
         BufferedWriter writer2 = Files.newBufferedWriter(Paths.get("src/passConsommateur.txt"));
         writer2.write("");
-        writer.flush();
+        writer.flush();*/
+
+        PrintWriter pw = new PrintWriter("src/passResident.txt");
+        pw.close();
+
+        PrintWriter pw2 = new PrintWriter("src/passConsommateur.txt");
+        pw2.close();
+
+
 
     }
     public void changerPage(int intNumeroOption) throws IOException {

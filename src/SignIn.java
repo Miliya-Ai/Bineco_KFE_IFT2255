@@ -24,8 +24,9 @@ public class SignIn extends Page{
                 new Consommateur();
                 break;
             case 99:
-                System.exit(0);
                 effacer();
+                System.exit(0);
+
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
