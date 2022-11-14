@@ -30,57 +30,6 @@ public class LogInResident extends Page{
     //Fonction pour regarder si l<utilisateur existe, et si oui, ecq le mot de passe est bon
     public void verifyLogin(String user, String pass) throws FileNotFoundException {
 
-        /*boolean verified = false;
-        String tempUser = "";
-        String tempPass = "";
-
-        try {
-
-            x = new Scanner(new File("passResident.txt"));
-            x.useDelimiter("\n,");
-
-            while(x.hasNext() && !verified){
-                tempUser = x.next();
-                tempPass = x.next();
-
-                if (tempUser.trim().equals(user.trim()) && tempPass.trim().equals(pass.trim())){
-                    verified = true;
-
-                }
-            }
-            x.close();
-            out("valider!");
-
-
-        } catch (Exception e) {
-            out(tempUser);
-            out(tempPass);
-            out("Erreur, nom d'utilisateur ou mot de passe non valide");
-            scannerInput();
-        }*/
-
-        /*boolean verfified = false;
-        String tempUser = "";
-        String tempPass = "";
-
-
-
-
-        x = new Scanner(new File("passResident.txt"));
-        String[] inputs = x.delimiter().split(",");
-        tempUser = inputs[0];
-        tempPass = inputs[1];
-        out(tempPass);
-        out(tempUser);
-
-        if (user.equals(tempUser)  && pass.equals(tempPass)  ){
-            verfified = true;
-            out("MATCH");
-        } else {
-            out("erreur");
-        }*/
-
-
         try{
             FileInputStream fstream = new FileInputStream("src/passResident.txt");
             DataInputStream in = new DataInputStream(fstream);
@@ -111,10 +60,6 @@ public class LogInResident extends Page{
         switch (intNumeroOption) {
             case 1:
                 tabNomOptions.clear();
-                //out("Entre les info resident");
-                //new Menu();
-                //verified = true;
-                //new Menu();
                 break;
             case 99:
                 effacer();
