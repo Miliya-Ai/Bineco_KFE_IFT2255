@@ -13,6 +13,7 @@ public class Menu extends Page{
         addTabNomOptions("Voir les activité que je maintiens");
         //addTabNomOptions("Etat de traitement des dechets municipaux");
         addTabNomOptions("Signaler un problème à la ville");
+        addTabNomOptions("Modifier le profil");
         out(afficherOptions ());
 
         //out("\nPour revenir au Menu appuyer 0");
@@ -43,6 +44,10 @@ public class Menu extends Page{
             case 5:
                 tabNomOptions.clear();
                 new Probleme();
+                break;
+            case 6:
+                tabNomOptions.clear();
+                new ModifProfil();
                 break;
             case 99:
                 effacer();
