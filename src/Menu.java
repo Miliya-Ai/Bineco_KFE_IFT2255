@@ -7,7 +7,7 @@ public class Menu extends Page{
         out( "**** Pour retourner au menu, appuyer 0 ****");
         out( "**** Pour quitter, appuyer 99 ****\n");
 
-        addTabNomOptions("Enregistrer un bac");
+        addTabNomOptions("Mes bacs");
         addTabNomOptions("Trouver un consommateur");
         addTabNomOptions("Suivi ecologique");
         addTabNomOptions("Voir les activité que je maintiens");
@@ -25,7 +25,7 @@ public class Menu extends Page{
         switch (intNumeroOption) {
             case 1:
                 tabNomOptions.clear();
-                new EnregistrerBac();
+                new Bacs();
                 break;
             case 2:
                 tabNomOptions.clear();

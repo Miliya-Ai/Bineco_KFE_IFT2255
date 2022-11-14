@@ -7,7 +7,7 @@ public class Main {
     //**********************EXECUTER MAIN POUR COMMENCER L'APPLICATION **********************
     public static void main(String[] args) throws IOException {
 
-        new PageAccueil();
+        new Menu();
 
 
     }
