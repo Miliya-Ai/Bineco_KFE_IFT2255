@@ -40,12 +40,17 @@ public class LogInResident extends Page{
                 if (tokens[0].equals( user) && tokens[1].equals(pass)){
                     tabNomOptions.clear();
                     new Menu();
-                }else{
+                    return;
+                }/*else{
                     tabNomOptions.clear();
                     new LogInResident();
-                }
+                }*/
+
+
             }
             in.close();
+
+
         } catch (Exception e){
             System.err.println("Error: " + e.getMessage());
         }
