@@ -1,4 +1,0 @@
-xavier lap,email,adresse,telephjone,d123,
-personne autre,courriel autre,autre adresse,autre telephone,g12345,
-
-user,mdp1,xavier lap,courriel,adresse,telephone,bac123,

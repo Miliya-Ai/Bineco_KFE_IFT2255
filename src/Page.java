@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public abstract class Page {
+public abstract class Page extends Controller{
     protected ArrayList<String> tabNomOptions = new ArrayList<String>() ;
 
     public Page() {
@@ -72,6 +72,9 @@ public abstract class Page {
 
         PrintWriter pw2 = new PrintWriter("src/passConsommateur.txt");
         pw2.close();
+
+        PrintWriter pw3 = new PrintWriter("src/informations.txt");
+        pw3.close();
 
 
 
