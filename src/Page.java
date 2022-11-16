@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public abstract class Page {
+public abstract class Page extends Controller{
     protected ArrayList<String> tabNomOptions = new ArrayList<String>() ;
 
     public Page() {
