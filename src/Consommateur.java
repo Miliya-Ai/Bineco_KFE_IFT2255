@@ -13,13 +13,14 @@ public class Consommateur extends Client{
         out(afficherOptions ());
 
         credentials(false);
-        scannerInput("Nom : ");
-        scannerInput("Courriel : ");
-        scannerInput("Adresse : ");
-        scannerInput("Telephone : ");
-        scannerInput("Type de dechets traités : ");
-        scannerInput("Capacité de traitement : ");
-        scannerInput("Activité d'exploitation : ");
+        saveInfo(scannerInput("Nom : "));
+        saveInfo(scannerInput("Courriel : "));
+        saveInfo(scannerInput("Adresse : "));
+        saveInfo(scannerInput("Telephone : "));
+        saveInfo(scannerInput("Type de dechets traités : "));
+        saveInfo(scannerInput("Capacité de traitement : "));
+        saveInfo(scannerInput("Activité d'exploitation : "));
+        newLine();
         out("\n Appuyer sur 1 pour enregistrer");
         filtrer();
 

@@ -13,17 +13,28 @@ public class Resident extends Client{
         out(afficherOptions ());
 
         credentials(true);
-        scannerInput("Nom et prenom : ");
-        scannerInput("Courriel : ");
-        scannerInput("Adresse : ");
-        scannerInput("Telephone : ");
-        scannerInput("Numero du premier bac a enregistrer : ");
+        saveInfo(scannerInput("Nom et prenom : "));
+        saveInfo(scannerInput("Courriel : "));
+        saveInfo(scannerInput("Adresse : "));
+        saveInfo(scannerInput("Telephone : "));
+        saveInfo(scannerInput("Numero du premier bac a enregistrer : "));
+        newLine();
         out("\n Appuyer sur 1 pour enregistrer");
         filtrer();
 
     }
 
+    /*public void saveInfo(String info) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
+        writer.write(info + ",");
+        writer.close();
+    }
 
+    public void newLine() throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
+        writer.write("\n");
+        writer.close();
+    }*/
 
     @Override
     public void changerPage(int intNumeroOption) throws IOException {

@@ -6,11 +6,11 @@ import java.util.Scanner;
 abstract class  Client extends Page {
     public boolean isPasswordEligible;
 
-    public void scannerInput(String message){
+    public String scannerInput(String message){
         out(message);
         Scanner temp = new Scanner(System.in);
         String wut = temp.nextLine();
-
+        return wut;
     }
 
     public void save(String content, Boolean isResident)throws IOException {
@@ -32,6 +32,11 @@ abstract class  Client extends Page {
         out("Veuillez choisir un nom d'utilisateur :");
         Scanner myUser = new Scanner(System.in);
         String userAccount = myUser.nextLine();
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
+        writer.write(userAccount + ",");
+        writer.close();
+
         passwordEligible(userAccount, isResident);
 
     }
@@ -46,9 +51,26 @@ abstract class  Client extends Page {
         if (isPasswordEligible){
             userAccount += " " + password;
             save(userAccount, isResident);
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
+            writer.write(password + ",");
+            writer.close();
+
         } else {
             passwordEligible(userAccount, isResident);
         }
+    }
+
+    public void saveInfo(String info) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
+        writer.write(info + ",");
+        writer.close();
+    }
+
+    public void newLine() throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
+        writer.write("\n");
+        writer.close();
     }
 
 }
