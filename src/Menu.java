@@ -2,7 +2,7 @@ import java.io.IOException;
 
 public class Menu extends Page{
     public Menu() {
-        entete("Menu");
+        entete("Menu" +" Session de : " +Controller.liveUser.user);
 
         out( "**** Pour retourner au menu, appuyer 0 ****");
         out( "**** Pour quitter, appuyer 99 ****\n");
