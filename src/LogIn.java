@@ -48,8 +48,6 @@ public class LogIn extends Page{
                 String[] tokens = strLine.split(" ");
                 if (tokens[0].equals( user) && tokens[1].equals(pass)){
                     tabNomOptions.clear();
-                    Controller.liveUser.setUser(user);
-                    Controller.liveUser.setMdp(pass);
                     new Menu();
                     return;
                 }/*else{
@@ -67,8 +65,6 @@ public class LogIn extends Page{
                 String[] tokens = strLine2.split(" ");
                 if (tokens[0].equals( user) && tokens[1].equals(pass)){
                     tabNomOptions.clear();
-                    Controller.liveUser.setUser(user);
-                    Controller.liveUser.setMdp(pass);
                     new MenuConsommateur();
                     return;
                 }/*else{
