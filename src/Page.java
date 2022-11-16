@@ -73,6 +73,9 @@ public abstract class Page extends Controller{
         PrintWriter pw2 = new PrintWriter("src/passConsommateur.txt");
         pw2.close();
 
+        PrintWriter pw3 = new PrintWriter("src/informations.txt");
+        pw3.close();
+
 
 
     }
