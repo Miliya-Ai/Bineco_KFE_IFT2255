@@ -3,7 +3,11 @@ import java.io.IOException;
 public class Menu extends Page{
     public Menu() throws IOException {
         entete("Menu" +" Session de : " +Controller.liveUser.user);
-        Controller.liveUser.getInfo();
+        if(Controller.liveUser.res){
+            Controller.liveUser.getInfoRes();
+        } else {
+            Controller.liveUser.getInfoCons();
+        }
 
         out( "**** Pour retourner au menu, appuyer 0 ****");
         out( "**** Pour quitter, appuyer 99 ****\n");

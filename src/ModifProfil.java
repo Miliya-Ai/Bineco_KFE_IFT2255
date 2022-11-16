@@ -23,7 +23,6 @@ public class ModifProfil extends Page{
 
     }
     public void changerMdp(){
-
         scannerInput("Ancien mot de passe : ");
         scannerInput("Nouveau mot de passe :");
         scannerInput("Confirmer nouveau mot de passe : ");

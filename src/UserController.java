@@ -5,6 +5,8 @@ public class UserController extends Controller{
 
 
     public String user, mdp, name, adresse, telephone, courriel, numeroBac;
+    public String typeDechet, capacite, activite;
+    public boolean res;
 
 
 
@@ -22,7 +24,7 @@ public class UserController extends Controller{
     }
 
 
-    public void getInfo() throws IOException {
+    public void getInfoRes() throws IOException {
         FileInputStream fstream = new FileInputStream("src/informations.txt");
         DataInputStream in = new DataInputStream(fstream);
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
@@ -37,13 +39,40 @@ public class UserController extends Controller{
         }
     }
 
+    public void getInfoCons() throws IOException {
+        FileInputStream fstream = new FileInputStream("src/informations.txt");
+        DataInputStream in = new DataInputStream(fstream);
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+        String strLine;
+        while ((strLine = br.readLine()) != null)   {
+            String[] tokens = strLine.split(",");
+            this.name = tokens[2];
+            this.courriel = tokens[3];
+            this.adresse = tokens[4];
+            this.telephone = tokens[5];
+            this.typeDechet = tokens[6];
+            this.capacite = tokens[7];
+            this.activite = tokens[8];
+        }
+    }
+
     public void afficherInfo(){
 
-        System.out.println(this.name);
-        System.out.println(this.courriel);
-        System.out.println(this.adresse);
-        System.out.println(this.telephone);
-        System.out.println(this.numeroBac);
+        if (res){
+            System.out.println(this.name);
+            System.out.println(this.courriel);
+            System.out.println(this.adresse);
+            System.out.println(this.telephone);
+            System.out.println(this.numeroBac);
+        } else {
+            System.out.println(this.name);
+            System.out.println(this.courriel);
+            System.out.println(this.adresse);
+            System.out.println(this.telephone);
+            System.out.println(this.typeDechet);
+            System.out.println(this.capacite);
+            System.out.println(this.activite);
+        }
 
     }
 
