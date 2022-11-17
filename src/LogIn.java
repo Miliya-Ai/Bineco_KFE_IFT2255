@@ -50,6 +50,7 @@ public class LogIn extends Page{
                     tabNomOptions.clear();
                     Controller.liveUser.setUser(user);
                     Controller.liveUser.setMdp(pass);
+                    Controller.liveUser.res = true;
                     new Menu();
                     return;
                 }/*else{
@@ -69,6 +70,7 @@ public class LogIn extends Page{
                     tabNomOptions.clear();
                     Controller.liveUser.setUser(user);
                     Controller.liveUser.setMdp(pass);
+                    Controller.liveUser.res = false;
                     new MenuConsommateur();
                     return;
                 }/*else{

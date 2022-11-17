@@ -15,7 +15,7 @@ public abstract class Page extends Controller{
 
     public void entete (String nomPage){
         out("\n"
-            + "################ " + nomPage + " ##################"
+            + "################ " + nomPage + " ##################" +"  Session de : "+Controller.liveUser.user
             + "\n");
     }
 
@@ -49,7 +49,7 @@ public abstract class Page extends Controller{
             intNumeroOption = Integer.parseInt(stringNumeroOption);
             changerPage(intNumeroOption);
         } catch (Exception e) {
-            out("Svp, entrer un chiffre");
+            //out("Svp, entrer un chiffre");
             filtrer();
 
         }
@@ -72,6 +72,9 @@ public abstract class Page extends Controller{
 
         PrintWriter pw2 = new PrintWriter("src/passConsommateur.txt");
         pw2.close();
+
+        PrintWriter pw3 = new PrintWriter("src/informations.txt");
+        pw3.close();
 
 
 

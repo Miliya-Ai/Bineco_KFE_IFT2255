@@ -1,7 +1,13 @@
 import java.io.IOException;
 
 public class MenuConsommateur extends Page{
-    public MenuConsommateur(){
+    public MenuConsommateur() throws IOException {
+
+        if(Controller.liveUser.res){
+            Controller.liveUser.getInfoRes();
+        } else {
+            Controller.liveUser.getInfoCons();
+        }
         entete("Menu du consommateur");
 
         out( "**** Pour retourner au menu, appuyer 0 ****");
@@ -11,6 +17,7 @@ public class MenuConsommateur extends Page{
         addTabNomOptions("Voir les activité que je maintiens");
         addTabNomOptions("Etat de traitement des dechets municipaux");
         addTabNomOptions("Signaler un problème à la ville");
+        addTabNomOptions("Mon profil");
         out(afficherOptions ());
 
         //out("\nPour revenir au Menu appuyer 0");
@@ -35,6 +42,10 @@ public class MenuConsommateur extends Page{
             case 4:
                 tabNomOptions.clear();
                 new Probleme();
+                break;
+            case 5:
+                tabNomOptions.clear();
+                Controller.liveUser.afficherInfo();
                 break;
             case 99:
                 effacer();

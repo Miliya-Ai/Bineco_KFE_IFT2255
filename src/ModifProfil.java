@@ -10,6 +10,7 @@ public class ModifProfil extends Page{
         addTabNomOptions("Modifier le mot de passe");
         addTabNomOptions("Modifier courriel");
         addTabNomOptions("Modifier numero de telephone");
+        addTabNomOptions("Voir mes infos");
         out(afficherOptions());
         filtrer();
 
@@ -22,7 +23,6 @@ public class ModifProfil extends Page{
 
     }
     public void changerMdp(){
-
         scannerInput("Ancien mot de passe : ");
         scannerInput("Nouveau mot de passe :");
         scannerInput("Confirmer nouveau mot de passe : ");
@@ -68,6 +68,11 @@ public class ModifProfil extends Page{
                 changerTel();
                 out("changement confirmé");
                 new Menu();
+                break;
+            case 4:
+                tabNomOptions.clear();
+                Controller.liveUser.afficherInfo();
+                //new Menu();
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
