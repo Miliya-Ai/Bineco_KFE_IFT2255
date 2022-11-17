@@ -4,8 +4,9 @@ public class UserController extends Controller{
 
 
 
-    public String user, mdp, name, adresse, telephone, courriel, numeroBac;
+    public String user, mdp, name, adresse, telephone, courriel;
     public String typeDechet, capacite, activite;
+    public String[] numeroBac = new String[3];
     public boolean res;
 
 
@@ -35,7 +36,7 @@ public class UserController extends Controller{
             this.courriel = tokens[3];
             this.adresse = tokens[4];
             this.telephone = tokens[5];
-            this.numeroBac = tokens[6];
+            this.numeroBac[0] = tokens[6];
         }
     }
 
@@ -63,7 +64,9 @@ public class UserController extends Controller{
             System.out.println(this.courriel);
             System.out.println(this.adresse);
             System.out.println(this.telephone);
-            System.out.println(this.numeroBac);
+            System.out.println(this.numeroBac[0]);
+            System.out.println(this.numeroBac[1]);
+            System.out.println(this.numeroBac[2]);
         } else {
             System.out.println(this.name);
             System.out.println(this.courriel);

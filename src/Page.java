@@ -49,7 +49,7 @@ public abstract class Page extends Controller{
             intNumeroOption = Integer.parseInt(stringNumeroOption);
             changerPage(intNumeroOption);
         } catch (Exception e) {
-            out("Svp, entrer un chiffre");
+            //out("Svp, entrer un chiffre");
             filtrer();
 
         }
