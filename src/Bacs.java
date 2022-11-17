@@ -62,12 +62,14 @@ public class Bacs extends Page{
             if(Controller.liveUser.numeroBac[i] == null){
                 Controller.liveUser.numeroBac[i] = num;
 
-                addToFile(num +",");
+                //addToFile(num +",");
+                appendInfo(num);
                 //Controller.liveUser.getInfoRes();
                 out("Bac enregistré");
+                //Controller.liveUser.getInfoRes();
                 tabNomOptions.clear();
-                new Menu();
-                return;
+                new Bacs();
+                break;
             }
         }
 
@@ -76,29 +78,7 @@ public class Bacs extends Page{
 
     //-----------------------------A TESTER----------------------------
     public void supprimerBac() throws IOException {
-        /*String num = scannerInput("Numero du bac a supprimer : ");
-        String[] temp = new String[3];
 
-        for(int i = 0; i < 3; i++){
-
-            if(Controller.liveUser.numeroBac[i] == num){
-                Controller.liveUser.numeroBac[i] = null;
-
-                int k =0;
-                for (int j = 0; j < 3; j++){
-                    if(Controller.liveUser.numeroBac[j] != null){
-                        temp[k] = Controller.liveUser.numeroBac[j];
-                        k++;
-                    }
-                }
-                Controller.liveUser.numeroBac = temp;
-                out("Bac supprimé");
-                new Menu();
-                return;
-            }
-        }
-        out("Numero de bac inexistant dans vos bacs!");
-        new Menu();*/
         String[] temp = new String[3];
         out("Voici vos bacs : ");
         int k = 1;
@@ -106,6 +86,7 @@ public class Bacs extends Page{
             if(Controller.liveUser.numeroBac[i] != null){
                 temp[k-1] = Controller.liveUser.numeroBac[i];
                 out(k +"-  " +Controller.liveUser.numeroBac[i]);
+                k++;
             }
         }
 
@@ -131,7 +112,6 @@ public class Bacs extends Page{
         new Menu();
 
 
-
     }
 
 
@@ -155,6 +135,44 @@ public class Bacs extends Page{
             // Display message when exception occurs
             System.out.println("exception occurred" + e);
         }
+    }
+
+
+    public void appendInfo(String input) throws IOException {
+
+        String filePath = "src/informations.txt";
+        //Instantiating the Scanner class to read the file
+        Scanner sc = new Scanner(new File(filePath));
+        //instantiating the StringBuffer class
+        StringBuffer buffer = new StringBuffer();
+        //Reading lines of the file and appending them to StringBuffer
+        while (sc.hasNextLine()) {
+            buffer.append(sc.nextLine() + System.lineSeparator());
+        }
+
+        String fileContents = buffer.toString();
+        //System.out.println("Contents of the file: "+fileContents);
+        //closing the Scanner object
+        sc.close();
+        String oldLine = Controller.liveUser.getInfoString();
+
+        /*for (int i = 0; i < Controller.liveUser.numeroBac.length; i++){
+            oldLine += Controller.liveUser.numeroBac[i];
+        }*/
+        //oldLine += ",";
+        out(oldLine);
+
+        String newLine = oldLine += input;
+        out(newLine);
+        //Replacing the old line with new line
+        fileContents = fileContents.replace(oldLine, newLine);
+        //instantiating the FileWriter class
+        FileWriter writer = new FileWriter(filePath);
+        //System.out.println("");
+        //System.out.println("new data: "+fileContents);
+        writer.append(fileContents);
+        writer.flush();
+
 
     }
 

@@ -9,6 +9,8 @@ public class UserController extends Controller{
     public String[] numeroBac = new String[3];
     public boolean res;
 
+    String info;
+
 
 
     public UserController(){
@@ -24,6 +26,20 @@ public class UserController extends Controller{
         this.mdp = pass;
     }
 
+    public String getInfoString() throws IOException {
+        String str = null;
+        FileInputStream fstream = new FileInputStream("src/informations.txt");
+        DataInputStream in = new DataInputStream(fstream);
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
+        String strLine;
+        /*while ((br.readLine()) != null)   {
+            str = br.readLine();
+        }*/
+        str = br.readLine();
+
+        return str;
+    }
+
 
     public void getInfoRes() throws IOException {
         FileInputStream fstream = new FileInputStream("src/informations.txt");
@@ -37,6 +53,7 @@ public class UserController extends Controller{
             this.adresse = tokens[4];
             this.telephone = tokens[5];
             this.numeroBac[0] = tokens[6];
+            return;
         }
     }
 

@@ -15,7 +15,7 @@ public abstract class Page extends Controller{
 
     public void entete (String nomPage){
         out("\n"
-            + "################ " + nomPage + " ##################"
+            + "################ " + nomPage + " ##################" +"  Session de : "+Controller.liveUser.user
             + "\n");
     }
 

@@ -2,12 +2,13 @@ import java.io.IOException;
 
 public class Menu extends Page{
     public Menu() throws IOException {
-        entete("Menu" +" Session de : " +Controller.liveUser.user);
-        if(Controller.liveUser.res){
+        entete("Menu");
+        Controller.liveUser.getInfoRes();
+        /*if(Controller.liveUser.res){
             Controller.liveUser.getInfoRes();
         } else {
             Controller.liveUser.getInfoCons();
-        }
+        }*/
 
         out( "**** Pour retourner au menu, appuyer 0 ****");
         out( "**** Pour quitter, appuyer 99 ****\n");
@@ -20,6 +21,13 @@ public class Menu extends Page{
         addTabNomOptions("Modifier le profil");
         out(afficherOptions ());
 
+        String temp = "Bacs enregistrés :  ";
+        for (int i = 0; i < 3; i++){
+            if(Controller.liveUser.numeroBac[i] != null){
+                temp += Controller.liveUser.numeroBac[i]+",   ";
+            }
+        }
+        out("\n"+temp);
         //out("\nPour revenir au Menu appuyer 0");
         //out("Pour quitter appuyer 99");
         filtrer();
