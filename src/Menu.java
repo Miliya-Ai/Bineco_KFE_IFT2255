@@ -16,9 +16,9 @@ public class Menu extends Page{
         addTabNomOptions("Mes bacs");
         addTabNomOptions("Trouver un consommateur");
         addTabNomOptions("Suivi ecologique");
-        addTabNomOptions("Voir les activité que je maintiens");
+        //addTabNomOptions("Voir les activité que je maintiens");
         addTabNomOptions("Signaler un problème à la ville");
-        addTabNomOptions("Modifier le profil");
+        addTabNomOptions("Mon profil");
         out(afficherOptions ());
 
         String temp = "Bacs enregistrés :  ";
@@ -50,14 +50,9 @@ public class Menu extends Page{
                 break;
             case 4:
                 tabNomOptions.clear();
-                new Activites();
-                break;
-
-            case 5:
-                tabNomOptions.clear();
                 new Probleme();
                 break;
-            case 6:
+            case 5:
                 tabNomOptions.clear();
                 new ModifProfil();
                 break;

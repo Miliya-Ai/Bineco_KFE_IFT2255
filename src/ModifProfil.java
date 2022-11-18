@@ -5,7 +5,7 @@ public class ModifProfil extends Page{
 
     public ModifProfil(){
 
-        entete("Modification du profil");
+        entete("Profil");
 
         addTabNomOptions("Modifier le mot de passe");
         addTabNomOptions("Modifier courriel");
@@ -16,28 +16,54 @@ public class ModifProfil extends Page{
 
     }
 
-    public void scannerInput(String message){
+    public String scannerInput(String message){
         out(message);
         Scanner temp = new Scanner(System.in);
         String wut = temp.nextLine();
+        return wut;
 
     }
     public void changerMdp(){
-        scannerInput("Ancien mot de passe : ");
-        scannerInput("Nouveau mot de passe :");
-        scannerInput("Confirmer nouveau mot de passe : ");
+
+        out("Votre mot de passe actuel : " +Controller.liveUser.mdp);
+
+        String newMdp = scannerInput("Nouveau mot de passe : ");
+        String confirmation = scannerInput("Confirmer nouveau mot de passe : ");
+
+        if(confirmation.equals(newMdp)){
+            Controller.liveUser.mdp = newMdp;
+            out("Changement effectué");
+        } else {
+            out("Les deux inputs ne correspondent pas");
+        }
     }
 
     public void changerCourriel(){
-        out("Ancien courriel : ");
-        out("Nouveau courriel :");
-        out("Confirmer courriel : ");
+        out("Votre courriel actuel : " +Controller.liveUser.courriel);
+
+        String newMail = scannerInput("Nouveau courriel : ");
+        String confirmation = scannerInput("Confirmer nouveau courriel : ");
+
+        if(confirmation.equals(newMail)){
+            Controller.liveUser.courriel = newMail;
+            out("Changement effectué");
+        } else {
+            out("Les deux inputs ne correspondent pas");
+        }
     }
 
     public void changerTel(){
-        out("Ancien telephone : ");
-        out("Nouveau telephone :");
-        out("Confirmer telephone : ");
+        out("Votre telephone actuel  : " +Controller.liveUser.telephone);
+
+        String newTel = scannerInput("Nouveau telephone : ");
+        String confirmation = scannerInput("Confirmer telephone : ");
+
+        if(confirmation.equals(newTel)){
+            Controller.liveUser.telephone = newTel;
+            out("Changement effectué");
+        } else {
+            out("Les deux inputs ne correspondent pas");
+        }
     }
 
 
@@ -47,6 +73,7 @@ public class ModifProfil extends Page{
             case 0:
                 tabNomOptions.clear();
                 new Menu();
+                break;
             case 99:
                 effacer();
                 System.exit(0);
@@ -54,25 +81,26 @@ public class ModifProfil extends Page{
             case 1:
                 tabNomOptions.clear();
                 changerMdp();
-                out("changement confirmé");
-                new Menu();
+                //out("changement confirmé");
+                new ModifProfil();
                 break;
             case 2:
                 tabNomOptions.clear();
                 changerCourriel();
-                out("changement confirmé");
-                new Menu();
+                //out("changement confirmé");
+                new ModifProfil();
                 break;
             case 3:
                 tabNomOptions.clear();
                 changerTel();
-                out("changement confirmé");
-                new Menu();
+                //out("changement confirmé");
+                new ModifProfil();
                 break;
             case 4:
                 tabNomOptions.clear();
                 Controller.liveUser.afficherInfo();
-                //new Menu();
+                out("Appuyez sur 0 pour retourner au Menu");
+                filtrer();
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
