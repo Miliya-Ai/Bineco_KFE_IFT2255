@@ -54,24 +54,35 @@ public class FindConsommateur extends Page{
 
             out("Code : "+set.getKey()+",   nom : "+set.getValue()[0]);
         }
+        out("--Appuyez sur 0 pour revenir au menu--");
         filtrer();
     }
 
     public void getConsommateur(){
-        String code = scannerInput("Code du consommateur cherché :");
-        String[] info = Controller.municipInfo.consommateurs.get(code);
-        String nom = info[0];
-        String details = info[1];
 
-        if(info.length > 2){
-            for (int i = 2; i < info.length; i++){
-                details += " , "+info[i];
+        String code = scannerInput("Code du consommateur cherché :");
+        String[] consExist = Controller.municipInfo.listeCons;
+        for (int j = 0; j < consExist.length; j++){
+            if (consExist[j].equals(code)){
+                String[] info = Controller.municipInfo.consommateurs.get(code);
+                String nom = info[0];
+                String details = info[1];
+
+                if(info.length > 2){
+                    for (int i = 2; i < info.length; i++){
+                        details += " , "+info[i];
+                    }
+                }
+                out("Code : "+code+"  Nom : "+nom+"  Info: "+details);
+                noter(code);
+                out("--Appuyez sur 0 pour revenir au menu--");
+                filtrer();
+                return;
             }
         }
-        out("Code : "+code+"  Nom : "+nom+"  Info: "+details);
-        noter(code);
-        out("--Appuyez sur 0 pour revenir au menu--");
-        filtrer();
+        out("Code consommateur inexistant");
+        new FindConsommateur();
+
     }
 
     public void noter(String code){

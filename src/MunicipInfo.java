@@ -4,11 +4,12 @@ public class MunicipInfo {
 
 
     public String[] numerosBac = {"r00", "r01","r02","d00","d01","d02","co00","co01","co02"};
+    public String[] listeCons = {"c00","c01","c02","c03","c04","c05","c06","c07","c08","c09"};
+    public String[] listeLots = {"l00","l01","l02","l03","l04","l05","l06","l07","l08","l09"};
     public HashMap<String, String[]> consommateurs = new HashMap<>();
-
     public HashMap<String, String[]> bacs = new HashMap<>();
-
     public HashMap<String, int[]> feedbackCons = new HashMap<>();
+    public HashMap<String, String[]> lots = new HashMap<>();
 
 
 
@@ -16,6 +17,7 @@ public class MunicipInfo {
         setConsommateurs();
         setBacs();
         setFeedbackCons();
+        setLots();
     }
 
     public void setConsommateurs(){
@@ -56,7 +58,19 @@ public class MunicipInfo {
         feedbackCons.put("c07", null);
         feedbackCons.put("c08", null);
         feedbackCons.put("c09", null);
+    }
 
+    public void setLots(){
+        lots.put("l00", new String[]{"recyclage","YYYY-MM-DD","YYYY-MM-DD","statut_actuel", "1000", "750", "0.25"});
+        lots.put("l01", new String[]{"composte","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
+        lots.put("l02", new String[]{"ordures","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
+        lots.put("l03", new String[]{"recyclage","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
+        lots.put("l04", new String[]{"composte","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
+        lots.put("l05", new String[]{"ordures","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
+        lots.put("l06", new String[]{"recyclage","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
+        lots.put("l07", new String[]{"composte","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
+        lots.put("l08", new String[]{"ordures","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
+        lots.put("l09", new String[]{"recyclage","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
     }
 
 }

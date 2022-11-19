@@ -56,7 +56,6 @@ public class Bacs extends Page{
         Scanner temp = new Scanner(System.in);
         String wut = temp.nextLine();
         return wut;
-
     }
 
 

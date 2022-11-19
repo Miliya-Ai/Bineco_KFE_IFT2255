@@ -7,13 +7,9 @@ public class Main {
     //**********************EXECUTER MAIN POUR COMMENCER L'APPLICATION **********************
     public static void main(String[] args) throws IOException {
 
-        //new Menu();
-        //UserController liveUser = new UserController();
-        //new PageAccueil();
         Controller init = new Controller();
         init.setLiveAccount();
         init.start();
-
 
     }
 }

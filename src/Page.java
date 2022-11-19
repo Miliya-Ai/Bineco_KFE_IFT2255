@@ -60,13 +60,6 @@ public abstract class Page extends Controller{
 
     //https://stackoverflow.com/questions/6994518/how-to-delete-the-content-of-text-file-without-deleting-itself
     public void effacer() throws IOException {
-        /*BufferedWriter writer = Files.newBufferedWriter(Paths.get("src/passResident.txt"));
-        writer.write("");
-        writer.flush();
-
-        BufferedWriter writer2 = Files.newBufferedWriter(Paths.get("src/passConsommateur.txt"));
-        writer2.write("");
-        writer.flush();*/
 
         PrintWriter pw = new PrintWriter("src/passResident.txt");
         pw.close();

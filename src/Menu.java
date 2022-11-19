@@ -3,18 +3,12 @@ import java.io.IOException;
 public class Menu extends Page{
     public Menu() throws IOException {
         entete("Menu");
-        //Controller.liveUser.getInfoRes();
-        /*if(Controller.liveUser.res){
-            Controller.liveUser.getInfoRes();
-        } else {
-            Controller.liveUser.getInfoCons();
-        }*/
 
         out( "**** Pour retourner au menu, appuyer 0 ****");
         out( "**** Pour quitter, appuyer 99 ****\n");
 
         addTabNomOptions("Mes bacs");
-        addTabNomOptions("Trouver un consommateur");
+        addTabNomOptions("Consommateurs");
         addTabNomOptions("Suivi ecologique");
         //addTabNomOptions("Voir les activité que je maintiens");
         addTabNomOptions("Signaler un problème à la ville");
@@ -28,8 +22,7 @@ public class Menu extends Page{
             }
         }
         out("\n"+temp);
-        //out("\nPour revenir au Menu appuyer 0");
-        //out("Pour quitter appuyer 99");
+        out("\nPour quitter appuyer 99");
         filtrer();
     }
 
