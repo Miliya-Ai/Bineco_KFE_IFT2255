@@ -33,10 +33,10 @@ abstract class  Client extends Page {
         Scanner myUser = new Scanner(System.in);
         String userAccount = myUser.nextLine();
 
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
+        /*BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
         writer.write(userAccount + ",");
-        writer.close();
-
+        writer.close();*/
+        Controller.tempInfo[0] = userAccount;
         passwordEligible(userAccount, isResident);
 
     }
@@ -52,19 +52,22 @@ abstract class  Client extends Page {
             userAccount += " " + password;
             save(userAccount, isResident);
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
+            /*BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
             writer.write(password + ",");
-            writer.close();
-
+            writer.close();*/
+            Controller.tempInfo[1] = password;
         } else {
             passwordEligible(userAccount, isResident);
         }
     }
 
-    public void saveInfo(String info) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
+    public void saveInfo(String info, int index) throws IOException {
+        /*BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
         writer.write(info + ",");
-        writer.close();
+        writer.close();*/
+
+        Controller.tempInfo[index] = info;
+
     }
 
     public void newLine() throws IOException {

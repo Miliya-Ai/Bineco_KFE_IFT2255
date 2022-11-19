@@ -50,6 +50,14 @@ public class LogIn extends Page{
                     tabNomOptions.clear();
                     Controller.liveUser.setUser(user);
                     Controller.liveUser.setMdp(pass);
+
+                    Controller.liveUser.name = Controller.tempInfo[0];
+                    Controller.liveUser.courriel = Controller.tempInfo[1];
+                    Controller.liveUser.adresse = Controller.tempInfo[2];
+                    Controller.liveUser.telephone = Controller.tempInfo[3];
+                    Controller.liveUser.numeroBac[0] = Controller.tempInfo[4];
+
+
                     Controller.liveUser.res = true;
                     new Menu();
                     return;

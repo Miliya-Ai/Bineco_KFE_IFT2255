@@ -48,6 +48,7 @@ public abstract class Page extends Controller{
         try {
             intNumeroOption = Integer.parseInt(stringNumeroOption);
             changerPage(intNumeroOption);
+            myObj.close();
         } catch (Exception e) {
             //out("Svp, entrer un chiffre");
             filtrer();

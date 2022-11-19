@@ -5,9 +5,12 @@ public class Bacs extends Page{
 
     public Bacs(){
         entete("Mes bacs");
+        out( "**** Pour retourner au menu, appuyer 0 ****");
+        out( "**** Pour quitter, appuyer 99 ****\n");
 
         addTabNomOptions("Enregistrer un bac");
         addTabNomOptions("Supprimer un bac");
+        addTabNomOptions("Etat de mes bacs");
         out(afficherOptions());
 
         filtrer();
@@ -29,6 +32,10 @@ public class Bacs extends Page{
                 tabNomOptions.clear();
                 supprimerBac();
                 break;
+            case 3:
+                tabNomOptions.clear();
+                etatBacs();
+                break;
             case 99:
                 effacer();
                 System.exit(0);
@@ -36,7 +43,7 @@ public class Bacs extends Page{
                 break;
             default:
                 //out("Svp, entrer un chiffre valide");
-                //filtrer();
+                filtrer();
         }
     }
 
@@ -63,7 +70,7 @@ public class Bacs extends Page{
                 Controller.liveUser.numeroBac[i] = num;
 
                 //addToFile(num +",");
-                appendInfo(num);
+                //appendInfo(num);
                 //Controller.liveUser.getInfoRes();
                 out("Bac enregistré");
                 //Controller.liveUser.getInfoRes();
@@ -93,23 +100,27 @@ public class Bacs extends Page{
         String num = scannerInput("Quel bac voulez nous supprimer? (numero correspondant) : ");
         int numInt = Integer.parseInt(num);
         if(numInt <= 3 && temp[numInt-1] != null){
+            //out(temp[numInt-1]);
             temp[numInt -1] = null;
+            //out(temp[numInt-1]);
 
             int m = 0;
             for(int j = 0; j < 3; j++){
-                if(temp[j] != null){
-                    Controller.liveUser.numeroBac[m] = temp[j];
-                    m++;
-                }
+
+                //out(temp[j]);
+                Controller.liveUser.numeroBac[m] = temp[j];
+                out(Controller.liveUser.numeroBac[m]);
+                m++;
+
             }
             out("Suppression réussie");
             tabNomOptions.clear();
-            new Menu();
+            new Bacs();
             return;
         }
         out("Erreur dans la suppression");
         tabNomOptions.clear();
-        new Menu();
+        new Bacs();
 
 
     }
@@ -175,5 +186,37 @@ public class Bacs extends Page{
 
 
     }
+
+
+    public void etatBacs(){
+        out(Controller.liveUser.numeroBac[0]+","+Controller.liveUser.numeroBac[1]+","+Controller.liveUser.numeroBac[2]);
+
+        for(int i = 0; i < 3; i++){
+            String bac = Controller.liveUser.numeroBac[i];
+            if (bac != null){
+                String[] capComp = Controller.capteurs.capteursList.get(bac);
+                if(capComp.length != 1){
+                    String[] composition = Controller.capteurs.capteursList.get(bac)[1].split(";");
+                    String afficher2 = Controller.capteurs.capteursList.get(bac)[0];
+                    String afficherComp = null;
+
+                    for (int j = 0; j < composition.length; j++){
+                        afficherComp += composition[j] +"     ";
+                    }
+
+                    out(bac +"-->    Capacité : "+afficher2  + "     Composition : "+afficherComp);
+                } else {
+                    String cap = Controller.capteurs.capteursList.get(bac)[0];
+                    out(bac +"-->    Capacité : "+cap);
+                }
+
+            }
+        }
+
+        filtrer();
+
+    }
+
+
 
 }

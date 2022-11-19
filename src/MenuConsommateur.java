@@ -3,11 +3,11 @@ import java.io.IOException;
 public class MenuConsommateur extends Page{
     public MenuConsommateur() throws IOException {
 
-        if(Controller.liveUser.res){
+        /*if(Controller.liveUser.res){
             Controller.liveUser.getInfoRes();
         } else {
             Controller.liveUser.getInfoCons();
-        }
+        }*/
         entete("Menu du consommateur");
 
         out( "**** Pour retourner au menu, appuyer 0 ****");

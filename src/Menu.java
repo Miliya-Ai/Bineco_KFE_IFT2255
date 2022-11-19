@@ -3,7 +3,7 @@ import java.io.IOException;
 public class Menu extends Page{
     public Menu() throws IOException {
         entete("Menu");
-        Controller.liveUser.getInfoRes();
+        //Controller.liveUser.getInfoRes();
         /*if(Controller.liveUser.res){
             Controller.liveUser.getInfoRes();
         } else {

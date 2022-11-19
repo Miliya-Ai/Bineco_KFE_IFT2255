@@ -13,11 +13,13 @@ public class Resident extends Client{
         out(afficherOptions ());
 
         credentials(true);
-        saveInfo(scannerInput("Nom et prenom : "));
-        saveInfo(scannerInput("Courriel : "));
-        saveInfo(scannerInput("Adresse : "));
-        saveInfo(scannerInput("Telephone : "));
-        saveInfo(scannerInput("Numero du premier bac a enregistrer : "));
+
+
+        saveInfo(scannerInput("Nom et prenom : "),0);
+        saveInfo(scannerInput("Courriel : "),1);
+        saveInfo(scannerInput("Adresse : "),2);
+        saveInfo(scannerInput("Telephone : "),3);
+        saveInfo(scannerInput("Numero du premier bac a enregistrer : "), 4);
         newLine();
         out("\n Appuyer sur 1 pour enregistrer");
         filtrer();
