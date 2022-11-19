@@ -100,14 +100,10 @@ public class Bacs extends Page{
         String num = scannerInput("Quel bac voulez nous supprimer? (numero correspondant) : ");
         int numInt = Integer.parseInt(num);
         if(numInt <= 3 && temp[numInt-1] != null){
-            //out(temp[numInt-1]);
             temp[numInt -1] = null;
-            //out(temp[numInt-1]);
-
             int m = 0;
             for(int j = 0; j < 3; j++){
 
-                //out(temp[j]);
                 Controller.liveUser.numeroBac[m] = temp[j];
                 out(Controller.liveUser.numeroBac[m]);
                 m++;
@@ -189,7 +185,6 @@ public class Bacs extends Page{
 
 
     public void etatBacs(){
-        out(Controller.liveUser.numeroBac[0]+","+Controller.liveUser.numeroBac[1]+","+Controller.liveUser.numeroBac[2]);
 
         for(int i = 0; i < 3; i++){
             String bac = Controller.liveUser.numeroBac[i];
@@ -198,7 +193,7 @@ public class Bacs extends Page{
                 if(capComp.length != 1){
                     String[] composition = Controller.capteurs.capteursList.get(bac)[1].split(";");
                     String afficher2 = Controller.capteurs.capteursList.get(bac)[0];
-                    String afficherComp = null;
+                    String afficherComp = "";
 
                     for (int j = 0; j < composition.length; j++){
                         afficherComp += composition[j] +"     ";
