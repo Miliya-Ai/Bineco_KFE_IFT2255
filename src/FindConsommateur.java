@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class FindConsommateur extends Page{
 
     public FindConsommateur(){
-        entete("Trouver un consommateur");
+        entete("Consommateurs");
 
         addTabNomOptions("Liste des consommateurs");
         addTabNomOptions("Trouver un consommateur");
@@ -69,7 +69,30 @@ public class FindConsommateur extends Page{
             }
         }
         out("Code : "+code+"  Nom : "+nom+"  Info: "+details);
+        noter(code);
+        out("--Appuyez sur 0 pour revenir au menu--");
         filtrer();
+    }
+
+    public void noter(String code){
+        String noter = scannerInput("Voulez vous notez ce consommateur? (y pour oui, n pour non");
+        if (noter.equals("n")){
+            return;
+        } else {
+            int note = Integer.parseInt(scannerInput("Note a donner (0-5) :"));
+            if (Controller.municipInfo.feedbackCons.get(code) == null){
+                int[] temp = new int[1];
+                temp[0] = note;
+            } else {
+                int newLen = Controller.municipInfo.feedbackCons.get(code).length+1;
+                int[] newTab = new int[newLen];
+                for(int i = 0; i < newLen-1; i++){
+                    newTab[i] = Controller.municipInfo.feedbackCons.get(code)[i];
+                }
+                newTab[newLen-1] = note;
+            }
+            out("Note envoyee");
+        }
     }
 
 }

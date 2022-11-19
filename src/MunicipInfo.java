@@ -8,11 +8,14 @@ public class MunicipInfo {
 
     public HashMap<String, String[]> bacs = new HashMap<>();
 
+    public HashMap<String, int[]> feedbackCons = new HashMap<>();
+
 
 
     public MunicipInfo(){
         setConsommateurs();
         setBacs();
+        setFeedbackCons();
     }
 
     public void setConsommateurs(){
@@ -40,6 +43,20 @@ public class MunicipInfo {
         bacs.put("co00", new String[]{"adress7", "UNE_DATE"});
         bacs.put("co01", new String[]{"adresse8", "UNE_DATE"});
         bacs.put("co02", new String[]{"adresse9", "UNE_DATE"});
+    }
+
+    public void setFeedbackCons(){
+        feedbackCons.put("c00", null);
+        feedbackCons.put("c01", null);
+        feedbackCons.put("c02", null);
+        feedbackCons.put("c03", null);
+        feedbackCons.put("c04", null);
+        feedbackCons.put("c05", null);
+        feedbackCons.put("c06", null);
+        feedbackCons.put("c07", null);
+        feedbackCons.put("c08", null);
+        feedbackCons.put("c09", null);
+
     }
 
 }
