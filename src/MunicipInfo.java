@@ -3,13 +3,16 @@ import java.util.HashMap;
 public class MunicipInfo {
 
 
-    public String[] bacs = {"b00", "b01","b02","d00","d01","d02","co00","co01","co02"};
+    public String[] numerosBac = {"r00", "r01","r02","d00","d01","d02","co00","co01","co02"};
     public HashMap<String, String[]> consommateurs = new HashMap<>();
+
+    public HashMap<String, String[]> bacs = new HashMap<>();
 
 
 
     public MunicipInfo(){
         setConsommateurs();
+        setBacs();
     }
 
     public void setConsommateurs(){
@@ -25,6 +28,18 @@ public class MunicipInfo {
         consommateurs.put("c08", new String[]{"company9","composte:1750"});
         consommateurs.put("c09", new String[]{"company10","recyclage:1000", "composte:1000", "dechets:1000"});
 
+    }
+
+    public void setBacs(){
+        bacs.put("r00", new String[]{"adresse1", "UNE_DATE"});
+        bacs.put("r01", new String[]{"adresse2", "UNE_DATE"});
+        bacs.put("r02", new String[]{"adresse3", "UNE_DATE"});
+        bacs.put("d00", new String[]{"adresse4", "UNE_DATE"});
+        bacs.put("d01", new String[]{"adresse5", "UNE_DATE"});
+        bacs.put("d02", new String[]{"adresse6", "UNE_DATE"});
+        bacs.put("co00", new String[]{"adress7", "UNE_DATE"});
+        bacs.put("co01", new String[]{"adresse8", "UNE_DATE"});
+        bacs.put("co02", new String[]{"adresse9", "UNE_DATE"});
     }
 
 }

@@ -11,10 +11,10 @@ public class Bacs extends Page{
         addTabNomOptions("Enregistrer un bac");
         addTabNomOptions("Supprimer un bac");
         addTabNomOptions("Etat de mes bacs");
+        addTabNomOptions("Trouver un bac");
         out(afficherOptions());
 
         filtrer();
-
     }
 
     @Override
@@ -35,6 +35,10 @@ public class Bacs extends Page{
             case 3:
                 tabNomOptions.clear();
                 etatBacs();
+                break;
+            case 4:
+                tabNomOptions.clear();
+                getBac();
                 break;
             case 99:
                 effacer();
@@ -68,12 +72,7 @@ public class Bacs extends Page{
             }
             if(Controller.liveUser.numeroBac[i] == null){
                 Controller.liveUser.numeroBac[i] = num;
-
-                //addToFile(num +",");
-                //appendInfo(num);
-                //Controller.liveUser.getInfoRes();
                 out("Bac enregistré");
-                //Controller.liveUser.getInfoRes();
                 tabNomOptions.clear();
                 new Bacs();
                 break;
@@ -96,7 +95,6 @@ public class Bacs extends Page{
                 k++;
             }
         }
-
         String num = scannerInput("Quel bac voulez nous supprimer? (numero correspondant) : ");
         int numInt = Integer.parseInt(num);
         if(numInt <= 3 && temp[numInt-1] != null){
@@ -107,7 +105,6 @@ public class Bacs extends Page{
                 Controller.liveUser.numeroBac[m] = temp[j];
                 out(Controller.liveUser.numeroBac[m]);
                 m++;
-
             }
             out("Suppression réussie");
             tabNomOptions.clear();
@@ -117,8 +114,6 @@ public class Bacs extends Page{
         out("Erreur dans la suppression");
         tabNomOptions.clear();
         new Bacs();
-
-
     }
 
 
@@ -194,21 +189,34 @@ public class Bacs extends Page{
                     String[] composition = Controller.capteurs.capteursList.get(bac)[1].split(";");
                     String afficher2 = Controller.capteurs.capteursList.get(bac)[0];
                     String afficherComp = "";
-
                     for (int j = 0; j < composition.length; j++){
                         afficherComp += composition[j] +"     ";
                     }
-
                     out(bac +"-->    Capacité : "+afficher2  + "     Composition : "+afficherComp);
                 } else {
                     String cap = Controller.capteurs.capteursList.get(bac)[0];
                     out(bac +"-->    Capacité : "+cap);
                 }
-
             }
         }
-
         filtrer();
+    }
+
+    public void getBac(){
+
+        String numero = scannerInput("Numero du bac :");
+        String[] listBac = Controller.municipInfo.numerosBac;
+        for (int i = 0; i < listBac.length; i++){
+            if(listBac[i].equals(numero)){
+                String[] info = Controller.municipInfo.bacs.get(numero);
+
+                out("Code : "+numero +"  Adresse : "+info[0]+"  Date d'emission : "+info[1]);
+                filtrer();
+                return;
+            }
+        }
+        out("Numero de bac non-existant");
+        new Bacs();
 
     }
 
