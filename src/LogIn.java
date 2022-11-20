@@ -82,6 +82,13 @@ public class LogIn extends Page{
                     Controller.liveUser.capacite = Controller.tempInfoCons[6];
                     Controller.liveUser.res = false;
 
+                    String[] lesCons = Controller.municipInfo.listeCons;
+                    String[] temp = new String[lesCons.length+1];
+                    for (int i = 0; i < temp.length-1; i++){
+                        temp[i] = lesCons[i];
+                    }
+                    temp[temp.length-1] = Controller.tempInfoCons[0];
+                    Controller.municipInfo.listeCons = temp;
                     Controller.municipInfo.consommateurs.put(Controller.tempInfoCons[0],
                             new String[]{Controller.tempInfoCons[1],Controller.tempInfoCons[5]
                             +":"+Controller.tempInfoCons[6]});

@@ -12,6 +12,7 @@ public class Bacs extends Page{
         addTabNomOptions("Supprimer un bac");
         addTabNomOptions("Etat de mes bacs");
         addTabNomOptions("Trouver un bac");
+        addTabNomOptions("Voir l'historique de mes bacs");
         out(afficherOptions());
 
         filtrer();
@@ -39,6 +40,10 @@ public class Bacs extends Page{
             case 4:
                 tabNomOptions.clear();
                 getBac();
+                break;
+            case 5:
+                tabNomOptions.clear();
+                historiqueBac();
                 break;
             case 99:
                 effacer();
@@ -217,6 +222,26 @@ public class Bacs extends Page{
         out("Numero de bac non-existant");
         new Bacs();
 
+    }
+
+    public void historiqueBac(){
+        int idx = 0;
+        for (int i = 0; i < 3; i++){
+            String bac = Controller.liveUser.numeroBac[i];
+            if(bac != null){
+                String[] someBac = Controller.capteurs.historique[idx];
+                out("\nHistorique du bac "+bac+" dans les 3 derniers jours : ");
+                for (int j = 0; j < someBac.length; j++){
+                    String[] split = someBac[j].split(";");
+                    String capacite = split[0];
+                    String cap = split[1]+"   "+split[2]+"   "+split[3];
+                    out("Capacité : "+capacite+"  Composition (categorie, proportion) : "+cap);
+                }
+                idx++;
+            }
+        }
+        out("--Appuyez sur 0 pour revenir au menu--");
+        filtrer();
     }
 
 

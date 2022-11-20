@@ -7,7 +7,6 @@ public class Suivi extends Page {
         entete("Suivi ecologique");
         out( "**** Pour retourner au menu, appuyer 0 ****");
         out( "**** Pour quitter, appuyer 99 ****\n");
-        //addTabNomOptions("Afficher les métriques écologiques");
         addTabNomOptions("Etat traitement dechets municipaux");
         addTabNomOptions("Metriques ecologiques municipales");
         //addTabNomOptions("Metriques residentielles");
@@ -21,7 +20,11 @@ public class Suivi extends Page {
         switch (intNumeroOption) {
             case 0:
                 tabNomOptions.clear();
-                new Menu();
+                if (liveUser.res){
+                    new Menu();
+                } else {
+                    new MenuConsommateur();
+                }
                 break;
             case 1:
                 tabNomOptions.clear();
@@ -160,7 +163,7 @@ public class Suivi extends Page {
         float propO = (float)sumO/(float)sum;
 
         String affichage = "Recyclage : "+propR+",  "+"Composte : "+propC+",  Ordures : "+propO+
-                            "\n---"+propO*100+" de tout n'est ni recyclé, ni composté.";
+                            "\n---"+propO*100+"% de tout n'est ni recyclé, ni composté.";
         return affichage;
     }
 

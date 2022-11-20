@@ -72,8 +72,13 @@ public class ModifProfil extends Page{
         switch (intNumeroOption) {
             case 0:
                 tabNomOptions.clear();
-                new Menu();
+                if (liveUser.res){
+                    new Menu();
+                } else {
+                    new MenuConsommateur();
+                }
                 break;
+
             case 99:
                 effacer();
                 System.exit(0);

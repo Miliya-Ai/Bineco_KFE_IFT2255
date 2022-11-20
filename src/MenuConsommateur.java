@@ -13,10 +13,8 @@ public class MenuConsommateur extends Page{
         out( "**** Pour retourner au menu, appuyer 0 ****");
         out( "**** Pour quitter, appuyer 99 ****\n");
 
-        //addTabNomOptions("Trouver un consommateur");
-        //addTabNomOptions("Voir les activité que je maintiens");
-        addTabNomOptions("Etat de traitement des dechets municipaux");
-        addTabNomOptions("Signaler un problème à la ville");
+        addTabNomOptions("Trouver un consommateur");
+        addTabNomOptions("Suivi Ecologique");
         addTabNomOptions("Mon profil");
         out(afficherOptions ());
 
@@ -33,19 +31,11 @@ public class MenuConsommateur extends Page{
                 break;
             case 2:
                 tabNomOptions.clear();
-                new Activites();
+                new Suivi();
                 break;
             case 3:
                 tabNomOptions.clear();
                 new ModifProfil();
-                break;
-            case 4:
-                tabNomOptions.clear();
-                new Probleme();
-                break;
-            case 5:
-                tabNomOptions.clear();
-                Controller.liveUser.afficherInfo();
                 break;
             case 99:
                 effacer();
