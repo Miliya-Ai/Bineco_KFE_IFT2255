@@ -1219,15 +1219,20 @@
                     <h3 class="subsection-title">Risques</h3>
                     <ol class="risks">
                         <li><u>L’état n’est pas à jour </u>:
-                            <p>Le bon-fonctionnement de l’application dépend des API et des sites webs de la ville. Panne ou trafic sur un site peut incapacité notre application.</p></li>
+                            <p>Le bon-fonctionnement de l’application dépend des API et des sites webs de la ville. Panne ou trafic sur un site peuvent entraver le fonctionnement de  notre application.</p></li>
                         <li><u>Informations erronées</u>: 
                             <p>La validité et la mise à jour des données affichée dans l’application dépend du consommateur (fréquence d’affichage des données, ect…). De plus, les métriques en lien avec nos propres bacs dépendent aussi du bon fonctionnement des capteurs.</p> </li>
-                        <li><u> du bac/scan du bac</u> :
-                             <p>Si le bac s’endommage et il est impossible de le scanner lors de la récolte. Le contenu de nos bacs partirait, mais impossible de faire le suivi.</p></li>
+                        <li><u>Endommagement du bac/scan du bac</u> :
+                             <p>Si le bac s’endommage et qu'il est impossible de le scanner lors de la récolte, le contenu de nos bacs ne paraîtrait pas et donc, il serait impossible de faire le suivi.</p></li>
                         <li><u>Impossible de trouver un consommateur</u> :
                             <p>Le resident est incapable de trouver le consommateur qui lui convient car ce dernier n’est pas enregistré auprès de la ville ou dans son filtre de recherche rien ne s’affiche. </p></li>
                         <li><u>Compréhension des données montrées complexe</u> : 
                             <p>Les informations que l’outil présente (métriques écologiques, proportions) au niveau résidentiel ou municipal ne sont pas nécessairement les plus simples à comprendre. Elles dépendent beaucoup du contexte.</p></li>
+                        <li><u>Loi sur l’exploitation des données au Québec </u> : 
+                            <p>Afin de conserver sa vie privée dans l’ère numérique, Québec a mis en place la loi 25 qui offre aux utilisateurs le droit à la transparence (savoir concrètement comment et pourquoi les données sont exploités), au consentement, à la portabilité (obtenir tous les données recueillies par la compagnie à propos de l’utilisateur en question) et à l’effacement (possibilité de réclamer l’arrêt de collecte de données sur son compte) . Enfreindre cette loi peut amener à une amende allant jusqu’à 25 M $. S’assurer que de mettre des termes et conditions d’utilisation bien clair et précis et d’obtenir le consentement de l’utilisateur est ainsi très important. <a href="https://www.vertisoftpme.com/article/loi-25-impacts-entreprises-donnees-personnelles/">Source 1</a>, 
+                            <a href="https://www.bnpperformance.com/loi-25/">Source 2</a></p></li>
+                            <li><u>Temps alloué pour réaliser le projet:</u> : 
+                            <p>Avoir un deadline raisonnable permet de bâtir proprement Bineco pour répondre aux besoins fonctionnels, notamment en s’assurant de bien passer les tests qui vérifient et valident sa qualité. </p></li>       
                     </ol>
                 </div>
 
@@ -1235,15 +1240,21 @@
                     <h3 class="subsection-title">Exigences non-fonctionnelles</h3>
                     <ol class="nf-requirements">
                         <li><u>Sécurité (Base de donnée encrypter) </u></li>
-                        <ol>Protéger les informations personnelles du client.</ol>
-                        <li><u>Temps de réponse rapide avec l’api</u></li>
-                        <ol>Minimiser la latence de l’application </ol>
+                        <ol>Depuis la mise en place de la loi 25 (expliquée plus loin dans la section Analyse, risque), protéger les informations personnelles du client est devenu une obligation. Les utilisateurs se sentiraient plus assurés d’utiliser un outil qui respecte leurs données privées. De plus, comme le numéro de téléphone et l’adresse sont emmagasinés dans la base de données de Bineco, les résidents et consommateurs courent le risque de se faire exposer par des hackers mal intentionnés (ex: scammer). </ol>
+                        <li><u>Performance (Temps de réponse rapide avec l’api < 0.1 seconde):</u></li>
+                        <ol>Comme Bineco à recours aux API de MunicipInfo et aux capteurs pour afficher la plupart de ses données, minimiser la latence de l’application permet de promouvoir des données précises pour les utilisateurs.</ol>
                         <li><u>Option de revenir au menu ou quitter à tout moment</u></li>
                         <ol>Application en ligne de commande plus difficile à naviguer, donc avoir les options de revenir au menu et quitter à tout moment.</ol>
                         <li><u>Maintenir l’app avec des mise à jour</u> </li>
                         <ol>Améliorer l’expérience en ayant du feedback du client.</ol>
                         <li><u>Visibilité, facile à lire, contenu pas condensé</u></li>
                         <ol>Améliorer la structure des pages. Pas d’information inutile affichée. Liste des options clairement énoncées.</ol>
+                        <li><u>Portabilité (Pouvoir être utilisé par divers villes):</u> </li>
+                        <ol>Bineco a comme objectif de pousser la collectivité à réduire leur déchets ménagers. Bien construit, l’outil peut bénéficier à plusieurs villes qui veulent encourager leur citoyen à recycler et composter en étant le pont entre les résidents et les consommateurs de déchets. </ol>
+                        <li><u>Utilisabilité (Rendre accessible Bineco à divers utilisateurs):</u> </li>
+                        <ol>Il existe une grande variété d’utilisateurs avec des besoins différents. Comme une application en ligne de commande peut être plus difficile à naviguer, avoir les options de revenir au menu et quitter à tout moment permet une meilleure utilisation des services offerts. Améliorer la structure des pages, pas d’information inutile affichée et une liste des options clairement énoncées permettent de ne pas encombrer la lecture des données. Sans oublier, maintenir l’app avec des mises à jour en ayant du feedback du client améliore l’expérience.</ol>
+                        <li><u>Fiabilité (Taux de fonctionnement 99,99%):</u> </li>
+                        <ol>Les utilisateurs sont nombreux. Ils produisent des déchets à divers moments et accèdent à différents laps de temps à Bineco. Avoir un outil qui tombe en panne souvent nuirait à l’expérience de l’utilisateur et entraverait la mise à jour des états de déchets des résidents (un but premier de Bineco).</ol>
                     </ol>
                 </div>            
 
@@ -1252,9 +1263,10 @@
 
                         <em style="font-size: 1.5em">Besoins matériels:</em>
                         <ol class="ressources">
-                        <u>Matériel nécessaire</u> :<p>appareil, capteur, bacs</p>
-                        <u>Partie à informatiser</u> :<p> API, User Interface, Queries a base de données</p>
-                        <u>Solutions de stockage</u> :<p> base de donnée</p></ol>
+                        <u>Matériel nécessaire</u> :<p>: Appareil, capteur, bacs.
+                            <ul>L’ordinateur/téléphone intelligent permet à l’utilisateur de télécharger Bineco . Les capteurs servent à mettre à jour les données des bacs. Les bacs sont nécessaires à Bineco afin de calculer des métriques et aux résidents pour se créer un compte.</ul></p>
+                        <u>Partie à informatiser</u> :<p>: API, User Interface, Queries a base de données.<ul>Comme Bineco doit chercher des données dans MunicipInfo et auprès des capteurs, il doit nécessairement utiliser un API et également des Queries. Un User interface facilitera la navigation et l’utilisation de Bineco. </ul></p>
+                        <u>Solutions de stockage</u> :<p>: Base de donnée. <ul>Bineco utilisera une base de données comme mySQL qui enregistre toutes les informations sur les consommateurs (et leurs activités correspondant), les résidents (et leurs bacs correspondants). L’outil pourra alors plus facilement modifier, créer ou supprimer ses données. </ul></p></ol>
 
 
                     </div>
@@ -1264,15 +1276,15 @@
 
                         <em>Contraintes physiques </em>
                         <ul>
-                            <li>La capacité de stockage </li>
-                            <li>Connection internet pour faire le suivi et voir les métriques</li>
-                            <li>Caméra pour scanner le code du bac</li>
+                            <li> <b>La capacité de stockage</b>: L’utilisateur doit avoir suffisamment d’espace pour installer l’application BINECO. Les données relatives à l’application doivent avoir de l’espace pour être stockées de manière à faciliter le bon fonctionnement de l’outil BINECO.</li>
+                            <li><b>Connection internet (suivi, métriques)</b>:L’utilisateur doit avoir une connexion internet  pour pouvoir consulter ses métriques et faire le suivi de ses bacs.</li>
+                            <li><b>Caméra pour scanner</b>: L’utilisateur doit être muni d’une caméra afin de scanner le code de son bac et procéder à l’enregistrement de ce dernier sur l’outil BINECOc</li>
                         </ul>
-                        <em>Contraintes physiques </em>
+                        <em>Contraintes conceptuelles</em>
                         <ul>
-                            <li>Base de donné encryptée (utilisateur et mot de passe)</li>
-                            <li>API pour avoir accès aux données (ville et consommateurs)</li>
-                            <li>Utilisation de langage de programmation orienté objet tel que Java pour faciliter l’encapsulation et la structure du code</li>
+                            <li><b>Base de données encryptée</b> (utilisateur, mot de passe): crypter la base de données assure une sécurisation de son contenu contre tout accès non autorisé. Ainsi, les informations entrées ( mot de passe, adresse, etc…)par l’utilisateur de BINECO sont protégées de toutes utilisations mal intentionnées .</li>
+                            <li><b>API</b>: Avoir un API permet d’ avoir accès aux données de la ville et des consommateurs . Ainsi, ca facilite l’accès aux métriques du coté des résidents le suivi des bacs</li>
+                            <li><b>Utilisation de langage de programmation orienté objet</b>: Un langage tel que Java facilite l’encapsulation et la structure du code.</li>
                         </ul>
 
 
