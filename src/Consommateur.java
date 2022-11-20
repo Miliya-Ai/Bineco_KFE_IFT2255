@@ -13,13 +13,15 @@ public class Consommateur extends Client{
         out(afficherOptions ());
 
         credentials(false);
-        saveInfo(scannerInput("Nom : "),0);
-        saveInfo(scannerInput("Courriel : "),1);
-        saveInfo(scannerInput("Adresse : "),2);
-        saveInfo(scannerInput("Telephone : "),3);
-        saveInfo(scannerInput("Type de dechets traités : "),4);
-        saveInfo(scannerInput("Capacité de traitement : "),5);
-        saveInfo(scannerInput("Activité d'exploitation : "),6);
+        //saveInfoCons(scannerInput("Code : "), 0);
+        checkCode();
+        saveInfoCons(scannerInput("Nom : "),1);
+        saveInfoCons(scannerInput("Courriel : "),2);
+        saveInfoCons(scannerInput("Adresse : "),3);
+        saveInfoCons(scannerInput("Telephone : "),4);
+        saveInfoCons(scannerInput("Type de dechets traités : "),5);
+        saveInfoCons(scannerInput("Capacité de traitement : "),6);
+
         newLine();
         out("\n Appuyer sur 1 pour enregistrer");
         filtrer();
@@ -42,6 +44,19 @@ public class Consommateur extends Client{
                 out("Svp, entrer un chiffre valide");
                 filtrer();
         }
+    }
+
+    public void checkCode() throws IOException {
+        String code = scannerInput("Code :");
+        for (int i = 0; i < Controller.municipInfo.listeConsDispo.length; i ++){
+            String listBac = Controller.municipInfo.listeConsDispo[i];
+            if(listBac.equals(code)){
+                saveInfoCons(code, 4);
+                return;
+            }
+        }
+        out("Code inexistant ou deja enregistré");
+        checkCode();
     }
 
 

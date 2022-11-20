@@ -1,3 +1,4 @@
+import javax.naming.ldap.Control;
 import java.io.*;
 import java.util.Scanner;
 
@@ -50,21 +51,15 @@ public class LogIn extends Page{
                     tabNomOptions.clear();
                     Controller.liveUser.setUser(user);
                     Controller.liveUser.setMdp(pass);
-
                     Controller.liveUser.name = Controller.tempInfo[0];
                     Controller.liveUser.courriel = Controller.tempInfo[1];
                     Controller.liveUser.adresse = Controller.tempInfo[2];
                     Controller.liveUser.telephone = Controller.tempInfo[3];
                     Controller.liveUser.numeroBac[0] = Controller.tempInfo[4];
-
-
                     Controller.liveUser.res = true;
                     new Menu();
                     return;
-                }/*else{
-                    tabNomOptions.clear();
-                    new LogInResident();
-                }*/
+                }
             }
             in.close();
 
@@ -78,13 +73,21 @@ public class LogIn extends Page{
                     tabNomOptions.clear();
                     Controller.liveUser.setUser(user);
                     Controller.liveUser.setMdp(pass);
+                    Controller.liveUser.code = Controller.tempInfoCons[0];
+                    Controller.liveUser.name = Controller.tempInfoCons[1];
+                    Controller.liveUser.courriel = Controller.tempInfoCons[2];
+                    Controller.liveUser.adresse = Controller.tempInfoCons[3];
+                    Controller.liveUser.telephone = Controller.tempInfoCons[4];
+                    Controller.liveUser.typeDechet = Controller.tempInfoCons[5];
+                    Controller.liveUser.capacite = Controller.tempInfoCons[6];
                     Controller.liveUser.res = false;
+
+                    Controller.municipInfo.consommateurs.put(Controller.tempInfoCons[0],
+                            new String[]{Controller.tempInfoCons[1],Controller.tempInfoCons[5]
+                            +":"+Controller.tempInfoCons[6]});
                     new MenuConsommateur();
                     return;
-                }/*else{
-                    tabNomOptions.clear();
-                    new LogInResident();
-                }*/
+                }
             }
             in2.close();
             tabNomOptions.clear();

@@ -7,6 +7,8 @@ public class Controller {
 
     public static String[] tempInfo;
 
+    public static String[] tempInfoCons;
+
     public Controller(){
 
         //new PageAccueil();
@@ -15,6 +17,7 @@ public class Controller {
 
     public void setLiveAccount(){
         tempInfo = new String[5];
+        tempInfoCons = new String[7];
         liveUser = new UserController();
         municipInfo = new MunicipInfo();
         capteurs = new Capteurs();
