@@ -37,9 +37,7 @@ public class Capteurs {
 
     }
 
-    public void historiqueBac(){
 
-    }
 
 
 

@@ -18,6 +18,7 @@ public class MunicipInfo {
     public int[] ordures12mois = {60000,50000,55000,65000,45000,57000,53000,65000,42000,69000,56000,51000};
     public ArrayList<String> problemes = new ArrayList<>();
 
+    public ArrayList<String> message = new ArrayList<>();
 
 
     public MunicipInfo(){
@@ -25,6 +26,11 @@ public class MunicipInfo {
         setBacs();
         setFeedbackCons();
         setLots();
+        setMessage();
+    }
+    public void setMessage(){
+        message.add("Laver vos bacs! - 20 novembre 2022");
+
     }
 
     public void setConsommateurs(){

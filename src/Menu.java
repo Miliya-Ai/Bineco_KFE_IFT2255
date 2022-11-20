@@ -17,12 +17,18 @@ public class Menu extends Page{
 
         String temp = "Bacs enregistrés :  ";
         for (int i = 0; i < 3; i++){
-            if(Controller.liveUser.numeroBac[i] != null){
-                temp += Controller.liveUser.numeroBac[i]+",   ";
+            String bac = Controller.liveUser.numeroBac[i];
+            if(bac != null){
+
+                temp += Controller.liveUser.numeroBac[i] + " Capacité : " + Controller.capteurs.capteursList.get(bac)[0]
+                        +",   ";
+
             }
         }
         out("\n"+temp);
-        out("\nPour quitter appuyer 99");
+        out("\n" + "Notification : ");
+        out(Controller.municipInfo.message.get(0));
+
         filtrer();
     }
 

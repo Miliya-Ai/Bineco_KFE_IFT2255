@@ -107,7 +107,7 @@ public class Bacs extends Page{
             for(int j = 0; j < 3; j++){
 
                 Controller.liveUser.numeroBac[m] = temp[j];
-                out(Controller.liveUser.numeroBac[m]);
+                //out(Controller.liveUser.numeroBac[m]);
                 m++;
             }
             out("Suppression réussie");

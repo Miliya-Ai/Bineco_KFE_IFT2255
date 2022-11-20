@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/Admin/Documents/UDEM/IFT2255/xavier/src</OriginalElement>
+  <nodes>
+    <node x="797.0" y="502.0">Probleme</node>
+    <node x="586.0" y="491.0">ModifProfil</node>
+    <node x="1951.5" y="163.0">Page</node>
+    <node x="2165.0" y="502.0">LogIn</node>
+    <node x="2083.75" y="0.0">Controller</node>
+    <node x="2786.0" y="491.0">FindConsommateur</node>
+    <node x="228.0" y="907.0">Capteurs</node>
+    <node x="2997.0" y="447.0">Bacs</node>
+    <node x="320.0" y="436.0">Suivi</node>
+    <node x="0.0" y="907.0">MunicipInfo</node>
+    <node x="1237.0" y="535.0">SignIn</node>
+    <node x="185.0" y="762.0">Resident</node>
+    <node x="2394.0" y="535.0">MenuConsommateur</node>
+    <node x="0.0" y="762.0">Consommateur</node>
+    <node x="2193.5" y="150.0">UserController</node>
+    <node x="2601.0" y="535.0">Menu</node>
+    <node x="1795.0" y="535.0">PageAccueil</node>
+    <node x="50.0" y="469.0">Client</node>
+    <node x="428.0" y="907.0">Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ModifProfil" target="Page" relationship="GENERALIZATION">
+      <point x="0.0" y="-83.0" />
+      <point x="681.5" y="411.0" />
+      <point x="2062.5" y="411.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="Page" target="Controller" relationship="GENERALIZATION">
+      <point x="0.0" y="-105.0" />
+      <point x="2062.5" y="125.0" />
+      <point x="2164.75" y="125.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="UserController" target="Controller" relationship="GENERALIZATION">
+      <point x="0.0" y="-118.0" />
+      <point x="2267.0" y="125.0" />
+      <point x="2164.75" y="125.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="LogIn" target="Page" relationship="GENERALIZATION">
+      <point x="0.0" y="-72.0" />
+      <point x="2269.5" y="411.0" />
+      <point x="2062.5" y="411.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="SignIn" target="Page" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="1319.5" y="411.0" />
+      <point x="2062.5" y="411.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="MenuConsommateur" target="Page" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="2487.5" y="411.0" />
+      <point x="2062.5" y="411.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="Bacs" target="Page" relationship="GENERALIZATION">
+      <point x="0.0" y="-127.0" />
+      <point x="3092.5" y="411.0" />
+      <point x="2062.5" y="411.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="Consommateur" target="Client" relationship="GENERALIZATION">
+      <point x="0.0" y="-50.0" />
+      <point x="82.5" y="737.0" />
+      <point x="175.0" y="737.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="Probleme" target="Page" relationship="GENERALIZATION">
+      <point x="0.0" y="-72.0" />
+      <point x="892.5" y="411.0" />
+      <point x="2062.5" y="411.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="FindConsommateur" target="Page" relationship="GENERALIZATION">
+      <point x="0.0" y="-83.0" />
+      <point x="2881.5" y="411.0" />
+      <point x="2062.5" y="411.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="Menu" target="Page" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="2683.5" y="411.0" />
+      <point x="2062.5" y="411.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="Resident" target="Client" relationship="GENERALIZATION">
+      <point x="0.0" y="-50.0" />
+      <point x="267.5" y="737.0" />
+      <point x="175.0" y="737.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="Suivi" target="Page" relationship="GENERALIZATION">
+      <point x="0.0" y="-138.0" />
+      <point x="443.0" y="411.0" />
+      <point x="2062.5" y="411.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="Client" target="Page" relationship="GENERALIZATION">
+      <point x="0.0" y="-105.0" />
+      <point x="175.0" y="411.0" />
+      <point x="2062.5" y="411.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="PageAccueil" target="Page" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.0" />
+      <point x="1877.5" y="411.0" />
+      <point x="2062.5" y="411.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.5499999999999999" showDependencies="false" x="3009.3636363636365" y="432.18181818181824" />
+  <SelectedNodes>
+    <node>Bacs</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

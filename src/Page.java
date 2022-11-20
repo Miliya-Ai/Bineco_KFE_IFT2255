@@ -9,6 +9,7 @@ import java.util.Scanner;
 public abstract class Page extends Controller{
     protected ArrayList<String> tabNomOptions = new ArrayList<String>() ;
 
+    public Controller controller = new Controller();
     public Page() {
 
     }

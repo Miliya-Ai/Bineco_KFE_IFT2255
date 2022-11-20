@@ -113,14 +113,14 @@ public class LogIn extends Page{
             case 1:
                 tabNomOptions.clear();
                 //out("Entre les info resident");
-                new LogInResident();
+                //new LogInResident();
                 //verified = true;
                 //new Menu();
                 break;
             case 2:
                 tabNomOptions.clear();
                 //out("Entre les info consommateur");
-                new LogInConsommateur();
+                //new LogInConsommateur();
                 //verified = true;
                 //new Menu();
                 break;
