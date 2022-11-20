@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Bineco</OriginalElement>
+  <nodes>
+    <node x="1595.9264705882354" y="278.0">Bineco.ProfilView</node>
+    <node x="1173.9264705882354" y="267.0">Bineco.BacView</node>
+    <node x="1498.0" y="1115.0">Bineco.Province</node>
+    <node x="212.0" y="1440.0">Bineco.Notification</node>
+    <node x="0.0" y="903.0">Bineco.NotificationController</node>
+    <node x="1079.0" y="837.0">Bineco.AccountController</node>
+    <node x="1364.0" y="870.0">Bineco.MetriqueController</node>
+    <node x="575.0" y="1115.0">Bineco.Activite</node>
+    <node x="1395.9264705882354" y="278.0">Bineco.AcceuilView</node>
+    <node x="380.9999999999999" y="914.0">Bineco.signalerProblemController</node>
+    <node x="454.0" y="1440.0">Bineco.Bineco</node>
+    <node x="758.9999999999999" y="892.0">Bineco.TrouverConsommateurController</node>
+    <node x="1171.75" y="0.0">Bineco.View</node>
+    <node x="958.25" y="661.0">Bineco.Controller</node>
+    <node x="1717.0" y="1115.0">Bineco.Address</node>
+    <node x="476.0" y="440.0">Bineco.MenuResidentView</node>
+    <node x="1173.0" y="1115.0">Bineco.Capteur</node>
+    <node x="1798.0" y="881.0">Bineco.BacController</node>
+    <node x="0.0" y="399.0">Bineco.Consommateur</node>
+    <node x="737.0" y="451.0">Bineco.MenuConsommateurView</node>
+    <node x="239.0" y="1115.0">Bineco.MunicipInfo</node>
+    <node x="851.9264705882354" y="278.0">Bineco.MetriqueView</node>
+    <node x="617.9264705882354" y="289.0">Bineco.MenuView</node>
+    <node x="158.75" y="0.0">Bineco.Utilisateur</node>
+    <node x="0.0" y="1115.0">Bineco.Bac</node>
+    <node x="769.0" y="1115.0">Bineco.DataBineco</node>
+    <node x="0.0" y="1440.0">Bineco.Dechet</node>
+    <node x="274.0" y="410.0">Bineco.Resident</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Bineco.TrouverConsommateurController" target="Bineco.Controller" relationship="GENERALIZATION">
+      <point x="1.1368683772161603E-13" y="-61.5" />
+      <point x="909.0" y="812.0" />
+      <point x="1060.25" y="812.0" />
+      <point x="0.0" y="63.0" />
+    </edge>
+    <edge source="Bineco.AccountController" target="Bineco.Controller" relationship="GENERALIZATION">
+      <point x="0.0" y="-116.5" />
+      <point x="1211.5" y="812.0" />
+      <point x="1060.25" y="812.0" />
+      <point x="0.0" y="63.0" />
+    </edge>
+    <edge source="Bineco.ProfilView" target="Bineco.View" relationship="GENERALIZATION">
+      <point x="0.0" y="-50.5" />
+      <point x="1700.9264705882354" y="242.0" />
+      <point x="1270.75" y="242.0" />
+      <point x="0.0" y="108.5" />
+    </edge>
+    <edge source="Bineco.BacController" target="Bineco.Controller" relationship="GENERALIZATION">
+      <point x="0.0" y="-72.5" />
+      <point x="1902.0" y="812.0" />
+      <point x="1060.25" y="812.0" />
+      <point x="0.0" y="63.0" />
+    </edge>
+    <edge source="Bineco.MenuConsommateurView" target="Bineco.MenuView" relationship="GENERALIZATION">
+      <point x="0.0" y="-61.5" />
+      <point x="845.0" y="415.0" />
+      <point x="724.9264705882354" y="415.0" />
+      <point x="0.0" y="39.5" />
+    </edge>
+    <edge source="Bineco.MenuView" target="Bineco.View" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.5" />
+      <point x="724.9264705882354" y="242.0" />
+      <point x="1270.75" y="242.0" />
+      <point x="0.0" y="108.5" />
+    </edge>
+    <edge source="Bineco.AcceuilView" target="Bineco.View" relationship="GENERALIZATION">
+      <point x="0.0" y="-50.5" />
+      <point x="1485.9264705882354" y="242.0" />
+      <point x="1270.75" y="242.0" />
+      <point x="0.0" y="108.5" />
+    </edge>
+    <edge source="Bineco.MetriqueController" target="Bineco.Controller" relationship="GENERALIZATION">
+      <point x="0.0" y="-83.5" />
+      <point x="1571.0" y="812.0" />
+      <point x="1060.25" y="812.0" />
+      <point x="0.0" y="63.0" />
+    </edge>
+    <edge source="Bineco.BacView" target="Bineco.View" relationship="GENERALIZATION">
+      <point x="0.0" y="-61.5" />
+      <point x="1274.9264705882354" y="242.0" />
+      <point x="1270.75" y="242.0" />
+      <point x="0.0" y="108.5" />
+    </edge>
+    <edge source="Bineco.Consommateur" target="Bineco.Utilisateur" relationship="GENERALIZATION">
+      <point x="0.0" y="-108.5" />
+      <point x="127.0" y="374.0" />
+      <point x="239.75" y="374.0" />
+      <point x="0.0" y="174.5" />
+    </edge>
+    <edge source="Bineco.Resident" target="Bineco.Utilisateur" relationship="GENERALIZATION">
+      <point x="0.0" y="-97.5" />
+      <point x="352.5" y="374.0" />
+      <point x="239.75" y="374.0" />
+      <point x="0.0" y="174.5" />
+    </edge>
+    <edge source="Bineco.NotificationController" target="Bineco.Controller" relationship="GENERALIZATION">
+      <point x="0.0" y="-50.5" />
+      <point x="180.5" y="812.0" />
+      <point x="1060.25" y="812.0" />
+      <point x="0.0" y="63.0" />
+    </edge>
+    <edge source="Bineco.MenuResidentView" target="Bineco.MenuView" relationship="GENERALIZATION">
+      <point x="0.0" y="-72.5" />
+      <point x="596.5" y="415.0" />
+      <point x="724.9264705882354" y="415.0" />
+      <point x="0.0" y="39.5" />
+    </edge>
+    <edge source="Bineco.signalerProblemController" target="Bineco.Controller" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.5" />
+      <point x="559.9999999999999" y="812.0" />
+      <point x="1060.25" y="812.0" />
+      <point x="0.0" y="63.0" />
+    </edge>
+    <edge source="Bineco.MetriqueView" target="Bineco.View" relationship="GENERALIZATION">
+      <point x="0.0" y="-50.5" />
+      <point x="1002.9264705882354" y="242.0" />
+      <point x="1270.75" y="242.0" />
+      <point x="0.0" y="108.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.5549647661755285" showDependencies="false" x="666.6449266997577" y="592.740967332333" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
