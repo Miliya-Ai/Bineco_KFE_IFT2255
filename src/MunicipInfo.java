@@ -11,6 +11,10 @@ public class MunicipInfo {
     public HashMap<String, int[]> feedbackCons = new HashMap<>();
     public HashMap<String, String[]> lots = new HashMap<>();
 
+    public int[] recyclage12mois = {50000,40000,45000,55000,35000,47000,43000,55000,32000,59000,46000,41000};
+    public int[] composte12mois = {20000,10000,15000,35000,15000,27000,23000,35000,12000,39000,26000,21000};
+    public int[] ordures12mois = {60000,50000,55000,65000,45000,57000,53000,65000,42000,69000,56000,51000};
+
 
 
     public MunicipInfo(){
