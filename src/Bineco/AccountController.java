@@ -1,8 +1,37 @@
 package Bineco;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class AccountController extends Controller {
 
 	private boolean passwordValide;
+
+	public String scannerInput(String message){
+		out(message);
+		Scanner temp = new Scanner(System.in);
+		String wut = temp.nextLine();
+		temp.close();
+		return wut;
+	}
+
+	public void save(String content, Boolean isResident)throws IOException {
+		String path;
+		if (isResident){
+			path = "src/Bineco/passResident.txt";
+		}else {
+			path = "src/Bineco/passConsommateur.txt";}
+
+		FileWriter fw = new FileWriter(path,true);
+		BufferedWriter writer = new BufferedWriter(fw);
+		writer.append(content +"\n"  );
+		writer.flush();
+		writer.close();
+	}
+
+
 
 	public void creerAccount() {
 		// TODO - implement Bineco.AccountController.creerAccount
@@ -72,5 +101,11 @@ public class AccountController extends Controller {
 		// TODO - implement Bineco.AccountController.findActiviteMaintenu
 		throw new UnsupportedOperationException();
 	}
+
+	public void out (String message){
+		System.out.println(message);
+	}
+
+
 
 }

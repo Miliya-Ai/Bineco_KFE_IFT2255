@@ -17,7 +17,7 @@ public class MetriqueController extends Controller {
 	 * @param intervalleTemps
 	 * @param typeMetrique
 	 */
-	public int calculerMetrique(boolean metriqueVille, Time intervalleTemps, String typeMetrique) {
+	public int calculerMetrique(boolean metriqueVille, String intervalleTemps, String typeMetrique) {
 		// TODO - implement MetriqueController.calculerMetrique
 		throw new UnsupportedOperationException();
 	}
@@ -26,7 +26,7 @@ public class MetriqueController extends Controller {
 	 * 
 	 * @param temps
 	 */
-	public void findPeriodeRecuperationDechet(Time temps) {
+	public void findPeriodeRecuperationDechet(String temps) {
 		// TODO - implement MetriqueController.findPeriodeRecuperationDechet
 		throw new UnsupportedOperationException();
 	}
@@ -38,7 +38,7 @@ public class MetriqueController extends Controller {
 	 * @param depot
 	 * @param etatDechet
 	 */
-	public void findPeriodeLivraisonDechet(Date date, Consommateur consommateur, String depot, String etatDechet) {
+	public void findPeriodeLivraisonDechet(String date, Consommateur consommateur, String depot, String etatDechet) {
 		// TODO - implement MetriqueController.findPeriodeLivraisonDechet
 		throw new UnsupportedOperationException();
 	}

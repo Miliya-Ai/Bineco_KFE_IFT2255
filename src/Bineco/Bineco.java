@@ -6,9 +6,9 @@ public class Bineco {
 	 * 
 	 * @param args
 	 */
-	public void main(String[] args) {
-		// TODO - implement Bineco.main
-		throw new UnsupportedOperationException();
+	public static void main(String[] args) {
+		Controller init = new Controller();
+		init.start();
 	}
 
 }
