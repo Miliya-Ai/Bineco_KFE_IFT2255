@@ -19,7 +19,8 @@ public class Resident extends Client{
         saveInfo(scannerInput("Courriel : "),1);
         saveInfo(scannerInput("Adresse : "),2);
         saveInfo(scannerInput("Telephone : "),3);
-        saveInfo(scannerInput("Numero du premier bac a enregistrer : "), 4);
+        //saveInfo(scannerInput("Numero du premier bac a enregistrer : "), 4);
+        checkBac();
         newLine();
         out("\n Appuyer sur 1 pour enregistrer");
         filtrer();
@@ -54,6 +55,19 @@ public class Resident extends Client{
                 out("Svp, entrer un chiffre valide");
                 filtrer();
         }
+    }
+
+    public void checkBac() throws IOException {
+        String bac = scannerInput("Numero du premier bac a enregistrer :");
+        for (int i = 0; i < Controller.municipInfo.numerosBac.length; i ++){
+            String listBac = Controller.municipInfo.numerosBac[i];
+            if(listBac.equals(bac)){
+                saveInfo(bac, 4);
+                return;
+            }
+        }
+        out("Numero de bac inexistant");
+        checkBac();
     }
 
 

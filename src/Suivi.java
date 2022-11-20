@@ -9,7 +9,8 @@ public class Suivi extends Page {
         out( "**** Pour quitter, appuyer 99 ****\n");
         //addTabNomOptions("Afficher les métriques écologiques");
         addTabNomOptions("Etat traitement dechets municipaux");
-        addTabNomOptions("Metriques ecologiques");
+        addTabNomOptions("Metriques ecologiques municipales");
+        //addTabNomOptions("Metriques residentielles");
         out(afficherOptions ());
         filtrer();
     }
@@ -29,6 +30,10 @@ public class Suivi extends Page {
             case 2:
                 tabNomOptions.clear();
                 choixTemps();
+                break;
+            case 3:
+                tabNomOptions.clear();
+                historiqueBac();
                 break;
             case 99:
                 effacer();
@@ -95,7 +100,7 @@ public class Suivi extends Page {
     }
 
     public void choixTemps(){
-        out("Sur quel interval de temps voulez vous voir les metriques : ");
+        out("Sur quel interval de temps voulez vous voir les metriques municipales? : ");
         String choix = scannerInput("1- 1 mois\n2- 3 mois\n3- 6 mois\n4- 12 mois");
 
         switch (choix){
@@ -154,8 +159,14 @@ public class Suivi extends Page {
         float propC = (float)sumC/(float)sum;
         float propO = (float)sumO/(float)sum;
 
-        String affichage = "Recyclage : "+propR+",  "+"Composte : "+propC+",  Ordures : "+propO;
+        String affichage = "Recyclage : "+propR+",  "+"Composte : "+propC+",  Ordures : "+propO+
+                            "\n---"+propO*100+" de tout n'est ni recyclé, ni composté.";
         return affichage;
+    }
+
+
+    public void historiqueBac(){
+
     }
 
 
