@@ -5,6 +5,17 @@ public class Capteurs {
 
 
     public HashMap<String, String[]> capteursList = new HashMap<>();
+    public String[][] historique = new String[][]{{"0,24;categorie1 : 0,50;categorie2 : 0,25;categorie3 : 0,25",
+                                                    "0,44;categorie1 : 0,47;categorie2 : 0,28;categorie3 : 0,25",
+                                                    "0,68;categorie1 : 0,40;categorie2 : 0,30;categorie3 : 0,30"},
+
+                                                    {"0,12;categorie1 : 0,50;categorie2 : 0,25;categorie3 : 0,25",
+                                                    "0,32;categorie1 : 0,27;categorie2 : 0,38;categorie3 : 0,35",
+                                                    "0,40;categorie1 : 0,30;categorie2 : 0,40;categorie3 : 0,30"},
+
+                                                    {"0,33;categorie1 : 0,60;categorie2 : 0,15;categorie3 : 0,25",
+                                                    "0,51;categorie1 : 0,27;categorie2 : 0,35;categorie3 : 0,38",
+                                                    "0,60;categorie1 : 0,35;categorie2 : 0,35;categorie3 : 0,30"}};
 
     public Capteurs(){
         setCapteurs();
@@ -26,9 +37,10 @@ public class Capteurs {
 
     }
 
-    public void getRempli(){
+    public void historiqueBac(){
 
     }
+
 
 
 
