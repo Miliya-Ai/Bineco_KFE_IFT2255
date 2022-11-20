@@ -51,7 +51,7 @@ public class Consommateur extends Client{
         for (int i = 0; i < Controller.municipInfo.listeConsDispo.length; i ++){
             String listBac = Controller.municipInfo.listeConsDispo[i];
             if(listBac.equals(code)){
-                saveInfoCons(code, 4);
+                saveInfoCons(code, 0);
                 return;
             }
         }
