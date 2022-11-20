@@ -3,7 +3,7 @@
 
 # Outil BINECO
 
-------------------------------**POUR EXECUTER L'APPLICATION SIMPLEMENT RUN LA FONCITON MAIN!**--------------------------------------------
+----------------------**POUR EXECUTER L'APPLICATION SIMPLEMENT RUN LA FONCITON MAIN!**--------------------------------------
 
 ----
 ## IMPORTANT
