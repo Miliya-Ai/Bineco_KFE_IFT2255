@@ -70,6 +70,10 @@ abstract class  Client extends Page {
 
     }
 
+    public void saveInfoCons(String info, int index){
+        Controller.tempInfoCons[index] = info;
+    }
+
     public void newLine() throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
         writer.write("\n");

@@ -6,6 +6,7 @@ public class MunicipInfo {
 
     public String[] numerosBac = {"r00", "r01","r02","d00","d01","d02","co00","co01","co02"};
     public String[] listeCons = {"c00","c01","c02","c03","c04","c05","c06","c07","c08","c09"};
+    public String[] listeConsDispo = {"c10","c11","c12","c13","c14","c15","c16","c17","c18","c19"};
     public String[] listeLots = {"l00","l01","l02","l03","l04","l05","l06","l07","l08","l09"};
     public HashMap<String, String[]> consommateurs = new HashMap<>();
     public HashMap<String, String[]> bacs = new HashMap<>();
