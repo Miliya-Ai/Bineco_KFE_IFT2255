@@ -173,6 +173,7 @@
                     </h4>
                     <p>
                         <ul>
+                            <p style="font-size: 1.4em"><em>Jalon 1</em></p>
                             <li>Quelles sont les spécifications à afficher dans :</li>
                                 <ol>
                                     <li>"Afficher l'état de mes bacs" (ex: type d'états),</li>
@@ -207,7 +208,36 @@
                             <ol><em>Non, ce n’est pas tout le temps nécéssaire donc optionnel.</em></ol>
                             <li>La page “ voir les activités que je maintiens” concernent les  résidents et les consommateurs ?</li>
                             <ol><em>C’est un souhait(pas une page). Les consommateurs indiquent les proportions de chacun de leurs activités et le résident peut les consulter.</em></ol>
-                        </ul>              
+
+                        <p style="font-size:1.4em"> <em> Jalon 2</em></p>
+                            <li>Avez-vous une liste d’activités que vous voulez absolument être présentes dans Bineco?</li>
+                            <ol><em>
+                               Oui les activités des consommateurs( activités de recyclage, activités liés au déchets organiques, activités de compostages)  que les résidents pourront consulter. Des tags pourraient être utiles pour catégoriser les activités.</em>
+                            </ol>
+
+                            <li> Concernant le prototype fonctionnel, voulez-vous que toutes les fonctionnalités des CUs du résident soient testables. De quelle manière ? </li>
+                            <ol><em>
+                              Les clients doivent être capable d'exécuter le code JAVA ,i-e, ouvrir le menu, pouvoir faire certaines manipulations tels que: afficher les métriques et les explorer, rechercher les consommateurs, etc… </em>
+                            </ol>
+                            <li> Il semblerait que l’outil Bineco devrait notifier les résidents d'un besoin de plastique (notification d'accumulation) . Pouvez-vous nous donner des exemples? Est-ce lorsque le résident ne recycle pas assez? </li>
+                            <ol><em>
+                              Exemple: Les bacs ont besoin d’une certaine quantité d’engrais qui sont constitués d’éléments qui pourraient favoriser le développement des bacs. Le consommateur pour notifier le résident d’un message disant "Prêtez attention à tels produits dans les jours à venir “ afin d’atteindre les résidents. </em>
+                            </ol>
+                             <li> Un résident peut noter un consommateur. Cela se fera-t-il d’une manière anonyme? Est-ce qu’un consommateur peut répondre à sa note?</li>
+                            <ol><em>
+                              Non , le consommateur n’a pas besoin de répondre. Il n’a pas d’anonymat. Il faut que le résident ait la capacité de pouvoir remplir son formulaire et donc qu’il fait simplement la possibilité. </em>
+                            </ol>
+                            <li> À quelle fréquence voulez-vous notifier le résident pour les sensibiliser au traitement de certains déchets?</li>
+                            <ol><em>
+                              Il n’y a pas de fréquence à envisager.</em>
+                            </ol>
+                             <li>Vous avez dit tout à l’heure que municipInfo vérifie chaque bac. Donc lorsqu’un résident enregistre un nouveau bac, qu’arrive-t-il?</li>
+                            <ol><em>
+                              Le code du bac et l'adresse du résident sont envoyés. Avec ces éléments, on arrive à valider si le bac est géré par la ville et si il est vraiment associé à l'adresse fournie. La validation se fait dans l’application BINECO.</em>
+                            </ol>
+                                
+                    
+                        </ul>
                     </p>
 
             </section>
@@ -223,15 +253,17 @@
                 <dl class="glossary">
                     <h4>Entités:</h4>
                     <dt class="glossary-term">Outils bineco </dt>
-                    <dd class="glossary-def">application permettant une meilleur communication des activités de recyclage et compostage résultant du travail de tri effectué dans les foyers, et des métriques accessibles à tous  la distance entre les acteurs.Données sur les consommateurs, résidents, les activités.</dd>
+                    <dd class="glossary-def"> application permettant une meilleure communication des activités de recyclage et compostage résultant du travail de tri effectué dans les foyers, et des métriques accessibles à tous  la distance entre les acteurs. Les données sur les consommateurs, résidents, les activités et les bacs seront utilisé à des fins purement statistiques: calculer les métriques au niveau municipal et résidentiel.</dd>
                     <dt class="glossary-term">Résidants </dt>
-                    <dd class="glossary-def">utilisateurs de l’application Bineco</dd>
+                    <dd class="glossary-def">utilisateurs dans l’application Bineco qui ont en minimum un bac et en maximum trois bacs en leur possession (condition requise pour créer un compte). Ils auront la possibilité de faire divers actions avec leurs bacs telles que le supprimer ou l’enregistrer et voir son état. Trouver un consommateur, voir les activités qu’ils maintiennent et voir les métriques au niveau municipal/résident sont d’autres options accessibles à ces derniers.</dd>
                     <dt class="glossary-term">Consommateurs </dt>
-                    <dd class="glossary-def">fourni les données (exemple: temps de passage des camions de déchets)</dd>
-                    <dt class="glossary-term">Ville de Montréal </dt>
-                    <dd class="glossary-def">tout entreprise, organisme, groupe ou individu faisant le traitement des déchets ou les utilisant dans leurs activités.</dd>
+                    <dd class="glossary-def"> toute entreprise, organisme, groupe ou individu faisant le traitement des déchets ou les utilisant dans leurs activités. Il est une entité exploitant les déchets et un utilisateur de Bineco.Pour se créer un code, un consommateur doit avoir reçu un code de la ville. Ces derniers pourront ainsi notifier les résidents pour un besoin de déchets et avoir un aperçu des métriques au niveau municipal. En ayant un compte dans l’outil, les résidents peuvent les trouver et noter leurs activités. </dd>
+                    <dt class="glossary-term">MunicipInfo (ex: Ville de Montréal)</dt>
+                    <dd class="glossary-def">le système administratif municipal traitant les déchets. Elle fournit tout le matériel nécessaire (poubelles, capteurs, données de suivi). Les utilisateurs peuvent signaler leur problème (comme demander un nouveau bac) à MunicipInfo via Bineco.</dd>
                     <dt class="glossary-term">Poubelles </dt>
                     <dd class="glossary-def">bacs de compostage, bac de recyclage, bacs d’ordure</dd>
+                    <dt class="glossary-term">Capteurs</dt>
+                    <dd class="glossary-def">les capteurs communiquent directement avec le système pour envoyer les données du contenu des bacs (citer du feedback). Ses données seront disponibles aux résidents qui veulent connaître la capacité/composition actuelle et l’usage de leurs bacs au fil du temps. Elles vont aider à calculer les métriques nécessaires disponibles à tous les utilisateurs.</dd>
                     <dt class="glossary-term">Activités  </dt>
                     <dd class="glossary-def">compostage, recyclage, ordures</dd>
 
@@ -243,7 +275,7 @@
                     <dt class="glossary-term">Code QR</dt>
                     <dd class="glossary-def">identificateur de bac.</dd>
                     <dt class="glossary-term">Métriques</dt>
-                    <dd class="glossary-def">indicateurs écologiques révélant la tendance qu’ont les résidents à recycler.</dd>
+                    <dd class="glossary-def">indicateurs écologiques révélant la tendance qu’ont les résidents à recycler, jeter leur déchet et composter.</dd>
 
                     <h4>Actions:</h4>
                     <dt class="glossary-term">Faire le suivi des services</dt>
@@ -253,7 +285,7 @@
                     <dd class="glossary-def">compostage, recyclage, ordures.
                     </dd>
                     <dt class="glossary-term">Inscription à l’outil “Bineco”</dt>
-                    <dd class="glossary-def">inscription d’un résident qui pourra enregistrer ses bacs  ou d’un consommateur.
+                    <dd class="glossary-def">inscription d’un résident qui pourra enregistrer ses bacs  ou d’un consommateur pour augmenter sa visibilité.
                     </dd>
                     <dt class="glossary-term">Signaler un problème :</dt>
                     <dd class="glossary-def">Communiquer avec la ville. 
@@ -287,13 +319,28 @@
                                     <li class="cu-actor">consommateur(Principal)</li>
                                 </ul>
                             </div>
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Préconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">Avoir télécharger l’application</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Postconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">Aucun</li>
+                                </ul>
+                            </div>
+                        
                             
                         </div>
                         <div class="scenario-main">
                             <h5 class="scenario-main-title">Scénario principal</h5>
                             <ol class="scenario-main-steps">
-                                <li class="scenario-main-step">Il souhaite s’inscrire</li>
-                                <li class="scenario-main-step"> Il souhaite se connecter.</li>
+                                <li class="scenario-main-step">Le système affiche le choix d’aller vers la page de connection ou d’inscription.</li>
+                                <li class="scenario-main-step"> L’utilisateur choisit l’option voulu.</li>
+                                <li class="scenario-main-step"> Le système valide et amène l’utilisateur vers la page voulue.</li>
                             </ol>
                         </div>
                     </div>
@@ -316,6 +363,20 @@
                                     <li class="cu-actor">consommateur(Principal)</li>
                                 </ul>
                             </div>
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Préconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash"> Avoir un code fourni par la ville.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Postconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">Un nouveau compte a été créé lorsque l’utilisateur clique sur le lien de confirmation. </li>
+                                </ul>
+                            </div>
+                        
                         </div>
                         <div class="scenario-main">
                             <h5 class="scenario-main-title">Scénario principal</h5>
@@ -354,6 +415,19 @@
                                 <ul class="bare-list cu-actors">
                                     <li class="cu-actor">résident(Principal)</li>
                                     <li class="cu-actor">consommateur(Principal)</li>
+                                </ul>
+                            </div>
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Préconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">L’utilisateur doit être inscrit, a reçu le courriel de confirmation de MunicipInfo et a cliqué sur le lien de confirmation du courriel.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Postconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">Le système affiche le menu respectif de l’utilisateur.</li>
                                 </ul>
                             </div>
                         </div>
@@ -398,6 +472,19 @@
                                 <h5 class="cu-part-title">Acteurs</h5>
                                 <ul class="bare-list cu-actors">
                                     <li class="cu-actor">résident(Principal)</li>
+                                </ul>
+                            </div>
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Préconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">le résident doit être connecté et a choisit la page "enregistrer des bacs” du menu résident."</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Postconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">Un nouveau bac est associé au compte du résident</li>
                                 </ul>
                             </div>
                         </div>
@@ -447,6 +534,19 @@
                                     <li class="cu-actor">resident(Principal)</li>
                                 </ul>
                             </div>
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Préconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">le résident doit être connecté et a choisit la page “afficher l’état de mes bacs” du menu résident.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Postconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">Aucun</li>
+                                </ul>
+                            </div>
 
                         </div>
                         <div class="scenario-main">
@@ -489,6 +589,19 @@
                                     <li class="cu-actor">resident(Principal)</li>
                                 </ul>
                             </div>
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Préconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">l'utilisateur doit être connecté et a choisit la page “Afficher les métriques de l'activité écologique” du menu résident/consommateur.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Postconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">Aucun</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="scenario-main">
                             <h5 class="scenario-main-title">Scénario principal</h5>
@@ -527,6 +640,19 @@
                                     <li class="cu-actor">resident(Principal)</li>
                                 </ul>
                             </div>
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Préconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash"> l'utilisateur doit être connecté et a choisit la page “Voir l'état de traitement des déchets municipaux” du menu résident/consommateur.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Postconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">Aucun</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="scenario-main">
                             <h5 class="scenario-main-title">Scénario principal</h5>
@@ -554,6 +680,19 @@
                                 <h5 class="cu-part-title">Acteurs</h5>
                                 <ul class="bare-list cu-actors">
                                     <li class="cu-actor">resident(Principal)</li>
+                                </ul>
+                            </div>
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Préconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">l'utilisateur doit être connecté et a choisit la page “Signaler un problème à la ville” du menu résident/consommateur.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Postconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">le message a été transmis à MunicipInfo.</li>
                                 </ul>
                             </div>
                         </div>
@@ -587,7 +726,19 @@
                                     <li class="cu-actor">Consommateur (Principal)</li>
                                 </ul>
                             </div>
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Préconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash"> l'utilisateur doit être connecté et a choisit la page “Trouver un consommateur” du menu résident.</li>
+                                </ul>
+                            </div>
                             
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Postconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">Aucun</li>
+                                </ul>
+                            </div>                            
                         
                         </div>
                         <div class="scenario-main">
@@ -628,7 +779,19 @@
                                     <li class="cu-actor">Ville de Montréal (Secondaire)</li>
                                 </ul>
                             </div>
-    
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Préconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">Le professionnel a un compte et est présent au GYM.</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="cu-part">
+                                <h5 class="cu-part-title">Postconditions</h5>
+                                <ul class="bare-list cu-conditions">
+                                    <li class="dash">Aucun</li>
+                                </ul>
+                            </div>    
                         </div>
                         <div class="scenario-main">
                             <h5 class="scenario-main-title">Scénario principal</h5>
@@ -667,7 +830,7 @@
                 <div>
                     <h3 class="subsection-title">Exigences non-fonctionnelles</h3>
                     <ol class="nf-requirements">
-                        <li><u>Base de donnée encrypter</u></li>
+                        <li><u>Sécurité (Base de donnée encrypter) </u></li>
                         <ol>Protéger les informations personnelles du client.</ol>
                         <li><u>Temps de réponse rapide avec l’api</u></li>
                         <ol>Minimiser la latence de l’application </ol>
