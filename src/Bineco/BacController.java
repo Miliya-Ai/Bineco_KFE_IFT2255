@@ -28,7 +28,7 @@ public class BacController extends Controller {
 	 * @param choix
 	 */
 	public String voirEtatBac(Bac bac, String choix) {
-
+	return "bacController";
 	}
 
 	/**

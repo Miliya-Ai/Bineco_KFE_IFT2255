@@ -4,7 +4,7 @@ public class signalerProblemController extends Controller {
 
 	/**
 	 * 
-	 * @param typeProbl�me
+	 * @param typeProbleme
 	 * @param nom
 	 * @param address
 	 * @param email
