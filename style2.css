@@ -81,6 +81,10 @@ th { text-align: center; }
 .question em{
     font-weight: bold;
 }
+
+.flex1{
+    display: flex;
+}
 .btn {
     font-family: 'Segoe UI', 'Droid Sans', Ubuntu, 'Lucida Grande', Arial, sans-serif;
     text-decoration: none; text-align: center;
