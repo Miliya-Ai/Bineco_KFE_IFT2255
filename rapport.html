@@ -1236,13 +1236,13 @@
                 <p style="font-size:1.8em">Pour simuler les API nécessaires, la classe MunicipInfo et Capteur ont été utilisées.</p>
                 <p style="font-size:1.8em">La classe DataBineco store les informations des utilisateurs de l'outil tels que les consommateurs et les résidents ainsi que les objets qui leur sont reliés (bac ou activité).
                 Si nous avons eu le temps, il aurait été génial d'utiliser une base de donnée mySQL afin d'explorer de nouvelles technologies. </p>
-                <p>Bref, cette division en MVC, nous a permis de mieux coupler les classes et assurer une bonne cohésion entre eux.</p>
+                <p style="font-size:1.8em">Bref, cette division en MVC, nous a permis de mieux coupler les classes et assurer une bonne cohésion entre eux.</p>
                 <h3>Vue: la classe View et ses enfants</h3>
                 <p style="font-size:1.7em">View s'occupe d'afficher tous les pages nécessaires à l'outil. En premier, il affiche la page d'Accueil (AccueilView). Il listera, par la suite, 
                 l'option de s'inscrire ou se connecter. Une fois que l'utilisateur aura fait son choix le Controller entrera en jeu.  Si tout est valide, alors MenuView pourra afficher le menu correspondant 
             à un consommateur ou utilisateur. De là, il pourra accéder à des "pages" plus spécifique telles que "Voir les métriques écologique" par MetriqueView ou "Voir l'état de son bac" par BacView. Le View ira chercher les donnnees par le Controller. 
             Il affichera, par la suite, les informations reçus.</p>
-            <p>View est une classe abstraite. Elle n'a pas besoin d'être instancié: elle contient seulement les méthodes utilent à tous les vues comme exit (quitter l'outil en ligne de commande par status 0).</p>
+            <p style="font-size:1.7em">View est une classe abstraite. Elle n'a pas besoin d'être instancié: elle contient seulement les méthodes utilent à tous les vues comme exit (quitter l'outil en ligne de commande par status 0).</p>
                 <h3>Controller: la classe Controller et ses enfants</h3>
                 <p style="font-size:1.7em">Pour faire le pont entre la vue et les data/entités, ce sera le rôle du Controller. Pour tout ce qui relié aux comptes des utilisateurs (connection, inscription, modifier le profil),
                     si c'est un login, par exemple, AccountController vérifiera si l'utilisateur existe dans la base de donnée de Bineco
