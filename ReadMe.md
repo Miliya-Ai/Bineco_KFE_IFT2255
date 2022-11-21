@@ -99,14 +99,16 @@ Si les infos ne correspondent pas, on revoie le formulaire de connection
 ![](images/menuResident.jpg)
 
 ---
+## P.S
+-A cause du manque de temps, le prototype ne suit pas le diagramme de classe et les diagrammes de séquences.
+
+---
 ## Auteurs
 
 - Kim Trinh (20215539)
 - Xavier Laperriere (20157146)
 - Eed Flory Jean-Baptiste (20168335)
 - Miliya Ai (20180783)
-
-
 
 
 
