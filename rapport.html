@@ -1228,6 +1228,27 @@
                 <h4 style="font-size: 1.8em; margin-bottom: 6px">Notifier les résidents d'un besoin de plastique</h4>
                 <img class="preview-img" src="images/DiagramSequence_NotifierResidentBesoinPlastique.jpg" alt="">
                 </div> 
+
+                <h4>Justification des choix du design: Abstraction, Couplage et cohésion, Encapsulation</h4>
+                <p style="font-size:1.8em">Pour notre diagramme de classe, nous avons décidé de suivre le style d'architecture MVC. La classe "View" et ses enfants s'occupent d'afficher les informations du modèle 
+                    (c'est-à-dire les classes entitées: Utilisateur et ses enfants, Notification, Bac et Activite) par la classe Controller.</p>
+                <p style="font-size:1.8em">Pour simuler les API nécessaires, la classe MunicipInfo et Capteur ont été utilisées.</p>
+                <p style="font-size:1.8em">La classe DataBineco store les informations des utilisateurs de l'outil tels que les consommateurs et les résidents ainsi que les objets qui leur sont reliés (bac ou activité).
+                Si nous avons eu le temps, il aurait été génial d'utiliser une base de donnée mySQL afin d'explorer de nouvelles technologies. </p>
+                <h3>Vue: la classe View et ses enfants</h3>
+                <p style="font-size:1.7em">View s'occupe d'afficher tous les pages nécessaires à l'outil. En premier, il affiche la page d'Accueil (AccueilView). Il listera, par la suite, 
+                l'option de s'inscrire ou se connecter. Une fois que l'utilisateur aura fait son choix le Controller entrera en jeu.  Si tout est valide, alors MenuView pourra afficher le menu correspondant 
+            à un consommateur ou utilisateur. De là, il pourra accéder à des "pages" plus spécifique telles que "Voir les métriques écologique" par MetriqueView ou "Voir l'état de son bac" par BacView. Le View ira chercher les donnnees par le Controller. 
+            Il affichera, par la suite, les informations reçus.</p>
+                <h3>Controller: la classe Controller et ses enfants</h3>
+                <p style="font-size:1.7em">Pour faire le pont entre la vue et les data/entités, ce sera le rôle du Controller. Pour tout ce qui relié aux comptes des utilisateurs (connection, inscription, modifier le profil),
+                    si c'est un login, par exemple, AccountController vérifiera si l'utilisateur existe dans la base de donnée de Bineco
+                    et s'assurera que le nom d'utilisateur corresponde bien au mot de passe (passwordValide(utilisateur)). La logique du code (qu'est-ce qui fait en sorte qu'un utilisateur est valide, 
+                    comment calculer les métriques, à quelle fréquence faut-il envoyer un message de notification de sensibilisation et autres) se retrouve ainsi dans le Controller et ses enfants. Il va aller chercher les 
+                    informations dans les entités, s'occupera de gérer les erreurs et dira au View ce qui devrait être afficher suite aux requêtes de l'utilisateur.
+                </p>
+                <h3>Modèle: la classe Utilisateur et ses enfant, Activite, Bac, Notification, DataBineco</h3>
+                <p style="font-size:1.7em">Modèle emmagasine les informations de l'outil. </p>
             </section>
 
             <section class="main-section">
