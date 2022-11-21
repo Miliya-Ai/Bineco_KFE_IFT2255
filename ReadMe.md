@@ -8,6 +8,7 @@
 ----
 ## IMPORTANT
 > *Comme seul le nom d’utilisateur et son mot de passe respectif seront sauvegardés, le prototype ne vérifie pas la validité du courriel, téléphone, etc.*
+>*Ne pas mettre d'espace dans le nom d'utilisateur
 
 Toujours quitter l'application par le input 99, sinon les fichiers contenant les informations de connection ne sont pas effacés et cela pourrait creer des problemes pour les connections suivantes!
 
