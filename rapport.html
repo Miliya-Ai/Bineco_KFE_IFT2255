@@ -141,22 +141,23 @@
                 </h3>
                 <img class="preview-img" src="images/echeancier1.JPG" alt="">
                 <img class="preview-img" src="images/echeancier2.png" alt="">
+                <img class="preview-img" src="images/echeancier3.png" alt="">
                 <h3 style="text-decoration:underline;">Priorisation: Description de l'ordre de priorités choisi</h3>
                 <div class="priorisation">
                     <ol><u>Fonctionnalité essentielle</u>
                     <ul>Enregistrement des bacs</ul>
                     <ul>Faire le suivi de mes bacs</ul>
                     <ul>S’inscrire en tant que résident ou consommateur</ul>
-                    </ol>
-                    <ol><u> Fonctionnalité nécessaire </u>
                     <ul>Afficher les métriques écologiques</ul>
+                    </ol>
+                    <ol><u> Fonctionnalité nécessaire </u>                    
                     <ul>Trouver un consommateur</ul>
                     </ol>
                     <ol><u> Fonctionnalité importante </u>
                         <ul>Voir l’était de traitement des déchets municipaux</ul>
                     </ol>
                     <ol><u>Amélioration majeure</u>
-                        <ul>Voir les activités que je maintiens</ul>
+                        <ul>Supprimer un bac</ul>
                     </ol>
                     <ol><u>Amélioration mineure </u>
                         <ul>Signaler un problème</ul>
@@ -234,6 +235,10 @@
                              <li>Vous avez dit tout à l’heure que municipInfo vérifie chaque bac. Donc lorsqu’un résident enregistre un nouveau bac, qu’arrive-t-il?</li>
                             <ol><em>
                               Le code du bac et l'adresse du résident sont envoyés. Avec ces éléments, on arrive à valider si le bac est géré par la ville et si il est vraiment associé à l'adresse fournie. La validation se fait dans l’application BINECO.</em>
+                            </ol>
+                            <li>Un bac contient plusieurs données. À quelle fréquence doivent-ils être mise à jour? </li>
+                            <ol><em>
+                              Pas à chaque semaine, chaque jour idéalement. Les données peuvent être mise à jour à chaque fois que l’utilisateur souhaite voir l’état de son bac. </em>
                             </ol>
                                 
                     
@@ -1230,15 +1235,15 @@
                 <p style="font-size:1.8em">Notre analyse préliminaire nous a permis d'élucider les besoins et risques suivants...</p>
 
                 <h2 id="model" class="section-title">Modèle dynamique</h2>
-                <h4 style="font-size: 1.8em; margin-bottom: 6px">Enregistrer mes Bacs</h4>
+                <h4 style="font-size: 1.8em; margin-bottom: 6px"> Bacs: Enregistrer mes bacs , afficher l'état et supprimer .</h4>
                 <img class="preview-img" src="images/DiagrammeActivite_Bac.jpg" alt="">
-                <h4 style="font-size: 1.8em; margin-bottom: 6px">Page principale du résident</h4>
+                <h4 style="font-size: 1.8em; margin-bottom: 6px">Page principale du résident: Trouver un consommateur et signaler un problème.</h4>
                 <img class="preview-img" src="images/DiagrammeActivite_menuResident.jpg" alt="">
-                <h4 style="font-size: 1.8em; margin-bottom: 6px">Afficher les métriques de l'activité écologique</h4>
+                <h4 style="font-size: 1.8em; margin-bottom: 6px">Métriques: état de traitement des déchets et activité écologique </h4>
                 <img class="preview-img" src="images/DiagrammeActivite_Metrique.jpg" alt="">
-                <h4 style="font-size: 1.8em; margin-bottom: 6px">Page d'acceuil de l'outil BINECO</h4>
+                <h4 style="font-size: 1.8em; margin-bottom: 6px">Page d'acceuil : connexion </h4>
                 <img class="preview-img" src="images/DiagrammeActivite_page d'acceuil.jpg" alt="">
-                <h4 style="font-size: 1.8em; margin-bottom: 6px">Modification du profil du résident</h4>
+                <h4 style="font-size: 1.8em; margin-bottom: 6px">Profil : modification du profil du résident</h4>
                 <img class="preview-img" src="images/DiagrammeActivite_profil.jpg" alt="">
                 
                 <div>
@@ -1321,17 +1326,27 @@
                         <em>Choix des métriques: </em>
                         <p> Niveau résidentiel (usage des bacs):</p>
                         <ul>
-                            <li>Poids de chaque activité (kg) dans un intervalle de temps défini (ex:semaines, mois, année).</li>
-                            <li>Pourcentage de chaque activité (compostage, recyclage, ordures) par rapport à  une autre selon l’intervalle de temps défini. </li>
-                            <li>Portions de matière recyclés/compostés/jetés comparé, par exemple, au mois/année précédent.</li>
+                            <li>Interprétation du poids relatif de chaque activité (kg) dans un intervalle de temps défini (ex:semaines, mois, année). <ul>Exemple: Poids de recyclage = 5 kg; Poids de compostage = 10 kg; Poids de recyclage / poids de compostage = 5 / 10 = ½ -> on a deux fois moins recycler que composter.</ul></li>
+                            <li>Pourcentage de chaque activité (compostage, recyclage, ordures) par rapport à  une autre selon l’intervalle de temps défini complémenté par les préférences du résident pour plus de personnalisation.</li>
 
                         </ul>
 
                         <p> Niveau municipal (traitement des déchets): </p>
                         <ul>
-                            <li>Proportion de chaque activité (compostage, recyclage, ordures) par rapport à la ville</li>
-                            <li>Pourcentage de déchets envoyés dans le sites d'enfouissement/incinération, de produits recyclés,  matérielle composté</li>
-                            <li>Portions de matières recyclés/compostés/jetés comparés, par exemple, au mois/année précédent</li>
+                            <li>Proportion de chaque activité (compostage, recyclage, ordures) par rapport à la ville.</li>
+                            <li>Pourcentage de déchets envoyés dans le sites d'enfouissement/incinération, de produits recyclés,  matérielle composté. 
+                            <ul>Pour les déchets envoyés dans les sites d'enfouissement:
+                                <ul>1)  0 à 50% = bon.</ul>
+                                <ul>3)  50 à 70% = peut être améliorer.</ul>
+                                <ul>2)  70% + = demander plus d’effort aux résidents de recycler et composter.</ul>
+                            </ul>
+                            <ul>Pour les produits recyclés/compostés:
+                                <ul>1)  0 à 50% = demander plus d’effort aux résidents de recycler.</ul>
+                                <ul>2)  50 à 70% = peut être améliorer.</ul>
+                                <ul>3)  70% + = bon.</ul>
+                            </ul>
+                            </li>
+                            <li>Portions de matières qui auraient pu être recyclés/compostés/jetés comparés, par exemple, au mois/année précédent.</li>
 
                         </ul>
                         <p>Voici des exemples de diagramme affiché:</p>
