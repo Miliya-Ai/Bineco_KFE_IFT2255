@@ -20,7 +20,7 @@ public class AcceuilView extends View {
 
 	}
 
-	public void displayInscription() {
+	public void displayInscription() throws IOException {
 		entete("Sign in");
 		out( "**** Pour quitter, appuyer 99 ****\n");
 		out("Vous êtes un");
