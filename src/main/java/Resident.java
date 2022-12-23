@@ -15,16 +15,34 @@ public class Resident extends Client{
         credentials(true);
 
 
-        saveInfo(scannerInput("Nom et prenom : "),0);
+        saveInfo(getName(),0);
         saveInfo(scannerInput("Courriel : "),1);
         saveInfo(scannerInput("Adresse : "),2);
-        saveInfo(scannerInput("Telephone : "),3);
+        saveInfo(getTel(),3);
         //saveInfo(scannerInput("Numero du premier bac a enregistrer : "), 4);
         checkBac();
         newLine("src/main/java/informations.txt");
         out("\n Appuyer sur 1 pour enregistrer");
         filtrer();
 
+    }
+    public String getName(){
+        String input = scannerInput("Nom (doit debuter par une lettre masjuscule) :  ");
+
+        if(!Character.isUpperCase(input.charAt(0))){
+            out("Input invalide (premiere lettre pas majuscule)");
+            getTel();
+        }
+        return input;
+    }
+
+    public String getTel(){
+        String input = scannerInput("Telephone (doit etre de longueur 10) :  ");
+        if(input.length() != 10){
+            out("Input invalide (pas 10 de long)");
+            getTel();
+        }
+        return input;
     }
 
     /*public void saveInfo(String info) throws IOException {

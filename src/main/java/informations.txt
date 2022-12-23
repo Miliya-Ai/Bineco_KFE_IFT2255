@@ -1,0 +1,2 @@
+xavier,mdp,Xavier,courriel,adr,tel,r01,
+mr,x123,Xavierlap,courriel1,adresse,tele,r01,

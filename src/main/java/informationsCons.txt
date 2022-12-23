@@ -1,1 +1,2 @@
-x,x1,companyxav,composte:1000,courriel,adresse,tel,
+usr1,x1,Xav,dechets:1000,x.laperriere,9930,1234567890,
+usr2,x2,Aly,composte:10000,courr,adrr,1111111111,

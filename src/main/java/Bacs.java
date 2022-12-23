@@ -222,7 +222,7 @@ public class Bacs extends Page{
         String[][] bacs = Controller.municipInfo.lesBacs;
         for (int k = 0; k < bacs.length; k++){
             if (bacs[k][0].equals(numero)){
-                String affichage = "";
+                //String affichage = "";
                 /*for (int m = 0; m < bacs[k].length; m++){
                     affichage += bacs[k][m]+" , ";
                 }*/

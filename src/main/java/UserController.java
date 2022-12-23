@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.ArrayList;
 
 public class UserController extends Controller{
 
@@ -89,23 +90,97 @@ public class UserController extends Controller{
     public void afficherInfo(){
 
         if (res){
-            System.out.println(this.name);
-            System.out.println(this.courriel);
-            System.out.println(this.adresse);
-            System.out.println(this.telephone);
-            System.out.println(this.numeroBac[0]);
-            System.out.println(this.numeroBac[1]);
-            System.out.println(this.numeroBac[2]);
+            System.out.println("Nom :  "+this.name);
+            System.out.println("Courriel :  "+this.courriel);
+            System.out.println("Adresse :  "+this.adresse);
+            System.out.println("Telephone :  "+this.telephone);
+            System.out.println("Bac1 :  "+this.numeroBac[0]);
+            System.out.println("Bac2 :  "+this.numeroBac[1]);
+            System.out.println("Bac3 :  "+this.numeroBac[2]);
         } if(res == false) {
-            System.out.println(this.code);
-            System.out.println(this.name);
-            System.out.println(this.courriel);
-            System.out.println(this.adresse);
-            System.out.println(this.telephone);
-            System.out.println(this.typeDechet);
-            System.out.println(this.capacite);
+            //System.out.println(this.code);
+            System.out.println("Nom :  "+this.name);
+            System.out.println("Courriel :  "+this.courriel);
+            System.out.println("Adresse :  "+this.adresse);
+            System.out.println("Telephone :  "+this.telephone);
+            System.out.println("Nom :  "+this.typeDechet);
+            System.out.println("Nom :  "+this.capacite);
         }
 
+    }
+
+    public ArrayList toArrL(String path) throws IOException {
+
+        /*String path;
+        String path2;
+        if(this.res){
+            path = "src/main/java/informations.txt";
+            path2 = "src/main/java/passResident.txt";
+        } else {
+            path = "src/main/java/informationsCons.txt";
+            path2 = "src/main/java/passConsommateurs.txt";
+        }*/
+
+        BufferedReader br = new BufferedReader(new FileReader(path));
+
+        ArrayList<String> lines = new ArrayList<>();
+
+        String line;
+        while ((line = br.readLine()) != null) {
+            lines.add(line);
+        }
+
+        String[] data = lines.toArray(new String[lines.size()]);
+        br.close();
+
+        /*for(int i = 0; i < data.length; i++){
+            System.out.println(data[i]);
+        }*/
+        return lines;
+    }
+
+    public void changeInfo(ArrayList list, String info, String newOne, String path) throws IOException {
+
+        /*String path;
+        String path2;
+        if(this.res){
+            path = "src/main/java/informations.txt";
+            path2 = "src/main/java/passResident.txt";
+        } else {
+            path = "src/main/java/informationsCons.txt";
+            path2 = "src/main/java/passConsommateurs.txt";
+        }*/
+
+
+        BufferedReader reader = new BufferedReader(new FileReader(path));
+        String strInfo = "";
+        String line;
+        int idx = 0;
+        while ((line = reader.readLine()) != null) {
+            // Check if the current line contains the search term
+            if (line.contains(info) && (line.contains(this.user)||line.contains(this.name))) {
+                // The line has been found, take the appropriate action
+                //System.out.println("Found line: " + line +"  idx = " +idx);
+                strInfo = line;
+                break;
+            }
+            idx += 1;
+        }
+        String newStr = strInfo.replaceAll(info, newOne);
+        list.set(idx, newStr);
+
+        PrintWriter wr = new PrintWriter(path);
+        for(Object l : list){
+            wr.println(l);
+        }
+
+        /*if (res){
+            getInfoRes(this.user);
+        } else {
+            getInfoCons(this.user);
+        }*/
+        wr.close();
+        //System.out.println(this.courriel);
     }
 
 }

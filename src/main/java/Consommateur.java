@@ -16,15 +16,16 @@ public class Consommateur extends Client{
         //saveInfoCons(scannerInput("Code : "), 0);
         info += checkCode()+",";
 
-        info += saveInfoCons(scannerInput("Nom : "),1)+",";
+        info += saveInfoCons(getName(),1)+",";
         info += saveInfoCons(traitement(), 2)+",";
         info += saveInfoCons(scannerInput("Courriel : "),2)+",";
         info += saveInfoCons(scannerInput("Adresse : "),3)+",";
-        info += saveInfoCons(scannerInput("Telephone : "),4);
+        info += saveInfoCons(getTel(),4);
         /*info += saveInfoCons(scannerInput("Type de dechets traités : "),5)+",";
         info += saveInfoCons(scannerInput("Capacité de traitement : "),6);*/
 
         newLine("src/main/java/dataCons.txt");
+        newLine("src/main/java/informationsCons.txt");
         Controller.municipInfo.addCons(info);
         Controller.municipInfo.setConsommateurs();
         //newLine();
@@ -32,6 +33,25 @@ public class Consommateur extends Client{
 
         filtrer();
 
+    }
+
+    public String getName(){
+        String input = scannerInput("Nom (doit debuter par une lettre masjuscule) :  ");
+
+        if(!Character.isUpperCase(input.charAt(0))){
+            out("Input invalide (premiere lettre pas majuscule)");
+            getTel();
+        }
+        return input;
+    }
+
+    public String getTel(){
+        String input = scannerInput("Telephone (doit etre de longueur 10) :  ");
+        if(input.length() != 10){
+            out("Input invalide (pas 10 de long)");
+            getTel();
+        }
+        return input;
     }
 
     @Override
@@ -55,7 +75,7 @@ public class Consommateur extends Client{
     public String traitement(){
         String value = "";
         String type = scannerInput("Type de dechet traité : \n1- Recyclage\n2-Composte\n3-Dechets");
-        if(!(type.equals("1")||!type.equals("2")|!type.equals("3"))){
+        if(!(type.equals("1")||type.equals("2")||type.equals("3"))){
             out("Input erroné");
             traitement();
         } else {

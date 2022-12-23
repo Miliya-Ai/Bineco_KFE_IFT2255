@@ -42,7 +42,7 @@ abstract class  Client extends Page {
     }
 
     public void credentials (Boolean isResident) throws IOException {
-        out("Veuillez choisir un nom d'utilisateur :");
+        out("Veuillez choisir un nom d'utilisateur (pas de virgule!):");
         Scanner myUser = new Scanner(System.in);
         String userAccount = myUser.nextLine();
 
@@ -56,9 +56,13 @@ abstract class  Client extends Page {
 
     public void passwordEligible(String userAccount,boolean isResident) throws IOException {
         // Regex trouver sur https://stackoverflow.com/questions/11533474/java-how-to-test-if-a-string-contains-both-letters-and-numbers
-        out("Choisissez un mot de passe (que des lettres et des chiffres) :");
+        out("Choisissez un mot de passe (au moins une lettre et un chiffre, pas de virgule!) :");
         Scanner myPass = new Scanner(System.in);
         String password = myPass.nextLine();
+        if(password.equals(userAccount)){
+            out("Mot de passe ne peut pas etre meme chose que le username.");
+            passwordEligible(userAccount, isResident);
+        }
         isPasswordEligible =  password.matches(".*([a-zA-Z].*[0-9]|[0-9].*[a-zA-Z]).*");
 
         if (isPasswordEligible){
