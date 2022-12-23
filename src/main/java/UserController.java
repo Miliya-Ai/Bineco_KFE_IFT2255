@@ -42,7 +42,7 @@ public class UserController extends Controller{
 
 
     public void getInfoRes() throws IOException {
-        FileInputStream fstream = new FileInputStream("src/informations.txt");
+        FileInputStream fstream = new FileInputStream("src/java/main/informations.txt");
         DataInputStream in = new DataInputStream(fstream);
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         String strLine;

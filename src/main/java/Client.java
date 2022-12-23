@@ -66,9 +66,9 @@ abstract class  Client extends Page {
     }
 
     public void saveInfo(String info, int index) throws IOException {
-        /*BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
-        writer.write(info + ",");
-        writer.close();*/
+        FileWriter fw = (new FileWriter("src/main/java/informations.txt", true));
+        fw.write(info + ",");
+        fw.close();
 
         Controller.tempInfo[index] = info;
 

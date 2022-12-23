@@ -21,7 +21,7 @@ public class Resident extends Client{
         saveInfo(scannerInput("Telephone : "),3);
         //saveInfo(scannerInput("Numero du premier bac a enregistrer : "), 4);
         checkBac();
-        //newLine();
+        newLine();
         out("\n Appuyer sur 1 pour enregistrer");
         filtrer();
 

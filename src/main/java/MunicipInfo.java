@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -12,6 +13,8 @@ public class MunicipInfo {
     public HashMap<String, String[]> bacs = new HashMap<>();
     public HashMap<String, int[]> feedbackCons = new HashMap<>();
     public HashMap<String, String[]> lots = new HashMap<>();
+    public String[] lesLots;
+    public String[] lesCons;
 
     public int[] recyclage12mois = {50000,40000,45000,55000,35000,47000,43000,55000,32000,59000,46000,41000};
     public int[] composte12mois = {20000,10000,15000,35000,15000,27000,23000,35000,12000,39000,26000,21000};
@@ -21,7 +24,7 @@ public class MunicipInfo {
     public ArrayList<String> message = new ArrayList<>();
 
 
-    public MunicipInfo(){
+    public MunicipInfo() throws IOException {
         setConsommateurs();
         setBacs();
         setFeedbackCons();
@@ -33,9 +36,9 @@ public class MunicipInfo {
 
     }
 
-    public void setConsommateurs(){
+    public void setConsommateurs() throws IOException {
 
-        consommateurs.put("c00", new String[]{"company1", "recyclage:2000", "composte:1000",
+        /*consommateurs.put("c00", new String[]{"company1", "recyclage:2000", "composte:1000",
                                                 "courriel", "adresse", "telephone"});
         consommateurs.put("c01", new String[]{"company2","recyclage:2000", "composte:500",
                                                 "courriel", "adresse", "telephone"});
@@ -54,7 +57,9 @@ public class MunicipInfo {
         consommateurs.put("c08", new String[]{"company9","composte:1750",
                                                 "courriel", "adresse", "telephone"});
         consommateurs.put("c09", new String[]{"company10","recyclage:1000", "composte:1000", "dechets:1000",
-                                                "courriel", "adresse", "telephone"});
+                                                "courriel", "adresse", "telephone"});*/
+
+        lesCons = getFromCsv("src/main/java/dataCons.txt");
 
     }
 
@@ -83,8 +88,8 @@ public class MunicipInfo {
         feedbackCons.put("c09", null);
     }
 
-    public void setLots(){
-        lots.put("l00", new String[]{"recyclage","YYYY-MM-DD","YYYY-MM-DD","statut_actuel", "1000", "750", "0.25"});
+    public void setLots() throws IOException {
+       /* lots.put("l00", new String[]{"recyclage","YYYY-MM-DD","YYYY-MM-DD","statut_actuel", "1000", "750", "0.25"});
         lots.put("l01", new String[]{"composte","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
         lots.put("l02", new String[]{"ordures","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
         lots.put("l03", new String[]{"recyclage","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
@@ -93,7 +98,27 @@ public class MunicipInfo {
         lots.put("l06", new String[]{"recyclage","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
         lots.put("l07", new String[]{"composte","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
         lots.put("l08", new String[]{"ordures","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
-        lots.put("l09", new String[]{"recyclage","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
+        lots.put("l09", new String[]{"recyclage","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});*/
+        lesLots = getFromCsv("src/main/java/dataLots.txt");
+
+    }
+
+    public String[] getFromCsv(String path) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(path));
+
+        ArrayList<String> lines = new ArrayList<>();
+
+        String line;
+        while ((line = br.readLine()) != null) {
+            lines.add(line);
+        }
+
+        String[] data = lines.toArray(new String[lines.size()]);
+        br.close();
+        for(int i = 0; i < data.length; i++){
+            System.out.println(data[i]);
+        }
+        return data;
     }
 
 }

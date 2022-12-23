@@ -53,11 +53,24 @@ public class FindConsommateur extends Page{
 
     public void listConsommateur(){
 
-        for(Map.Entry<String, String[]> set:
+        /*for(Map.Entry<String, String[]> set:
             Controller.municipInfo.consommateurs.entrySet()){
 
             out("Code : "+set.getKey()+",   nom : "+set.getValue()[0]);
+        }*/
+
+        String[] lots = Controller.municipInfo.lesCons;
+        String[][] formattedCons = new String[10][8];
+        for(int i = 0; i < lots.length; i++){
+            String[] info = lots[i].split(",");
+            for(int j = 0; j < info.length; j++){
+                formattedCons[i][j] = info[j];
+            }
         }
+        for(int k = 0; k < formattedCons[0].length; k++){
+            System.out.println("Code : "+formattedCons[k][0]+"  Nom : "+formattedCons[k][1]);
+        }
+
         out("--Appuyez sur 0 pour revenir au menu--");
         filtrer();
     }
@@ -66,7 +79,7 @@ public class FindConsommateur extends Page{
 
         String code = scannerInput("Code du consommateur cherché :");
         String[] consExist = Controller.municipInfo.listeCons;
-        for (int j = 0; j < consExist.length; j++){
+        /*for (int j = 0; j < consExist.length; j++){
             if (consExist[j].equals(code)){
                 String[] info = Controller.municipInfo.consommateurs.get(code);
                 String nom = info[0];
@@ -83,7 +96,31 @@ public class FindConsommateur extends Page{
                 filtrer();
                 return;
             }
+        }*/
+
+        String[] lots = Controller.municipInfo.lesCons;
+        String[][] formattedLots = new String[10][8];
+        for(int i = 0; i < lots.length; i++){
+            String[] info = lots[i].split(",");
+            for(int j = 0; j < info.length; j++){
+                formattedLots[i][j] = info[j];
+            }
         }
+        for (int k = 0; k < lots.length; k++){
+            if (formattedLots[k][0].equals(code)){
+                String affichage = "";
+                String nom = formattedLots[k][1];
+                for (int m = 2; m < formattedLots[k].length; m++){
+                    affichage += formattedLots[k][m]+" , ";
+                }
+                out("Code : "+code+"  Nom : "+nom+"  Details : "+affichage);
+                out("--Appuyez sur 0 pour revenir au menu--");
+                filtrer();
+                return;
+            }
+        }
+
+
         out("Code consommateur inexistant");
         new FindConsommateur();
 

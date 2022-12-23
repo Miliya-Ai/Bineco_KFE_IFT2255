@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class Controller {
 
     //public UserController liveUser = new UserController();
@@ -15,7 +17,7 @@ public class Controller {
 
     }
 
-    public void setLiveAccount(){
+    public void setLiveAccount() throws IOException {
         tempInfo = new String[5];
         tempInfoCons = new String[7];
         liveUser = new UserController();

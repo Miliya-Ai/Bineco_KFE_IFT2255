@@ -70,12 +70,27 @@ public class Suivi extends Page {
     }
 
     public void listLot(){
-        for(Map.Entry<String, String[]> set:
+        /*for(Map.Entry<String, String[]> set:
                 Controller.municipInfo.lots.entrySet()){
 
             out("Numero : "+set.getKey()+",   type : "+set.getValue()[0]+",  date ramassé : "+set.getValue()[1]
                 +"  date livraison : "+set.getValue()[2]+"  statut : "+set.getValue()[3]);
+        }*/
+        String[] lots = Controller.municipInfo.lesLots;
+        String[][] formattedLots = new String[10][8];
+        for(int i = 0; i < lots.length; i++){
+            String[] info = lots[i].split(",");
+            for(int j = 0; j < info.length; j++){
+                formattedLots[i][j] = info[j];
+            }
         }
+        for(int k = 0; k < formattedLots[0].length; k++){
+            System.out.println("Code : "+formattedLots[k][0]+"  type : "+formattedLots[k][1]
+                    +"  Date ramassé : "+formattedLots[k][2]
+                    +"  Date livré : "+formattedLots[k][3]+"  Statut : "+formattedLots[k][4]);
+        }
+
+
         out("--Appuyez sur 0 pour revenir au menu--");
         filtrer();
     }
@@ -84,7 +99,7 @@ public class Suivi extends Page {
         String numero = scannerInput("Numero du lot recherché : ");
         String[] lotsExist = Controller.municipInfo.listeLots;
 
-        for (int i = 0; i < lotsExist.length; i ++){
+        /*for (int i = 0; i < lotsExist.length; i ++){
             if (lotsExist[i].equals(numero)){
                 String[] info = Controller.municipInfo.lots.get(numero);
                 String affichage = "";
@@ -97,8 +112,31 @@ public class Suivi extends Page {
                 filtrer();
                 return;
             }
+        }*/
+        //out("Numero de lot inexistant");
+        String[] lots = Controller.municipInfo.lesLots;
+        String[][] formattedLots = new String[10][8];
+        for(int i = 0; i < lots.length; i++){
+            String[] info = lots[i].split(",");
+            for(int j = 0; j < info.length; j++){
+                formattedLots[i][j] = info[j];
+            }
         }
-        out("Numero de lot inexistant");
+        for (int k = 0; k < lots.length; k++){
+            if (formattedLots[k][0].equals(numero)){
+                String affichage = "";
+                for (int m = 0; m < formattedLots[k].length; m++){
+                    affichage += formattedLots[k][m]+" , ";
+                }
+                out("numero, type, date ramassé, date livraison, statut, quantitee total, quantite traite, taux rejet");
+                out(affichage);
+                out("--Appuyez sur 0 pour revenir au menu--");
+                filtrer();
+                return;
+            }
+        }
+
+        out("Numero inexistant");
         new Suivi();
     }
 

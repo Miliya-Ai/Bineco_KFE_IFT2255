@@ -1,0 +1,10 @@
+c00,company1,recyclage:2000,composte:1000,courriel,adresse,telephone
+c01,company1,recyclage:2000,composte:500,courriel,adresse,telephone
+c02,company1,recyclage:1000,composte:1500,courriel,adresse,telephone
+c03,company1,recyclage:2000,composte:1000,dechets:2000,courriel,adresse,telephone
+c04,company1,recyclage:1500,composte:500,courriel,adresse,telephone
+c05,company1,recyclage:750,composte:1000,dechets:5000,courriel,adresse,telephone
+c06,company1,recyclage:2000,courriel,adresse,telephone
+c07,company1,recyclage:2000,composte:1000,dechets:1500,courriel,adresse,telephone
+c08,company1,composte:1750,courriel,adresse,telephone
+c09,company1,recyclage:1000,composte:1000,dechets:1000,courriel,adresse,telephone
