@@ -41,36 +41,48 @@ public class UserController extends Controller{
     }
 
 
-    public void getInfoRes() throws IOException {
-        FileInputStream fstream = new FileInputStream("src/java/main/informations.txt");
+    public void getInfoRes(String usr) throws IOException {
+        FileInputStream fstream = new FileInputStream("src/main/java/informations.txt");
         DataInputStream in = new DataInputStream(fstream);
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         String strLine;
         while ((strLine = br.readLine()) != null)   {
             String[] tokens = strLine.split(",");
-            this.name = tokens[2];
-            this.courriel = tokens[3];
-            this.adresse = tokens[4];
-            this.telephone = tokens[5];
-            this.numeroBac[0] = tokens[6];
-            return;
+            if(tokens[0].equals(usr)){
+                setUser(tokens[0]);
+                setMdp(tokens[1]);
+                this.name = tokens[2];
+                this.courriel = tokens[3];
+                this.adresse = tokens[4];
+                this.telephone = tokens[5];
+                this.numeroBac[0] = tokens[6];
+                this.res = true;
+                return;
+            }
+
         }
     }
 
-    public void getInfoCons() throws IOException {
-        FileInputStream fstream = new FileInputStream("src/informations.txt");
+    public void getInfoCons(String usr) throws IOException {
+        FileInputStream fstream = new FileInputStream("src/main/java/informationsCons.txt");
         DataInputStream in = new DataInputStream(fstream);
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         String strLine;
         while ((strLine = br.readLine()) != null)   {
             String[] tokens = strLine.split(",");
-            this.name = tokens[2];
-            this.courriel = tokens[3];
-            this.adresse = tokens[4];
-            this.telephone = tokens[5];
-            this.typeDechet = tokens[6];
-            this.capacite = tokens[7];
-            this.activite = tokens[8];
+            if (tokens[0].equals(usr)){
+                setUser(tokens[0]);
+                setMdp(tokens[1]);
+                this.name = tokens[2];
+                this.courriel = tokens[4];
+                this.adresse = tokens[5];
+                this.telephone = tokens[6];
+                this.typeDechet = tokens[3];
+                this.capacite = tokens[3];
+                //this.activite = tokens[8];
+                this.res = false;
+            }
+
         }
     }
 

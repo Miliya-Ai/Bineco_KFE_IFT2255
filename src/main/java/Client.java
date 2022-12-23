@@ -16,10 +16,14 @@ abstract class  Client extends Page {
 
     public void save(String content, Boolean isResident)throws IOException {
         String path;
+        String path2;
         if (isResident){
             path = "src/main/java/passResident.txt";
+            path2 = "src/main/java/informations.txt";
         }else {
-            path = "src/main/java/passConsommateur.txt";}
+            path = "src/main/java/passConsommateur.txt";
+            path2 = "src/main/java/informationsCons.txt";
+        }
 
         /*FileWriter fw = new FileWriter(path,true);
         BufferedWriter writer = new BufferedWriter(fw);
@@ -30,6 +34,11 @@ abstract class  Client extends Page {
         FileWriter fw = new FileWriter(path, true);
         fw.write(content+"\n");
         fw.close();
+
+        FileWriter fw2 = new FileWriter(path2, true);
+        fw2.write(content+",");
+        fw2.close();
+
     }
 
     public void credentials (Boolean isResident) throws IOException {
@@ -74,12 +83,16 @@ abstract class  Client extends Page {
 
     }
 
-    public void saveInfoCons(String info, int index){
+    public String saveInfoCons(String info, int index) throws IOException {
+        FileWriter fw = (new FileWriter("src/main/java/informationsCons.txt", true));
+        fw.write(info + ",");
+        fw.close();
         Controller.tempInfoCons[index] = info;
+        return info;
     }
 
-    public void newLine() throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/java/informations.txt", true));
+    public void newLine(String path) throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter(path, true));
         writer.write("\n");
         writer.close();
     }

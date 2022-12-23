@@ -11,19 +11,25 @@ public class Consommateur extends Client{
 
         addTabNomOptions("Enregistrer");
         out(afficherOptions ());
-
+        String info = "";
         credentials(false);
         //saveInfoCons(scannerInput("Code : "), 0);
-        checkCode();
-        saveInfoCons(scannerInput("Nom : "),1);
-        saveInfoCons(scannerInput("Courriel : "),2);
-        saveInfoCons(scannerInput("Adresse : "),3);
-        saveInfoCons(scannerInput("Telephone : "),4);
-        saveInfoCons(scannerInput("Type de dechets traités : "),5);
-        saveInfoCons(scannerInput("Capacité de traitement : "),6);
+        info += checkCode()+",";
 
+        info += saveInfoCons(scannerInput("Nom : "),1)+",";
+        info += saveInfoCons(traitement(), 2)+",";
+        info += saveInfoCons(scannerInput("Courriel : "),2)+",";
+        info += saveInfoCons(scannerInput("Adresse : "),3)+",";
+        info += saveInfoCons(scannerInput("Telephone : "),4);
+        /*info += saveInfoCons(scannerInput("Type de dechets traités : "),5)+",";
+        info += saveInfoCons(scannerInput("Capacité de traitement : "),6);*/
+
+        newLine("src/main/java/dataCons.txt");
+        Controller.municipInfo.addCons(info);
+        Controller.municipInfo.setConsommateurs();
         //newLine();
         out("\n Appuyer sur 1 pour enregistrer");
+
         filtrer();
 
     }
@@ -46,17 +52,43 @@ public class Consommateur extends Client{
         }
     }
 
-    public void checkCode() throws IOException {
+    public String traitement(){
+        String value = "";
+        String type = scannerInput("Type de dechet traité : \n1- Recyclage\n2-Composte\n3-Dechets");
+        if(!(type.equals("1")||!type.equals("2")|!type.equals("3"))){
+            out("Input erroné");
+            traitement();
+        } else {
+            switch (type){
+                case "1":
+                    String qty = scannerInput("Quantité : ");
+                    value+= "recyclage:"+qty;
+                    break;
+                case "2":
+                    String qty2 = scannerInput("Quantité : ");
+                    value+= "composte:"+qty2;
+                    break;
+                case "3":
+                    String qty3 = scannerInput("Quantité : ");
+                    value+= "dechets:"+qty3;
+                    break;
+            }
+        }
+        return value;
+    }
+
+    public String checkCode() throws IOException {
         String code = scannerInput("Code :");
         for (int i = 0; i < Controller.municipInfo.listeConsDispo.length; i ++){
             String listBac = Controller.municipInfo.listeConsDispo[i];
             if(listBac.equals(code)){
-                saveInfoCons(code, 0);
-                return;
+                //saveInfoCons(code, 0);
+                return code;
             }
         }
         out("Code inexistant ou deja enregistré");
         checkCode();
+        return code;
     }
 
 

@@ -17,8 +17,7 @@ public class MunicipInfo {
     public String[][] lesLots;
     public String[][] lesCons;
 
-    public String[][] test;
-
+    public String[][] utilisateurs = getFromCsv("src/main/java/informations.txt");
     public String[][] yearDataStr = getFromCsv("src/main/java/data12mois.txt");
     public int[][] dataYear = toInt(yearDataStr);
     public int[] recyclage12mois = dataYear[0];
@@ -140,6 +139,12 @@ public class MunicipInfo {
             formatted[i] = data[i].split(",");
         }
         return formatted;
+    }
+
+    public void addCons(String str) throws IOException {
+        FileWriter fw = (new FileWriter("src/main/java/dataCons.txt", true));
+        fw.write(str + ",");
+        fw.close();
     }
 
 }

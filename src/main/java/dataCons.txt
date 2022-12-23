@@ -8,3 +8,4 @@ c06,company1,recyclage:2000,courriel,adresse,telephone
 c07,company1,recyclage:2000,composte:1000,dechets:1500,courriel,adresse,telephone
 c08,company1,composte:1750,courriel,adresse,telephone
 c09,company1,recyclage:1000,composte:1000,dechets:1000,courriel,adresse,telephone
+c11,companyxav,composte:1000,courriel,adresse,tel,
