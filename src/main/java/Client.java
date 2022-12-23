@@ -46,9 +46,21 @@ abstract class  Client extends Page {
         Scanner myUser = new Scanner(System.in);
         String userAccount = myUser.nextLine();
 
+        for(int i = 0; i < Controller.municipInfo.activeUsers.size(); i++){
+            String it = Controller.municipInfo.activeUsers.get(i);
+            it = it.replaceAll("[\\r\\n]", "");
+            if(userAccount.equals(it)){
+                out("Nom d'utilisateur deja utilisé!");
+                credentials(isResident);
+                return;
+            }
+        }
+
+
         /*BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
         writer.write(userAccount + ",");
         writer.close();*/
+        Controller.municipInfo.addUser(userAccount);
         Controller.tempInfo[0] = userAccount;
         passwordEligible(userAccount, isResident);
 

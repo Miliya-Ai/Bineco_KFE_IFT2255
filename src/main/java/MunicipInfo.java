@@ -17,7 +17,7 @@ public class MunicipInfo {
     public String[][] lesLots;
     public String[][] lesCons;
 
-    public String[][] utilisateurs = getFromCsv("src/main/java/informations.txt");
+    //public String[][] utilisateurs = getFromCsv("src/main/java/informations.txt");
     public String[][] yearDataStr = getFromCsv("src/main/java/data12mois.txt");
     public int[][] dataYear = toInt(yearDataStr);
     public int[] recyclage12mois = dataYear[0];
@@ -27,6 +27,9 @@ public class MunicipInfo {
 
     public ArrayList<String> message = new ArrayList<>();
 
+    public ArrayList<String > activeUsers;
+
+
 
     public MunicipInfo() throws IOException {
         setConsommateurs();
@@ -34,6 +37,34 @@ public class MunicipInfo {
         setFeedbackCons();
         setLots();
         setMessage();
+        activeUsers = getExUser();
+        for (int i = 0; i < activeUsers.size(); i++){
+            System.out.println(activeUsers.get(i).toString());
+        }
+    }
+
+    public ArrayList<String> getExUser() throws FileNotFoundException {
+        String path = "src/main/java/existingUser.txt";
+        ArrayList<String> result = new ArrayList<>();
+        try (FileReader f = new FileReader(path)) {
+            StringBuffer sb = new StringBuffer();
+            while (f.ready()) {
+                char c = (char) f.read();
+                if (c == '\n') {
+                    result.add(sb.toString());
+                    sb = new StringBuffer();
+                } else {
+                    sb.append(c);
+                }
+            }
+            if (sb.length() > 0) {
+                result.add(sb.toString());
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return result;
+
     }
 
     public int[][] toInt(String[][] str){
@@ -144,6 +175,12 @@ public class MunicipInfo {
     public void addCons(String str) throws IOException {
         FileWriter fw = (new FileWriter("src/main/java/dataCons.txt", true));
         fw.write(str + ",");
+        fw.close();
+    }
+
+    public void addUser(String str) throws IOException {
+        FileWriter fw = (new FileWriter("src/main/java/existingUser.txt", true));
+        fw.write("\n"+str);
         fw.close();
     }
 
