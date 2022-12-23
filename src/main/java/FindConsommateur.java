@@ -59,16 +59,16 @@ public class FindConsommateur extends Page{
             out("Code : "+set.getKey()+",   nom : "+set.getValue()[0]);
         }*/
 
-        String[] lots = Controller.municipInfo.lesCons;
+        String[][] lots = Controller.municipInfo.lesCons;
         String[][] formattedCons = new String[10][8];
-        for(int i = 0; i < lots.length; i++){
+        /*for(int i = 0; i < lots.length; i++){
             String[] info = lots[i].split(",");
             for(int j = 0; j < info.length; j++){
                 formattedCons[i][j] = info[j];
             }
-        }
-        for(int k = 0; k < formattedCons[0].length; k++){
-            System.out.println("Code : "+formattedCons[k][0]+"  Nom : "+formattedCons[k][1]);
+        }*/
+        for(int k = 0; k < lots[0].length; k++){
+            System.out.println("Code : "+lots[k][0]+"  Nom : "+lots[k][1]);
         }
 
         out("--Appuyez sur 0 pour revenir au menu--");
@@ -98,20 +98,20 @@ public class FindConsommateur extends Page{
             }
         }*/
 
-        String[] lots = Controller.municipInfo.lesCons;
+        String[][] lots = Controller.municipInfo.lesCons;
         String[][] formattedLots = new String[10][8];
-        for(int i = 0; i < lots.length; i++){
+        /*for(int i = 0; i < lots.length; i++){
             String[] info = lots[i].split(",");
             for(int j = 0; j < info.length; j++){
                 formattedLots[i][j] = info[j];
             }
-        }
+        }*/
         for (int k = 0; k < lots.length; k++){
-            if (formattedLots[k][0].equals(code)){
+            if (lots[k][0].equals(code)){
                 String affichage = "";
-                String nom = formattedLots[k][1];
-                for (int m = 2; m < formattedLots[k].length; m++){
-                    affichage += formattedLots[k][m]+" , ";
+                String nom = lots[k][1];
+                for (int m = 2; m < lots[k].length; m++){
+                    affichage += lots[k][m]+" , ";
                 }
                 out("Code : "+code+"  Nom : "+nom+"  Details : "+affichage);
                 out("--Appuyez sur 0 pour revenir au menu--");

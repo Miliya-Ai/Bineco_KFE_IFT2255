@@ -76,18 +76,18 @@ public class Suivi extends Page {
             out("Numero : "+set.getKey()+",   type : "+set.getValue()[0]+",  date ramassé : "+set.getValue()[1]
                 +"  date livraison : "+set.getValue()[2]+"  statut : "+set.getValue()[3]);
         }*/
-        String[] lots = Controller.municipInfo.lesLots;
+        String[][] lots = Controller.municipInfo.lesLots;
         String[][] formattedLots = new String[10][8];
-        for(int i = 0; i < lots.length; i++){
+        /*for(int i = 0; i < lots.length; i++){
             String[] info = lots[i].split(",");
             for(int j = 0; j < info.length; j++){
                 formattedLots[i][j] = info[j];
             }
-        }
-        for(int k = 0; k < formattedLots[0].length; k++){
-            System.out.println("Code : "+formattedLots[k][0]+"  type : "+formattedLots[k][1]
-                    +"  Date ramassé : "+formattedLots[k][2]
-                    +"  Date livré : "+formattedLots[k][3]+"  Statut : "+formattedLots[k][4]);
+        }*/
+        for(int k = 0; k < lots[0].length; k++){
+            System.out.println("Code : "+lots[k][0]+"  type : "+lots[k][1]
+                    +"  Date ramassé : "+lots[k][2]
+                    +"  Date livré : "+lots[k][3]+"  Statut : "+lots[k][4]);
         }
 
 
@@ -114,19 +114,19 @@ public class Suivi extends Page {
             }
         }*/
         //out("Numero de lot inexistant");
-        String[] lots = Controller.municipInfo.lesLots;
+        String[][] lots = Controller.municipInfo.lesLots;
         String[][] formattedLots = new String[10][8];
-        for(int i = 0; i < lots.length; i++){
+        /*for(int i = 0; i < lots.length; i++){
             String[] info = lots[i].split(",");
             for(int j = 0; j < info.length; j++){
                 formattedLots[i][j] = info[j];
             }
-        }
+        }*/
         for (int k = 0; k < lots.length; k++){
-            if (formattedLots[k][0].equals(numero)){
+            if (lots[k][0].equals(numero)){
                 String affichage = "";
-                for (int m = 0; m < formattedLots[k].length; m++){
-                    affichage += formattedLots[k][m]+" , ";
+                for (int m = 0; m < lots[k].length; m++){
+                    affichage += lots[k][m]+" , ";
                 }
                 out("numero, type, date ramassé, date livraison, statut, quantitee total, quantite traite, taux rejet");
                 out(affichage);

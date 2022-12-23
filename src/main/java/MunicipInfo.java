@@ -10,13 +10,16 @@ public class MunicipInfo {
     public String[] listeConsDispo = {"c10","c11","c12","c13","c14","c15","c16","c17","c18","c19"};
     public String[] listeLots = {"l00","l01","l02","l03","l04","l05","l06","l07","l08","l09"};
     public HashMap<String, String[]> consommateurs = new HashMap<>();
-    public HashMap<String, String[]> bacs = new HashMap<>();
+    //public HashMap<String, String[]> bacs = new HashMap<>();
+    public String[][] lesBacs;
     public HashMap<String, int[]> feedbackCons = new HashMap<>();
     //public HashMap<String, String[]> lots = new HashMap<>();
-    public String[] lesLots;
-    public String[] lesCons;
+    public String[][] lesLots;
+    public String[][] lesCons;
 
-    public String[] yearDataStr = getFromCsv("src/main/java/data12mois.txt");
+    public String[][] test;
+
+    public String[][] yearDataStr = getFromCsv("src/main/java/data12mois.txt");
     public int[][] dataYear = toInt(yearDataStr);
     public int[] recyclage12mois = dataYear[0];
     public int[] composte12mois = dataYear[1];
@@ -34,12 +37,12 @@ public class MunicipInfo {
         setMessage();
     }
 
-    public int[][] toInt(String[] str){
+    public int[][] toInt(String[][] str){
         int[][] inInt =new int[str.length][12];
         for (int i = 0; i < str.length; i++){
-            String[] temp = (str[i].split(","));
-            for (int j = 0; j < temp.length; j++){
-                inInt[i][j] = Integer.parseInt(temp[j]);
+            //String[] temp = (str[i].split(","));
+            for (int j = 0; j < str[i].length; j++){
+                inInt[i][j] = Integer.parseInt(str[i][j]);
             }
         }
         return inInt;
@@ -76,8 +79,8 @@ public class MunicipInfo {
 
     }
 
-    public void setBacs(){
-        bacs.put("r00", new String[]{"adresse1", "UNE_DATE"});
+    public void setBacs() throws IOException {
+        /*bacs.put("r00", new String[]{"adresse1", "UNE_DATE"});
         bacs.put("r01", new String[]{"adresse2", "UNE_DATE"});
         bacs.put("r02", new String[]{"adresse3", "UNE_DATE"});
         bacs.put("d00", new String[]{"adresse4", "UNE_DATE"});
@@ -85,7 +88,8 @@ public class MunicipInfo {
         bacs.put("d02", new String[]{"adresse6", "UNE_DATE"});
         bacs.put("co00", new String[]{"adress7", "UNE_DATE"});
         bacs.put("co01", new String[]{"adresse8", "UNE_DATE"});
-        bacs.put("co02", new String[]{"adresse9", "UNE_DATE"});
+        bacs.put("co02", new String[]{"adresse9", "UNE_DATE"});*/
+        lesBacs = getFromCsv("src/main/java/bacsEmis.txt");
     }
 
     public void setFeedbackCons(){
@@ -116,7 +120,7 @@ public class MunicipInfo {
 
     }
 
-    public String[] getFromCsv(String path) throws IOException {
+    public String[][] getFromCsv(String path) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(path));
 
         ArrayList<String> lines = new ArrayList<>();
@@ -131,7 +135,11 @@ public class MunicipInfo {
         /*for(int i = 0; i < data.length; i++){
             System.out.println(data[i]);
         }*/
-        return data;
+        String[][] formatted = new String[data.length][];
+        for (int i = 0; i < data.length;  i++){
+            formatted[i] = data[i].split(",");
+        }
+        return formatted;
     }
 
 }

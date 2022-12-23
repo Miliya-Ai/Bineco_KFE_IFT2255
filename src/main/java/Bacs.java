@@ -210,11 +210,24 @@ public class Bacs extends Page{
 
         String numero = scannerInput("Numero du bac :");
         String[] listBac = Controller.municipInfo.numerosBac;
-        for (int i = 0; i < listBac.length; i++){
+        /*for (int i = 0; i < listBac.length; i++){
             if(listBac[i].equals(numero)){
                 String[] info = Controller.municipInfo.bacs.get(numero);
 
                 out("Code : "+numero +"  Adresse : "+info[0]+"  Date d'emission : "+info[1]);
+                filtrer();
+                return;
+            }
+        }*/
+        String[][] bacs = Controller.municipInfo.lesBacs;
+        for (int k = 0; k < bacs.length; k++){
+            if (bacs[k][0].equals(numero)){
+                String affichage = "";
+                /*for (int m = 0; m < bacs[k].length; m++){
+                    affichage += bacs[k][m]+" , ";
+                }*/
+                out("Code : "+numero+"  Adresse : "+bacs[k][1]+"  Date d'emission : "+bacs[k][2]);
+                out("--Appuyez sur 0 pour revenir au menu--");
                 filtrer();
                 return;
             }
