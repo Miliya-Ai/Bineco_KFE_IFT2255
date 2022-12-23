@@ -12,13 +12,15 @@ public class MunicipInfo {
     public HashMap<String, String[]> consommateurs = new HashMap<>();
     public HashMap<String, String[]> bacs = new HashMap<>();
     public HashMap<String, int[]> feedbackCons = new HashMap<>();
-    public HashMap<String, String[]> lots = new HashMap<>();
+    //public HashMap<String, String[]> lots = new HashMap<>();
     public String[] lesLots;
     public String[] lesCons;
 
-    public int[] recyclage12mois = {50000,40000,45000,55000,35000,47000,43000,55000,32000,59000,46000,41000};
-    public int[] composte12mois = {20000,10000,15000,35000,15000,27000,23000,35000,12000,39000,26000,21000};
-    public int[] ordures12mois = {60000,50000,55000,65000,45000,57000,53000,65000,42000,69000,56000,51000};
+    public String[] yearDataStr = getFromCsv("src/main/java/data12mois.txt");
+    public int[][] dataYear = toInt(yearDataStr);
+    public int[] recyclage12mois = dataYear[0];
+    public int[] composte12mois = dataYear[1];
+    public int[] ordures12mois = dataYear[2];
     public ArrayList<String> problemes = new ArrayList<>();
 
     public ArrayList<String> message = new ArrayList<>();
@@ -30,6 +32,17 @@ public class MunicipInfo {
         setFeedbackCons();
         setLots();
         setMessage();
+    }
+
+    public int[][] toInt(String[] str){
+        int[][] inInt =new int[str.length][12];
+        for (int i = 0; i < str.length; i++){
+            String[] temp = (str[i].split(","));
+            for (int j = 0; j < temp.length; j++){
+                inInt[i][j] = Integer.parseInt(temp[j]);
+            }
+        }
+        return inInt;
     }
     public void setMessage(){
         message.add("Laver vos bacs! - 20 novembre 2022");
@@ -115,9 +128,9 @@ public class MunicipInfo {
 
         String[] data = lines.toArray(new String[lines.size()]);
         br.close();
-        for(int i = 0; i < data.length; i++){
+        /*for(int i = 0; i < data.length; i++){
             System.out.println(data[i]);
-        }
+        }*/
         return data;
     }
 

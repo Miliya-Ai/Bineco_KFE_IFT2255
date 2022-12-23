@@ -153,6 +153,9 @@ public class Suivi extends Page {
                 metriques(6);
             case "4":
                 metriques(12);
+            default:
+                out("Choix inexistant");
+                choixTemps();
         }
     }
 
@@ -169,6 +172,7 @@ public class Suivi extends Page {
 
         out("\n---PROPORTIONS DES ACTIVITÉES DANS LES "+temps+" DERNIERS MOIS---\n");
         out(propotions(temps, rec, comp, ord));
+        out("\n--Appuyez sur 0 pour revenir au menu--");
         filtrer();
 
     }
