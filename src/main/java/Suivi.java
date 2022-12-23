@@ -39,7 +39,7 @@ public class Suivi extends Page {
                 historiqueBac();
                 break;
             case 99:
-                effacer();
+                //effacer();
                 System.exit(0);
                 break;
             default:

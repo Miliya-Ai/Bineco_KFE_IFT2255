@@ -22,7 +22,7 @@ public class Consommateur extends Client{
         saveInfoCons(scannerInput("Type de dechets traités : "),5);
         saveInfoCons(scannerInput("Capacité de traitement : "),6);
 
-        newLine();
+        //newLine();
         out("\n Appuyer sur 1 pour enregistrer");
         filtrer();
 
@@ -36,7 +36,7 @@ public class Consommateur extends Client{
                 new PageAccueil();
                 break;
             case 99:
-                effacer();
+                //effacer();
                 System.exit(0);
 
                 break;

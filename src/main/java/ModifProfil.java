@@ -80,7 +80,7 @@ public class ModifProfil extends Page{
                 break;
 
             case 99:
-                effacer();
+                //effacer();
                 System.exit(0);
                 break;
             case 1:

@@ -27,7 +27,7 @@ public class PageAccueil extends Page {
                 new SignIn();
                 break;
             case 99:
-                effacer();
+                //effacer();
                 System.exit(0);
 
                 break;

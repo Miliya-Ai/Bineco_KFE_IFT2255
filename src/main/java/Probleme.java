@@ -32,7 +32,7 @@ public class Probleme extends Page{
                 demandeBac();
                 break;
             case 99:
-                effacer();
+                //effacer();
                 System.exit(0);
 
                 break;

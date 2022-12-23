@@ -1,6 +1,7 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 abstract class  Client extends Page {
@@ -16,16 +17,19 @@ abstract class  Client extends Page {
     public void save(String content, Boolean isResident)throws IOException {
         String path;
         if (isResident){
-            path = "src/passResident.txt";
+            path = "src/main/java/passResident.txt";
         }else {
-            path = "src/passConsommateur.txt";}
+            path = "src/main/java/passConsommateur.txt";}
 
-        FileWriter fw = new FileWriter(path,true);
+        /*FileWriter fw = new FileWriter(path,true);
         BufferedWriter writer = new BufferedWriter(fw);
         writer.append(content +"\n"  );
         writer.flush();
-        writer.close();
+        writer.close();*/
 
+        FileWriter fw = new FileWriter(path, true);
+        fw.write(content+"\n");
+        fw.close();
     }
 
     public void credentials (Boolean isResident) throws IOException {
@@ -49,7 +53,7 @@ abstract class  Client extends Page {
         isPasswordEligible =  password.matches(".*([a-zA-Z].*[0-9]|[0-9].*[a-zA-Z]).*");
 
         if (isPasswordEligible){
-            userAccount += " " + password;
+            userAccount += "," + password;
             save(userAccount, isResident);
 
             /*BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
@@ -75,7 +79,7 @@ abstract class  Client extends Page {
     }
 
     public void newLine() throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/java/informations.txt", true));
         writer.write("\n");
         writer.close();
     }

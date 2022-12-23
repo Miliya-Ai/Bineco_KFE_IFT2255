@@ -60,7 +60,7 @@ public abstract class Page extends Controller{
 
 
     //https://stackoverflow.com/questions/6994518/how-to-delete-the-content-of-text-file-without-deleting-itself
-    public void effacer() throws IOException {
+    /*public void effacer() throws IOException {
 
         PrintWriter pw = new PrintWriter("src/passResident.txt");
         pw.close();
@@ -71,9 +71,7 @@ public abstract class Page extends Controller{
         PrintWriter pw3 = new PrintWriter("src/informations.txt");
         pw3.close();
 
-
-
-    }
+    }*/
     public void changerPage(int intNumeroOption) throws IOException {
 
     }

@@ -58,7 +58,7 @@ public class MenuConsommateur extends Page{
                 notifier();
                 break;
             case 99:
-                effacer();
+                //effacer();
                 System.exit(0);
 
                 break;

@@ -34,7 +34,7 @@ public class FindConsommateur extends Page{
                 getConsommateur();
                 break;
             case 99:
-                effacer();
+                //effacer();
                 System.exit(0);
 
                 break;
