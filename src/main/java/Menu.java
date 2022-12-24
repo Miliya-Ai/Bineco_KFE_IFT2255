@@ -3,7 +3,7 @@ import java.io.IOException;
 public class Menu extends Page{
     public Menu() throws IOException {
         entete("Menu");
-
+        //Controller.liveUser.getInfoRes(Controller.liveUser.user);
         out( "**** Pour retourner au menu, appuyer 0 ****");
         out( "**** Pour quitter, appuyer 99 ****\n");
 
@@ -16,6 +16,7 @@ public class Menu extends Page{
         out(afficherOptions ());
 
         String temp = "Bacs enregistrés :  ";
+
         for (int i = 0; i < 3; i++){
             String bac = Controller.liveUser.numeroBac[i];
             if(bac != null){

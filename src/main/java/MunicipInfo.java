@@ -23,6 +23,7 @@ public class MunicipInfo {
     public int[] recyclage12mois = dataYear[0];
     public int[] composte12mois = dataYear[1];
     public int[] ordures12mois = dataYear[2];
+
     public ArrayList<String> problemes = new ArrayList<>();
 
     public ArrayList<String> message = new ArrayList<>();
@@ -38,9 +39,6 @@ public class MunicipInfo {
         setLots();
         setMessage();
         activeUsers = getExUser();
-        for (int i = 0; i < activeUsers.size(); i++){
-            System.out.println(activeUsers.get(i).toString());
-        }
     }
 
     public ArrayList<String> getExUser() throws FileNotFoundException {
@@ -83,42 +81,10 @@ public class MunicipInfo {
     }
 
     public void setConsommateurs() throws IOException {
-
-        /*consommateurs.put("c00", new String[]{"company1", "recyclage:2000", "composte:1000",
-                                                "courriel", "adresse", "telephone"});
-        consommateurs.put("c01", new String[]{"company2","recyclage:2000", "composte:500",
-                                                "courriel", "adresse", "telephone"});
-        consommateurs.put("c02", new String[]{"company3","recyclage:1000", "composte:1500",
-                                                 "courriel", "adresse", "telephone"});
-        consommateurs.put("c03", new String[]{"company4","recyclage:2000", "composte:1000", "dechets:2000",
-                                                "courriel", "adresse", "telephone"});
-        consommateurs.put("c04", new String[]{"company5","recyclage:1500", "composte:500",
-                                                "courriel", "adresse", "telephone"});
-        consommateurs.put("c05", new String[]{"company6","recyclage:750", "composte:1000", "dechets:5000",
-                                                "courriel", "adresse", "telephone"});
-        consommateurs.put("c06", new String[]{"company7","recyclage:2500",
-                                                "courriel", "adresse", "telephone"});
-        consommateurs.put("c07", new String[]{"company8","recyclage:2000", "composte:1000", "dechets:1500",
-                                                "courriel", "adresse", "telephone"});
-        consommateurs.put("c08", new String[]{"company9","composte:1750",
-                                                "courriel", "adresse", "telephone"});
-        consommateurs.put("c09", new String[]{"company10","recyclage:1000", "composte:1000", "dechets:1000",
-                                                "courriel", "adresse", "telephone"});*/
-
         lesCons = getFromCsv("src/main/java/dataCons.txt");
-
     }
 
     public void setBacs() throws IOException {
-        /*bacs.put("r00", new String[]{"adresse1", "UNE_DATE"});
-        bacs.put("r01", new String[]{"adresse2", "UNE_DATE"});
-        bacs.put("r02", new String[]{"adresse3", "UNE_DATE"});
-        bacs.put("d00", new String[]{"adresse4", "UNE_DATE"});
-        bacs.put("d01", new String[]{"adresse5", "UNE_DATE"});
-        bacs.put("d02", new String[]{"adresse6", "UNE_DATE"});
-        bacs.put("co00", new String[]{"adress7", "UNE_DATE"});
-        bacs.put("co01", new String[]{"adresse8", "UNE_DATE"});
-        bacs.put("co02", new String[]{"adresse9", "UNE_DATE"});*/
         lesBacs = getFromCsv("src/main/java/bacsEmis.txt");
     }
 
@@ -136,18 +102,7 @@ public class MunicipInfo {
     }
 
     public void setLots() throws IOException {
-       /* lots.put("l00", new String[]{"recyclage","YYYY-MM-DD","YYYY-MM-DD","statut_actuel", "1000", "750", "0.25"});
-        lots.put("l01", new String[]{"composte","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
-        lots.put("l02", new String[]{"ordures","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
-        lots.put("l03", new String[]{"recyclage","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
-        lots.put("l04", new String[]{"composte","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
-        lots.put("l05", new String[]{"ordures","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
-        lots.put("l06", new String[]{"recyclage","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
-        lots.put("l07", new String[]{"composte","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
-        lots.put("l08", new String[]{"ordures","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});
-        lots.put("l09", new String[]{"recyclage","YYYY-MM-DD","YYYY-MM-DD","statut_actuel","1000", "750", "0.25"});*/
         lesLots = getFromCsv("src/main/java/dataLots.txt");
-
     }
 
     public String[][] getFromCsv(String path) throws IOException {
@@ -162,9 +117,7 @@ public class MunicipInfo {
 
         String[] data = lines.toArray(new String[lines.size()]);
         br.close();
-        /*for(int i = 0; i < data.length; i++){
-            System.out.println(data[i]);
-        }*/
+
         String[][] formatted = new String[data.length][];
         for (int i = 0; i < data.length;  i++){
             formatted[i] = data[i].split(",");
@@ -182,6 +135,73 @@ public class MunicipInfo {
         FileWriter fw = (new FileWriter("src/main/java/existingUser.txt", true));
         fw.write("\n"+str);
         fw.close();
+    }
+
+    public ArrayList toArrL() throws IOException {
+
+        BufferedReader br = new BufferedReader(new FileReader("src/main/java/informations.txt"));
+
+        ArrayList<String> lines = new ArrayList<>();
+
+        String line;
+        while ((line = br.readLine()) != null) {
+            lines.add(line);
+        }
+
+        //String[] data = lines.toArray(new String[lines.size()]);
+        br.close();
+
+        return lines;
+    }
+
+    public void newBac(ArrayList list, String bac) throws IOException {
+
+        BufferedReader reader = new BufferedReader(new FileReader("src/main/java/informations.txt"));
+        String strInfo = "";
+        String line;
+        int idx = 0;
+        while ((line = reader.readLine()) != null) {
+            // Check if the current line contains the search term
+            if (line.contains(Controller.liveUser.user)) {
+                // The line has been found, take the appropriate action
+                //System.out.println("Found line: " + line +"  idx = " +idx);
+                strInfo = line;
+                break;
+            }
+            idx += 1;
+        }
+        strInfo+=bac+",";
+        list.set(idx, strInfo);
+        PrintWriter wr = new PrintWriter("src/main/java/informations.txt");
+        for(Object l : list){
+            wr.println(l);
+        }
+        wr.close();
+
+    }
+
+    public void deleteBac(ArrayList list, String bac) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader("src/main/java/informations.txt"));
+        String strInfo = "";
+        String line;
+        int idx = 0;
+        while ((line = reader.readLine()) != null) {
+            // Check if the current line contains the search term
+            if (line.contains(Controller.liveUser.user)) {
+                // The line has been found, take the appropriate action
+                //System.out.println("Found line: " + line +"  idx = " +idx);
+                strInfo = line;
+                break;
+            }
+            idx += 1;
+        }
+        String newStr = strInfo.replaceAll(","+bac, "");
+        list.set(idx, newStr);
+        PrintWriter wr = new PrintWriter("src/main/java/informations.txt");
+        for(Object l : list){
+            wr.println(l);
+        }
+        wr.close();
     }
 
 }

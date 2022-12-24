@@ -10,8 +10,6 @@ public class Main {
         Controller init = new Controller();
         init.setLiveAccount();
         init.start();
-        //MunicipInfo m = new MunicipInfo();
-        //m.getFromCsv("src/main/java/dataLots.txt");
 
     }
 }

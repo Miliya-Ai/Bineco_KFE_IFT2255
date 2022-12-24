@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Bacs extends Page{
-
     public Bacs(){
         entete("Mes bacs");
         out( "**** Pour retourner au menu, appuyer 0 ****");
@@ -64,29 +63,42 @@ public class Bacs extends Page{
     }
 
 
-    // --------------------------A FAIRE------------------------------
     public void enregistrerBac() throws IOException {
         String num = scannerInput("Numero du bac a enregistrer : ");
-        for(int i = 0; i < 3; i++){
-            if(num == Controller.liveUser.numeroBac[i]){
-                out("Bac deja enregistré! ");
-                tabNomOptions.clear();
-                new Bacs();
-                break;
-            }
-            if(Controller.liveUser.numeroBac[i] == null){
-                Controller.liveUser.numeroBac[i] = num;
-                out("Bac enregistré");
-                tabNomOptions.clear();
-                new Bacs();
-                break;
+        for (int k = 0; k < Controller.municipInfo.numerosBac.length; k++){
+            if(Controller.municipInfo.numerosBac[k].equals(num)){
+
+                for(int i = 0; i < 3; i++){
+                    if(num == Controller.liveUser.numeroBac[i]){
+                        out("Bac deja enregistré! ");
+                        tabNomOptions.clear();
+                        new Bacs();
+                        return;
+
+                    }
+                    if(Controller.liveUser.numeroBac[i] == null){
+
+                        //Controller.liveUser.numeroBac[i] = num;
+                        Controller.municipInfo.newBac(Controller.municipInfo.toArrL(), num);
+                        out("Bac enregistré");
+                        for(int m = 0; m < 3; m++){
+                            Controller.liveUser.numeroBac[m] = null;
+                        }
+                        Controller.liveUser.getInfoRes(Controller.liveUser.user);
+                        tabNomOptions.clear();
+                        new Bacs();
+                        return;
+                    }
+                }
+
             }
         }
+        out("Bac inexistant!");
+        new Bacs();
+        return;
 
     }
 
-
-    //-----------------------------A TESTER----------------------------
     public void supprimerBac() throws IOException {
 
         String[] temp = new String[3];
@@ -101,86 +113,26 @@ public class Bacs extends Page{
         }
         String num = scannerInput("Quel bac voulez nous supprimer? (numero correspondant) : ");
         int numInt = Integer.parseInt(num);
-        if(numInt <= 3 && temp[numInt-1] != null){
-            temp[numInt -1] = null;
-            int m = 0;
-            for(int j = 0; j < 3; j++){
 
-                Controller.liveUser.numeroBac[m] = temp[j];
-                //out(Controller.liveUser.numeroBac[m]);
-                m++;
+        for (int j = 1; j <= k; j++){
+            if(numInt == j){
+                String numero = Controller.liveUser.numeroBac[numInt-1];
+                Controller.municipInfo.deleteBac(Controller.municipInfo.toArrL(), numero);
+                out("Bac supprimé!");
+                for(int m = 0; m < 3; m++){
+                    Controller.liveUser.numeroBac[m] = null;
+                }
+                Controller.liveUser.getInfoRes(Controller.liveUser.user);
+                new Bacs();
+                return;
             }
-            out("Suppression réussie");
-            tabNomOptions.clear();
-            new Bacs();
-            return;
         }
+
         out("Erreur dans la suppression");
         tabNomOptions.clear();
         new Bacs();
     }
 
-
-    public void addToFile(String str) throws IOException {
-        try {
-
-            // Open given file in append mode by creating an
-            // object of BufferedWriter class
-            BufferedWriter out = new BufferedWriter(
-                    new FileWriter("src/informations.txt", true));
-
-            // Writing on output stream
-            out.write(str);
-            // Closing the connection
-            out.close();
-        }
-
-        // Catch block to handle the exceptions
-        catch (IOException e) {
-
-            // Display message when exception occurs
-            System.out.println("exception occurred" + e);
-        }
-    }
-
-
-    public void appendInfo(String input) throws IOException {
-
-        String filePath = "src/informations.txt";
-        //Instantiating the Scanner class to read the file
-        Scanner sc = new Scanner(new File(filePath));
-        //instantiating the StringBuffer class
-        StringBuffer buffer = new StringBuffer();
-        //Reading lines of the file and appending them to StringBuffer
-        while (sc.hasNextLine()) {
-            buffer.append(sc.nextLine() + System.lineSeparator());
-        }
-
-        String fileContents = buffer.toString();
-        //System.out.println("Contents of the file: "+fileContents);
-        //closing the Scanner object
-        sc.close();
-        String oldLine = Controller.liveUser.getInfoString();
-
-        /*for (int i = 0; i < Controller.liveUser.numeroBac.length; i++){
-            oldLine += Controller.liveUser.numeroBac[i];
-        }*/
-        //oldLine += ",";
-        out(oldLine);
-
-        String newLine = oldLine += input;
-        out(newLine);
-        //Replacing the old line with new line
-        fileContents = fileContents.replace(oldLine, newLine);
-        //instantiating the FileWriter class
-        FileWriter writer = new FileWriter(filePath);
-        //System.out.println("");
-        //System.out.println("new data: "+fileContents);
-        writer.append(fileContents);
-        writer.flush();
-
-
-    }
 
 
     public void etatBacs(){
@@ -210,15 +162,7 @@ public class Bacs extends Page{
 
         String numero = scannerInput("Numero du bac :");
         String[] listBac = Controller.municipInfo.numerosBac;
-        /*for (int i = 0; i < listBac.length; i++){
-            if(listBac[i].equals(numero)){
-                String[] info = Controller.municipInfo.bacs.get(numero);
 
-                out("Code : "+numero +"  Adresse : "+info[0]+"  Date d'emission : "+info[1]);
-                filtrer();
-                return;
-            }
-        }*/
         String[][] bacs = Controller.municipInfo.lesBacs;
         for (int k = 0; k < bacs.length; k++){
             if (bacs[k][0].equals(numero)){

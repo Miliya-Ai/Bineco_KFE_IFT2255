@@ -33,9 +33,6 @@ public class UserController extends Controller{
         DataInputStream in = new DataInputStream(fstream);
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         String strLine;
-        /*while ((br.readLine()) != null)   {
-            str = br.readLine();
-        }*/
         str = br.readLine();
 
         return str;
@@ -56,7 +53,9 @@ public class UserController extends Controller{
                 this.courriel = tokens[3];
                 this.adresse = tokens[4];
                 this.telephone = tokens[5];
-                this.numeroBac[0] = tokens[6];
+                for (int i = 6; i < tokens.length; i++){
+                    this.numeroBac[i-6] = tokens[i];
+                }
                 this.res = true;
                 return;
             }
@@ -103,23 +102,14 @@ public class UserController extends Controller{
             System.out.println("Courriel :  "+this.courriel);
             System.out.println("Adresse :  "+this.adresse);
             System.out.println("Telephone :  "+this.telephone);
-            System.out.println("Nom :  "+this.typeDechet);
-            System.out.println("Nom :  "+this.capacite);
+            System.out.println("Type et capacité :  "+this.typeDechet);
+            //System.out.println("Nom :  "+this.capacite);
         }
 
     }
 
     public ArrayList toArrL(String path) throws IOException {
 
-        /*String path;
-        String path2;
-        if(this.res){
-            path = "src/main/java/informations.txt";
-            path2 = "src/main/java/passResident.txt";
-        } else {
-            path = "src/main/java/informationsCons.txt";
-            path2 = "src/main/java/passConsommateurs.txt";
-        }*/
 
         BufferedReader br = new BufferedReader(new FileReader(path));
 
@@ -133,23 +123,10 @@ public class UserController extends Controller{
         String[] data = lines.toArray(new String[lines.size()]);
         br.close();
 
-        /*for(int i = 0; i < data.length; i++){
-            System.out.println(data[i]);
-        }*/
         return lines;
     }
 
     public void changeInfo(ArrayList list, String info, String newOne, String path) throws IOException {
-
-        /*String path;
-        String path2;
-        if(this.res){
-            path = "src/main/java/informations.txt";
-            path2 = "src/main/java/passResident.txt";
-        } else {
-            path = "src/main/java/informationsCons.txt";
-            path2 = "src/main/java/passConsommateurs.txt";
-        }*/
 
 
         BufferedReader reader = new BufferedReader(new FileReader(path));
@@ -173,14 +150,7 @@ public class UserController extends Controller{
         for(Object l : list){
             wr.println(l);
         }
-
-        /*if (res){
-            getInfoRes(this.user);
-        } else {
-            getInfoCons(this.user);
-        }*/
         wr.close();
-        //System.out.println(this.courriel);
     }
 
 }

@@ -1,4 +1,4 @@
-xavier,mdp,Xavier,courriel,adr,tel,r01,
+xavier,newmdp,Xavier,x.laperriere@gmail,adr,tel,co02,d01,
 mr,x123,Xavierlap,courriel1,adresse,tele,r01,
 hl,h1,Hu,cour,990,0987654321,co01,
 poe,po1,PO,pp,pp,0987654321,co00,

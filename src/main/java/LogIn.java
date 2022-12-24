@@ -49,14 +49,6 @@ public class LogIn extends Page{
                 String[] tokens = strLine.split(",");
                 if (tokens[0].equals( user) && tokens[1].equals(pass)){
                     tabNomOptions.clear();
-                    /*Controller.liveUser.setUser(user);
-                    Controller.liveUser.setMdp(pass);
-                    Controller.liveUser.name = Controller.tempInfo[0];
-                    Controller.liveUser.courriel = Controller.tempInfo[1];
-                    Controller.liveUser.adresse = Controller.tempInfo[2];
-                    Controller.liveUser.telephone = Controller.tempInfo[3];
-                    Controller.liveUser.numeroBac[0] = Controller.tempInfo[4];
-                    Controller.liveUser.res = true;*/
                     Controller.liveUser.getInfoRes(user);
                     new Menu();
                     return;
@@ -72,16 +64,6 @@ public class LogIn extends Page{
                 String[] tokens = strLine2.split(",");
                 if (tokens[0].equals( user) && tokens[1].equals(pass)){
                     tabNomOptions.clear();
-                    /*Controller.liveUser.setUser(user);
-                    Controller.liveUser.setMdp(pass);
-                    Controller.liveUser.code = Controller.tempInfoCons[0];
-                    Controller.liveUser.name = Controller.tempInfoCons[1];
-                    Controller.liveUser.courriel = Controller.tempInfoCons[2];
-                    Controller.liveUser.adresse = Controller.tempInfoCons[3];
-                    Controller.liveUser.telephone = Controller.tempInfoCons[4];
-                    Controller.liveUser.typeDechet = Controller.tempInfoCons[5];
-                    Controller.liveUser.capacite = Controller.tempInfoCons[6];
-                    Controller.liveUser.res = false;*/
                     Controller.liveUser.getInfoCons(user);
 
                     String[] lesCons = Controller.municipInfo.listeCons;
@@ -114,17 +96,9 @@ public class LogIn extends Page{
         switch (intNumeroOption) {
             case 1:
                 tabNomOptions.clear();
-                //out("Entre les info resident");
-                //new LogInResident();
-                //verified = true;
-                //new Menu();
                 break;
             case 2:
                 tabNomOptions.clear();
-                //out("Entre les info consommateur");
-                //new LogInConsommateur();
-                //verified = true;
-                //new Menu();
                 break;
             case 99:
                 //effacer();

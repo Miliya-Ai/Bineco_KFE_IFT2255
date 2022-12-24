@@ -45,17 +45,6 @@ public class Resident extends Client{
         return input;
     }
 
-    /*public void saveInfo(String info) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
-        writer.write(info + ",");
-        writer.close();
-    }
-
-    public void newLine() throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/informations.txt", true));
-        writer.write("\n");
-        writer.close();
-    }*/
 
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
