@@ -7,24 +7,14 @@ public class LogIn extends Page{
 
     public boolean verified = false;
     public LogIn() throws IOException {
-
-
        entete("Log in");
        out( "**** Pour quitter, appuyer 99 ****\n");
-       //out("Vous êtes un");
-       //addTabNomOptions("Résident");
-       //addTabNomOptions("Consommateur");
-       //out(afficherOptions ());
 
         addTabNomOptions("Enter");
         out(afficherOptions ());
         scannerInput();
-
-
        filtrer();
-
-
-   };
+   }
 
     public void scannerInput() throws FileNotFoundException {
         out("Nom d'utilisateur :");
@@ -83,7 +73,7 @@ public class LogIn extends Page{
             in2.close();
             tabNomOptions.clear();
             out("Erreur d'informations de connexion");
-            new LogIn();
+            new Menu();
 
         } catch (Exception e){
             System.err.println("Error: " + e.getMessage());
