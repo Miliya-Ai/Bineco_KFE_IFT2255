@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Bacs extends Page{
+
     public Bacs(){
         entete("Mes bacs");
         out( "**** Pour retourner au menu, appuyer 0 ****");

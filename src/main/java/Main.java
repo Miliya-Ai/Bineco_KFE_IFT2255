@@ -3,6 +3,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main {
+    /**
+     *
+     * @param args
+     * @throws IOException
+     */
 
     //**********************EXECUTER MAIN POUR COMMENCER L'APPLICATION **********************
     public static void main(String[] args) throws IOException {
