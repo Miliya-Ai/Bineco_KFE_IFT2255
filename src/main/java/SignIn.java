@@ -1,7 +1,13 @@
 import java.io.IOException;
 
+/**
+ *
+ */
 public class SignIn extends Page{
 
+    /**
+     *
+     */
     public SignIn() {
         entete("Sign in");
         out( "**** Pour quitter, appuyer 99 ****\n");
@@ -12,6 +18,10 @@ public class SignIn extends Page{
         filtrer();
     }
 
+    /**
+     * @param intNumeroOption
+     * @throws IOException
+     */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
@@ -24,7 +34,6 @@ public class SignIn extends Page{
                 new Consommateur();
                 break;
             case 99:
-                //effacer();
                 System.exit(0);
 
                 break;

@@ -1,6 +1,12 @@
 import java.io.IOException;
 
+/**
+ *
+ */
 public class Menu extends Page{
+    /**
+     * @throws IOException
+     */
     public Menu() throws IOException {
         entete("Menu");
         //Controller.liveUser.getInfoRes(Controller.liveUser.user);
@@ -33,6 +39,10 @@ public class Menu extends Page{
         filtrer();
     }
 
+    /**
+     * @param intNumeroOption
+     * @throws IOException
+     */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
@@ -57,7 +67,6 @@ public class Menu extends Page{
                 new ModifProfil();
                 break;
             case 99:
-                //effacer();
                 System.exit(0);
 
                 break;

@@ -2,10 +2,17 @@ import javax.naming.ldap.Control;
 import java.io.*;
 import java.util.Scanner;
 
+/**
+ *
+ */
 public class LogIn extends Page{
 
 
     public boolean verified = false;
+
+    /**
+     * @throws IOException
+     */
     public LogIn() throws IOException {
        entete("Log in");
        out( "**** Pour quitter, appuyer 99 ****\n");
@@ -16,6 +23,9 @@ public class LogIn extends Page{
        filtrer();
    }
 
+    /**
+     * @throws FileNotFoundException
+     */
     public void scannerInput() throws FileNotFoundException {
         out("Nom d'utilisateur :");
         Scanner nom = new Scanner(System.in);
@@ -28,6 +38,11 @@ public class LogIn extends Page{
 
     }
 
+    /**
+     * @param user
+     * @param pass
+     * @throws FileNotFoundException
+     */
     public void verifyLogin(String user, String pass) throws FileNotFoundException {
 
         try{
@@ -81,6 +96,10 @@ public class LogIn extends Page{
 
     }
 
+    /**
+     * @param intNumeroOption
+     * @throws IOException
+     */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
@@ -91,7 +110,6 @@ public class LogIn extends Page{
                 tabNomOptions.clear();
                 break;
             case 99:
-                //effacer();
                 System.exit(0);
 
                 break;
@@ -102,7 +120,9 @@ public class LogIn extends Page{
     }
 
 
-
+    /**
+     * @param message
+     */
     public void out(String message) {
         System.out.println(message);
     }

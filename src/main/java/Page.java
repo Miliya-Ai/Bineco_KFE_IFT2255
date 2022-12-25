@@ -6,20 +6,33 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ *
+ */
 public abstract class Page extends Controller{
     protected ArrayList<String> tabNomOptions = new ArrayList<String>() ;
 
     public Controller controller = new Controller();
+
+    /**
+     *
+     */
     public Page() {
 
     }
 
+    /**
+     * @param nomPage
+     */
     public void entete (String nomPage){
         out("\n"
             + "################ " + nomPage + " ##################" +"  Session de : "+Controller.liveUser.user
             + "\n");
     }
 
+    /**
+     * @return
+     */
     public String afficherOptions () {
         String optionDonnee = "";
         int lenghtTabNomOptions = tabNomOptions.size() ;
@@ -31,19 +44,26 @@ public abstract class Page extends Controller{
         return optionDonnee;
     }
 
+    /**
+     * @param option
+     */
     public void addTabNomOptions(String option) {
         this.tabNomOptions.add(option);
     }
 
+    /**
+     * @param message
+     */
     public void out (String message){
         System.out.println(message);
     }
 
+    /**
+     *
+     */
     public void filtrer () {
         Scanner myObj = new Scanner(System.in);
         String stringNumeroOption = myObj.nextLine();
-        //String optionChoisi = tabNomOptions.get(numeroOption - 1);
-
         int intNumeroOption = 0;
 
         try {
@@ -51,7 +71,7 @@ public abstract class Page extends Controller{
             changerPage(intNumeroOption);
             myObj.close();
         } catch (Exception e) {
-            //out("Svp, entrer un chiffre");
+
             filtrer();
 
         }
@@ -59,19 +79,11 @@ public abstract class Page extends Controller{
     }
 
 
-    //https://stackoverflow.com/questions/6994518/how-to-delete-the-content-of-text-file-without-deleting-itself
-    /*public void effacer() throws IOException {
+    /**
+     * @param intNumeroOption
+     * @throws IOException
+     */
 
-        PrintWriter pw = new PrintWriter("src/passResident.txt");
-        pw.close();
-
-        PrintWriter pw2 = new PrintWriter("src/passConsommateur.txt");
-        pw2.close();
-
-        PrintWriter pw3 = new PrintWriter("src/informations.txt");
-        pw3.close();
-
-    }*/
     public void changerPage(int intNumeroOption) throws IOException {
 
     }

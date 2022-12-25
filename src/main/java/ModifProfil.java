@@ -1,8 +1,14 @@
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ *
+ */
 public class ModifProfil extends Page{
 
+    /**
+     *
+     */
     public ModifProfil(){
 
         entete("Profil");
@@ -16,6 +22,10 @@ public class ModifProfil extends Page{
 
     }
 
+    /**
+     * @param message
+     * @return
+     */
     public String scannerInput(String message){
         out(message);
         Scanner temp = new Scanner(System.in);
@@ -23,6 +33,10 @@ public class ModifProfil extends Page{
         return wut;
 
     }
+
+    /**
+     * @throws IOException
+     */
     public void changerMdp() throws IOException {
         String mdp = Controller.liveUser.mdp;
         out("Votre mot de passe actuel : " +mdp);
@@ -58,6 +72,9 @@ public class ModifProfil extends Page{
         }
     }
 
+    /**
+     * @throws IOException
+     */
     public void changerCourriel() throws IOException {
         String mail = Controller.liveUser.courriel;
         out("Votre courriel actuel : " +mail);
@@ -85,6 +102,9 @@ public class ModifProfil extends Page{
         }
     }
 
+    /**
+     * @throws IOException
+     */
     public void changerTel() throws IOException {
         String tel = Controller.liveUser.telephone;
         out("Votre telephone actuel : " +tel);
@@ -120,6 +140,10 @@ public class ModifProfil extends Page{
     }
 
 
+    /**
+     * @param intNumeroOption
+     * @throws IOException
+     */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {

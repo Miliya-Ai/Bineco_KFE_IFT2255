@@ -1,14 +1,15 @@
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ *
+ */
 public class MenuConsommateur extends Page{
+    /**
+     * @throws IOException
+     */
     public MenuConsommateur() throws IOException {
 
-        /*if(Controller.liveUser.res){
-            Controller.liveUser.getInfoRes();
-        } else {
-            Controller.liveUser.getInfoCons();
-        }*/
         entete("Menu du consommateur");
 
         out( "**** Pour retourner au menu, appuyer 0 ****");
@@ -19,11 +20,12 @@ public class MenuConsommateur extends Page{
         addTabNomOptions("Mon profil");
         addTabNomOptions("Notifier");
         out(afficherOptions ());
-
-        //out("\nPour revenir au Menu appuyer 0");
-        //out("Pour quitter appuyer 99");
         filtrer();
     }
+
+    /**
+     * @throws IOException
+     */
     public void notifier() throws IOException {
         String msg = scannerInput("Message à transmettre");
         Controller.municipInfo.message.add(msg);
@@ -31,6 +33,10 @@ public class MenuConsommateur extends Page{
         new MenuConsommateur();
     }
 
+    /**
+     * @param message
+     * @return
+     */
     public String scannerInput(String message){
         out(message);
         Scanner temp = new Scanner(System.in);
@@ -38,6 +44,10 @@ public class MenuConsommateur extends Page{
         return wut;
     }
 
+    /**
+     * @param intNumeroOption
+     * @throws IOException
+     */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
@@ -58,7 +68,6 @@ public class MenuConsommateur extends Page{
                 notifier();
                 break;
             case 99:
-                //effacer();
                 System.exit(0);
 
                 break;

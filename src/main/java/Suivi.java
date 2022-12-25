@@ -2,6 +2,9 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ *
+ */
 public class Suivi extends Page {
     public Suivi() {
         entete("Suivi ecologique");
@@ -15,6 +18,10 @@ public class Suivi extends Page {
     }
 
 
+    /**
+     * @param intNumeroOption
+     * @throws IOException
+     */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
@@ -48,6 +55,10 @@ public class Suivi extends Page {
         }
     }
 
+    /**
+     * @param message
+     * @return
+     */
     public String scannerInput(String message){
         out(message);
         Scanner temp = new Scanner(System.in);
@@ -55,6 +66,9 @@ public class Suivi extends Page {
         return wut;
     }
 
+    /**
+     *
+     */
     public void etatTraitement(){
         String choix = (scannerInput("1- Liste des lots \n2- Trouver un lot"));
         if (choix.equals("1")){
@@ -69,6 +83,9 @@ public class Suivi extends Page {
 
     }
 
+    /**
+     *
+     */
     public void listLot(){
         /*for(Map.Entry<String, String[]> set:
                 Controller.municipInfo.lots.entrySet()){
@@ -95,33 +112,15 @@ public class Suivi extends Page {
         filtrer();
     }
 
+    /**
+     *
+     */
     public void getLot(){
         String numero = scannerInput("Numero du lot recherché : ");
         String[] lotsExist = Controller.municipInfo.listeLots;
-
-        /*for (int i = 0; i < lotsExist.length; i ++){
-            if (lotsExist[i].equals(numero)){
-                String[] info = Controller.municipInfo.lots.get(numero);
-                String affichage = "";
-                for (int j = 0; j < info.length; j++){
-                    affichage += info[j]+", ";
-                }
-                out("numero, type, date ramassé, date livraison, statut, quantitee total, quantite traite, taux rejet");
-                out(numero+", "+affichage);
-                out("--Appuyez sur 0 pour revenir au menu--");
-                filtrer();
-                return;
-            }
-        }*/
-        //out("Numero de lot inexistant");
         String[][] lots = Controller.municipInfo.lesLots;
         String[][] formattedLots = new String[10][8];
-        /*for(int i = 0; i < lots.length; i++){
-            String[] info = lots[i].split(",");
-            for(int j = 0; j < info.length; j++){
-                formattedLots[i][j] = info[j];
-            }
-        }*/
+
         for (int k = 0; k < lots.length; k++){
             if (lots[k][0].equals(numero)){
                 String affichage = "";
@@ -140,6 +139,9 @@ public class Suivi extends Page {
         new Suivi();
     }
 
+    /**
+     *
+     */
     public void choixTemps(){
         out("Sur quel interval de temps voulez vous voir les metriques municipales? : ");
         String choix = scannerInput("1- 1 mois\n2- 3 mois\n3- 6 mois\n4- 12 mois");
@@ -159,6 +161,9 @@ public class Suivi extends Page {
         }
     }
 
+    /**
+     * @param temps
+     */
     public void metriques(int temps){
 
         int[] rec = Controller.municipInfo.recyclage12mois;
@@ -177,6 +182,11 @@ public class Suivi extends Page {
 
     }
 
+    /**
+     * @param temps
+     * @param type
+     * @return
+     */
     public String avgSum(int temps, int[] type){
         int sum = 0;
         for (int i = 0; i < temps; i++){
@@ -186,6 +196,13 @@ public class Suivi extends Page {
         return "Moyenne : "+average+"   Quantitée totale : "+sum;
     }
 
+    /**
+     * @param temps
+     * @param r
+     * @param c
+     * @param o
+     * @return
+     */
     public String propotions(int temps, int[] r, int[] c, int[] o){
         int sumR = 0;
         for (int i = 0; i < temps; i++){
@@ -210,6 +227,9 @@ public class Suivi extends Page {
     }
 
 
+    /**
+     *
+     */
     public void historiqueBac(){
 
     }

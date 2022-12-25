@@ -1,6 +1,9 @@
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ *
+ */
 public class UserController extends Controller{
 
 
@@ -13,20 +16,32 @@ public class UserController extends Controller{
     String info;
 
 
-
+    /**
+     *
+     */
     public UserController(){
 
 
     }
 
+    /**
+     * @param usr
+     */
     public void setUser(String usr){
         this.user = usr;
     }
 
+    /**
+     * @param pass
+     */
     public void setMdp(String pass){
         this.mdp = pass;
     }
 
+    /**
+     * @return
+     * @throws IOException
+     */
     public String getInfoString() throws IOException {
         String str = null;
         FileInputStream fstream = new FileInputStream("src/informations.txt");
@@ -39,6 +54,10 @@ public class UserController extends Controller{
     }
 
 
+    /**
+     * @param usr
+     * @throws IOException
+     */
     public void getInfoRes(String usr) throws IOException {
         FileInputStream fstream = new FileInputStream("src/main/java/informations.txt");
         DataInputStream in = new DataInputStream(fstream);
@@ -63,6 +82,10 @@ public class UserController extends Controller{
         }
     }
 
+    /**
+     * @param usr
+     * @throws IOException
+     */
     public void getInfoCons(String usr) throws IOException {
         FileInputStream fstream = new FileInputStream("src/main/java/informationsCons.txt");
         DataInputStream in = new DataInputStream(fstream);
@@ -86,6 +109,9 @@ public class UserController extends Controller{
         }
     }
 
+    /**
+     *
+     */
     public void afficherInfo(){
 
         if (res){
@@ -108,6 +134,11 @@ public class UserController extends Controller{
 
     }
 
+    /**
+     * @param path
+     * @return
+     * @throws IOException
+     */
     public ArrayList toArrL(String path) throws IOException {
 
 
@@ -126,6 +157,13 @@ public class UserController extends Controller{
         return lines;
     }
 
+    /**
+     * @param list
+     * @param info
+     * @param newOne
+     * @param path
+     * @throws IOException
+     */
     public void changeInfo(ArrayList list, String info, String newOne, String path) throws IOException {
 
 
@@ -137,7 +175,6 @@ public class UserController extends Controller{
             // Check if the current line contains the search term
             if (line.contains(info) && (line.contains(this.user)||line.contains(this.name))) {
                 // The line has been found, take the appropriate action
-                //System.out.println("Found line: " + line +"  idx = " +idx);
                 strInfo = line;
                 break;
             }

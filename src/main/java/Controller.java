@@ -1,5 +1,8 @@
 import java.io.IOException;
 
+/**
+ *
+ */
 public class Controller {
 
     //public UserController liveUser = new UserController();
@@ -11,12 +14,18 @@ public class Controller {
 
     public static String[] tempInfoCons;
 
+    /**
+     *
+     */
     public Controller(){
 
         //new PageAccueil();
 
     }
 
+    /**
+     * @throws IOException
+     */
     public void setLiveAccount() throws IOException {
         tempInfo = new String[5];
         tempInfoCons = new String[7];
@@ -25,6 +34,9 @@ public class Controller {
         capteurs = new Capteurs();
     }
 
+    /**
+     *
+     */
     public void start(){
         new PageAccueil();
     }

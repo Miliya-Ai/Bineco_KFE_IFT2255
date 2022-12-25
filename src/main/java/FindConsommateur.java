@@ -2,6 +2,9 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ *
+ */
 public class FindConsommateur extends Page{
 
     public FindConsommateur(){
@@ -14,6 +17,10 @@ public class FindConsommateur extends Page{
     }
 
 
+    /**
+     * @param intNumeroOption
+     * @throws IOException
+     */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
@@ -34,7 +41,6 @@ public class FindConsommateur extends Page{
                 getConsommateur();
                 break;
             case 99:
-                //effacer();
                 System.exit(0);
 
                 break;
@@ -43,6 +49,11 @@ public class FindConsommateur extends Page{
                 filtrer();
         }
     }
+
+    /**
+     * @param message
+     * @return
+     */
     public String scannerInput(String message){
         out(message);
         Scanner temp = new Scanner(System.in);
@@ -51,22 +62,13 @@ public class FindConsommateur extends Page{
 
     }
 
+    /**
+     *
+     */
     public void listConsommateur(){
-
-        /*for(Map.Entry<String, String[]> set:
-            Controller.municipInfo.consommateurs.entrySet()){
-
-            out("Code : "+set.getKey()+",   nom : "+set.getValue()[0]);
-        }*/
-
         String[][] lots = Controller.municipInfo.lesCons;
         String[][] formattedCons = new String[10][8];
-        /*for(int i = 0; i < lots.length; i++){
-            String[] info = lots[i].split(",");
-            for(int j = 0; j < info.length; j++){
-                formattedCons[i][j] = info[j];
-            }
-        }*/
+
         for(int k = 0; k < lots.length; k++){
             System.out.println("Code : "+lots[k][0]+"  Nom : "+lots[k][1]);
         }
@@ -75,37 +77,16 @@ public class FindConsommateur extends Page{
         filtrer();
     }
 
+    /**
+     *
+     */
     public void getConsommateur(){
 
         String code = scannerInput("Code du consommateur cherché :");
         String[] consExist = Controller.municipInfo.listeCons;
-        /*for (int j = 0; j < consExist.length; j++){
-            if (consExist[j].equals(code)){
-                String[] info = Controller.municipInfo.consommateurs.get(code);
-                String nom = info[0];
-                String details = info[1];
-
-                if(info.length > 2){
-                    for (int i = 2; i < info.length; i++){
-                        details += " , "+info[i];
-                    }
-                }
-                out("Code : "+code+"  Nom : "+nom+"  Info: "+details);
-                noter(code);
-                out("--Appuyez sur 0 pour revenir au menu--");
-                filtrer();
-                return;
-            }
-        }*/
-
         String[][] lots = Controller.municipInfo.lesCons;
         String[][] formattedLots = new String[10][8];
-        /*for(int i = 0; i < lots.length; i++){
-            String[] info = lots[i].split(",");
-            for(int j = 0; j < info.length; j++){
-                formattedLots[i][j] = info[j];
-            }
-        }*/
+
         for (int k = 0; k < lots.length; k++){
             if (lots[k][0].equals(code)){
                 String affichage = "";
@@ -126,6 +107,9 @@ public class FindConsommateur extends Page{
 
     }
 
+    /**
+     * @param code
+     */
     public void noter(String code){
         String noter = scannerInput("Voulez vous notez ce consommateur? (y pour oui, n pour non");
         if (noter.equals("n")){

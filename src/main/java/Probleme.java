@@ -1,9 +1,15 @@
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ *
+ */
 public class Probleme extends Page{
 
 
+    /**
+     *
+     */
     public Probleme(){
         entete("Signaler un probleme");
         addTabNomOptions("Remplacement d'un bac");
@@ -12,6 +18,10 @@ public class Probleme extends Page{
         filtrer();
     }
 
+    /**
+     * @param intNumeroOption
+     * @throws IOException
+     */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
@@ -32,7 +42,6 @@ public class Probleme extends Page{
                 demandeBac();
                 break;
             case 99:
-                //effacer();
                 System.exit(0);
 
                 break;
@@ -42,6 +51,10 @@ public class Probleme extends Page{
         }
     }
 
+    /**
+     * @param message
+     * @return
+     */
     public String scannerInput(String message){
         out(message);
         Scanner temp = new Scanner(System.in);
@@ -49,6 +62,9 @@ public class Probleme extends Page{
         return wut;
     }
 
+    /**
+     *
+     */
     public void demandeBac(){
         String nom = Controller.liveUser.name;
         String adresse = Controller.liveUser.adresse;
@@ -71,6 +87,9 @@ public class Probleme extends Page{
         }
     }
 
+    /**
+     *
+     */
     public void remplacerBac(){
         String nom = Controller.liveUser.name;
         String adresse = Controller.liveUser.adresse;

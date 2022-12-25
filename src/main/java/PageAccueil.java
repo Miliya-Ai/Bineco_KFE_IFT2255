@@ -2,8 +2,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ *
+ */
 public class PageAccueil extends Page {
 
+    /**
+     *
+     */
     public PageAccueil() { //constructeur;
         entete("Page d'accueil");
         out( "**** Pour quitter, appuyer 99 ****");
@@ -15,6 +21,10 @@ public class PageAccueil extends Page {
 
     }
 
+    /**
+     * @param intNumeroOption
+     * @throws IOException
+     */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
@@ -27,7 +37,6 @@ public class PageAccueil extends Page {
                 new SignIn();
                 break;
             case 99:
-                //effacer();
                 System.exit(0);
 
                 break;

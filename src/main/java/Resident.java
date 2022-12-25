@@ -3,8 +3,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ *
+ */
 public class Resident extends Client{
 
+    /**
+     * @throws IOException
+     */
     public Resident()throws IOException{
         entete("Resident");
         out( "**** Pour quitter, appuyer 99 ****\n");
@@ -26,6 +32,10 @@ public class Resident extends Client{
         filtrer();
 
     }
+
+    /**
+     * @return
+     */
     public String getName(){
         String input = scannerInput("Nom (doit debuter par une lettre masjuscule) :  ");
 
@@ -36,6 +46,9 @@ public class Resident extends Client{
         return input;
     }
 
+    /**
+     * @return
+     */
     public String getTel(){
         String input = scannerInput("Telephone (doit etre de longueur 10) :  ");
         if(input.length() != 10){
@@ -46,6 +59,10 @@ public class Resident extends Client{
     }
 
 
+    /**
+     * @param intNumeroOption
+     * @throws IOException
+     */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
@@ -54,7 +71,6 @@ public class Resident extends Client{
                 new PageAccueil();
                 break;
             case 99:
-                //effacer();
                 System.exit(0);
 
                 break;
@@ -64,6 +80,9 @@ public class Resident extends Client{
         }
     }
 
+    /**
+     * @throws IOException
+     */
     public void checkBac() throws IOException {
         String bac = scannerInput("Numero du premier bac a enregistrer :");
         for (int i = 0; i < Controller.municipInfo.numerosBac.length; i ++){

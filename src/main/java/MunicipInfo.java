@@ -2,6 +2,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ *
+ */
 public class MunicipInfo {
 
 
@@ -31,7 +34,9 @@ public class MunicipInfo {
     public ArrayList<String > activeUsers;
 
 
-
+    /**
+     * @throws IOException
+     */
     public MunicipInfo() throws IOException {
         setConsommateurs();
         setBacs();
@@ -41,6 +46,10 @@ public class MunicipInfo {
         activeUsers = getExUser();
     }
 
+    /**
+     * @return
+     * @throws FileNotFoundException
+     */
     public ArrayList<String> getExUser() throws FileNotFoundException {
         String path = "src/main/java/existingUser.txt";
         ArrayList<String> result = new ArrayList<>();
@@ -65,6 +74,10 @@ public class MunicipInfo {
 
     }
 
+    /**
+     * @param str
+     * @return
+     */
     public int[][] toInt(String[][] str){
         int[][] inInt =new int[str.length][12];
         for (int i = 0; i < str.length; i++){
@@ -75,19 +88,32 @@ public class MunicipInfo {
         }
         return inInt;
     }
+
+    /**
+     *
+     */
     public void setMessage(){
         message.add("Laver vos bacs! - 20 novembre 2022");
 
     }
 
+    /**
+     * @throws IOException
+     */
     public void setConsommateurs() throws IOException {
         lesCons = getFromCsv("src/main/java/dataCons.txt");
     }
 
+    /**
+     * @throws IOException
+     */
     public void setBacs() throws IOException {
         lesBacs = getFromCsv("src/main/java/bacsEmis.txt");
     }
 
+    /**
+     *
+     */
     public void setFeedbackCons(){
         feedbackCons.put("c00", null);
         feedbackCons.put("c01", null);
@@ -101,10 +127,18 @@ public class MunicipInfo {
         feedbackCons.put("c09", null);
     }
 
+    /**
+     * @throws IOException
+     */
     public void setLots() throws IOException {
         lesLots = getFromCsv("src/main/java/dataLots.txt");
     }
 
+    /**
+     * @param path
+     * @return
+     * @throws IOException
+     */
     public String[][] getFromCsv(String path) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(path));
 
@@ -125,18 +159,30 @@ public class MunicipInfo {
         return formatted;
     }
 
+    /**
+     * @param str
+     * @throws IOException
+     */
     public void addCons(String str) throws IOException {
         FileWriter fw = (new FileWriter("src/main/java/dataCons.txt", true));
         fw.write(str + ",");
         fw.close();
     }
 
+    /**
+     * @param str
+     * @throws IOException
+     */
     public void addUser(String str) throws IOException {
         FileWriter fw = (new FileWriter("src/main/java/existingUser.txt", true));
         fw.write("\n"+str);
         fw.close();
     }
 
+    /**
+     * @return
+     * @throws IOException
+     */
     public ArrayList toArrL() throws IOException {
 
         BufferedReader br = new BufferedReader(new FileReader("src/main/java/informations.txt"));
@@ -154,6 +200,11 @@ public class MunicipInfo {
         return lines;
     }
 
+    /**
+     * @param list
+     * @param bac
+     * @throws IOException
+     */
     public void newBac(ArrayList list, String bac) throws IOException {
 
         BufferedReader reader = new BufferedReader(new FileReader("src/main/java/informations.txt"));
@@ -164,7 +215,6 @@ public class MunicipInfo {
             // Check if the current line contains the search term
             if (line.contains(Controller.liveUser.user)) {
                 // The line has been found, take the appropriate action
-                //System.out.println("Found line: " + line +"  idx = " +idx);
                 strInfo = line;
                 break;
             }
@@ -180,6 +230,11 @@ public class MunicipInfo {
 
     }
 
+    /**
+     * @param list
+     * @param bac
+     * @throws IOException
+     */
     public void deleteBac(ArrayList list, String bac) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("src/main/java/informations.txt"));
         String strInfo = "";
@@ -189,7 +244,6 @@ public class MunicipInfo {
             // Check if the current line contains the search term
             if (line.contains(Controller.liveUser.user)) {
                 // The line has been found, take the appropriate action
-                //System.out.println("Found line: " + line +"  idx = " +idx);
                 strInfo = line;
                 break;
             }
