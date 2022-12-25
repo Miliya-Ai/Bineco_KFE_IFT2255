@@ -77,11 +77,11 @@ public class UserController extends Controller{
                 setUser(tokens[0]);
                 setMdp(tokens[1]);
                 this.name = tokens[2];
-                this.courriel = tokens[4];
-                this.adresse = tokens[5];
-                this.telephone = tokens[6];
-                this.typeDechet = tokens[3];
-                this.capacite = tokens[3];
+                this.courriel = tokens[5];
+                this.adresse = tokens[6];
+                this.telephone = tokens[7];
+                this.typeDechet = tokens[3] + " " + tokens[4];
+               // this.capacite = tokens[3] ;
                 //this.activite = tokens[8];
                 this.res = false;
             }
