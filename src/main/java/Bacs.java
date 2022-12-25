@@ -188,7 +188,7 @@ public class Bacs extends Page{
      *     <li>Capacite</li>
      *     <li>Composition</li>
      * </ol>
-     * </p>
+     *
      */
     public void etatBacs(){
 
@@ -223,7 +223,7 @@ public class Bacs extends Page{
      *         <li>Date d'emision</li>
      *     </ol>
      *     Si le numero de bac n'est pas associe a son compte, lui afficher le messager. La page Bacs se reaffiche.
-     * </p>
+     *
      */
     public void getBac(){
 
@@ -254,7 +254,7 @@ public class Bacs extends Page{
      *         <li>Capacite</li>
      *         <li>Composition</li>
      *     </ol>
-     * </p>
+     *
      */
     public void historiqueBac(){
         int idx = 0;

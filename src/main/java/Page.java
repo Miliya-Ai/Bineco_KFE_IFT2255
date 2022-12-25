@@ -85,7 +85,7 @@ public abstract class Page extends Controller{
      * Option 0 pour revenir au menu correspondant a l'utilisateur et option 99, pour quitter.
      * Option 0 n'est pas valide pour la page d'accueil, log in, sign in, menu du resident et menu de consommateur.
      * @param intNumeroOption numero correspondant aux options de la page
-     * @throws IOException
+     * @throws IOException smt123
      */
 
     public void changerPage(int intNumeroOption) throws IOException {

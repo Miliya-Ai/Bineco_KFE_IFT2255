@@ -129,7 +129,7 @@ abstract class  Client extends Page {
      *          <li>Addresse</li>
      *          <li>Telephone</li>
      *      </ol>
-     * </p>
+     *
      * @param info information du resident
      * @param index index correspondant a l'information a enregistrer dans tempInfo
      *
@@ -157,7 +157,7 @@ abstract class  Client extends Page {
      *          <li>Telephone</li>
      *      </ol>
      *
-     * </p>
+     *
      * @param info information du consommateur
      * @param index index correspondant a l'information a enregistrer dans tempInfo
      * @return information a enregistre
