@@ -36,16 +36,15 @@ public class Resident extends Client{
     }
     //TODO: check ce qui arrive lorsqu'on met un nom legal non valide, pourquoi on va a tel?
     /**
-     * Demande un nom legal qui doit commencer par une lettre majuscule. Apres, demander son numero de telephone.
+     * Demande un nom legal qui doit commencer par une lettre majuscule.
      * @return le nom legal valide
-     * @see #getTel()
      */
     public String getName(){
         String input = scannerInput("Nom (doit debuter par une lettre masjuscule) :  ");
 
         if(!Character.isUpperCase(input.charAt(0))){
             out("Input invalide (premiere lettre pas majuscule)");
-            getTel();
+            getName();
         }
         return input;
     }

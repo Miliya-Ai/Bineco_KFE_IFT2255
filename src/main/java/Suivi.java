@@ -17,7 +17,6 @@ public class Suivi extends Page {
         filtrer();
     }
 
-    //TODO: verifier a quoi sert l'option 3
     /**
      * @param intNumeroOption Le resident choisit la page vers laquelle se diriger.
      *                        Les nombres representent les pages.
@@ -45,10 +44,6 @@ public class Suivi extends Page {
             case 2:
                 tabNomOptions.clear();
                 choixTemps();
-                break;
-            case 3:
-                tabNomOptions.clear();
-                historiqueBac();
                 break;
             case 99:
                 //effacer();
@@ -135,9 +130,8 @@ public class Suivi extends Page {
         out("Numero inexistant");
         new Suivi();
     }
-    //TODO: verifier si c'est utilise
     /**
-     * L'utilisateur choisit un interval de temps.
+     * L'utilisateur choisit un interval de temps lorsqu'il connaitre les metriques ecologiques municipales.
      */
     public void choixTemps(){
         out("Sur quel interval de temps voulez vous voir les metriques municipales? : ");
@@ -159,7 +153,7 @@ public class Suivi extends Page {
     }
 
     /**
-     * Calcule les metriques selon l'intervalle de temps choisi. Les metriques sont
+     * Calcule les metriques selon l'intervalle de temps choisi.
      * <ol>
      *     <li>le volume total et la moyenne</li>
      *     <li>les proportions des activites</li>
@@ -227,14 +221,6 @@ public class Suivi extends Page {
         String affichage = "Recyclage : "+propR+",  "+"Composte : "+propC+",  Ordures : "+propO+
                             "\n---"+propO*100+"% de tout n'est ni recyclé, ni composté.";
         return affichage;
-    }
-
-    //TODO: verifier si c'est utilise
-    /**
-     *
-     */
-    public void historiqueBac(){
-
     }
 
 
