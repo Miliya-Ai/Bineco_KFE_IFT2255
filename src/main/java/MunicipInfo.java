@@ -35,6 +35,7 @@ public class MunicipInfo {
 
 
     /**
+     * Constructeur de MunicipInfo: Instancie tous les donnes hardcodees de munipInfo/Bineco
      * @throws IOException
      */
     public MunicipInfo() throws IOException {
@@ -47,7 +48,7 @@ public class MunicipInfo {
     }
 
     /**
-     * @return
+     * @return tous les noms d'utilisateur de Bineco
      * @throws FileNotFoundException
      */
     public ArrayList<String> getExUser() throws FileNotFoundException {
@@ -75,8 +76,9 @@ public class MunicipInfo {
     }
 
     /**
-     * @param str
-     * @return
+     * Utiliser pour calculer les metriques
+     * @param str le string a transforme en int
+     * @return un array de int
      */
     public int[][] toInt(String[][] str){
         int[][] inInt =new int[str.length][12];
@@ -90,7 +92,7 @@ public class MunicipInfo {
     }
 
     /**
-     *
+     * Message de sensibilisatoin
      */
     public void setMessage(){
         message.add("Laver vos bacs! - 20 novembre 2022");
@@ -98,6 +100,7 @@ public class MunicipInfo {
     }
 
     /**
+     * Tous les informations de tous les consommateurs de Bineco
      * @throws IOException
      */
     public void setConsommateurs() throws IOException {
@@ -105,6 +108,7 @@ public class MunicipInfo {
     }
 
     /**
+     * Tous les numeros de bacs de MunipIfo, leur adresse et la date d'emission
      * @throws IOException
      */
     public void setBacs() throws IOException {
@@ -112,7 +116,7 @@ public class MunicipInfo {
     }
 
     /**
-     *
+     * La note des consommateurs
      */
     public void setFeedbackCons(){
         feedbackCons.put("c00", null);
@@ -128,6 +132,7 @@ public class MunicipInfo {
     }
 
     /**
+     * Tous les lots et leur identifiant, leur type, leur date de ramassage, leur date de livraison et leur statut
      * @throws IOException
      */
     public void setLots() throws IOException {
@@ -135,8 +140,9 @@ public class MunicipInfo {
     }
 
     /**
-     * @param path
-     * @return
+     * Lit et return le contenu du fichier voulu.
+     * @param path le fichier txt
+     * @return le contenu au complet du fichier
      * @throws IOException
      */
     public String[][] getFromCsv(String path) throws IOException {
@@ -160,7 +166,7 @@ public class MunicipInfo {
     }
 
     /**
-     * @param str
+     * @param str les informations d'un consommateur
      * @throws IOException
      */
     public void addCons(String str) throws IOException {
@@ -170,7 +176,7 @@ public class MunicipInfo {
     }
 
     /**
-     * @param str
+     * @param str le nom d'utilisateur d'un resident
      * @throws IOException
      */
     public void addUser(String str) throws IOException {
@@ -180,7 +186,8 @@ public class MunicipInfo {
     }
 
     /**
-     * @return
+     * Chaque resident et leur information correspond a un index de l'ArrayList retourne.
+     * @return les informations de tous les residents dans un ArrayList
      * @throws IOException
      */
     public ArrayList toArrL() throws IOException {
@@ -200,9 +207,10 @@ public class MunicipInfo {
         return lines;
     }
 
+    //TODO: verifier son utilisation car pas sur
     /**
-     * @param list
-     * @param bac
+     * @param list information du nouveau bac
+     * @param bac numero du nouveau bac
      * @throws IOException
      */
     public void newBac(ArrayList list, String bac) throws IOException {
@@ -229,10 +237,10 @@ public class MunicipInfo {
         wr.close();
 
     }
-
+    //TDO: verifier son utilisation
     /**
-     * @param list
-     * @param bac
+     * @param list information du bac a supprimer
+     * @param bac bac a supprimer
      * @throws IOException
      */
     public void deleteBac(ArrayList list, String bac) throws IOException {

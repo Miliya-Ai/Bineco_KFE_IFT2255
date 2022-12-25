@@ -3,10 +3,13 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- *
+ * S'occupe du besoin fonctionnel "trouver un consommateur"
  */
 public class FindConsommateur extends Page{
 
+    /**
+     * Contrusteur de FindConmmateur: Imprime les options valident
+     */
     public FindConsommateur(){
         entete("Consommateurs");
 
@@ -18,7 +21,12 @@ public class FindConsommateur extends Page{
 
 
     /**
-     * @param intNumeroOption
+     * @param intNumeroOption Le resident choisit la page vers laquelle se diriger.
+     *                        Les nombres representent les pages.
+     *                        <ol>
+     *                        <li>Liste des consommateur</li>
+     *                        <li>Trouver un consommateur</li>
+     *                        </ol>
      * @throws IOException
      */
     @Override
@@ -51,19 +59,20 @@ public class FindConsommateur extends Page{
     }
 
     /**
-     * @param message
-     * @return
+     * @param message texte que le resident entre dans la console
+     * @return le string lu
      */
     public String scannerInput(String message){
         out(message);
-        Scanner temp = new Scanner(System.in);
-        String wut = temp.nextLine();
-        return wut;
+        Scanner scanner = new Scanner(System.in);
+        String line = scanner.nextLine();
+        return line;
 
     }
 
     /**
-     *
+     * Imprime sur la console la liste de consommateurs enregistre dans Bineco selon leur code identifiant et
+     * le nom de la compagnie.
      */
     public void listConsommateur(){
         String[][] lots = Controller.municipInfo.lesCons;
@@ -78,7 +87,8 @@ public class FindConsommateur extends Page{
     }
 
     /**
-     *
+     * Imprime sur la console les lots dont une compagnie recherchee s'en occupe.
+     * Si la compagnie n'existe pas, lui avertir par un message.
      */
     public void getConsommateur(){
 
@@ -106,9 +116,10 @@ public class FindConsommateur extends Page{
         new FindConsommateur();
 
     }
-
+    //TODO: verifie si c'est utilise pour une activite
     /**
-     * @param code
+     * Le resident note un consommateur donnee
+     * @param code identifiant d'une compagnie
      */
     public void noter(String code){
         String noter = scannerInput("Voulez vous notez ce consommateur? (y pour oui, n pour non");

@@ -2,10 +2,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- *
+ * Menu du consommateur
  */
 public class MenuConsommateur extends Page{
     /**
+     * Constructeur de MenuConsommateur: Imprime les options valident
      * @throws IOException
      */
     public MenuConsommateur() throws IOException {
@@ -24,6 +25,7 @@ public class MenuConsommateur extends Page{
     }
 
     /**
+     * Le consommateur veut notifier tous les residents d'un besoin en déchets spécifiques
      * @throws IOException
      */
     public void notifier() throws IOException {
@@ -34,18 +36,26 @@ public class MenuConsommateur extends Page{
     }
 
     /**
-     * @param message
-     * @return
+     * @param message texte que le resident entre dans la console
+     * @return le string lu
      */
     public String scannerInput(String message){
         out(message);
-        Scanner temp = new Scanner(System.in);
-        String wut = temp.nextLine();
-        return wut;
+        Scanner scanner = new Scanner(System.in);
+        String line = scanner.nextLine();
+        return line;
     }
-
+    //TODO: trouver des noms plus descriptifs?
     /**
-     * @param intNumeroOption
+     * @param intNumeroOption Le consommateur choisit la page vers laquelle se diriger.
+     *                        Les nombres representent les pages.
+     *                        <ol>
+     *                        <li>Consommateurs</li>
+     *                        <li>Suivi Ecologique</li>
+     *                        <li>Mon profil</li>
+     *                        <li>Notifier</li>
+     *                        <li>Mon profil</li>
+     *                        </ol>
      * @throws IOException
      */
     @Override

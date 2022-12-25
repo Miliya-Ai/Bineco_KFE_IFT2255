@@ -124,8 +124,7 @@ abstract class  Client extends Page {
      * Enregistre les informations propres aux residents.
      * <p>Informations et leur index correspondant dans tempInfo dans {@link Controller}:
      *      <ol>
-     *          <li>Nom d'utilisateur</li>
-     *          <li>Mot de passe</li>
+     *          <li>Nom legal</li>
      *          <li>Courriel</li>
      *          <li>Addresse</li>
      *          <li>Telephone</li>
@@ -151,8 +150,7 @@ abstract class  Client extends Page {
      *
      * <p>Informations et leur index correspondant dans tempInfo dans {@link Controller}:
      *      <ol>
-     *          <li>Nom d'utilisateur</li>
-     *          <li>Mot de passe</li>
+     *          <li>Nom legal</li>
      *          <li>Type de dechets traites</li>
      *          <li>Courriel</li>
      *          <li>Addresse</li>

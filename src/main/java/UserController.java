@@ -6,41 +6,33 @@ import java.util.ArrayList;
  */
 public class UserController extends Controller{
 
-
-
     public String user, mdp, name, adresse, telephone, courriel;
     public String typeDechet, capacite, activite, code;
     public String[] numeroBac = new String[3];
     public boolean res;
-
     String info;
 
+    public UserController(){}
 
     /**
-     *
-     */
-    public UserController(){
-
-
-    }
-
-    /**
-     * @param usr
+     * @param usr le nom d'utilisateur
      */
     public void setUser(String usr){
         this.user = usr;
     }
 
     /**
-     * @param pass
+     * @param pass le mot de passe
      */
     public void setMdp(String pass){
         this.mdp = pass;
     }
 
+    //TODO: jamais utilise
     /**
      * @return
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                    Si le fichier n'est pas present, une exception se produit.
      */
     public String getInfoString() throws IOException {
         String str = null;
@@ -55,8 +47,11 @@ public class UserController extends Controller{
 
 
     /**
-     * @param usr
-     * @throws IOException
+     * Cherche toutes les informations d'un resident et les emmagasinent dans leurs variables correspondant.
+     *
+     * @param usr le nom d'utilisateur d'un resident
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                    Si le fichier n'est pas present, une exception se produit.
      */
     public void getInfoRes(String usr) throws IOException {
         FileInputStream fstream = new FileInputStream("src/main/java/informations.txt");
@@ -83,8 +78,11 @@ public class UserController extends Controller{
     }
 
     /**
-     * @param usr
-     * @throws IOException
+     * Cherche toutes les informations d'un consommateur et les emmagasinent dans leurs variables correspondant.
+     *
+     * @param usr le nom d'utilisateur d'un consommateur
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                    Si le fichier n'est pas present, une exception se produit.
      */
     public void getInfoCons(String usr) throws IOException {
         FileInputStream fstream = new FileInputStream("src/main/java/informationsCons.txt");
@@ -110,7 +108,8 @@ public class UserController extends Controller{
     }
 
     /**
-     *
+     * Imprime les informations du client qui avait ete affecte lors de {@link #getInfoCons(String usr)} ou
+     * {@link #getInfoRes(String usr)}.
      */
     public void afficherInfo(){
 
@@ -133,7 +132,7 @@ public class UserController extends Controller{
         }
 
     }
-
+    //TODO: a completer
     /**
      * @param path
      * @return
@@ -157,6 +156,7 @@ public class UserController extends Controller{
         return lines;
     }
 
+    //TODO: a completer
     /**
      * @param list
      * @param info

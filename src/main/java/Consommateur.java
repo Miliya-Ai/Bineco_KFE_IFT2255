@@ -97,7 +97,7 @@ public class Consommateur extends Client{
     }
 
     /**
-     * Demande le type de dechet soit recyclage, compostage ou dechet .
+     * Demande le type de dechet soit recyclage, compostage ou dechet et sa capacite de traitement.
      *
      * @return le chiffre correspondant au type de dechet traite
      * <ol>
@@ -132,8 +132,11 @@ public class Consommateur extends Client{
     }
 
     /**
-     * @return
-     * @throws IOException
+     * Verifie le code identifiant du consommateur. Si le code n'existe pas ou a deja ete enregistre, lui avertir par
+     * un message.
+     * @return le code identifiant du consommateur
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public String checkCode() throws IOException {
         String code = scannerInput("Code :");

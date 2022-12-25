@@ -4,14 +4,16 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- *
+ * Insciption d'un resident
  */
 public class Resident extends Client{
 
     /**
-     * @throws IOException
+     * Constructeur de Resident : Imprime les champs que le resident doit remplir et sauvegarde l'information.
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
-    public Resident()throws IOException{
+    public Resident() throws IOException{
         entete("Resident");
         out( "**** Pour quitter, appuyer 99 ****\n");
 
@@ -32,9 +34,11 @@ public class Resident extends Client{
         filtrer();
 
     }
-
+    //TODO: check ce qui arrive lorsqu'on met un nom legal non valide, pourquoi on va a tel?
     /**
-     * @return
+     * Demande un nom legal qui doit commencer par une lettre majuscule. Apres, demander son numero de telephone.
+     * @return le nom legal valide
+     * @see #getTel()
      */
     public String getName(){
         String input = scannerInput("Nom (doit debuter par une lettre masjuscule) :  ");
@@ -47,7 +51,8 @@ public class Resident extends Client{
     }
 
     /**
-     * @return
+     * Demande un numero de telephone de 10 chiffres de format: 5145145145
+     * @return le numero de telephone valide
      */
     public String getTel(){
         String input = scannerInput("Telephone (doit etre de longueur 10) :  ");
@@ -60,8 +65,11 @@ public class Resident extends Client{
 
 
     /**
-     * @param intNumeroOption
-     * @throws IOException
+     * Une fois l'information enregistrer, le resident revient a la page d'accueil ou il pourra se connecter pour
+     * aller a son menu correspondant.
+     * @param intNumeroOption Le resident choisit d'enregistrer l'information en appuyant sur 1.
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
@@ -79,9 +87,12 @@ public class Resident extends Client{
                 filtrer();
         }
     }
-
+    //TODO: qu'arrive-t-il lorsque le numero du bac a deja ete enregistre par un autre utilisateur?
     /**
-     * @throws IOException
+     * Verifie le numero du bac du resident. Si le numero n'existe pas, lui avertir par
+     * un message.
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public void checkBac() throws IOException {
         String bac = scannerInput("Numero du premier bac a enregistrer :");

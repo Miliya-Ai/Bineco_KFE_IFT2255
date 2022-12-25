@@ -11,6 +11,7 @@ public class LogIn extends Page{
     public boolean verified = false;
 
     /**
+     * Constructeur de LogIn: Imprime les options valident et verifie si l'utilisateur existe ans BINECO.
      * @throws IOException
      */
     public LogIn() throws IOException {
@@ -24,7 +25,9 @@ public class LogIn extends Page{
    }
 
     /**
+     * Demande le nom d'utilisateur et le mot de passe du client pour verifie s'il est eligibleé
      * @throws FileNotFoundException
+     * @see verifyLogin(String user, String pass)
      */
     public void scannerInput() throws FileNotFoundException {
         out("Nom d'utilisateur :");
@@ -37,11 +40,16 @@ public class LogIn extends Page{
         verifyLogin(userName, password);
 
     }
-
+    //TODO: verifie ce qui arrive lorsque nous entrons des donnees erronnes.
     /**
-     * @param user
-     * @param pass
-     * @throws FileNotFoundException
+     * Par son nom d'utilisateur et mot, aller chercher dans le fichier contenant nom d'utilisateur et mot de passe
+     * des residents et le fichier des consommateurs. Si le client existe dans la base de donnee Bineco, alors afficher
+     * le menu correspondant. Sinon, recommencer.
+     *
+     * @param user nom d'utilisateur a verifier
+     * @param pass mot de passse a verifier
+     * @throws FileNotFoundException La methode utilise des methodes qui lisent des fichiers.
+     *                               Si le fichier n'est pas present, une exception se produit.
      */
     public void verifyLogin(String user, String pass) throws FileNotFoundException {
 
@@ -95,9 +103,10 @@ public class LogIn extends Page{
         }
 
     }
-
+    //TODO: verifier a quoi sert l'option 2.
     /**
-     * @param intNumeroOption
+     * Une fois que le client a finit d'entrer ses informations, il peut choisir de se faire valider.
+     * @param intNumeroOption Le resident choisit de valider son nom d'utilisateur et mot de passe
      * @throws IOException
      */
     @Override
@@ -119,7 +128,7 @@ public class LogIn extends Page{
         }
     }
 
-
+    //TODO: pourquoi avoir ca ici? alors qu'il l'avait deja dans Page??
     /**
      * @param message
      */

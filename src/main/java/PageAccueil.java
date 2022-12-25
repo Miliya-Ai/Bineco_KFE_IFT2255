@@ -3,14 +3,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- *
+ * La premier affichee lors de l'execution de JAR Bineco.
  */
 public class PageAccueil extends Page {
 
     /**
-     *
+     * Constructeur de PageAccueil: Imprime les options valident
      */
-    public PageAccueil() { //constructeur;
+    public PageAccueil() {
         entete("Page d'accueil");
         out( "**** Pour quitter, appuyer 99 ****");
         out("Bonjour");
@@ -22,7 +22,12 @@ public class PageAccueil extends Page {
     }
 
     /**
-     * @param intNumeroOption
+     * @param intNumeroOption Le resident choisit la page vers laquelle se diriger.
+     *                        Les nombres representent les pages.
+     *                        <ol>
+     *                        <li>Log In</li>
+     *                        <li>Sign In</li>
+     *                        </ol>
      * @throws IOException
      */
     @Override
