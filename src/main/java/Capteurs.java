@@ -1,6 +1,9 @@
 import java.io.File;
 import java.util.HashMap;
 
+/**
+ * Donnees (hardcodees) qui vont etre manipulees par {@link Bacs}
+ */
 public class Capteurs {
 
 
@@ -17,10 +20,16 @@ public class Capteurs {
                                                     "0,51;categorie1 : 0,27;categorie2 : 0,35;categorie3 : 0,38",
                                                     "0,60;categorie1 : 0,35;categorie2 : 0,35;categorie3 : 0,30"}};
 
+    /**
+     * Instancie les donnees (hardcodees) des capteurs
+     */
     public Capteurs(){
         setCapteurs();
     }
 
+    /**
+     * Pour chaque bac, mettre son numero, sa capacite et sa composition dans la "base de donnee" du capteur.
+     */
     public void setCapteurs(){
 
         capteursList.put("r00", new String[] {"0,70", "categorie1 : 0,50;categorie2 : 0,25;categorie3 : 0,25"});

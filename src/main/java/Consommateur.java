@@ -3,8 +3,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Inscription d'un consommateur
+ */
 public class Consommateur extends Client{
-
+    //TODO: check si on enregistre les activites
+    /**
+     * Constructeur de Consommateur : Imprime les champs que le consommateur doit remplir et sauvegarde l'information.
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
+     */
     public Consommateur() throws IOException {
         entete("Consommateur");
         out( "**** Pour quitter, appuyer 99 ****\n");
@@ -34,7 +42,12 @@ public class Consommateur extends Client{
         filtrer();
 
     }
-
+    //TODO: check ce qui arrive lorsqu'on met un nom legal non valide, pourquoi on va a tel?
+    /**
+     * Demande un nom legal qui doit commencer par une lettre majuscule. Apres, demander son numero de telephone.
+     * @return le nom legal valide
+     * @see #getTel()
+     */
     public String getName(){
         String input = scannerInput("Nom (doit debuter par une lettre masjuscule) :  ");
 
@@ -45,6 +58,10 @@ public class Consommateur extends Client{
         return input;
     }
 
+    /**
+     * Demande un numero de telephone de 10 chiffres de format: 5145145145
+     * @return le numero de telephone valide
+     */
     public String getTel(){
         String input = scannerInput("Telephone (doit etre de longueur 10) :  ");
         if(input.length() != 10){
@@ -54,6 +71,13 @@ public class Consommateur extends Client{
         return input;
     }
 
+    /**
+     * Une fois l'information enregistrer, le consommateur revient a la page d'accueil ou il pourra se connecter pour
+     * aller a son menu correspondant.
+     * @param intNumeroOption Le consommateur choisit d'enregistrer l'information en appuyant sur 1.
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
+     */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
@@ -72,6 +96,16 @@ public class Consommateur extends Client{
         }
     }
 
+    /**
+     * Demande le type de dechet soit recyclage, compostage ou dechet et sa capacite de traitement.
+     *
+     * @return le chiffre correspondant au type de dechet traite
+     * <ol>
+     *     <li>Recyclage</li>
+     *     <li>Compostage</li>
+     *     <li>Dechets</li>
+     * </ol>
+     */
     public String traitement(){
         String value = "";
         String type = scannerInput("Type de dechet traité : \n1- Recyclage\n2-Composte\n3-Dechets");
@@ -97,6 +131,13 @@ public class Consommateur extends Client{
         return value;
     }
 
+    /**
+     * Verifie le code identifiant du consommateur. Si le code n'existe pas ou a deja ete enregistre, lui avertir par
+     * un message.
+     * @return le code identifiant du consommateur
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
+     */
     public String checkCode() throws IOException {
         String code = scannerInput("Code :");
         for (int i = 0; i < Controller.municipInfo.listeConsDispo.length; i ++){

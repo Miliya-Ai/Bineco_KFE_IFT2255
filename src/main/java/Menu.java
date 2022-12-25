@@ -1,6 +1,14 @@
 import java.io.IOException;
 
+/**
+ * Menu du resident
+ */
 public class Menu extends Page{
+    //TODO: verifier si les notifications contiennent egalement celles de sensibilisation
+    /**
+     * Constructeur de Menu: Imprime les options valident, l'etat de ses bacs et les notifications
+     * @throws IOException
+     */
     public Menu() throws IOException {
         entete("Menu");
         //Controller.liveUser.getInfoRes(Controller.liveUser.user);
@@ -32,7 +40,19 @@ public class Menu extends Page{
 
         filtrer();
     }
-
+    //TODO: trouver des noms plus descriptifs?
+    /**
+     * @param intNumeroOption Le resident choisit la page vers laquelle se diriger.
+     *                        Les nombres representent les pages.
+     *                        <ol>
+     *                        <li>Mes bacs</li>
+     *                        <li>Consommateurs</li>
+     *                        <li>Suivi ecologique</li>
+     *                        <li>Signaler un probleme a la ville</li>
+     *                        <li>Mon profil</li>
+     *                        </ol>
+     * @throws IOException
+     */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
@@ -57,7 +77,6 @@ public class Menu extends Page{
                 new ModifProfil();
                 break;
             case 99:
-                //effacer();
                 System.exit(0);
 
                 break;

@@ -1,14 +1,16 @@
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Menu du consommateur
+ */
 public class MenuConsommateur extends Page{
+    /**
+     * Constructeur de MenuConsommateur: Imprime les options valident
+     * @throws IOException
+     */
     public MenuConsommateur() throws IOException {
 
-        /*if(Controller.liveUser.res){
-            Controller.liveUser.getInfoRes();
-        } else {
-            Controller.liveUser.getInfoCons();
-        }*/
         entete("Menu du consommateur");
 
         out( "**** Pour retourner au menu, appuyer 0 ****");
@@ -19,11 +21,13 @@ public class MenuConsommateur extends Page{
         addTabNomOptions("Mon profil");
         addTabNomOptions("Notifier");
         out(afficherOptions ());
-
-        //out("\nPour revenir au Menu appuyer 0");
-        //out("Pour quitter appuyer 99");
         filtrer();
     }
+
+    /**
+     * Le consommateur veut notifier tous les residents d'un besoin en déchets spécifiques
+     * @throws IOException
+     */
     public void notifier() throws IOException {
         String msg = scannerInput("Message à transmettre");
         Controller.municipInfo.message.add(msg);
@@ -31,13 +35,29 @@ public class MenuConsommateur extends Page{
         new MenuConsommateur();
     }
 
+    /**
+     * @param message texte que le resident entre dans la console
+     * @return le string lu
+     */
     public String scannerInput(String message){
         out(message);
-        Scanner temp = new Scanner(System.in);
-        String wut = temp.nextLine();
-        return wut;
+        Scanner scanner = new Scanner(System.in);
+        String line = scanner.nextLine();
+        return line;
     }
-
+    //TODO: trouver des noms plus descriptifs?
+    /**
+     * @param intNumeroOption Le consommateur choisit la page vers laquelle se diriger.
+     *                        Les nombres representent les pages.
+     *                        <ol>
+     *                        <li>Consommateurs</li>
+     *                        <li>Suivi Ecologique</li>
+     *                        <li>Mon profil</li>
+     *                        <li>Notifier</li>
+     *                        <li>Mon profil</li>
+     *                        </ol>
+     * @throws IOException
+     */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
@@ -58,7 +78,6 @@ public class MenuConsommateur extends Page{
                 notifier();
                 break;
             case 99:
-                //effacer();
                 System.exit(0);
 
                 break;

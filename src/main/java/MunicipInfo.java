@@ -2,6 +2,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ *
+ */
 public class MunicipInfo {
 
 
@@ -31,7 +34,10 @@ public class MunicipInfo {
     public ArrayList<String > activeUsers;
 
 
-
+    /**
+     * Constructeur de MunicipInfo: Instancie tous les donnes hardcodees de munipInfo/Bineco
+     * @throws IOException
+     */
     public MunicipInfo() throws IOException {
         setConsommateurs();
         setBacs();
@@ -41,6 +47,10 @@ public class MunicipInfo {
         activeUsers = getExUser();
     }
 
+    /**
+     * @return tous les noms d'utilisateur de Bineco
+     * @throws FileNotFoundException
+     */
     public ArrayList<String> getExUser() throws FileNotFoundException {
         String path = "src/main/java/existingUser.txt";
         ArrayList<String> result = new ArrayList<>();
@@ -65,6 +75,11 @@ public class MunicipInfo {
 
     }
 
+    /**
+     * Utiliser pour calculer les metriques
+     * @param str le string a transforme en int
+     * @return un array de int
+     */
     public int[][] toInt(String[][] str){
         int[][] inInt =new int[str.length][12];
         for (int i = 0; i < str.length; i++){
@@ -75,19 +90,34 @@ public class MunicipInfo {
         }
         return inInt;
     }
+
+    /**
+     * Message de sensibilisatoin
+     */
     public void setMessage(){
         message.add("Laver vos bacs! - 20 novembre 2022");
 
     }
 
+    /**
+     * Tous les informations de tous les consommateurs de Bineco
+     * @throws IOException
+     */
     public void setConsommateurs() throws IOException {
         lesCons = getFromCsv("src/main/java/dataCons.txt");
     }
 
+    /**
+     * Tous les numeros de bacs de MunipIfo, leur adresse et la date d'emission
+     * @throws IOException
+     */
     public void setBacs() throws IOException {
         lesBacs = getFromCsv("src/main/java/bacsEmis.txt");
     }
 
+    /**
+     * La note des consommateurs
+     */
     public void setFeedbackCons(){
         feedbackCons.put("c00", null);
         feedbackCons.put("c01", null);
@@ -101,10 +131,20 @@ public class MunicipInfo {
         feedbackCons.put("c09", null);
     }
 
+    /**
+     * Tous les lots et leur identifiant, leur type, leur date de ramassage, leur date de livraison et leur statut
+     * @throws IOException
+     */
     public void setLots() throws IOException {
         lesLots = getFromCsv("src/main/java/dataLots.txt");
     }
 
+    /**
+     * Lit et return le contenu du fichier voulu.
+     * @param path le fichier txt
+     * @return le contenu au complet du fichier
+     * @throws IOException
+     */
     public String[][] getFromCsv(String path) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(path));
 
@@ -125,18 +165,31 @@ public class MunicipInfo {
         return formatted;
     }
 
+    /**
+     * @param str les informations d'un consommateur
+     * @throws IOException
+     */
     public void addCons(String str) throws IOException {
         FileWriter fw = (new FileWriter("src/main/java/dataCons.txt", true));
         fw.write(str + ",");
         fw.close();
     }
 
+    /**
+     * @param str le nom d'utilisateur d'un resident
+     * @throws IOException
+     */
     public void addUser(String str) throws IOException {
         FileWriter fw = (new FileWriter("src/main/java/existingUser.txt", true));
         fw.write("\n"+str);
         fw.close();
     }
 
+    /**
+     * Chaque resident et leur information correspond a un index de l'ArrayList retourne.
+     * @return les informations de tous les residents dans un ArrayList
+     * @throws IOException
+     */
     public ArrayList toArrL() throws IOException {
 
         BufferedReader br = new BufferedReader(new FileReader("src/main/java/informations.txt"));
@@ -154,6 +207,12 @@ public class MunicipInfo {
         return lines;
     }
 
+    //TODO: verifier son utilisation car pas sur
+    /**
+     * @param list information du nouveau bac
+     * @param bac numero du nouveau bac
+     * @throws IOException
+     */
     public void newBac(ArrayList list, String bac) throws IOException {
 
         BufferedReader reader = new BufferedReader(new FileReader("src/main/java/informations.txt"));
@@ -164,7 +223,6 @@ public class MunicipInfo {
             // Check if the current line contains the search term
             if (line.contains(Controller.liveUser.user)) {
                 // The line has been found, take the appropriate action
-                //System.out.println("Found line: " + line +"  idx = " +idx);
                 strInfo = line;
                 break;
             }
@@ -179,7 +237,12 @@ public class MunicipInfo {
         wr.close();
 
     }
-
+    //TDO: verifier son utilisation
+    /**
+     * @param list information du bac a supprimer
+     * @param bac bac a supprimer
+     * @throws IOException
+     */
     public void deleteBac(ArrayList list, String bac) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("src/main/java/informations.txt"));
         String strInfo = "";
@@ -189,7 +252,6 @@ public class MunicipInfo {
             // Check if the current line contains the search term
             if (line.contains(Controller.liveUser.user)) {
                 // The line has been found, take the appropriate action
-                //System.out.println("Found line: " + line +"  idx = " +idx);
                 strInfo = line;
                 break;
             }
