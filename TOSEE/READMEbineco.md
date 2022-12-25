@@ -1,27 +1,38 @@
 # README
 
-Cette application est un prototype en ligne de commande de Roundtable permettant de...
+Cette application appelé BINCEO est un prototype en ligne de commande permettant  à tout résident de:
+- Faire le suivi des recyclables
+- Faire le suivi des déchets organiques (résidus alimentaires).
+- Visualiser l'efficacité des activités de recyclages et compostages.
+- Signaler un problème à la ville.
+- Trouver un consommateur de déchets organiques ou matières recyclables.
 
-## Fonctionnalités
 
-- Parcourir l'ensemble des résidents
-  - Visualiser la liste des résidents
-  - Effectuer une recherche sur la liste des résidents
-  - Visualiser la fiche d'un membre
-- Parcourir l'ensemble des articles
-  - Visualiser la liste des articles
-  - Effectuer une recherche sur la liste des articles
-  - Visualiser la fiche d'un article
-- Parcourir l'ensemble des outils
-- Parcourir l'ensemble des projets
-- S'inscrire ou se désinscrire à un intérêt
-- ...
+## Fonctionnalités 
+
+- Se connecter en tant que résident/consommateur
+  -créér un compte
+  -Modifier son profil
+-Gestion des bacs
+  - Enregistrer un bac
+  - Supprimer un bac
+  - Afficher l'état des bacs
+- Afficher l'état du traitement d'un lot de déchets.
+- Consulter les métriques.
+- Signaler un problème à MunicipInfo.
+- Trouver un consommateur
+- Gestion des activités:
+  - Noter une activité.
+  - Ajouter une activité.
+  - Modifier une activité.
+  - Supprimer une activité.
+- Notifier les résidents au besoin.
 
 ## Manuel d'utilisation
 
 Pour utiliser l'application, il vous faut exécuter la commande suivante: `java App` (ou autre commande).
 Étant un prototype, nous avons inclus un jeu de données afin de tester l'application.
-À l'ouverture, vous devez vous connecter en tant que membre, superviseur ou administrateur. Ceci vous donnera accès au menu principal propre au rôle.
+À l'ouverture, vous devez vous connecter en tant que résident ou consommateur. Ceci vous donnera accès au menu principal propre au rôle.
 
 ### Données incluses dans l'application
 
@@ -54,7 +65,7 @@ Pour se connecter à l'application, veuillez utiliser un des identifiants suivan
 
 ### Menu principal (Résident)
 
-À partir du menu principal, dans le rôle du membre, vous pouvez choisir l'une des options suivantes en tapant le chiffre correspondant.
+À partir du menu principal, dans le rôle du résident, vous pouvez choisir l'une des options suivantes en tapant le chiffre correspondant.
 
 - [1] Trouver un membre: Accédez à la liste des résidents ou effectuer une recherche.
 - [2] Trouver un article: Accédez à la liste des articles ou effectuer une recherche.
@@ -79,6 +90,6 @@ Suivez les instructions à l'écran pour compléter la tache.
 - ...
 - [0] Revenir au menu principal
 
-### Menu principal (Superviseur)
+### Menu principal (Consommateur)
 
-### Menu principal (Administrateur)
+

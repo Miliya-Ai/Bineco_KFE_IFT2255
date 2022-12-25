@@ -51,6 +51,7 @@ public class LogIn extends Page{
      * @throws FileNotFoundException La methode utilise des methodes qui lisent des fichiers.
      *                               Si le fichier n'est pas present, une exception se produit.
      */
+
     public void verifyLogin(String user, String pass) throws FileNotFoundException {
 
         try{
@@ -96,7 +97,7 @@ public class LogIn extends Page{
             in2.close();
             tabNomOptions.clear();
             out("Erreur d'informations de connexion");
-            new Menu();
+            new LogIn();
 
         } catch (Exception e){
             System.err.println("Error: " + e.getMessage());

@@ -1,0 +1,10 @@
+c00,company1,SCOURY,recyclage:2000,composte:1000,scoury@gmail.com,3225 rue wally,telephone
+c01,company1,POLISHY,recyclage:2000,composte:500,polishy@hotmail.com,555 rue westmount,telephone
+c02,company1,RINSY,recyclage:1000,composte:1500,rinsy@yahoo.fr,,telephone
+c03,company1,FLUSHY,recyclage:2000,composte:1000,dechets:2000,flushy@gmail.com,adresse,telephone
+c04,company1,UNSTAINY,recyclage:1500,composte:500,unstainy@gmail.com,adresse,telephone
+c05,company1,WIPPY,recyclage:750,composte:1000,dechets:5000,wippy@hotmail.com,adresse,telephone
+c06,company1,SCRUBBY,recyclage:2000,scrubby@yahoo.ca,adresse,telephone
+c07,company1,CYCLE,recyclage:2000,composte:1000,dechets:1500,cycle@outlook.com,adresse,telephone
+c08,company1,CLEANY,composte:1750,cleany@outlook.ca,adresse,telephone
+c09,company1,JEDCO,recyclage:1000,composte:1000,dechets:1000,jedco@hotmail.ca,adresse,telephone
