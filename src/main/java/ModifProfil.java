@@ -37,7 +37,8 @@ public class ModifProfil extends Page{
     /**
      * Le nouveau mot de passe ne doit correspondre au nom d'utilisateur. Lors du changement, il faut confirmer a
      * nouveau le nouveau mot de passe.
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public void changerMdp() throws IOException {
         String mdp = Controller.liveUser.mdp;
@@ -76,7 +77,8 @@ public class ModifProfil extends Page{
 
     /**
      * Lors du changement, il faut confirmer a nouveau le nouveau courriel.
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public void changerCourriel() throws IOException {
         String mail = Controller.liveUser.courriel;
@@ -108,7 +110,8 @@ public class ModifProfil extends Page{
     /**
      * Le nouveau numero de telephone doit contenir 10 chiffre de format: 5145145143. Lors du changement,
      * il faut confirmer a nouveau le nouveau numero de telephone.
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public void changerTel() throws IOException {
         String tel = Controller.liveUser.telephone;
@@ -154,7 +157,8 @@ public class ModifProfil extends Page{
      *                        <li>Modifier numero de telephone</li>
      *                        <li>Voir mes infos</li>
      *                        </ol>
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {

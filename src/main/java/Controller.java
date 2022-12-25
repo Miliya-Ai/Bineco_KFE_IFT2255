@@ -12,6 +12,9 @@ public class Controller {
     public static String[] tempInfo;
     public static String[] tempInfoCons;
 
+    /**
+     * Constructeur de Controller
+     */
     public Controller(){
         //new PageAccueil();
     }

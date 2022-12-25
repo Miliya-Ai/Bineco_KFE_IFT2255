@@ -17,7 +17,6 @@ public class Probleme extends Page{
         out(afficherOptions());
         filtrer();
     }
-    //TODO: resident et consommateur?
     /**
      * @param intNumeroOption Le resident choisit l'action a entreprendre.
      *                        Les nombres representent les actions valables.
@@ -25,7 +24,8 @@ public class Probleme extends Page{
      *                        <li>Remplacement d'un bac</li>
      *                        <li>Demande d'un nouveau bac</li>
      *                        </ol>
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {

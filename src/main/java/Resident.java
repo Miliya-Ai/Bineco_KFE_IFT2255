@@ -34,7 +34,6 @@ public class Resident extends Client{
         filtrer();
 
     }
-    //TODO: check ce qui arrive lorsqu'on met un nom legal non valide, pourquoi on va a tel?
     /**
      * Demande un nom legal qui doit commencer par une lettre majuscule.
      * @return le nom legal valide
@@ -86,7 +85,7 @@ public class Resident extends Client{
                 filtrer();
         }
     }
-    //TODO: qu'arrive-t-il lorsque le numero du bac a deja ete enregistre par un autre utilisateur?
+    //cheTODO: qu'arrive-t-il lorsque le numero du bac a deja ete enregistre par un autre utilisateur?
     /**
      * Verifie le numero du bac du resident. Si le numero n'existe pas, lui avertir par
      * un message.

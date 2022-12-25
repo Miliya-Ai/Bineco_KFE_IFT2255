@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- *
+ * Base de donnee de MunicpInfo et Bineco
  */
 public class MunicipInfo {
 
@@ -36,7 +36,8 @@ public class MunicipInfo {
 
     /**
      * Constructeur de MunicipInfo: Instancie tous les donnes hardcodees de munipInfo/Bineco
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public MunicipInfo() throws IOException {
         setConsommateurs();
@@ -49,7 +50,8 @@ public class MunicipInfo {
 
     /**
      * @return tous les noms d'utilisateur de Bineco
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException La methode utilise des methodes qui lisent des fichiers.
+     *                               Si le fichier n'est pas present, une exception se produit.
      */
     public ArrayList<String> getExUser() throws FileNotFoundException {
         String path = "src/main/java/existingUser.txt";
@@ -101,7 +103,8 @@ public class MunicipInfo {
 
     /**
      * Tous les informations de tous les consommateurs de Bineco
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public void setConsommateurs() throws IOException {
         lesCons = getFromCsv("src/main/java/dataCons.txt");
@@ -109,7 +112,8 @@ public class MunicipInfo {
 
     /**
      * Tous les numeros de bacs de MunipIfo, leur adresse et la date d'emission
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public void setBacs() throws IOException {
         lesBacs = getFromCsv("src/main/java/bacsEmis.txt");
@@ -133,7 +137,8 @@ public class MunicipInfo {
 
     /**
      * Tous les lots et leur identifiant, leur type, leur date de ramassage, leur date de livraison et leur statut
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public void setLots() throws IOException {
         lesLots = getFromCsv("src/main/java/dataLots.txt");
@@ -143,7 +148,8 @@ public class MunicipInfo {
      * Lit et return le contenu du fichier voulu.
      * @param path le fichier txt
      * @return le contenu au complet du fichier
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public String[][] getFromCsv(String path) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(path));
@@ -167,7 +173,8 @@ public class MunicipInfo {
 
     /**
      * @param str les informations d'un consommateur
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public void addCons(String str) throws IOException {
         FileWriter fw = (new FileWriter("src/main/java/dataCons.txt", true));
@@ -177,7 +184,8 @@ public class MunicipInfo {
 
     /**
      * @param str le nom d'utilisateur d'un resident
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public void addUser(String str) throws IOException {
         FileWriter fw = (new FileWriter("src/main/java/existingUser.txt", true));
@@ -188,7 +196,8 @@ public class MunicipInfo {
     /**
      * Chaque resident et leur information correspond a un index de l'ArrayList retourne.
      * @return les informations de tous les residents dans un ArrayList
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public ArrayList toArrL() throws IOException {
 
@@ -207,11 +216,13 @@ public class MunicipInfo {
         return lines;
     }
 
-    //TODO: verifier son utilisation car pas sur
     /**
+     * Utiliser lorsque le resident veut enregistrer un nouveau bac.
      * @param list information du nouveau bac
      * @param bac numero du nouveau bac
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
+     * @see Bacs#enregistrerBac()
      */
     public void newBac(ArrayList list, String bac) throws IOException {
 
@@ -241,7 +252,8 @@ public class MunicipInfo {
     /**
      * @param list information du bac a supprimer
      * @param bac bac a supprimer
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public void deleteBac(ArrayList list, String bac) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader("src/main/java/informations.txt"));
