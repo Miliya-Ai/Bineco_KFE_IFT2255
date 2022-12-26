@@ -1,4 +1,0 @@
-xlap,mdp123,Xavier Lap,x.laperriere@gmail.com,1234 UdeM,5141234567,d01,
-tyff,mdp100,Kim,kim@gmail.com,4321 UdeM,5141234321,r00,
-lala,mdp00,Flory,flory@gmail.com,0987 UdeM,5140987890,co02,
-mili,mdp11,Emily,emily@gmail.com,1111 UdeM,5141112222,d00,

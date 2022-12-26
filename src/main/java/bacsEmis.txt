@@ -1,9 +1,9 @@
-r00,adresse1,UNE_DATE
+r00,4321 UdeM, 20 janvier 2021
 r01,adresse2,UNE_DATE
-r02,adresse3,UNE_DATE
-d00,adresse4,UNE_DATE
-d01,adresse5,UNE_DATE
+r02,0987 UdeM, 15 mars 2022
+d00,4321 UdeM,20 janvier 2021
+d01,1234 UdeM, 20 novembre 2022
 d02,adresse6,UNE_DATE
 co00,adresse7,UNE_DATE
-co01,adresse8,UNE_DATE
-co02,adresse9,UNE_DATE
+co01,1234 UdeM,20 novembre 2022
+co02,0987 UdeM,20 mars 2022

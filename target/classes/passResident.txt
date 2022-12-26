@@ -1,4 +1,0 @@
-xlap,mdp123
-tyff,mdp100
-lala,mdp00
-mili,mdp11
