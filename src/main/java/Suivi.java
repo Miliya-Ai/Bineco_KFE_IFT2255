@@ -138,8 +138,8 @@ public class Suivi extends Page {
      * L'utilisateur choisit un interval de temps lorsqu'il connaitre les metriques ecologiques municipales.
      */
     public void choixTemps(){
-        out("Sur quel interval de temps voulez vous voir les metriques municipales? : ");
-        String choix = scannerInput("1- 1 mois\n2- 3 mois\n3- 6 mois\n4- 12 mois");
+        out("Sur quel intervalle de temps voulez-vous voir les metriques municipales? : ");
+        String choix = scannerInput("[1]: 1 mois\n[2]: 3 mois\n[3]: 6 mois\n[4]: 12 mois");
 
         switch (choix){
             case "1":

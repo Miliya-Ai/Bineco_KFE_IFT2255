@@ -80,7 +80,7 @@ public class FindConsommateur extends Page{
         String[][] formattedCons = new String[10][8];
 
         for(int k = 0; k < lots.length; k++){
-            System.out.println("Code : "+lots[k][0]+"  Nom : "+lots[k][2]);
+            System.out.println("Code : "+lots[k][0]+"  Nom : "+lots[k][1]);
         }
 
         out("--Appuyez sur 0 pour revenir au menu--");
