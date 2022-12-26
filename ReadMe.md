@@ -7,15 +7,129 @@
 
 ----
 ## IMPORTANT
-> *Comme seul le nom d’utilisateur et son mot de passe respectif seront sauvegardés, le prototype ne vérifie pas la validité du courriel, téléphone, etc.*
-
 > *Ne pas mettre d'espace dans le nom d'utilisateur
 
 > *Si on arrive pas à quitter la session avec "99" , il faut stopper manuelement le code (Sign in et Log in) et vider les fichiers passConsommateur.txt et passResident.txt.
 
 Toujours quitter l'application par le input 99, sinon les fichiers contenant les informations de connection ne sont pas effacés et cela pourrait creer des problemes pour les connections suivantes!
 
-Le prototype ne gere qu'un seul enregistrement en ce moment donc ne pas creer plusieurs compte. Simplement creer un compte et se connecter a celui ci immediatement.
+----
+
+Cette application appelé BINCEO est un prototype en ligne de commande permettant  à tout résident de:
+- Faire le suivi des recyclables
+- Faire le suivi des déchets organiques (résidus alimentaires).
+- Visualiser l'efficacité des activités de recyclages et compostages.
+- Signaler un problème à la ville.
+- Trouver un consommateur de déchets organiques ou matières recyclables.
+
+
+## Fonctionnalités 
+
+- Se connecter en tant que résident/consommateur
+  - créér un compte
+  - Modifier son profil
+- Gestion des bacs
+  - Enregistrer un bac
+  - Supprimer un bac
+  - Afficher l'état des bacs
+- Afficher l'état du traitement d'un lot de déchets.
+- Consulter les métriques.
+- Signaler un problème à MunicipInfo.
+- Trouver un consommateur
+- Gestion des activités:
+  - Noter une activité.
+  - Ajouter une activité.
+  - Modifier une activité.
+  - Supprimer une activité.
+- Notifier les résidents au besoin.
+
+## Manuel d'utilisation
+
+Pour utiliser l'application | il vous faut exécuter la commande suivante: `java App` (ou autre commande).
+Étant un prototype | nous avons inclus un jeu de données afin de tester l'application.
+À l'ouverture | vous devez vous connecter en tant que résident ou consommateur. Ceci vous donnera accès au menu principal propre au rôle.
+
+### Données incluses dans l'application
+lots de déchets:
+- l00,recyclage,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+- l01,composte,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+- l02,ordures,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+- l03,recyclage,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+- l04,composte,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+- l05,ordures,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+- l06,recyclage,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+- l07,composte,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+- l08,ordures,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+- l09,recyclage,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+
+### Connexion
+
+Pour se connecter à l'application | veuillez utiliser un des identifiants suivants:
+
+- Rôle du résident (3 résidents)
+  - Username: xlap| email: x.laperriere@gmail.com| password: mdp123 | statut: VALIDE
+  - Username:tyff |email: kim@gmail.com | password: mdp100 | statut: VALIDE
+  - Username: lala| email: flory@gmail.com | password: mdp00 | statut: SUSPENDU
+
+- Rôle du consommateur (10 consommateurs)
+  - Code: c00 | Nom: SCOURY | Activités: recyclage:2000; composte:1000 | Email: scoury@gmail.com | Adresse: 3225 rue wally | telephone : 5143333331
+  - Code: c01 | Nom: POLISHY | Activités: recyclage:2000; composte:500 | Email:polishy@hotmail.com | Adresse: 555 rue westmount | telephone: 43333332
+  - Code:  c02 | Nom: RINSY | Activités: recyclage:1000; composte:1500 | Email: rinsy@yahoo.fr | Adresse: 115 rue laurent | telephone :5143333333
+  - Code: c03 | Nom:FLUSHY | Activités: recyclage:2000; composte:1000 |dechets:2000 | Email: flushy@gmail.com | Adresse: 3333 rue durant | telephone : 5143333334
+  - Code: c04 | Nom: UNSTAINY | Activités: recyclage:1500; composte:500 | Email: unstainy@gmail.com | Adresse: 255 rue cochondufresne  | telephone: 43333335
+  - Code: c05 | Nom: WIPPY | Activités: recyclage:750; composte:1000;dechets:5000 | Email: wippy@hotmail.com | Adresse: 1556 rue simon | telephone: 43333336
+  - Code: c06 | Nom: CRUBBY | Activités: recyclage:2000 | Email: scrubby@yahoo.ca | Adresse: 444 rue didi | telephone : 5143333337
+  - Code: c07 | Nom: CYCLE |Activités: recyclage:2000; composte:1000;dechets:1500 | Email: cycle@outlook.com | Adresse: 666 rue duCode: diable | telephone : 5143333338
+  - Code: c08 | Nom: CLEANY |Activités: composte:1750 | Email: cleany@outlook.ca | Adresse: 69 rue ducharme | telephone : 5143333339
+  - Code: c09 | Nom: JEDCO | Activités: recyclage:1000; composte:1000 |dechets:1000 | Email:jedco@hotmail.ca |Adresse: 25 rue christmas | telephone: 5143333330
+
+### Menu principal (Résident)
+
+À partir du menu principal | dans le rôle du résident | vous pouvez choisir l'une des options suivantes en tapant le chiffre correspondant.
+
+- [1]: Mes bacs :
+  - [1]: Enregistrer un bac
+  - [2]: Supprimer un bac
+  - [3]: Etat de mes bacs
+  - [4]: Trouver un bac
+  - [5]: Voir l'historique de mes bacs
+- [2]: Trouver un ou plusieurs consommateurs:
+  - [1]: Liste des consommateurs
+  - [2]: Trouver un consommateur
+- [3]: Faire un suivi ecologique:
+  - [1]: Etat traitement dechets municipaux
+  - [2]: Metriques ecologiques municipales
+- [4]: Signaler un probleme à la ville:
+  - [1]: Remplacement d'un bac
+  - [2]: Demande d'un nouveau bac
+- [5]: Mon profil:
+  - [1]: Modifier le mot de passe
+  - [2]: Modifier courriel
+  - [3]: Modifier numero de telephone
+  - [4]: Voir mes infos
+- ...
+- [0] retour au menu
+- [99] Quitter
+
+### Menu principal (Consommateur)
+
+À partir du menu principal | dans le rôle du résident | vous pouvez choisir l'une des options suivantes en tapant le chiffre correspondant.
+Suivez les instructions à l'écran pour compléter la tache.
+
+- [1]: Trouver un ou plusieurs consommateurs :
+  - [1]: Liste des consommateurs
+  - [2]: Trouver un consommateur
+- [2]: Faire un suivi ecologique:
+  - [1]: Etat traitement dechets municipaux
+  - [2]: Metriques ecologiques municipales
+- [3]: Mon profil:
+  - [1]: Modifier le mot de passe
+  - [2]: Modifier courriel
+  - [3]: Modifier numero de telephone
+  - [4]: Voir mes infos
+-[4]: Notifier
+- [0]: retour au menu
+- [99] Quitter
 
 --- 
 
