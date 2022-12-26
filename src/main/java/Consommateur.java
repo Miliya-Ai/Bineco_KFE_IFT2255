@@ -43,6 +43,11 @@ public class Consommateur extends Client{
         filtrer();
 
     }
+
+    /**
+     * Constructeure pour le programmeur, afin de tester des methodes de la classe sans imprimer la page.
+     * @param pageImprime false pour ne pas imprimer la page
+     */
     public Consommateur(boolean pageImprime){
 
     }

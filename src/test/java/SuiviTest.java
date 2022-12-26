@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +11,7 @@ class SuiviTest {
     }
 
     /**
-     * @author Kim
+     * @author Xavier
      * Test si le calcul est bon
      */
     @Test
@@ -36,5 +35,17 @@ class SuiviTest {
         String attendu = "Recyclage : NaN"+",  "+"Composte : NaN"+",  Ordures : NaN"+
                 "\n---NaN"+"% de tout n'est ni recyclé, ni composté.";
         assertEquals(test.propotions(1, arrayTest, arrayTest, arrayTest), attendu);
+    }
+
+    /**
+     * Verifie que le string imprime le bon format
+     * @author Ai Miliya
+     */
+    @Test
+    void afficherNomOptions(){
+        Suivi test = new Suivi(false);
+        test.addTabNomOptions("123 test");
+        String options = "[ + 0 + ]: 123 test\n";
+
     }
 }

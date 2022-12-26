@@ -22,7 +22,7 @@ public class Suivi extends Page {
 
     /**
      * Constructeure pour le programmeur, afin de tester des methodes de la classe sans imprimer la page.
-     * @param printPage
+     * @param printPage false pour ne pas imprimer la page
      */
     public Suivi(Boolean printPage){}
 

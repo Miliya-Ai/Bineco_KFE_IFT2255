@@ -1,14 +1,15 @@
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserControllerTest {
     /**
-     * @author Kim
      * Verifier que getInfoRes cherche les donnees dans le bon champ du fichier csv "informations.txt" et
      * enregistre ses donnees dans la bonne variable.
+     * @author Kim
      */
     @Test
     void getInfoRes() throws IOException {
@@ -23,9 +24,9 @@ class UserControllerTest {
         assertEquals(test.numeroBac[0],testNumeroBac[0]);
     }
     /**
-     * @author Kim
      * Verifier que getInfoCons cherche les donnees dans le bon champ du fichier csv "informationsCons.txt" et
      * enregistre ses donnees dans la bonne variable.
+     * @author Kim
      */
     @Test
     void getInfoCons() throws IOException {
@@ -39,4 +40,6 @@ class UserControllerTest {
         assertEquals(test.telephone,"5143333331");
         assertEquals(test.typeDechet,"recyclage:2000 composte:1000");
     }
+
+
 }
