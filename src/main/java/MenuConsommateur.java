@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class MenuConsommateur extends Page{
     /**
      * Constructeur de MenuConsommateur: Imprime les options valident
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public MenuConsommateur() throws IOException {
 
@@ -16,8 +17,8 @@ public class MenuConsommateur extends Page{
         out( "**** Pour retourner au menu, appuyer 0 ****");
         out( "**** Pour quitter, appuyer 99 ****\n");
 
-        addTabNomOptions("Consommateurs");
-        addTabNomOptions("Suivi Ecologique");
+        addTabNomOptions("Trouver un ou plusieurs consommateurs");
+        addTabNomOptions("Faire un suivi ecologique");
         addTabNomOptions("Mon profil");
         addTabNomOptions("Notifier");
         out(afficherOptions ());
@@ -26,7 +27,8 @@ public class MenuConsommateur extends Page{
 
     /**
      * Le consommateur veut notifier tous les residents d'un besoin en déchets spécifiques
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public void notifier() throws IOException {
         String msg = scannerInput("Message à transmettre");
@@ -45,18 +47,18 @@ public class MenuConsommateur extends Page{
         String line = scanner.nextLine();
         return line;
     }
-    //TODO: trouver des noms plus descriptifs?
     /**
      * @param intNumeroOption Le consommateur choisit la page vers laquelle se diriger.
      *                        Les nombres representent les pages.
      *                        <ol>
-     *                        <li>Consommateurs</li>
-     *                        <li>Suivi Ecologique</li>
+     *                        <li>Trouver un ou plusieurs consommateurs</li>
+     *                        <li>Faire un suivi Ecologique</li>
      *                        <li>Mon profil</li>
      *                        <li>Notifier</li>
      *                        <li>Mon profil</li>
      *                        </ol>
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {

@@ -17,7 +17,6 @@ public class SignIn extends Page{
         out(afficherOptions ());
         filtrer();
     }
-    //TODO: mettre des noms plus descriptifs?
     /**
      * @param intNumeroOption Le client choisit la page vers laquelle se diriger.
      *                        Les nombres representent les pages.
@@ -25,7 +24,8 @@ public class SignIn extends Page{
      *                        <li>Resident</li>
      *                        <li>Consommateur</li>
      *                        </ol>
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {

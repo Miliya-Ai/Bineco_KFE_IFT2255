@@ -12,22 +12,24 @@ public class LogIn extends Page{
 
     /**
      * Constructeur de LogIn: Imprime les options valident et verifie si l'utilisateur existe ans BINECO.
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public LogIn() throws IOException {
        entete("Log in");
        out( "**** Pour quitter, appuyer 99 ****\n");
 
-        addTabNomOptions("Enter");
-        out(afficherOptions ());
-        scannerInput();
+       addTabNomOptions("Page d'accueil");
+       out(afficherOptions ());
+       scannerInput();
        filtrer();
    }
 
     /**
      * Demande le nom d'utilisateur et le mot de passe du client pour verifie s'il est eligibleé
-     * @throws FileNotFoundException
-     * @see verifyLogin(String user, String pass)
+     * @throws FileNotFoundException La methode utilise des methodes qui lisent des fichiers.
+     *                               Si le fichier n'est pas present, une exception se produit.
+     * @see #verifyLogin(String, String)
      */
     public void scannerInput() throws FileNotFoundException {
         out("Nom d'utilisateur :");
@@ -40,11 +42,10 @@ public class LogIn extends Page{
         verifyLogin(userName, password);
 
     }
-    //TODO: verifie ce qui arrive lorsque nous entrons des donnees erronnes.
     /**
      * Par son nom d'utilisateur et mot, aller chercher dans le fichier contenant nom d'utilisateur et mot de passe
      * des residents et le fichier des consommateurs. Si le client existe dans la base de donnee Bineco, alors afficher
-     * le menu correspondant. Sinon, recommencer.
+     * le menu correspondant. Sinon, l'utilisateur revient a la page d'accueil.
      *
      * @param user nom d'utilisateur a verifier
      * @param pass mot de passse a verifier
@@ -97,46 +98,34 @@ public class LogIn extends Page{
             in2.close();
             tabNomOptions.clear();
             out("Erreur d'informations de connexion");
-            new LogIn();
+            //new LogIn();
 
         } catch (Exception e){
             System.err.println("Error: " + e.getMessage());
         }
 
     }
-    //TODO: verifier a quoi sert l'option 2.
     /**
      * Une fois que le client a finit d'entrer ses informations, il peut choisir de se faire valider.
      * @param intNumeroOption Le resident choisit de valider son nom d'utilisateur et mot de passe
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
         switch (intNumeroOption) {
             case 1:
                 tabNomOptions.clear();
-                break;
-            case 2:
-                tabNomOptions.clear();
+                new PageAccueil();
                 break;
             case 99:
                 System.exit(0);
-
                 break;
             default:
                 out("Svp, entrer un chiffre valide");
-                //filtrer();
+                filtrer();
         }
     }
-
-    //TODO: pourquoi avoir ca ici? alors qu'il l'avait deja dans Page??
-    /**
-     * @param message
-     */
-    public void out(String message) {
-        System.out.println(message);
-    }
-
 }
 
 

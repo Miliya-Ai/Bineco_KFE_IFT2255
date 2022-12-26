@@ -13,10 +13,6 @@ public abstract class Page extends Controller{
     protected ArrayList<String> tabNomOptions = new ArrayList<String>() ;
     public Controller controller = new Controller();
 
-    public Page() {
-
-    }
-
     /**
      * Utiliser a choque fois qu'une page est creee
      * @param nomPage a imprimer sur la console
@@ -85,7 +81,8 @@ public abstract class Page extends Controller{
      * Option 0 pour revenir au menu correspondant a l'utilisateur et option 99, pour quitter.
      * Option 0 n'est pas valide pour la page d'accueil, log in, sign in, menu du resident et menu de consommateur.
      * @param intNumeroOption numero correspondant aux options de la page
-     * @throws IOException smt123
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
 
     public void changerPage(int intNumeroOption) throws IOException {

@@ -27,7 +27,8 @@ public class FindConsommateur extends Page{
      *                        <li>Liste des consommateur</li>
      *                        <li>Trouver un consommateur</li>
      *                        </ol>
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {

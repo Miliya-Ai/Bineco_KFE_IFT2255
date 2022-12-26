@@ -6,6 +6,9 @@ import java.util.Scanner;
  * S'occupe du besoin fonctionnel "Suivi ecologique"
  */
 public class Suivi extends Page {
+    /**
+     * Constructeur de Suivi: Imprime tous les pages valident
+     */
     public Suivi() {
         entete("Suivi ecologique");
         out( "**** Pour retourner au menu, appuyer 0 ****");
@@ -17,7 +20,6 @@ public class Suivi extends Page {
         filtrer();
     }
 
-    //TODO: verifier a quoi sert l'option 3
     /**
      * @param intNumeroOption Le resident choisit la page vers laquelle se diriger.
      *                        Les nombres representent les pages.
@@ -25,7 +27,8 @@ public class Suivi extends Page {
      *                        <li>Etat traitement dechets municipaux</li>
      *                        <li>Metriques ecologiques municipales</li>
      *                        </ol>
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {
@@ -45,10 +48,6 @@ public class Suivi extends Page {
             case 2:
                 tabNomOptions.clear();
                 choixTemps();
-                break;
-            case 3:
-                tabNomOptions.clear();
-                historiqueBac();
                 break;
             case 99:
                 //effacer();
@@ -135,9 +134,8 @@ public class Suivi extends Page {
         out("Numero inexistant");
         new Suivi();
     }
-    //TODO: verifier si c'est utilise
     /**
-     * L'utilisateur choisit un interval de temps.
+     * L'utilisateur choisit un interval de temps lorsqu'il connaitre les metriques ecologiques municipales.
      */
     public void choixTemps(){
         out("Sur quel interval de temps voulez vous voir les metriques municipales? : ");
@@ -159,13 +157,13 @@ public class Suivi extends Page {
     }
 
     /**
-     * Calcule les metriques selon l'intervalle de temps choisi. Les metriques sont
+     * Calcule les metriques selon l'intervalle de temps choisi.
      * <ol>
      *     <li>le volume total et la moyenne</li>
      *     <li>les proportions des activites</li>
      * </ol>
      *
-     * @param temps
+     * @param temps intervalle de temps: 1 mois, 2 mois, 3 mois, 6 mois ou 12 mois
      */
     public void metriques(int temps){
 
@@ -204,7 +202,7 @@ public class Suivi extends Page {
      * @param r recyclage
      * @param c compostage
      * @param o dechet
-     * @return
+     * @return la proportion de ce qui a ete recycle, composte, mis a l'ordure et tout ce qui n'a pas ete traite
      */
     public String propotions(int temps, int[] r, int[] c, int[] o){
         int sumR = 0;
@@ -227,14 +225,6 @@ public class Suivi extends Page {
         String affichage = "Recyclage : "+propR+",  "+"Composte : "+propC+",  Ordures : "+propO+
                             "\n---"+propO*100+"% de tout n'est ni recyclé, ni composté.";
         return affichage;
-    }
-
-    //TODO: verifier si c'est utilise
-    /**
-     *
-     */
-    public void historiqueBac(){
-
     }
 
 

@@ -1,0 +1,10 @@
+l00,recyclage,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+l01,composte,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+l02,ordures,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+l03,recyclage,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+l04,composte,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+l05,ordures,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+l06,recyclage,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+l07,composte,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+l08,ordures,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25
+l09,recyclage,YYYY-MM-DD,YYYY-MM-DD,statut_actuel,1000,750,0.25

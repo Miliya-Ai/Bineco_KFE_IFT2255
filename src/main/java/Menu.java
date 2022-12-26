@@ -4,10 +4,11 @@ import java.io.IOException;
  * Menu du resident
  */
 public class Menu extends Page{
-    //TODO: verifier si les notifications contiennent egalement celles de sensibilisation
+    //TODO: les notifications contiennent PAS celles de sensibilisation
     /**
      * Constructeur de Menu: Imprime les options valident, l'etat de ses bacs et les notifications
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public Menu() throws IOException {
         entete("Menu");
@@ -16,10 +17,10 @@ public class Menu extends Page{
         out( "**** Pour quitter, appuyer 99 ****\n");
 
         addTabNomOptions("Mes bacs");
-        addTabNomOptions("Consommateurs");
-        addTabNomOptions("Suivi ecologique");
+        addTabNomOptions("Trouver un ou plusieurs consommateurs");
+        addTabNomOptions("Faire un suivi ecologique");
         //addTabNomOptions("Voir les activité que je maintiens");
-        addTabNomOptions("Signaler un problème à la ville");
+        addTabNomOptions("Signaler un probleme à la ville");
         addTabNomOptions("Mon profil");
         out(afficherOptions ());
 
@@ -40,18 +41,18 @@ public class Menu extends Page{
 
         filtrer();
     }
-    //TODO: trouver des noms plus descriptifs?
     /**
      * @param intNumeroOption Le resident choisit la page vers laquelle se diriger.
      *                        Les nombres representent les pages.
      *                        <ol>
      *                        <li>Mes bacs</li>
-     *                        <li>Consommateurs</li>
-     *                        <li>Suivi ecologique</li>
+     *                        <li>Trouver un ou plusieurs consommateurs</li>
+     *                        <li>Faire un suivi ecologique</li>
      *                        <li>Signaler un probleme a la ville</li>
      *                        <li>Mon profil</li>
      *                        </ol>
-     * @throws IOException
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     @Override
     public void changerPage(int intNumeroOption) throws IOException {

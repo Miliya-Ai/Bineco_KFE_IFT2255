@@ -10,7 +10,7 @@ public class UserController extends Controller{
     public String typeDechet, capacite, activite, code;
     public String[] numeroBac = new String[3];
     public boolean res;
-    String info;
+
 
     public UserController(){}
 
@@ -27,24 +27,6 @@ public class UserController extends Controller{
     public void setMdp(String pass){
         this.mdp = pass;
     }
-
-    //TODO: jamais utilise
-    /**
-     * @return
-     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
-     *                    Si le fichier n'est pas present, une exception se produit.
-     */
-    public String getInfoString() throws IOException {
-        String str = null;
-        FileInputStream fstream = new FileInputStream("src/informations.txt");
-        DataInputStream in = new DataInputStream(fstream);
-        BufferedReader br = new BufferedReader(new InputStreamReader(in));
-        String strLine;
-        str = br.readLine();
-
-        return str;
-    }
-
 
     /**
      * Cherche toutes les informations d'un resident et les emmagasinent dans leurs variables correspondant.
@@ -132,11 +114,13 @@ public class UserController extends Controller{
         }
 
     }
-    //TODO: a completer
     /**
-     * @param path
-     * @return
-     * @throws IOException
+     * Utiliser lorsque l'utilisateur souhaite modifier son profil. Il faut aller chercher l'information existante.
+     * @param path le fichier a extraire l'information
+     * @return information de l'utilisateur sour la forme d'un ArrayList
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
+     * @see ModifProfil
      */
     public ArrayList toArrL(String path) throws IOException {
 
@@ -156,13 +140,15 @@ public class UserController extends Controller{
         return lines;
     }
 
-    //TODO: a completer
+
     /**
-     * @param list
-     * @param info
-     * @param newOne
-     * @param path
-     * @throws IOException
+     * Modifie le fichier correspondant en remplacant l'ancienne information par la nouvelle.
+     * @param list toutes les informations du client
+     * @param info ancienne information qu'on veut modifier
+     * @param newOne nouvelle information qui remplacera l'ancienne
+     * @param path le fichier qui contient les informations du client qui sera modifie
+     * @throws IOException La methode utilise des methodes qui lisent des fichiers.
+     *                     Si le fichier n'est pas present, une exception se produit.
      */
     public void changeInfo(ArrayList list, String info, String newOne, String path) throws IOException {
 
