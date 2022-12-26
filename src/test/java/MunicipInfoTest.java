@@ -7,19 +7,15 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MunicipInfoTest {
-/*
+
     @Test
-    void getExUser() throws IOException {
-        MunicipInfo test = new MunicipInfo();
-        ArrayList<String> user = new ArrayList<>();
-        user.add("xlap\n");
-        String attendu = user.get(0);
-        String reponseGetExUser = test.getExUser().get(0);
-        //assertEquals(reponseGetExUser,attendu);
-        System.out.println(test.getExUser().get(1));
-        System.out.println(test.getExUser().get(1).equals("tyff"));
-        assertTrue(test.getExUser().contains("xlap"));
+    void toInt() throws IOException {
+       MunicipInfo test = new MunicipInfo();
+       String[][] testNumero = {{"1"},{"1"}};
+       test.toInt(testNumero);
+       int[][] attendu = {{1},{1}};
+       assertEquals(test.toInt(testNumero)[0][0],attendu[0][0]);
+
     }
 
- */
 }

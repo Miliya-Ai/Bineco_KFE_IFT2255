@@ -93,6 +93,14 @@ public class MunicipInfo {
         return inInt;
     }
 
+    public static void main(String[] args) throws IOException {
+
+        MunicipInfo test = new MunicipInfo();
+        String[][] testNumero = {{"1"},{"1"}};
+        test.toInt(testNumero);
+        System.out.println(test.toInt(testNumero)[0][0]);
+    }
+
     /**
      * Message de sensibilisatoin
      */
