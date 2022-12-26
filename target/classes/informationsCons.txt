@@ -1,10 +1,10 @@
-c00,company1,SCOURY,recyclage:2000,composte:1000,scoury@gmail.com,3225 rue wally,telephone
-c01,company1,POLISHY,recyclage:2000,composte:500,polishy@hotmail.com,555 rue westmount,telephone
-c02,company1,RINSY,recyclage:1000,composte:1500,rinsy@yahoo.fr,,telephone
-c03,company1,FLUSHY,recyclage:2000,composte:1000,dechets:2000,flushy@gmail.com,adresse,telephone
-c04,company1,UNSTAINY,recyclage:1500,composte:500,unstainy@gmail.com,adresse,telephone
-c05,company1,WIPPY,recyclage:750,composte:1000,dechets:5000,wippy@hotmail.com,adresse,telephone
-c06,company1,SCRUBBY,recyclage:2000,scrubby@yahoo.ca,adresse,telephone
-c07,company1,CYCLE,recyclage:2000,composte:1000,dechets:1500,cycle@outlook.com,adresse,telephone
-c08,company1,CLEANY,composte:1750,cleany@outlook.ca,adresse,telephone
-c09,company1,JEDCO,recyclage:1000,composte:1000,dechets:1000,jedco@hotmail.ca,adresse,telephone
+c00,company0,SCOURY,recyclage:2000,composte:1000,scoury@gmail.com,3225 rue wally,5143333331
+c01,company1,POLISHY,recyclage:2000,composte:500,polishy@hotmail.com,555 rue westmount,5143333332
+c02,company2,RINSY,recyclage:1000,composte:1500,rinsy@yahoo.fr,115 rue laurent,5143333333
+c03,company3,FLUSHY,recyclage:2000,composte:1000,dechets:2000,flushy@gmail.com,3333 rue durant,5143333334
+c04,company4,UNSTAINY,recyclage:1500,composte:500,unstainy@gmail.com,255 rue cochondufresne,5143333335
+c05,company5,WIPPY,recyclage:750,composte:1000,dechets:5000,wippy@hotmail.com,1556 rue simon,5143333336
+c06,company6,SCRUBBY,recyclage:2000,scrubby@yahoo.ca,444 rue didi,5143333337
+c07,company7,CYCLE,recyclage:2000,composte:1000,dechets:1500,cycle@outlook.com,666 rue dudiable,5143333338
+c08,company8,CLEANY,composte:1750,cleany@outlook.ca,69 rue ducharme,5143333339
+c09,company91,JEDCO,recyclage:1000,composte:1000,dechets:1000,jedco@hotmail.ca,25 rue christmas,5143333330
