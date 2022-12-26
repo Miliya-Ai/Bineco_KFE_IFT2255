@@ -12,6 +12,7 @@ public class Consommateur extends Client{
      * Constructeur de Consommateur : Imprime les champs que le consommateur doit remplir et sauvegarde l'information.
      * @throws IOException La methode utilise des methodes qui lisent des fichiers.
      *                     Si le fichier n'est pas present, une exception se produit.
+     *
      */
     public Consommateur() throws IOException {
         entete("Consommateur");
@@ -40,6 +41,9 @@ public class Consommateur extends Client{
         out("\n Appuyer sur 1 pour enregistrer");
 
         filtrer();
+
+    }
+    public Consommateur(boolean pageImprime){
 
     }
     /**
