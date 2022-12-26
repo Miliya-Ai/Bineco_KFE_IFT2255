@@ -6,6 +6,9 @@ body {
     scroll-behavior: smooth;
     background: #f5f5f5;
     overflow-x: hidden;
+    background-image: url(https://media0.giphy.com/media/ZRxGjh17OyP8yQkXqq/giphy.webp?cid=ecf05e473d74gc0wdub5nxnrzt01vtrxvjuxisphpnzicj6f&rid=giphy.webp&ct=g);
+    background-attachment: fixed;
+    background-size: 50%;
 }
 
 h1, h2 { margin: 0; }
