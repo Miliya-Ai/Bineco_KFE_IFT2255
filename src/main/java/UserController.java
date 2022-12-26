@@ -90,7 +90,8 @@ public class UserController extends Controller{
     }
 
     /**
-     * Imprime les informations du client qui avait ete affecte lors de {@link #getInfoCons(String usr)} ou
+     * Imprime les
+     * informations du client qui avait ete affecte lors de {@link #getInfoCons(String usr)} ou
      * {@link #getInfoRes(String usr)}.
      */
     public void afficherInfo(){
