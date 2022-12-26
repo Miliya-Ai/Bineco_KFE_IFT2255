@@ -20,6 +20,6 @@ class MunicipInfoTest {
         System.out.println(test.getExUser().get(1).equals("tyff"));
         assertTrue(test.getExUser().contains("xlap"));
     }
-    
+
  */
 }

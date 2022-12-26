@@ -11,9 +11,9 @@ Cette application appelé BINCEO est un prototype en ligne de commande permettan
 ## Fonctionnalités 
 
 - Se connecter en tant que résident/consommateur
-  -créér un compte
-  -Modifier son profil
--Gestion des bacs
+  - créér un compte
+  - Modifier son profil
+- Gestion des bacs
   - Enregistrer un bac
   - Supprimer un bac
   - Afficher l'état des bacs

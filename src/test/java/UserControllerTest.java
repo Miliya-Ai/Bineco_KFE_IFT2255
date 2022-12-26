@@ -22,4 +22,21 @@ class UserControllerTest {
         assertEquals(test.telephone,"5141234321");
         assertEquals(test.numeroBac[0],testNumeroBac[0]);
     }
+    /**
+     * @author Kim
+     * Verifier que getInfoRes cherche les donnees dans le bon champ du fichier csv "informations.txt" et
+     * enregistre ses donnees dans la bonne variable.
+     */
+    @Test
+    void getInfoCons() throws IOException {
+        UserController test = new UserController();
+        String[] testNumeroBac = new String[3];
+        testNumeroBac[0] = "r00";
+        test.getInfoCons("c00");
+        assertEquals(test.name,"SCOURY");
+        assertEquals(test.courriel,"scoury@gmail.com");
+        assertEquals(test.adresse,"3225 rue wally");
+        assertEquals(test.telephone,"5141234321");
+        assertEquals(test.numeroBac[0],testNumeroBac[0]);
+    }
 }
