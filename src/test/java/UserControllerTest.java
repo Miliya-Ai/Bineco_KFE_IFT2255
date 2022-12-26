@@ -24,7 +24,7 @@ class UserControllerTest {
     }
     /**
      * @author Kim
-     * Verifier que getInfoRes cherche les donnees dans le bon champ du fichier csv "informations.txt" et
+     * Verifier que getInfoCons cherche les donnees dans le bon champ du fichier csv "informationsCons.txt" et
      * enregistre ses donnees dans la bonne variable.
      */
     @Test
@@ -36,7 +36,7 @@ class UserControllerTest {
         assertEquals(test.name,"SCOURY");
         assertEquals(test.courriel,"scoury@gmail.com");
         assertEquals(test.adresse,"3225 rue wally");
-        assertEquals(test.telephone,"5141234321");
-        assertEquals(test.numeroBac[0],testNumeroBac[0]);
+        assertEquals(test.telephone,"5143333331");
+        assertEquals(test.typeDechet,"recyclage:2000 composte:1000");
     }
 }

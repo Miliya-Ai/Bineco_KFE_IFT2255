@@ -21,6 +21,12 @@ public class Suivi extends Page {
     }
 
     /**
+     * Constructeure pour le programmeur, afin de tester des methodes de la classe sans imprimer la page.
+     * @param printPage
+     */
+    public Suivi(Boolean printPage){}
+
+    /**
      * @param intNumeroOption Le resident choisit la page vers laquelle se diriger.
      *                        Les nombres representent les pages.
      *                        <ol>
