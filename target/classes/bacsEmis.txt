@@ -1,9 +1,0 @@
-r00,adresse1,UNE_DATE
-r01,adresse2,UNE_DATE
-r02,adresse3,UNE_DATE
-d00,adresse4,UNE_DATE
-d01,adresse5,UNE_DATE
-d02,adresse6,UNE_DATE
-co00,adresse7,UNE_DATE
-co01,adresse8,UNE_DATE
-co02,adresse9,UNE_DATE
