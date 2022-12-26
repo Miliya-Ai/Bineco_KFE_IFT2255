@@ -5,6 +5,8 @@
 
 --**POUR EXECUTER L'APPLICATION SIMPLEMENT RUN LA FONCITON MAIN DANS LA BRANCHE MAIN!**--
 
+JAR se trouve out/artifacts/outilBineco_jar/outilBineco.jar 
+
 ----
 ## IMPORTANT
 > *Ne pas mettre d'espace dans le nom d'utilisateur
